@@ -122,7 +122,7 @@ export function useRoster() {
   const transportValidations = useMemo(() => {
     if (!state.currentRoster) return [];
     return validateTransportCapacity(rosterUnitsWithData);
-  }, [rosterUnitsWithData]);
+  }, [state.currentRoster, rosterUnitsWithData]);
 
   // Share functions
   const generateShareLink = useCallback(async (): Promise<string | null> => {

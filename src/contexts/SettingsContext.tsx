@@ -23,20 +23,19 @@ const defaultSettings: SettingsState = {
 const SettingsContext = createContext<SettingsContextType | null>(null);
 
 export function SettingsProvider({ children }: { children: ReactNode }) {
-  const [settings, setSettings] = useState<SettingsState>(defaultSettings);
-
-  // Load settings from localStorage on mount
-  useEffect(() => {
+  const [settings, setSettings] = useState<SettingsState>(() => {
+    // Initialize state from localStorage
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {
         const parsed = JSON.parse(saved);
-        setSettings({ ...defaultSettings, ...parsed });
+        return { ...defaultSettings, ...parsed };
       }
     } catch (err) {
       console.error('Failed to load settings from localStorage:', err);
     }
-  }, []);
+    return defaultSettings;
+  });
 
   // Save settings to localStorage whenever they change
   useEffect(() => {

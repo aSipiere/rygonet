@@ -19,7 +19,7 @@ export function useRosterFilter(
 ): Unit[] {
   return useMemo(() => {
     // Step 1: Filter by search term
-    let filtered = units.filter((u) =>
+    const filtered = units.filter((u) =>
       u.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 

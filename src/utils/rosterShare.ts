@@ -1,5 +1,28 @@
 import { compressToEncodedURIComponent, decompressFromEncodedURIComponent } from 'lz-string';
-import { Roster } from '../types';
+import { Roster, RosterUnit, RosterGroup, UnitRelationship } from '../types';
+
+interface MinimalUnit {
+  unitId: string;
+  count: number;
+  customName?: string;
+  selectedOptions?: number[];
+  groupId?: string;
+  relationship?: {
+    type: string;
+    transportUnitIndex: number;
+  } | {
+    type: string;
+    transportUnitId: string;
+  };
+}
+
+interface MinimalRoster {
+  name: string;
+  factionId: string;
+  pointsLimit: number;
+  units: MinimalUnit[];
+  groups: Array<{ id: string; name: string }>;
+}
 
 /**
  * Encode a roster into a shareable URL-safe string
@@ -8,20 +31,16 @@ import { Roster } from '../types';
 export function encodeRosterForSharing(roster: Roster): string {
   try {
     // Create a minimal version of the roster for sharing
-    const minimalRoster = {
+    const minimalRoster: MinimalRoster = {
       name: roster.name,
       factionId: roster.factionId,
       pointsLimit: roster.pointsLimit,
       units: roster.units.map(unit => {
         // Convert transportUnitId to transportUnitIndex for reliable decoding
-        let relationship: any = unit.relationship;
-        if (relationship) {
-          const transportIndex = roster.units.findIndex(u => u.id === relationship!.transportUnitId);
-          relationship = {
-            type: relationship.type,
-            transportUnitIndex: transportIndex,
-          };
-        }
+        const relationship = unit.relationship ? {
+          type: unit.relationship.type,
+          transportUnitIndex: roster.units.findIndex(u => u.id === unit.relationship!.transportUnitId),
+        } : undefined;
 
         return {
           unitId: unit.unitId,
@@ -57,38 +76,41 @@ export function decodeRosterFromShare(shareCode: string): Roster | null {
     if (!decompressed) {
       return null;
     }
-    const minimalRoster = JSON.parse(decompressed);
+    const minimalRoster: MinimalRoster = JSON.parse(decompressed);
 
     // Reconstruct full roster with generated IDs and timestamps
     const now = new Date().toISOString();
 
     // First pass: Create all units with new IDs
-    const newUnits = minimalRoster.units.map((unit: any) => ({
+    const newUnits: RosterUnit[] = minimalRoster.units.map((unit) => ({
       id: crypto.randomUUID(),
       unitId: unit.unitId,
       count: unit.count,
       customName: unit.customName,
       selectedOptions: unit.selectedOptions,
       groupId: unit.groupId,
-      relationship: unit.relationship, // Keep temporarily, will be updated
+      relationship: undefined, // Will be updated in second pass
     }));
 
     // Second pass: Update relationship transportUnitId using the index
-    minimalRoster.units.forEach((unit: any, index: number) => {
-      if (unit.relationship?.transportUnitIndex !== undefined) {
+    minimalRoster.units.forEach((unit, index: number) => {
+      if (unit.relationship && 'transportUnitIndex' in unit.relationship && unit.relationship.transportUnitIndex !== undefined) {
         const transportIndex = unit.relationship.transportUnitIndex;
         if (transportIndex >= 0 && transportIndex < newUnits.length) {
           // Update the relationship to use the new transport unit ID
           newUnits[index].relationship = {
-            type: unit.relationship.type,
+            type: unit.relationship.type as UnitRelationship['type'],
             transportUnitId: newUnits[transportIndex].id,
           };
         }
-      } else if (unit.relationship?.transportUnitId) {
+      } else if (unit.relationship && 'transportUnitId' in unit.relationship && unit.relationship.transportUnitId) {
         // Handle legacy encoded rosters that still use transportUnitId
         // This maintains backwards compatibility but won't work correctly
         // (relationships will be broken for old share links)
-        newUnits[index].relationship = unit.relationship;
+        newUnits[index].relationship = {
+          type: unit.relationship.type as UnitRelationship['type'],
+          transportUnitId: unit.relationship.transportUnitId,
+        };
       }
     });
 
@@ -98,7 +120,7 @@ export function decodeRosterFromShare(shareCode: string): Roster | null {
       factionId: minimalRoster.factionId,
       pointsLimit: minimalRoster.pointsLimit,
       units: newUnits,
-      groups: minimalRoster.groups.map((group: any) => ({
+      groups: minimalRoster.groups.map((group): RosterGroup => ({
         id: group.id,
         name: group.name,
       })),

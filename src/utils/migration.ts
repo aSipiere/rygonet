@@ -1,16 +1,26 @@
-import { Roster } from '../types';
+import { Roster, RosterUnit } from '../types';
 
-export function migrateRosterToV2(roster: any): Roster {
+interface LegacyRosterUnit extends Omit<RosterUnit, 'groupId' | 'relationship'> {
+  groupId?: never;
+  relationship?: never;
+}
+
+interface LegacyRoster extends Omit<Roster, 'groups' | 'units'> {
+  groups?: never;
+  units: LegacyRosterUnit[];
+}
+
+export function migrateRosterToV2(roster: Roster | LegacyRoster): Roster {
   // Check if already migrated
-  if (roster.groups !== undefined) {
-    return roster;
+  if ('groups' in roster && roster.groups !== undefined) {
+    return roster as Roster;
   }
 
   // Add groups array if missing and ensure units have no groupId or relationship
   return {
     ...roster,
     groups: [],
-    units: roster.units.map((unit: any) => ({
+    units: roster.units.map((unit) => ({
       ...unit,
       groupId: undefined,
       relationship: undefined,
@@ -18,6 +28,6 @@ export function migrateRosterToV2(roster: any): Roster {
   };
 }
 
-export function migrateAllRosters(rosters: any[]): Roster[] {
+export function migrateAllRosters(rosters: (Roster | LegacyRoster)[]): Roster[] {
   return rosters.map(migrateRosterToV2);
 }
