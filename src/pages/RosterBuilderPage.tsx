@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { Typography, Box } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import { Divider } from '@components/common/Divider';
@@ -9,43 +8,19 @@ import { RosterSelectionDialog } from '@/components/armyBuilder/RosterSelectionD
 
 export default function RosterBuilderPage() {
   const { currentRoster, createRoster, loadRoster, addUnit, savedRosters, isEditMode } = useRoster();
-  const [showRosterDialog, setShowRosterDialog] = useState(false);
-
-  // Update dialog visibility based on roster state
-  useEffect(() => {
-    // Don't show dialog if we have a current roster (including shared rosters)
-    if (currentRoster) {
-      setShowRosterDialog(false);
-    } else {
-      // Only show dialog if we don't have a roster and it's not being loaded
-      setShowRosterDialog(true);
-    }
-  }, [currentRoster]);
 
   // If no roster selected, show selection dialog
   if (!currentRoster) {
-    if (showRosterDialog) {
-      return (
-        <RosterSelectionDialog
-          savedRosters={savedRosters}
-          onCreateNew={(name, factionId, pointsLimit) => {
-            createRoster(name, factionId, pointsLimit);
-            setShowRosterDialog(false);
-          }}
-          onLoadExisting={(roster) => {
-            loadRoster(roster);
-            setShowRosterDialog(false);
-          }}
-        />
-      );
-    }
-    // Loading state while waiting for shared roster
     return (
-      <Box sx={{ textAlign: 'center', mt: 4 }}>
-        <Typography variant="h6" color="primary.main">
-          Loading roster...
-        </Typography>
-      </Box>
+      <RosterSelectionDialog
+        savedRosters={savedRosters}
+        onCreateNew={(name, factionId, pointsLimit) => {
+          createRoster(name, factionId, pointsLimit);
+        }}
+        onLoadExisting={(roster) => {
+          loadRoster(roster);
+        }}
+      />
     );
   }
 

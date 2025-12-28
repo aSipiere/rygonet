@@ -5,6 +5,7 @@ import { useRoster } from '@hooks/useRoster';
 import { useFactionData } from '@hooks/useFactionData';
 import { Divider } from '@components/common/Divider';
 import { TerminalBox } from '@components/common/TerminalBox';
+import { Roster } from '@/types';
 
 export default function HomePage() {
   const { savedRosters, loadRoster, currentRoster, isSharedRoster } = useRoster();
@@ -18,7 +19,7 @@ export default function HomePage() {
     }
   }, [currentRoster, isSharedRoster, navigate]);
 
-  const handleRosterClick = (roster: any) => {
+  const handleRosterClick = (roster: Roster) => {
     loadRoster(roster);
     navigate('/builder');
   };
