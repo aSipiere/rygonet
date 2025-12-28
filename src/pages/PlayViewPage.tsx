@@ -1,5 +1,6 @@
 import { Typography, Box, Stack, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useRoster } from '@/hooks/useRoster';
 import { getUnitsInGroup, getUngroupedUnits } from '@/utils/roster';
@@ -10,8 +11,14 @@ export default function PlayViewPage() {
   const { currentRoster } = useRoster();
   const navigate = useNavigate();
 
+  // Redirect to home if no roster is loaded
+  useEffect(() => {
+    if (!currentRoster) {
+      navigate('/');
+    }
+  }, [currentRoster, navigate]);
+
   if (!currentRoster) {
-    navigate('/');
     return null;
   }
 
