@@ -4,25 +4,30 @@ A modern army roster builder for Firelock: 198X miniatures wargame.
 
 ## Tech Stack
 
-- **Framework**: React 18 + TypeScript 5
-- **Build Tool**: Vite 5
+- **Framework**: React 19 + TypeScript 5.9
+- **Build Tool**: Vite 7
 - **UI Library**: Material-UI (MUI) v7
-- **State Management**: React Context API + useReducer
-- **Routing**: React Router v6
+- **State Management**: React Context API + useImmer (Immer integration)
+- **Routing**: React Router v7
 - **Drag & Drop**: @dnd-kit
+- **Utilities**: lz-string (roster compression/sharing)
 - **Deployment**: Netlify
 
 ## Features
 
 - ✅ Faction data management (FSA faction included)
-- ✅ Roster creation and management
-- ✅ Local storage persistence
-- ✅ TypeScript type safety
+- ✅ Roster creation and management with full army builder interface
+- ✅ Unit selection with filtering and options customization
+- ✅ Drag-and-drop unit reordering and group management
+- ✅ Transport capacity tracking and unit relationships
+- ✅ Play mode view with condensed unit cards
+- ✅ Roster sharing via compressed URL
+- ✅ Local storage persistence with data migration
+- ✅ CRT scanline effects toggle
+- ✅ Retro terminal-style theming
+- ✅ TypeScript type safety throughout
 - ✅ Responsive layout with MUI
 - ✅ Netlify deployment ready
-- 🚧 Roster builder interface (in progress)
-- 🚧 Unit display components (in progress)
-- 🚧 Drag-and-drop unit reordering (in progress)
 
 ## Project Structure
 
@@ -30,27 +35,51 @@ A modern army roster builder for Firelock: 198X miniatures wargame.
 src/
 ├── components/          # Reusable UI components
 │   ├── layout/         # AppBar, Layout
-│   ├── roster/         # Roster-specific components (to be built)
-│   ├── unit/           # Unit display components (to be built)
-│   ├── builder/        # Builder interface components (to be built)
-│   └── common/         # Common/shared components
+│   ├── armyBuilder/    # Army builder interface components
+│   │   ├── ArmyRoster.tsx              # Main roster display
+│   │   ├── ArmyRosterGroup.tsx         # Draggable unit groups
+│   │   ├── ArmyRosterUnit.tsx          # Individual unit cards
+│   │   ├── UnitSelector.tsx            # Unit selection dialog
+│   │   ├── UnitOptionsSelector.tsx     # Unit customization
+│   │   ├── TransportCapacityIndicator.tsx
+│   │   └── UnitRelationshipControl.tsx
+│   ├── roster/         # Roster display components
+│   │   ├── RosterBrowser.tsx   # Roster management
+│   │   ├── UnitCard.tsx        # Unit display
+│   │   ├── WeaponDisplay.tsx   # Weapon stats
+│   │   └── StatsDisplay.tsx    # Unit stats
+│   ├── playMode/       # Play mode view components
+│   │   ├── PlayModeGroup.tsx
+│   │   └── PlayModeUnitCard.tsx
+│   └── common/         # Shared components
+│       ├── CRTScanlines.tsx    # CRT visual effects
+│       ├── TerminalBox.tsx     # Retro terminal styling
+│       ├── SettingsMenu.tsx
+│       └── Divider.tsx
 ├── pages/              # Page components
 │   ├── HomePage.tsx
 │   ├── RosterBuilderPage.tsx
 │   ├── FactionPage.tsx
+│   ├── PlayViewPage.tsx
 │   ├── PrintPage.tsx
 │   └── NotFoundPage.tsx
 ├── contexts/           # React Context providers
 │   ├── RosterContext.tsx         # Roster state management
-│   └── FactionDataContext.tsx    # Faction data loading
+│   ├── FactionDataContext.tsx    # Faction data loading
+│   └── SettingsContext.tsx       # App settings (CRT effects, etc.)
 ├── hooks/              # Custom React hooks
 │   ├── useRoster.ts
 │   ├── useFactionData.ts
-│   └── useLocalStorage.ts
+│   ├── useLocalStorage.ts
+│   └── useRosterFilter.ts
 ├── utils/              # Utility functions
-│   ├── roster.ts       # Points calculation, roster operations
-│   ├── validation.ts   # Roster validation rules
-│   ├── export.ts       # Export to JSON/PDF
+│   ├── roster.ts           # Points calculation, roster operations
+│   ├── validation.ts       # Roster validation rules
+│   ├── export.ts           # Export functionality
+│   ├── rosterShare.ts      # URL-based roster sharing
+│   ├── transportCapacity.ts # Transport logic
+│   ├── migration.ts        # Data migration utilities
+│   ├── nameGenerator.ts    # Random name generation
 │   └── constants.ts
 ├── types/              # TypeScript type definitions
 │   ├── faction.ts
@@ -59,11 +88,12 @@ src/
 │   ├── roster.ts
 │   └── index.ts
 ├── data/               # JSON data files
-│   ├── factions/
-│   │   └── FSA.json    # Federal States-Army roster data
-│   └── schema.json     # Army roster JSON schema
-├── theme/
-│   └── theme.ts        # MUI theme configuration
+│   └── factions/
+│       └── FSA.json    # Federal States-Army roster data
+├── theme/              # MUI theme configuration
+│   ├── theme.ts
+│   ├── createAppTheme.ts
+│   └── colorThemes.ts
 ├── App.tsx
 └── main.tsx
 ```
@@ -145,15 +175,29 @@ Each faction file contains:
 
 ## Next Steps
 
-3. **Add More Factions**
+1. **Add More Factions**
    - Add ATOM, EBON, and RYGO faction data
-   - Update faction selector to support multiple factions
+   - Multi-faction support in roster builder
 
-4. **Enhance Features**
+2. **Enhanced Validation**
    - Army composition validation rules
-   - Print/PDF export improvements
-   - Share roster functionality
-   - Dark mode toggle
+   - Points limits and force organization
+   - Required/restricted unit combinations
+
+3. **Export & Print**
+   - Improved print layout and styling
+   - PDF export functionality
+   - Export to external formats
+
+4. **UI Enhancements**
+   - Additional color themes
+   - Customizable CRT effect intensity
+   - Mobile-optimized touch controls
+
+5. **Gameplay Features**
+   - Activation tracking during play
+   - Unit status markers (pinned, shaken, etc.)
+   - Dice roller integration
 
 ## Contributing
 
