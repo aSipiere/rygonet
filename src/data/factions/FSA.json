@@ -1,0 +1,1864 @@
+{
+  "faction": {
+    "id": "fsa",
+    "name": "Federal States-Army",
+    "description": "The Federal States-Army represents the military forces of the Federal States, equipped with reliable battle rifles, versatile weapon teams, and elite paratrooper units.",
+    "version": "FM 100-1-8X",
+    "specialRules": [
+      {
+        "name": "Steel Watchbands",
+        "description": "Faction-wide special rule for Federal States-Army units"
+      },
+      {
+        "name": "NBC",
+        "description": "Nuclear, Biological, Chemical protection"
+      }
+    ]
+  },
+  "units": [
+    {
+      "id": "fsa-reservists",
+      "name": "Reservists",
+      "category": "Infantry",
+      "subcategory": "Militia Squad",
+      "points": 5,
+      "stats": {
+        "unitType": "Inf",
+        "height": 1,
+        "speed": 16,
+        "movement": 4,
+        "quality": 1,
+        "toughness": {
+          "front": 1,
+          "side": 1,
+          "rear": 1
+        }
+      },
+      "specialRules": [],
+      "weapons": [
+        {
+          "name": "6P3 11.5mm SMG",
+          "range": 8,
+          "accuracy": { "stationary": 5, "moving": 6 },
+          "strength": 1,
+          "damage": 2,
+          "ammo": null,
+          "specialRules": ["Small Arm"]
+        },
+        {
+          "name": "6L4 73mm RPG",
+          "range": 8,
+          "accuracy": { "stationary": 5, "moving": 6 },
+          "strength": 6,
+          "damage": 1,
+          "ammo": 3,
+          "specialRules": ["Shaped Charge", "Small Arm"]
+        }
+      ],
+      "options": []
+    },
+    {
+      "id": "fsa-states-grenadiers",
+      "name": "States-Grenadiers",
+      "category": "Infantry",
+      "subcategory": "Line Squad",
+      "points": 10,
+      "stats": {
+        "unitType": "Inf",
+        "height": 1,
+        "speed": 16,
+        "movement": 4,
+        "quality": 2,
+        "toughness": {
+          "front": 1,
+          "side": 1,
+          "rear": 1
+        }
+      },
+      "specialRules": [
+        {
+          "name": "Assault Dismount",
+          "description": "Can dismount from vehicles during assault moves"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "6G1 7.76mm Battle Rifle",
+          "range": 8,
+          "accuracy": { "stationary": 3, "moving": 4 },
+          "strength": 1,
+          "damage": 1,
+          "ammo": null,
+          "specialRules": ["Small Arm"]
+        },
+        {
+          "name": "6G2 7.76mm GPMG",
+          "range": 12,
+          "accuracy": { "stationary": 4, "moving": 5 },
+          "strength": 1,
+          "damage": 2,
+          "ammo": null,
+          "specialRules": ["Defensive CC"]
+        },
+        {
+          "name": "6L1 85mm RPG",
+          "range": 8,
+          "accuracy": { "stationary": 4, "moving": 5 },
+          "strength": 8,
+          "damage": 1,
+          "ammo": 3,
+          "specialRules": ["Shaped Charge", "Small Arm"]
+        }
+      ],
+      "options": []
+    },
+    {
+      "id": "fsa-federal-expeditionaries",
+      "name": "Federal Expeditionaries",
+      "category": "Infantry",
+      "subcategory": "Paratrooper Squad",
+      "points": 15,
+      "stats": {
+        "unitType": "Inf",
+        "height": 1,
+        "speed": 16,
+        "movement": 5,
+        "quality": 3,
+        "toughness": {
+          "front": 1,
+          "side": 1,
+          "rear": 1
+        }
+      },
+      "specialRules": [
+        {
+          "name": "Assault Dismount",
+          "description": "Can dismount from vehicles during assault moves"
+        },
+        {
+          "name": "Fearless",
+          "description": "Immune to morale effects"
+        },
+        {
+          "name": "Paradrop",
+          "description": "Can deploy via parachute insertion"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "6G1A 7.76mm Automatic Rifle",
+          "range": 8,
+          "accuracy": { "stationary": 4, "moving": 5 },
+          "strength": 1,
+          "damage": 2,
+          "ammo": null,
+          "specialRules": ["Small Arm"]
+        },
+        {
+          "name": "6L3 40mm HEDP Grenade Launcher",
+          "range": 8,
+          "accuracy": { "stationary": 4, "moving": 5 },
+          "strength": 5,
+          "damage": 1,
+          "ammo": 4,
+          "specialRules": ["Shaped Charge", "Underbarrel (6G1A)"]
+        }
+      ],
+      "options": []
+    },
+    {
+      "id": "fsa-mortar-team",
+      "name": "Mortar Team",
+      "category": "Infantry",
+      "subcategory": "Anti-Personnel Team",
+      "points": 10,
+      "stats": {
+        "unitType": "Inf",
+        "height": 1,
+        "speed": 16,
+        "movement": 4,
+        "quality": 2,
+        "toughness": {
+          "front": 1,
+          "side": 1,
+          "rear": 1
+        }
+      },
+      "specialRules": [
+        {
+          "name": "Assault Dismount",
+          "description": "Can dismount from vehicles during assault moves"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "6G1 7.76mm Battle Rifle",
+          "range": 8,
+          "accuracy": { "stationary": 3, "moving": 4 },
+          "strength": 1,
+          "damage": 1,
+          "ammo": null,
+          "specialRules": ["Small Arm"]
+        },
+        {
+          "name": "6L2 60mm Knee Mortar",
+          "range": 16,
+          "damage": 1,
+          "ammo": 6,
+          "specialRules": ["Light Indirect (1)", "No CC"],
+          "shotTypes": [
+            {
+              "name": "Frag",
+              "accuracy": { "stationary": 4, "moving": 5 },
+              "strength": 1,
+              "damage": 2,
+              "specialRules": ["Air-Filling"]
+            },
+            {
+              "name": "Smoke",
+              "accuracy": { "stationary": 1, "moving": 1 },
+              "strength": 0,
+              "specialRules": ["Smoke (3\")"]
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "id": "fsa-atgm-team",
+      "name": "ATGM Team",
+      "category": "Infantry",
+      "subcategory": "Anti-Tank Team",
+      "points": 10,
+      "stats": {
+        "unitType": "Inf",
+        "height": 1,
+        "speed": 32,
+        "movement": 4,
+        "quality": 2,
+        "toughness": {
+          "front": 1,
+          "side": 1,
+          "rear": 1
+        }
+      },
+      "specialRules": [
+        {
+          "name": "Assault Dismount",
+          "description": "Can dismount from vehicles during assault moves"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "6G1 7.76mm Battle Rifle",
+          "range": 8,
+          "accuracy": { "stationary": 3, "moving": 4 },
+          "strength": 1,
+          "damage": 1,
+          "ammo": null,
+          "specialRules": ["Small Arm"]
+        },
+        {
+          "name": "9GR1 125mm ATGM",
+          "range": 60,
+          "accuracy": { "stationary": 3, "moving": 4 },
+          "strength": 14,
+          "damage": 1,
+          "ammo": 2,
+          "specialRules": ["Guided Missile (2)", "MCLOS", "Shaped Charge"]
+        }
+      ],
+      "options": []
+    },
+    {
+      "id": "fsa-manpads-team",
+      "name": "MANPADS Team",
+      "category": "Infantry",
+      "subcategory": "Anti-Air Team",
+      "points": 10,
+      "stats": {
+        "unitType": "Inf",
+        "height": 1,
+        "speed": 32,
+        "movement": 4,
+        "quality": 2,
+        "toughness": {
+          "front": 1,
+          "side": 1,
+          "rear": 1
+        }
+      },
+      "specialRules": [
+        {
+          "name": "Assault Dismount",
+          "description": "Can dismount from vehicles during assault moves"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "6G1 7.76mm Battle Rifle",
+          "range": 8,
+          "accuracy": { "stationary": 3, "moving": 4 },
+          "strength": 1,
+          "damage": 1,
+          "ammo": null,
+          "specialRules": ["Small Arm"]
+        },
+        {
+          "name": "9GR2 85mm MANPADS",
+          "range": 60,
+          "accuracy": { "stationary": 4, "moving": 5 },
+          "strength": 5,
+          "damage": 1,
+          "ammo": 2,
+          "specialRules": ["Air-Filling", "Guided Missile (2)", "Homing", "Small Arm"]
+        }
+      ],
+      "options": []
+    },
+    {
+      "id": "fsa-recoilless-rifle-team",
+      "name": "Recoilless Rifle Team",
+      "category": "Infantry",
+      "subcategory": "General-Purpose Team",
+      "points": 15,
+      "stats": {
+        "unitType": "Inf",
+        "height": 1,
+        "speed": 24,
+        "movement": 4,
+        "quality": 2,
+        "toughness": {
+          "front": 1,
+          "side": 1,
+          "rear": 1
+        }
+      },
+      "specialRules": [
+        {
+          "name": "Assault Dismount",
+          "description": "Can dismount from vehicles during assault moves"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "6G1 7.76mm Battle Rifle",
+          "range": 8,
+          "accuracy": { "stationary": 3, "moving": 4 },
+          "strength": 1,
+          "damage": 1,
+          "ammo": null,
+          "specialRules": ["Small Arm"]
+        },
+        {
+          "name": "6L5 73mm Recoilless Rifle",
+          "range": 24,
+          "accuracy": { "stationary": 3, "moving": 4 },
+          "damage": 1,
+          "ammo": 4,
+          "specialRules": ["No CC (Inf.)"],
+          "shotTypes": [
+            {
+              "name": "HEAT",
+              "strength": 8,
+              "specialRules": ["Shaped Charge"]
+            },
+            {
+              "name": "Incendiary",
+              "strength": 1,
+              "specialRules": ["Ignore Cover (2)", "Rear Attack"]
+            },
+            {
+              "name": "Smoke",
+              "accuracy": { "stationary": 1, "moving": 1 },
+              "strength": 0,
+              "specialRules": ["No CC", "Smoke (3\")"]
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "id": "fsa-expeditionary-rr-team",
+      "name": "Expeditionary R.R. Team",
+      "category": "Infantry",
+      "subcategory": "Paratrooper General-Purpose Team",
+      "points": 15,
+      "stats": {
+        "unitType": "Inf",
+        "height": 1,
+        "speed": 24,
+        "movement": 5,
+        "quality": 3,
+        "toughness": {
+          "front": 1,
+          "side": 1,
+          "rear": 1
+        }
+      },
+      "specialRules": [
+        {
+          "name": "Assault Dismount",
+          "description": "Can dismount from vehicles during assault moves"
+        },
+        {
+          "name": "Fearless",
+          "description": "Immune to morale effects"
+        },
+        {
+          "name": "Paradrop",
+          "description": "Can deploy via parachute insertion"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "6G1A 7.76mm Automatic Rifle",
+          "range": 8,
+          "accuracy": { "stationary": 4, "moving": 5 },
+          "strength": 1,
+          "damage": 2,
+          "ammo": null,
+          "specialRules": ["Small Arm"]
+        },
+        {
+          "name": "6L6 57mm Light Recoilless Rifle",
+          "accuracy": { "stationary": 3, "moving": 4 },
+          "damage": 1,
+          "ammo": 4,
+          "specialRules": ["Small Arm"],
+          "shotTypes": [
+            {
+              "name": "HEAT",
+              "range": 24,
+              "strength": 6,
+              "specialRules": ["Shaped Charge"]
+            },
+            {
+              "name": "Canister",
+              "range": 12,
+              "strength": 1,
+              "damage": 3
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "id": "fsa-pup-carson-scouts",
+      "name": "Pup Carson Scouts",
+      "category": "Infantry",
+      "subcategory": "Pathfinder Team",
+      "points": 10,
+      "stats": {
+        "unitType": "Inf",
+        "height": 1,
+        "speed": 24,
+        "movement": 5,
+        "quality": 2,
+        "toughness": {
+          "front": 1,
+          "side": 1,
+          "rear": 1
+        }
+      },
+      "specialRules": [
+        {
+          "name": "Sense (6\")",
+          "description": "Can detect enemies within 6 inches"
+        },
+        {
+          "name": "Pathfinder Move",
+          "description": "Vehicles with M6\"+  this unit embarks on can make pathfinder move during Maneuver Phase (M6\" but ignores terrain costs/multipliers)"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "6G1 7.76mm Battle Rifle",
+          "range": 8,
+          "accuracy": { "stationary": 3, "moving": 4 },
+          "strength": 1,
+          "damage": 1,
+          "ammo": null,
+          "specialRules": ["Small Arm"]
+        },
+        {
+          "name": "Teeth & Claws",
+          "range": 0,
+          "accuracy": { "stationary": 1, "moving": 1 },
+          "strength": 1,
+          "damage": 1,
+          "ammo": null,
+          "specialRules": ["Melee"]
+        }
+      ],
+      "options": []
+    },
+    {
+      "id": "fsa-intermarine-rangers",
+      "name": "Intermarine Rangers",
+      "category": "Infantry",
+      "subcategory": "Scout-Sniper Team",
+      "points": 15,
+      "stats": {
+        "unitType": "Inf",
+        "height": 1,
+        "speed": 32,
+        "movement": 5,
+        "quality": 4,
+        "toughness": {
+          "front": 1,
+          "side": 1,
+          "rear": 1
+        }
+      },
+      "specialRules": [
+        {
+          "name": "Assault Dismount",
+          "description": "Can dismount from vehicles during assault moves"
+        },
+        {
+          "name": "Fearless",
+          "description": "Immune to morale effects"
+        },
+        {
+          "name": "Sniper Accuracy",
+          "description": "Does not lose accuracy from pin tokens while not identified"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "6G5 7.76mm Sniper Rifle",
+          "range": 16,
+          "accuracy": { "stationary": 2, "moving": 3 },
+          "strength": 1,
+          "damage": 1,
+          "ammo": null,
+          "specialRules": ["Discreet", "No CC", "Scoped", "Small Arm", "Thermal Sights"]
+        },
+        {
+          "name": "6P3 11.5mm SMG",
+          "range": 8,
+          "accuracy": { "stationary": 3, "moving": 4 },
+          "strength": 1,
+          "damage": 2,
+          "ammo": null,
+          "specialRules": ["Small Arm"]
+        },
+        {
+          "name": "1A5P MVSO Acquisition Laser",
+          "range": 40,
+          "accuracy": { "stationary": 1, "moving": 1 },
+          "strength": 0,
+          "damage": 1,
+          "ammo": null,
+          "specialRules": ["Designator", "Discreet"]
+        }
+      ],
+      "options": []
+    },
+    {
+      "id": "fsa-laf-301-ox",
+      "name": "LaF-301 \"Ox\" Logistics Truck",
+      "category": "Vehicles",
+      "subcategory": "Logistics Truck",
+      "points": 10,
+      "stats": {
+        "unitType": "Vec",
+        "height": 2,
+        "speed": 16,
+        "movement": 12,
+        "quality": 2,
+        "toughness": {
+          "front": 2,
+          "side": 2,
+          "rear": 2
+        },
+        "capacity": 2
+      },
+      "specialRules": [
+        {
+          "name": "Open-Topped",
+          "description": "Vulnerable to air-bursting weapons"
+        },
+        {
+          "name": "PC(2, Rear)",
+          "description": "Personnel Carrier: Can carry 2 infantry models, exit from rear"
+        },
+        {
+          "name": "Resupply(6)",
+          "description": "Can resupply units within 6 inches"
+        },
+        {
+          "name": "Tow(3)",
+          "description": "Can tow units with max toughness 3"
+        }
+      ],
+      "weapons": [],
+      "options": []
+    },
+    {
+      "id": "fsa-type-60-grumble",
+      "name": "Type 60 \"Grumble\" APC",
+      "category": "Vehicles",
+      "subcategory": "Armored Personnel Carrier",
+      "points": 10,
+      "stats": {
+        "unitType": "Vec",
+        "height": 2,
+        "speed": 16,
+        "movement": 12,
+        "quality": 2,
+        "toughness": {
+          "front": 3,
+          "side": 2,
+          "rear": 2
+        },
+        "capacity": 3
+      },
+      "specialRules": [
+        {
+          "name": "PC(3, Rear)",
+          "description": "Personnel Carrier: Can carry 3 infantry models, exit from rear"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "6G2 7.76mm GPMG",
+          "range": 12,
+          "accuracy": { "stationary": 4, "moving": 5 },
+          "strength": 1,
+          "damage": 2,
+          "ammo": null,
+          "specialRules": []
+        }
+      ],
+      "options": []
+    },
+    {
+      "id": "fsa-type-68-bantam",
+      "name": "Type 68 \"Bantam\" IFV",
+      "category": "Vehicles",
+      "subcategory": "Infantry Fighting Vehicle",
+      "points": 20,
+      "stats": {
+        "unitType": "Vec",
+        "height": 2,
+        "speed": 16,
+        "movement": 12,
+        "quality": 2,
+        "toughness": {
+          "front": 4,
+          "side": 2,
+          "rear": 2
+        },
+        "capacity": 2
+      },
+      "specialRules": [
+        {
+          "name": "PC(2, Rear)",
+          "description": "Personnel Carrier: Can carry 2 infantry models, exit from rear"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "2B16 20mm Autocannon",
+          "range": 16,
+          "accuracy": { "stationary": 4, "moving": 5 },
+          "strength": 3,
+          "damage": 2,
+          "ammo": null,
+          "specialRules": ["Air-Filling"]
+        },
+        {
+          "name": "9GR3 90mm ATGM",
+          "range": 48,
+          "accuracy": { "stationary": 4, "moving": 5 },
+          "strength": 10,
+          "damage": 1,
+          "ammo": 3,
+          "specialRules": ["Guided Missile (2)", "MCLOS", "Shaped Charge"]
+        }
+      ],
+      "options": []
+    },
+    {
+      "id": "fsa-type-68b-bantam-mk",
+      "name": "Type 68B \"Bantam-Mk\" IFV",
+      "category": "Vehicles",
+      "subcategory": "Infantry Fighting Vehicle",
+      "points": 25,
+      "stats": {
+        "unitType": "Vec",
+        "height": 2,
+        "speed": 16,
+        "movement": 12,
+        "quality": 2,
+        "toughness": {
+          "front": 5,
+          "side": 3,
+          "rear": 2
+        },
+        "capacity": 2
+      },
+      "specialRules": [
+        {
+          "name": "PC(2, Rear)",
+          "description": "Personnel Carrier: Can carry 2 infantry models, exit from rear"
+        },
+        {
+          "name": "ERA",
+          "description": "Explosive Reactive Armor"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "2B16 20mm Autocannon",
+          "range": 16,
+          "accuracy": { "stationary": 4, "moving": 5 },
+          "strength": 3,
+          "damage": 2,
+          "ammo": null,
+          "specialRules": ["Air-Filling"]
+        },
+        {
+          "name": "9GR4 90mm ATGM",
+          "range": 60,
+          "accuracy": { "stationary": 3, "moving": 4 },
+          "strength": 12,
+          "damage": 1,
+          "ammo": 3,
+          "specialRules": ["Guided Missile (2)", "SACLOS", "Shaped Charge", "Tandem"]
+        }
+      ],
+      "options": []
+    },
+    {
+      "id": "fsa-type-40m-veldjen-m",
+      "name": "Type 40M \"Veldjen-M\" Tank",
+      "category": "Vehicles",
+      "subcategory": "Light Tank",
+      "points": 20,
+      "stats": {
+        "unitType": "Vec",
+        "height": 2,
+        "speed": 12,
+        "movement": 8,
+        "quality": 2,
+        "toughness": {
+          "front": 5,
+          "side": 3,
+          "rear": 2
+        }
+      },
+      "specialRules": [],
+      "weapons": [
+        {
+          "name": "2D6 57mm Tank Gun",
+          "range": 32,
+          "accuracy": { "stationary": 3, "moving": 4 },
+          "damage": 1,
+          "ammo": null,
+          "specialRules": [],
+          "shotTypes": [
+            {
+              "name": "AP",
+              "strength": 7,
+              "specialRules": []
+            },
+            {
+              "name": "HEAT",
+              "strength": 8,
+              "specialRules": ["Shaped Charge"]
+            }
+          ]
+        },
+        {
+          "name": "6G2 7.76mm Coax MG",
+          "range": 12,
+          "accuracy": { "stationary": 4, "moving": 5 },
+          "strength": 1,
+          "damage": 2,
+          "ammo": null,
+          "specialRules": ["Coax"]
+        }
+      ],
+      "options": []
+    },
+    {
+      "id": "fsa-type-52-duck",
+      "name": "Type 52 \"Duck\" Light Tank",
+      "category": "Vehicles",
+      "subcategory": "Light Tank",
+      "points": 20,
+      "stats": {
+        "unitType": "Vec",
+        "height": 2,
+        "speed": 12,
+        "movement": 10,
+        "quality": 2,
+        "toughness": {
+          "front": 4,
+          "side": 3,
+          "rear": 2
+        }
+      },
+      "specialRules": [
+        {
+          "name": "Amphibious",
+          "description": "Can cross water terrain"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "2D8 76mm Tank Gun",
+          "range": 40,
+          "accuracy": { "stationary": 3, "moving": 4 },
+          "damage": 1,
+          "ammo": null,
+          "specialRules": [],
+          "shotTypes": [
+            {
+              "name": "AP",
+              "strength": 9,
+              "specialRules": []
+            },
+            {
+              "name": "HEAT",
+              "strength": 10,
+              "specialRules": ["Shaped Charge"]
+            },
+            {
+              "name": "HE",
+              "strength": 2,
+              "damage": 2,
+              "specialRules": ["Air-Filling"]
+            }
+          ]
+        },
+        {
+          "name": "6G2 7.76mm Coax MG",
+          "range": 12,
+          "accuracy": { "stationary": 4, "moving": 5 },
+          "strength": 1,
+          "damage": 2,
+          "ammo": null,
+          "specialRules": ["Coax"]
+        }
+      ],
+      "options": []
+    },
+    {
+      "id": "fsa-type-52p-mallard",
+      "name": "Type 52P \"Mallard\" Light Tank",
+      "category": "Vehicles",
+      "subcategory": "Light Tank",
+      "points": 20,
+      "stats": {
+        "unitType": "Vec",
+        "height": 2,
+        "speed": 12,
+        "movement": 10,
+        "quality": 2,
+        "toughness": {
+          "front": 4,
+          "side": 3,
+          "rear": 2
+        }
+      },
+      "specialRules": [
+        {
+          "name": "Amphibious",
+          "description": "Can cross water terrain"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "2D8 76mm Tank Gun",
+          "range": 40,
+          "accuracy": { "stationary": 3, "moving": 4 },
+          "damage": 1,
+          "ammo": null,
+          "specialRules": [],
+          "shotTypes": [
+            {
+              "name": "AP",
+              "strength": 9,
+              "specialRules": []
+            },
+            {
+              "name": "HEAT",
+              "strength": 10,
+              "specialRules": ["Shaped Charge"]
+            },
+            {
+              "name": "HE",
+              "strength": 2,
+              "damage": 2,
+              "specialRules": ["Air-Filling"]
+            }
+          ]
+        },
+        {
+          "name": "6G2 7.76mm Coax MG",
+          "range": 12,
+          "accuracy": { "stationary": 4, "moving": 5 },
+          "strength": 1,
+          "damage": 2,
+          "ammo": null,
+          "specialRules": ["Coax"]
+        },
+        {
+          "name": "9GR3 90mm ATGM",
+          "range": 48,
+          "accuracy": { "stationary": 4, "moving": 5 },
+          "strength": 10,
+          "damage": 1,
+          "ammo": 3,
+          "specialRules": ["Guided Missile (2)", "MCLOS", "Shaped Charge"]
+        }
+      ],
+      "options": []
+    },
+    {
+      "id": "fsa-type-55m-razorback-m",
+      "name": "Type 55M \"Razorback-M\" MBT",
+      "category": "Vehicles",
+      "subcategory": "Main Battle Tank",
+      "points": 40,
+      "stats": {
+        "unitType": "Vec",
+        "height": 2,
+        "speed": 10,
+        "movement": 8,
+        "quality": 3,
+        "toughness": {
+          "front": 9,
+          "side": 5,
+          "rear": 3
+        }
+      },
+      "specialRules": [],
+      "weapons": [
+        {
+          "name": "2D5 100mm Tank Gun",
+          "range": 48,
+          "accuracy": { "stationary": 3, "moving": 4 },
+          "damage": 1,
+          "ammo": null,
+          "specialRules": [],
+          "shotTypes": [
+            {
+              "name": "APFSDS",
+              "strength": 14,
+              "specialRules": []
+            },
+            {
+              "name": "HEAT",
+              "strength": 12,
+              "specialRules": ["Shaped Charge"]
+            },
+            {
+              "name": "HE",
+              "strength": 3,
+              "damage": 2,
+              "specialRules": ["Air-Filling"]
+            }
+          ]
+        },
+        {
+          "name": "6G2 7.76mm Coax MG",
+          "range": 12,
+          "accuracy": { "stationary": 4, "moving": 5 },
+          "strength": 1,
+          "damage": 2,
+          "ammo": null,
+          "specialRules": ["Coax"]
+        },
+        {
+          "name": "2B2 12.7mm HMG",
+          "range": 16,
+          "accuracy": { "stationary": 4, "moving": 5 },
+          "strength": 2,
+          "damage": 1,
+          "ammo": null,
+          "specialRules": ["Pintle"]
+        }
+      ],
+      "options": []
+    },
+    {
+      "id": "fsa-type-71-tusker-k",
+      "name": "Type 71 \"Tusker-K\" MBT",
+      "category": "Vehicles",
+      "subcategory": "Main Battle Tank",
+      "points": 50,
+      "stats": {
+        "unitType": "Vec",
+        "height": 2,
+        "speed": 12,
+        "movement": 10,
+        "quality": 3,
+        "toughness": {
+          "front": 11,
+          "side": 6,
+          "rear": 3
+        }
+      },
+      "specialRules": [],
+      "weapons": [
+        {
+          "name": "2D7 115mm Tank Gun",
+          "range": 60,
+          "accuracy": { "stationary": 3, "moving": 4 },
+          "damage": 1,
+          "ammo": null,
+          "specialRules": [],
+          "shotTypes": [
+            {
+              "name": "APFSDS",
+              "strength": 16,
+              "specialRules": []
+            },
+            {
+              "name": "HEAT",
+              "strength": 14,
+              "specialRules": ["Shaped Charge"]
+            },
+            {
+              "name": "HE",
+              "strength": 3,
+              "damage": 2,
+              "specialRules": ["Air-Filling"]
+            }
+          ]
+        },
+        {
+          "name": "6G2 7.76mm Coax MG",
+          "range": 12,
+          "accuracy": { "stationary": 4, "moving": 5 },
+          "strength": 1,
+          "damage": 2,
+          "ammo": null,
+          "specialRules": ["Coax"]
+        },
+        {
+          "name": "2B2 12.7mm HMG",
+          "range": 16,
+          "accuracy": { "stationary": 4, "moving": 5 },
+          "strength": 2,
+          "damage": 1,
+          "ammo": null,
+          "specialRules": ["Pintle"]
+        }
+      ],
+      "options": []
+    },
+    {
+      "id": "fsa-type-71b-tusker-gm",
+      "name": "Type 71B \"Tusker-GM\" MBT",
+      "category": "Vehicles",
+      "subcategory": "Main Battle Tank",
+      "points": 80,
+      "stats": {
+        "unitType": "Vec",
+        "height": 2,
+        "speed": 12,
+        "movement": 10,
+        "quality": 3,
+        "toughness": {
+          "front": 13,
+          "side": 7,
+          "rear": 4
+        }
+      },
+      "specialRules": [
+        {
+          "name": "ERA",
+          "description": "Explosive Reactive Armor"
+        },
+        {
+          "name": "FCS",
+          "description": "Fire Control System"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "2D7M 115mm Tank Gun",
+          "range": 60,
+          "accuracy": { "stationary": 2, "moving": 3 },
+          "damage": 1,
+          "ammo": null,
+          "specialRules": [],
+          "shotTypes": [
+            {
+              "name": "APFSDS",
+              "strength": 18,
+              "specialRules": []
+            },
+            {
+              "name": "HEAT",
+              "strength": 14,
+              "specialRules": ["Shaped Charge"]
+            },
+            {
+              "name": "HE",
+              "strength": 3,
+              "damage": 2,
+              "specialRules": ["Air-Filling"]
+            },
+            {
+              "name": "ATGM",
+              "range": 72,
+              "strength": 16,
+              "specialRules": ["Guided Missile (2)", "SACLOS", "Shaped Charge", "Tandem"]
+            }
+          ]
+        },
+        {
+          "name": "6G2 7.76mm Coax MG",
+          "range": 12,
+          "accuracy": { "stationary": 3, "moving": 4 },
+          "strength": 1,
+          "damage": 2,
+          "ammo": null,
+          "specialRules": ["Coax"]
+        },
+        {
+          "name": "2B2 12.7mm HMG",
+          "range": 16,
+          "accuracy": { "stationary": 3, "moving": 4 },
+          "strength": 2,
+          "damage": 1,
+          "ammo": null,
+          "specialRules": ["Pintle"]
+        }
+      ],
+      "options": []
+    },
+    {
+      "id": "fsa-2m9-korenbloem",
+      "name": "2M9 \"Korenbloem\" Towed Mortar",
+      "category": "Support",
+      "subcategory": "Towed Artillery",
+      "points": 25,
+      "stats": {
+        "unitType": "Vec",
+        "height": 1,
+        "speed": 0,
+        "movement": 0,
+        "quality": 2,
+        "toughness": {
+          "front": 1,
+          "side": 1,
+          "rear": 1
+        }
+      },
+      "specialRules": [
+        {
+          "name": "Deployed",
+          "description": "Cannot move once deployed"
+        },
+        {
+          "name": "Crew Served",
+          "description": "Requires crew to operate"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "2M9 120mm Heavy Mortar",
+          "range": 60,
+          "accuracy": { "stationary": 3, "moving": 6 },
+          "damage": 1,
+          "ammo": 8,
+          "specialRules": ["Heavy Indirect (3)"],
+          "shotTypes": [
+            {
+              "name": "HE",
+              "strength": 4,
+              "damage": 3,
+              "specialRules": ["Air-Filling"]
+            },
+            {
+              "name": "Smoke",
+              "accuracy": { "stationary": 1, "moving": 1 },
+              "strength": 0,
+              "specialRules": ["Smoke (5\")"]
+            }
+          ]
+        }
+      ],
+      "options": []
+    },
+    {
+      "id": "fsa-type-71h-tusker-av",
+      "name": "Type 71H \"Tusker-AV\" Self-Propelled Howitzer",
+      "category": "Support",
+      "subcategory": "Self-Propelled Artillery",
+      "points": 50,
+      "stats": {
+        "unitType": "Vec",
+        "height": 2,
+        "speed": 10,
+        "movement": 8,
+        "quality": 3,
+        "toughness": {
+          "front": 6,
+          "side": 4,
+          "rear": 3
+        }
+      },
+      "specialRules": [],
+      "weapons": [
+        {
+          "name": "2D10 152mm Howitzer",
+          "range": 80,
+          "accuracy": { "stationary": 3, "moving": 6 },
+          "damage": 1,
+          "ammo": 6,
+          "specialRules": ["Heavy Indirect (4)"],
+          "shotTypes": [
+            {
+              "name": "HE",
+              "strength": 6,
+              "damage": 4,
+              "specialRules": ["Air-Filling"]
+            },
+            {
+              "name": "Smoke",
+              "accuracy": { "stationary": 1, "moving": 1 },
+              "strength": 0,
+              "specialRules": ["Smoke (6\")"]
+            },
+            {
+              "name": "Laser-Guided",
+              "accuracy": { "stationary": 2, "moving": 2 },
+              "strength": 8,
+              "damage": 2,
+              "ammo": 2,
+              "specialRules": ["Guided Missile (3)", "Homing (Designator)"]
+            }
+          ]
+        },
+        {
+          "name": "6G2 7.76mm MG",
+          "range": 12,
+          "accuracy": { "stationary": 4, "moving": 5 },
+          "strength": 1,
+          "damage": 2,
+          "ammo": null,
+          "specialRules": []
+        }
+      ],
+      "options": []
+    },
+    {
+      "id": "fsa-s36-paddle",
+      "name": "S36 \"Paddle\" River Gunboat",
+      "category": "Scenario",
+      "subcategory": "Naval Unit",
+      "points": 15,
+      "stats": {
+        "unitType": "Vec",
+        "height": 2,
+        "speed": 12,
+        "movement": 12,
+        "quality": 2,
+        "toughness": {
+          "front": 3,
+          "side": 3,
+          "rear": 3
+        },
+        "capacity": 3
+      },
+      "specialRules": [
+        {
+          "name": "PC(3, Any)",
+          "description": "Personnel Carrier: Can carry 3 infantry models, exit from any side"
+        },
+        {
+          "name": "Watercraft",
+          "description": "Can only move in water terrain"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "2B2 12.7mm HMG",
+          "range": 16,
+          "accuracy": { "stationary": 4, "moving": 5 },
+          "strength": 2,
+          "damage": 1,
+          "ammo": null,
+          "specialRules": []
+        },
+        {
+          "name": "2B16 20mm Autocannon",
+          "range": 16,
+          "accuracy": { "stationary": 4, "moving": 5 },
+          "strength": 3,
+          "damage": 2,
+          "ammo": null,
+          "specialRules": ["Air-Filling"]
+        }
+      ],
+      "options": []
+    },
+    {
+      "id": "fsa-hzn-22-hugag",
+      "name": "HzN-22 \"Hugag\" Heavy Lift Helicopter",
+      "category": "Aircraft",
+      "subcategory": "Heavy Lift Helicopter",
+      "points": 20,
+      "stats": {
+        "unitType": "Air",
+        "height": 4,
+        "speed": 24,
+        "movement": 24,
+        "quality": 2,
+        "toughness": {
+          "front": 2,
+          "side": 2,
+          "rear": 2
+        }
+      },
+      "specialRules": [
+        {
+          "name": "Aircraft",
+          "description": "Flies at altitude"
+        },
+        {
+          "name": "Tow(2)",
+          "description": "Can tow units with max toughness 2"
+        },
+        {
+          "name": "Hover",
+          "description": "Can hover in place"
+        }
+      ],
+      "weapons": [],
+      "options": []
+    },
+    {
+      "id": "fsa-h2n-18-moose",
+      "name": "H2N-18 \"Moose\" Utility Helicopter",
+      "category": "Aircraft",
+      "subcategory": "Transport Helicopter",
+      "points": 15,
+      "stats": {
+        "unitType": "Air",
+        "height": 4,
+        "speed": 24,
+        "movement": 24,
+        "quality": 3,
+        "toughness": {
+          "front": 3,
+          "side": 3,
+          "rear": 3
+        },
+        "capacity": 2
+      },
+      "specialRules": [
+        {
+          "name": "Aircraft",
+          "description": "Flies at altitude"
+        },
+        {
+          "name": "PC(2, Sides)",
+          "description": "Personnel Carrier: Can carry 2 infantry models, exit from sides"
+        },
+        {
+          "name": "Hover",
+          "description": "Can hover in place"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "6G2 7.76mm Door Gun",
+          "range": 12,
+          "accuracy": { "stationary": 4, "moving": 5 },
+          "strength": 1,
+          "damage": 2,
+          "ammo": null,
+          "specialRules": []
+        }
+      ],
+      "options": []
+    },
+    {
+      "id": "fsa-type-60m-appomattox",
+      "name": "Type 60-M \"Appomattox\" TACOM",
+      "category": "TACOMS",
+      "subcategory": "Command APC",
+      "points": 0,
+      "stats": {
+        "unitType": "Vec",
+        "height": 2,
+        "speed": 16,
+        "movement": 12,
+        "quality": 2,
+        "toughness": {
+          "front": 3,
+          "side": 2,
+          "rear": 2
+        },
+        "command": 4
+      },
+      "specialRules": [
+        {
+          "name": "Brigade (4, 6\")",
+          "description": "Provides brigade command benefits"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "6G2 7.76mm GPMG",
+          "range": 12,
+          "accuracy": { "stationary": 4, "moving": 5 },
+          "strength": 1,
+          "damage": 2,
+          "ammo": null,
+          "specialRules": []
+        }
+      ],
+      "options": []
+    },
+    {
+      "id": "fsa-type-40mc-veldjen-mc",
+      "name": "Type 40MC \"Veldjen-MC\" Command Tank",
+      "category": "TACOMS",
+      "subcategory": "Command Medium Tank",
+      "points": 15,
+      "stats": {
+        "unitType": "Vec",
+        "height": 2,
+        "speed": 12,
+        "movement": 8,
+        "quality": 3,
+        "toughness": {
+          "front": 5,
+          "side": 3,
+          "rear": 2
+        },
+        "command": 4
+      },
+      "specialRules": [
+        {
+          "name": "Brigade (4, 6\")",
+          "description": "Provides brigade command benefits"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "2D6 57mm Tank Gun",
+          "range": 32,
+          "accuracy": { "stationary": 3, "moving": 4 },
+          "damage": 1,
+          "ammo": null,
+          "specialRules": [],
+          "shotTypes": [
+            {
+              "name": "AP",
+              "strength": 7,
+              "specialRules": []
+            },
+            {
+              "name": "HEAT",
+              "strength": 8,
+              "specialRules": ["Shaped Charge"]
+            }
+          ]
+        },
+        {
+          "name": "6G2 7.76mm Coax MG",
+          "range": 12,
+          "accuracy": { "stationary": 4, "moving": 5 },
+          "strength": 1,
+          "damage": 2,
+          "ammo": null,
+          "specialRules": ["Coax"]
+        }
+      ],
+      "options": []
+    },
+    {
+      "id": "fsa-type-52c-duck-c",
+      "name": "Type 52C \"Duck-C\" Command Light Tank",
+      "category": "TACOMS",
+      "subcategory": "Command Light Tank",
+      "points": 15,
+      "stats": {
+        "unitType": "Vec",
+        "height": 2,
+        "speed": 12,
+        "movement": 10,
+        "quality": 3,
+        "toughness": {
+          "front": 4,
+          "side": 3,
+          "rear": 2
+        },
+        "command": 4
+      },
+      "specialRules": [
+        {
+          "name": "Amphibious",
+          "description": "Can cross water terrain"
+        },
+        {
+          "name": "Brigade (4, 6\")",
+          "description": "Provides brigade command benefits"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "2D8 76mm Tank Gun",
+          "range": 40,
+          "accuracy": { "stationary": 3, "moving": 4 },
+          "damage": 1,
+          "ammo": null,
+          "specialRules": [],
+          "shotTypes": [
+            {
+              "name": "AP",
+              "strength": 9,
+              "specialRules": []
+            },
+            {
+              "name": "HEAT",
+              "strength": 10,
+              "specialRules": ["Shaped Charge"]
+            },
+            {
+              "name": "HE",
+              "strength": 2,
+              "damage": 2,
+              "specialRules": ["Air-Filling"]
+            }
+          ]
+        },
+        {
+          "name": "6G2 7.76mm Coax MG",
+          "range": 12,
+          "accuracy": { "stationary": 4, "moving": 5 },
+          "strength": 1,
+          "damage": 2,
+          "ammo": null,
+          "specialRules": ["Coax"]
+        }
+      ],
+      "options": []
+    },
+    {
+      "id": "fsa-type-52pc-mallard-c",
+      "name": "Type 52PC \"Mallard-C\" Command Armobile Light Tank",
+      "category": "TACOMS",
+      "subcategory": "Command Armobile Light Tank",
+      "points": 15,
+      "stats": {
+        "unitType": "Vec",
+        "height": 2,
+        "speed": 12,
+        "movement": 10,
+        "quality": 3,
+        "toughness": {
+          "front": 4,
+          "side": 3,
+          "rear": 2
+        },
+        "command": 4
+      },
+      "specialRules": [
+        {
+          "name": "Amphibious",
+          "description": "Can cross water terrain"
+        },
+        {
+          "name": "Brigade (4, 6\")",
+          "description": "Provides brigade command benefits"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "2D8 76mm Tank Gun",
+          "range": 40,
+          "accuracy": { "stationary": 3, "moving": 4 },
+          "damage": 1,
+          "ammo": null,
+          "specialRules": [],
+          "shotTypes": [
+            {
+              "name": "AP",
+              "strength": 9,
+              "specialRules": []
+            },
+            {
+              "name": "HEAT",
+              "strength": 10,
+              "specialRules": ["Shaped Charge"]
+            },
+            {
+              "name": "HE",
+              "strength": 2,
+              "damage": 2,
+              "specialRules": ["Air-Filling"]
+            }
+          ]
+        },
+        {
+          "name": "6G2 7.76mm Coax MG",
+          "range": 12,
+          "accuracy": { "stationary": 4, "moving": 5 },
+          "strength": 1,
+          "damage": 2,
+          "ammo": null,
+          "specialRules": ["Coax"]
+        },
+        {
+          "name": "9GR3 90mm ATGM",
+          "range": 48,
+          "accuracy": { "stationary": 4, "moving": 5 },
+          "strength": 10,
+          "damage": 1,
+          "ammo": 3,
+          "specialRules": ["Guided Missile (2)", "MCLOS", "Shaped Charge"]
+        }
+      ],
+      "options": []
+    },
+    {
+      "id": "fsa-type-55mc-razorback-mc",
+      "name": "Type 55MC \"Razorback-MC\" Command MBT",
+      "category": "TACOMS",
+      "subcategory": "Command Main Battle Tank",
+      "points": 30,
+      "stats": {
+        "unitType": "Vec",
+        "height": 2,
+        "speed": 10,
+        "movement": 8,
+        "quality": 4,
+        "toughness": {
+          "front": 9,
+          "side": 5,
+          "rear": 3
+        },
+        "command": 4
+      },
+      "specialRules": [
+        {
+          "name": "Brigade (4, 6\")",
+          "description": "Provides brigade command benefits"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "2D5 100mm Tank Gun",
+          "range": 48,
+          "accuracy": { "stationary": 3, "moving": 4 },
+          "damage": 1,
+          "ammo": null,
+          "specialRules": [],
+          "shotTypes": [
+            {
+              "name": "APFSDS",
+              "strength": 14,
+              "specialRules": []
+            },
+            {
+              "name": "HEAT",
+              "strength": 12,
+              "specialRules": ["Shaped Charge"]
+            },
+            {
+              "name": "HE",
+              "strength": 3,
+              "damage": 2,
+              "specialRules": ["Air-Filling"]
+            }
+          ]
+        },
+        {
+          "name": "6G2 7.76mm Coax MG",
+          "range": 12,
+          "accuracy": { "stationary": 4, "moving": 5 },
+          "strength": 1,
+          "damage": 2,
+          "ammo": null,
+          "specialRules": ["Coax"]
+        },
+        {
+          "name": "2B2 12.7mm HMG",
+          "range": 16,
+          "accuracy": { "stationary": 4, "moving": 5 },
+          "strength": 2,
+          "damage": 1,
+          "ammo": null,
+          "specialRules": ["Pintle"]
+        }
+      ],
+      "options": []
+    },
+    {
+      "id": "fsa-type-71c-tusker-kc",
+      "name": "Type 71C \"Tusker-KC\" Command MBT",
+      "category": "TACOMS",
+      "subcategory": "Command Main Battle Tank",
+      "points": 40,
+      "stats": {
+        "unitType": "Vec",
+        "height": 2,
+        "speed": 12,
+        "movement": 10,
+        "quality": 4,
+        "toughness": {
+          "front": 11,
+          "side": 6,
+          "rear": 3
+        },
+        "command": 4
+      },
+      "specialRules": [
+        {
+          "name": "Brigade (4, 6\")",
+          "description": "Provides brigade command benefits"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "2D7 115mm Tank Gun",
+          "range": 60,
+          "accuracy": { "stationary": 3, "moving": 4 },
+          "damage": 1,
+          "ammo": null,
+          "specialRules": [],
+          "shotTypes": [
+            {
+              "name": "APFSDS",
+              "strength": 16,
+              "specialRules": []
+            },
+            {
+              "name": "HEAT",
+              "strength": 14,
+              "specialRules": ["Shaped Charge"]
+            },
+            {
+              "name": "HE",
+              "strength": 3,
+              "damage": 2,
+              "specialRules": ["Air-Filling"]
+            }
+          ]
+        },
+        {
+          "name": "6G2 7.76mm Coax MG",
+          "range": 12,
+          "accuracy": { "stationary": 4, "moving": 5 },
+          "strength": 1,
+          "damage": 2,
+          "ammo": null,
+          "specialRules": ["Coax"]
+        },
+        {
+          "name": "2B2 12.7mm HMG",
+          "range": 16,
+          "accuracy": { "stationary": 4, "moving": 5 },
+          "strength": 2,
+          "damage": 1,
+          "ammo": null,
+          "specialRules": ["Pintle"]
+        }
+      ],
+      "options": []
+    },
+    {
+      "id": "fsa-type-71bc-tusker-gmc",
+      "name": "Type 71BC \"Tusker-GMC\" Command MBT",
+      "category": "TACOMS",
+      "subcategory": "Command Main Battle Tank",
+      "points": 70,
+      "stats": {
+        "unitType": "Vec",
+        "height": 2,
+        "speed": 12,
+        "movement": 10,
+        "quality": 4,
+        "toughness": {
+          "front": 13,
+          "side": 7,
+          "rear": 4
+        },
+        "command": 4
+      },
+      "specialRules": [
+        {
+          "name": "ERA",
+          "description": "Explosive Reactive Armor"
+        },
+        {
+          "name": "FCS",
+          "description": "Fire Control System"
+        },
+        {
+          "name": "Brigade (4, 6\")",
+          "description": "Provides brigade command benefits"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "2D7M 115mm Tank Gun",
+          "range": 60,
+          "accuracy": { "stationary": 2, "moving": 3 },
+          "damage": 1,
+          "ammo": null,
+          "specialRules": [],
+          "shotTypes": [
+            {
+              "name": "APFSDS",
+              "strength": 18,
+              "specialRules": []
+            },
+            {
+              "name": "HEAT",
+              "strength": 14,
+              "specialRules": ["Shaped Charge"]
+            },
+            {
+              "name": "HE",
+              "strength": 3,
+              "damage": 2,
+              "specialRules": ["Air-Filling"]
+            },
+            {
+              "name": "ATGM",
+              "range": 72,
+              "strength": 16,
+              "specialRules": ["Guided Missile (2)", "SACLOS", "Shaped Charge", "Tandem"]
+            }
+          ]
+        },
+        {
+          "name": "6G2 7.76mm Coax MG",
+          "range": 12,
+          "accuracy": { "stationary": 3, "moving": 4 },
+          "strength": 1,
+          "damage": 2,
+          "ammo": null,
+          "specialRules": ["Coax"]
+        },
+        {
+          "name": "2B2 12.7mm HMG",
+          "range": 16,
+          "accuracy": { "stationary": 3, "moving": 4 },
+          "strength": 2,
+          "damage": 1,
+          "ammo": null,
+          "specialRules": ["Pintle"]
+        }
+      ],
+      "options": []
+    }
+  ]
+}
