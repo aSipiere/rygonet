@@ -6,31 +6,51 @@ interface DividerProps {
 }
 
 export function Divider({ variant = 'simple', text }: DividerProps) {
-  const getDividerContent = () => {
-    switch (variant) {
-      case 'bracketed':
-        return text ? `[=== ${text.toUpperCase()} ===]` : '[===============]';
-      case 'heavy':
-        return '━'.repeat(60);
-      case 'simple':
-      default:
-        return '─'.repeat(60);
-    }
-  };
+  // For bracketed variant, show text with brackets
+  if (variant === 'bracketed') {
+    return (
+      <Box sx={{ my: 2, textAlign: 'center' }}>
+        <Typography
+          variant="body2"
+          sx={{
+            color: 'primary.main',
+            fontFamily: 'monospace',
+            letterSpacing: '0.1em',
+            opacity: 0.6,
+          }}
+        >
+          {text ? `[=== ${text.toUpperCase()} ===]` : '[===============]'}
+        </Typography>
+      </Box>
+    );
+  }
 
-  return (
-    <Box sx={{ my: 2, textAlign: 'center' }}>
-      <Typography
-        variant="body2"
+  // For heavy variant, use solid border
+  if (variant === 'heavy') {
+    return (
+      <Box
         sx={{
-          color: 'primary.main',
-          fontFamily: 'monospace',
-          letterSpacing: '0.1em',
+          my: 2,
+          borderTop: '2px solid',
+          borderColor: 'primary.main',
           opacity: 0.6,
         }}
-      >
-        {getDividerContent()}
-      </Typography>
-    </Box>
+      />
+    );
+  }
+
+  // For simple variant, use gradient for longer dashes
+  return (
+    <Box
+      sx={{
+        my: 2,
+        height: '1px',
+        backgroundImage: 'linear-gradient(to right, currentColor 50%, transparent 50%)',
+        backgroundSize: '12px 1px',
+        backgroundRepeat: 'repeat-x',
+        color: 'primary.main',
+        opacity: 0.6,
+      }}
+    />
   );
 }

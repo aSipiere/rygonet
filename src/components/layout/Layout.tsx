@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Container, Typography, Link } from '@mui/material';
 import { AppBar } from './AppBar';
 
 interface LayoutProps {
@@ -38,7 +38,21 @@ export function Layout({ children }: LayoutProps) {
             fontSize: '0.7rem',
           }}
         >
-          [UNAUTHORIZED ACCESS PROHIBITED] - RYGONET © 2025
+          [UNAUTHORIZED ACCESS PROHIBITED] - RYGONET -{' '}
+          <Link
+            href="https://github.com/aSipiere/rygonet"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{
+              color: 'primary.main',
+              textDecoration: 'none',
+              '&:hover': {
+                textDecoration: 'underline',
+              },
+            }}
+          >
+            GitHub
+          </Link>
         </Typography>
       </Box>
     </Box>
