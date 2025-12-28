@@ -1,0 +1,81 @@
+import { RosterUnit, Unit, RosterGroup } from '../types';
+import { generateRandomGroupName } from './nameGenerator';
+import { getEffectiveCapacity } from './transportCapacity';
+
+export function calculateTotalPoints(
+  rosterUnits: { rosterUnit: RosterUnit; unit: Unit }[]
+): number {
+  return rosterUnits.reduce((total, { rosterUnit, unit }) => {
+    let unitTotal = unit.points;
+
+    // Add selected options points
+    if (rosterUnit.selectedOptions && unit.options) {
+      rosterUnit.selectedOptions.forEach((optionIndex) => {
+        const option = unit.options![optionIndex];
+        if (option && option.points) {
+          unitTotal += option.points;
+        }
+      });
+    }
+
+    // Multiply by count
+    return total + unitTotal * rosterUnit.count;
+  }, 0);
+}
+
+export function categorizeUnits(units: Unit[]): Record<string, Unit[]> {
+  const categorized: Record<string, Unit[]> = {};
+
+  units.forEach((unit) => {
+    if (!categorized[unit.category]) {
+      categorized[unit.category] = [];
+    }
+    categorized[unit.category].push(unit);
+  });
+
+  return categorized;
+}
+
+export function sortUnitsByName(units: Unit[]): Unit[] {
+  return [...units].sort((a, b) => a.name.localeCompare(b.name));
+}
+
+export function sortUnitsByPoints(units: Unit[]): Unit[] {
+  return [...units].sort((a, b) => a.points - b.points);
+}
+
+// Group management helpers
+export function createGroup(name?: string): RosterGroup {
+  return {
+    id: crypto.randomUUID(),
+    name: name || generateRandomGroupName(),
+    collapsed: false,
+  };
+}
+
+export function getUnitsInGroup(
+  units: RosterUnit[],
+  groupId: string
+): RosterUnit[] {
+  return units.filter((unit) => unit.groupId === groupId);
+}
+
+export function getUngroupedUnits(units: RosterUnit[]): RosterUnit[] {
+  return units.filter((unit) => !unit.groupId);
+}
+
+// Relationship helpers
+export function getTransportedUnits(
+  units: RosterUnit[],
+  transportId: string
+): RosterUnit[] {
+  return units.filter((unit) => unit.relationship?.transportUnitId === transportId);
+}
+
+export function canUnitBeTransported(unit: Unit): boolean {
+  return unit.stats.unitType === 'Inf' || unit.stats.unitType === 'Vec'; // Infantry and vehicles can be transported/towed
+}
+
+export function canUnitTransport(unit: Unit): boolean {
+  return getEffectiveCapacity(unit) > 0;
+}

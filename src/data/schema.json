@@ -1,0 +1,306 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://firelock-builder.local/schemas/army-roster.json",
+  "title": "Army Roster",
+  "description": "Complete schema for an army faction roster including metadata and all units",
+  "type": "object",
+  "required": ["faction", "units"],
+  "properties": {
+    "faction": {
+      "type": "object",
+      "required": ["id", "name"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique faction identifier (e.g., 'fsa', 'atom', 'rygo', 'ebon')"
+        },
+        "name": {
+          "type": "string",
+          "description": "Full faction name (e.g., 'Federal States-Army')"
+        },
+        "description": {
+          "type": "string",
+          "description": "Faction background or flavor text"
+        },
+        "version": {
+          "type": "string",
+          "description": "Rulebook or roster version"
+        },
+        "specialRules": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name"],
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Name of the faction-wide special rule"
+              },
+              "description": {
+                "type": "string",
+                "description": "Full text description of the special rule"
+              }
+            }
+          },
+          "description": "Faction-wide special rules"
+        }
+      }
+    },
+    "units": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "category", "points", "stats"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for the unit"
+          },
+          "name": {
+            "type": "string",
+            "description": "Display name of the unit"
+          },
+          "category": {
+            "type": "string",
+            "enum": ["TACOMS", "Infantry", "Vehicles", "Aircraft", "Emplacements", "Support", "Scenario"],
+            "description": "Unit category for army organization"
+          },
+          "subcategory": {
+            "type": "string",
+            "description": "Subcategory within the main category"
+          },
+          "points": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Point cost of the unit"
+          },
+          "stats": {
+            "type": "object",
+            "required": ["unitType", "movement", "quality"],
+            "properties": {
+              "unitType": {
+                "type": "string",
+                "enum": ["Vec", "Inf", "Air"],
+                "description": "Unit type: Vehicle, Infantry, or Aircraft"
+              },
+              "height": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Height value"
+              },
+              "speed": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Speed value in inches"
+              },
+              "movement": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Movement value in inches"
+              },
+              "quality": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 6,
+                "description": "Quality rating (lower is better)"
+              },
+              "toughness": {
+                "type": "object",
+                "properties": {
+                  "front": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "side": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "rear": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                }
+              },
+              "command": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "capacity": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          },
+          "specialRules": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "weapons": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Weapon name"
+                },
+                "range": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "description": "Range in inches (common to all shot types if not specified per shot)"
+                },
+                "accuracy": {
+                  "oneOf": [
+                    {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 6,
+                      "description": "Single accuracy value (legacy format)"
+                    },
+                    {
+                      "type": "object",
+                      "required": ["stationary", "moving"],
+                      "properties": {
+                        "stationary": {
+                          "type": "integer",
+                          "minimum": 1,
+                          "maximum": 6,
+                          "description": "Accuracy when stationary (e.g., 4 for 4+)"
+                        },
+                        "moving": {
+                          "type": "integer",
+                          "minimum": 1,
+                          "maximum": 6,
+                          "description": "Accuracy when moving (e.g., 5 for 5+)"
+                        }
+                      },
+                      "description": "Dual accuracy values for stationary and moving"
+                    }
+                  ],
+                  "description": "Accuracy value (common to all shot types if not specified per shot)"
+                },
+                "strength": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "description": "Strength value (common to all shot types if not specified per shot)"
+                },
+                "damage": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "description": "Damage dice (common to all shot types if not specified per shot)"
+                },
+                "ammo": {
+                  "type": ["integer", "null"],
+                  "minimum": 0,
+                  "description": "Ammo count shared across all shot types (null for unlimited)"
+                },
+                "specialRules": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "Special rules common to all shot types"
+                },
+                "shotTypes": {
+                  "type": "array",
+                  "description": "Different ammo/shot types for this weapon. If present, represents the various ammunition types that can be used with this weapon.",
+                  "items": {
+                    "type": "object",
+                    "required": ["name"],
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "description": "Shot type name (e.g., 'HEAT', 'Sabot', 'Smoke')"
+                      },
+                      "target": {
+                        "type": ["string", "null"],
+                        "description": "Valid targets for this shot type (e.g., 'Vec', 'Inf/Vec', 'All', 'Gnd'). Omit or set to null to inherit from weapon."
+                      },
+                      "range": {
+                        "type": ["integer", "null"],
+                        "minimum": 0,
+                        "description": "Range override for this shot type. Omit or set to null to inherit from weapon."
+                      },
+                      "accuracy": {
+                        "oneOf": [
+                          {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 6
+                          },
+                          {
+                            "type": "object",
+                            "required": ["stationary", "moving"],
+                            "properties": {
+                              "stationary": {
+                                "type": "integer",
+                                "minimum": 1,
+                                "maximum": 6
+                              },
+                              "moving": {
+                                "type": "integer",
+                                "minimum": 1,
+                                "maximum": 6
+                              }
+                            }
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "description": "Accuracy override for this shot type. Omit or set to null to inherit from weapon."
+                      },
+                      "strength": {
+                        "type": ["integer", "null"],
+                        "minimum": 0,
+                        "description": "Strength value for this shot type. Omit or set to null to inherit from weapon."
+                      },
+                      "damage": {
+                        "type": ["integer", "null"],
+                        "minimum": 0,
+                        "description": "Damage override for this shot type. Omit or set to null to inherit from weapon."
+                      },
+                      "specialRules": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "Special rules unique to this shot type"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "type": "string"
+                },
+                "points": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
