@@ -12,14 +12,26 @@ export function encodeRosterForSharing(roster: Roster): string {
       name: roster.name,
       factionId: roster.factionId,
       pointsLimit: roster.pointsLimit,
-      units: roster.units.map(unit => ({
-        unitId: unit.unitId,
-        count: unit.count,
-        ...(unit.customName && { customName: unit.customName }),
-        ...(unit.selectedOptions && unit.selectedOptions.length > 0 && { selectedOptions: unit.selectedOptions }),
-        ...(unit.groupId && { groupId: unit.groupId }),
-        ...(unit.relationship && { relationship: unit.relationship }),
-      })),
+      units: roster.units.map(unit => {
+        // Convert transportUnitId to transportUnitIndex for reliable decoding
+        let relationship = unit.relationship;
+        if (relationship) {
+          const transportIndex = roster.units.findIndex(u => u.id === relationship.transportUnitId);
+          relationship = {
+            type: relationship.type,
+            transportUnitIndex: transportIndex,
+          };
+        }
+
+        return {
+          unitId: unit.unitId,
+          count: unit.count,
+          ...(unit.customName && { customName: unit.customName }),
+          ...(unit.selectedOptions && unit.selectedOptions.length > 0 && { selectedOptions: unit.selectedOptions }),
+          ...(unit.groupId && { groupId: unit.groupId }),
+          ...(relationship && { relationship }),
+        };
+      }),
       groups: roster.groups.map(group => ({
         id: group.id,
         name: group.name,
@@ -49,20 +61,43 @@ export function decodeRosterFromShare(shareCode: string): Roster | null {
 
     // Reconstruct full roster with generated IDs and timestamps
     const now = new Date().toISOString();
+
+    // First pass: Create all units with new IDs
+    const newUnits = minimalRoster.units.map((unit: any) => ({
+      id: crypto.randomUUID(),
+      unitId: unit.unitId,
+      count: unit.count,
+      customName: unit.customName,
+      selectedOptions: unit.selectedOptions,
+      groupId: unit.groupId,
+      relationship: unit.relationship, // Keep temporarily, will be updated
+    }));
+
+    // Second pass: Update relationship transportUnitId using the index
+    minimalRoster.units.forEach((unit: any, index: number) => {
+      if (unit.relationship?.transportUnitIndex !== undefined) {
+        const transportIndex = unit.relationship.transportUnitIndex;
+        if (transportIndex >= 0 && transportIndex < newUnits.length) {
+          // Update the relationship to use the new transport unit ID
+          newUnits[index].relationship = {
+            type: unit.relationship.type,
+            transportUnitId: newUnits[transportIndex].id,
+          };
+        }
+      } else if (unit.relationship?.transportUnitId) {
+        // Handle legacy encoded rosters that still use transportUnitId
+        // This maintains backwards compatibility but won't work correctly
+        // (relationships will be broken for old share links)
+        newUnits[index].relationship = unit.relationship;
+      }
+    });
+
     const roster: Roster = {
       id: crypto.randomUUID(),
       name: minimalRoster.name,
       factionId: minimalRoster.factionId,
       pointsLimit: minimalRoster.pointsLimit,
-      units: minimalRoster.units.map((unit: any) => ({
-        id: crypto.randomUUID(),
-        unitId: unit.unitId,
-        count: unit.count,
-        customName: unit.customName,
-        selectedOptions: unit.selectedOptions,
-        groupId: unit.groupId,
-        relationship: unit.relationship,
-      })),
+      units: newUnits,
       groups: minimalRoster.groups.map((group: any) => ({
         id: group.id,
         name: group.name,
