@@ -17,7 +17,10 @@ import NotFoundPage from '@pages/NotFoundPage';
 
 function AppContent() {
   const { settings } = useSettings();
-  const theme = useMemo(() => createAppTheme(settings.colorTheme), [settings.colorTheme]);
+  const theme = useMemo(
+    () => createAppTheme(settings.colorTheme, settings.scanlinesEnabled),
+    [settings.colorTheme, settings.scanlinesEnabled]
+  );
 
   return (
     <ThemeProvider theme={theme}>
