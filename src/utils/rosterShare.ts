@@ -14,9 +14,9 @@ export function encodeRosterForSharing(roster: Roster): string {
       pointsLimit: roster.pointsLimit,
       units: roster.units.map(unit => {
         // Convert transportUnitId to transportUnitIndex for reliable decoding
-        let relationship = unit.relationship;
+        let relationship: any = unit.relationship;
         if (relationship) {
-          const transportIndex = roster.units.findIndex(u => u.id === relationship.transportUnitId);
+          const transportIndex = roster.units.findIndex(u => u.id === relationship!.transportUnitId);
           relationship = {
             type: relationship.type,
             transportUnitIndex: transportIndex,

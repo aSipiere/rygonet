@@ -12,7 +12,7 @@ export function TransportCapacityIndicator({ transportUnit }: TransportCapacityI
   const validation = transportValidations.find((v) => v.transportUnit.id === transportUnit.id);
   if (!validation) return null;
 
-  const { pcCapacity, embarkedLoad, desantingCapacity, desantingLoad, isValid } = validation;
+  const { pcCapacity, embarkedLoad, desantingCapacity, desantingLoad } = validation;
 
   const embarkedPercentage = pcCapacity > 0 ? (embarkedLoad / pcCapacity) * 100 : 0;
   const desantingPercentage = desantingCapacity > 0 ? (desantingLoad / desantingCapacity) * 100 : 0;
