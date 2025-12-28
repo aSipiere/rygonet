@@ -30,7 +30,7 @@ export function AppBar() {
               fontSize: '0.7rem',
             }}
           >
-            RENEGADE ARMY ROSTER SYSTEM v0.1
+            198X ARMY ROSTER SYSTEM v0.1
           </Typography>
         </Box>
 

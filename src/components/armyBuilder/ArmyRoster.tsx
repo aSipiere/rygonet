@@ -10,7 +10,7 @@ import {
   useSensor,
   useSensors,
 } from '@dnd-kit/core';
-import { Roster, RosterUnit } from '@/types';
+import { Roster } from '@/types';
 import { useRoster } from '@/hooks/useRoster';
 import { getUnitsInGroup, getUngroupedUnits } from '@/utils/roster';
 import { TerminalBox } from '@/components/common/TerminalBox';

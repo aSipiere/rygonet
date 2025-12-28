@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Typography, Box, Grid } from '@mui/material';
+import { Typography, Box } from '@mui/material';
+import Grid from '@mui/material/Grid';
 import { Divider } from '@components/common/Divider';
 import { useRoster } from '@/hooks/useRoster';
 import { UnitSelector } from '@/components/armyBuilder/UnitSelector';
@@ -7,7 +8,7 @@ import { ArmyRoster } from '@/components/armyBuilder/ArmyRoster';
 import { RosterSelectionDialog } from '@/components/armyBuilder/RosterSelectionDialog';
 
 export default function RosterBuilderPage() {
-  const { currentRoster, createRoster, loadRoster, addUnit, savedRosters, isEditMode, isSharedRoster } = useRoster();
+  const { currentRoster, createRoster, loadRoster, addUnit, savedRosters, isEditMode } = useRoster();
   const [showRosterDialog, setShowRosterDialog] = useState(false);
 
   // Update dialog visibility based on roster state
@@ -59,12 +60,12 @@ export default function RosterBuilderPage() {
       {/* Two-column layout */}
       <Grid container spacing={3} sx={{ mt: 2 }}>
         {/* Left: Unit Selector */}
-        <Grid xs={12} md={5}>
+        <Grid size={{ xs: 12, md: 5 }}>
           <UnitSelector factionId={currentRoster.factionId} onAddUnit={addUnit} isEditMode={isEditMode} />
         </Grid>
 
         {/* Right: Current Roster */}
-        <Grid xs={12} md={7}>
+        <Grid size={{ xs: 12, md: 7 }}>
           <ArmyRoster roster={currentRoster} />
         </Grid>
       </Grid>

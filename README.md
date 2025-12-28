@@ -1,4 +1,4 @@
-# Firelock Builder
+# Rygonet Builder
 
 A modern army roster builder for Firelock: 198X miniatures wargame.
 

@@ -1,4 +1,4 @@
-import { Box, Grid } from '@mui/material';
+import Grid from '@mui/material/Grid';
 import { RosterGroup, RosterUnit } from '@/types';
 import { TerminalBox } from '@/components/common/TerminalBox';
 import { PlayModeUnitCard } from './PlayModeUnitCard';
@@ -18,7 +18,7 @@ export function PlayModeGroup({ group, units, factionId }: PlayModeGroupProps) {
     <TerminalBox title={title} variant="heavy">
       <Grid container spacing={2}>
         {units.map((rosterUnit) => (
-          <Grid item xs={12} sm={6} md={4} lg={3} key={rosterUnit.id}>
+          <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }} key={rosterUnit.id}>
             <PlayModeUnitCard
               rosterUnit={rosterUnit}
               factionId={factionId}

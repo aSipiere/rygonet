@@ -1,4 +1,5 @@
-import { Grid, Box } from '@mui/material';
+import Grid from '@mui/material/Grid';
+import { Box } from '@mui/material';
 import { Unit } from '@/types/unit';
 import { Divider } from '@components/common/Divider';
 import { UnitCard } from './UnitCard';
@@ -16,7 +17,7 @@ export function RosterGroup({ categoryName, units }: RosterGroupProps) {
       <Divider variant="bracketed" text={categoryName.toUpperCase()} />
       <Grid container spacing={2} sx={{ mt: 2 }}>
         {units.map((unit) => (
-          <Grid item xs={12} sm={6} md={4} lg={3} key={unit.id}>
+          <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }} key={unit.id}>
             <UnitCard unit={unit} />
           </Grid>
         ))}

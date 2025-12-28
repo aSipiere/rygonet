@@ -2,10 +2,8 @@ import { Typography, Box, Stack, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useRoster } from '@/hooks/useRoster';
-import { useFactionDataContext } from '@/contexts/FactionDataContext';
 import { getUnitsInGroup, getUngroupedUnits } from '@/utils/roster';
 import { Divider } from '@/components/common/Divider';
-import { TerminalBox } from '@/components/common/TerminalBox';
 import { PlayModeGroup } from '@/components/playMode/PlayModeGroup';
 
 export default function PlayViewPage() {

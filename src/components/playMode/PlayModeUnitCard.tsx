@@ -14,7 +14,7 @@ interface PlayModeUnitCardProps {
 
 export function PlayModeUnitCard({ rosterUnit, factionId }: PlayModeUnitCardProps) {
   const { getUnitById } = useFactionDataContext();
-  const { updateUnit, rosterUnitsWithData, currentRoster } = useRoster();
+  const { updateUnit, currentRoster } = useRoster();
 
   const unitDef = getUnitById(factionId, rosterUnit.unitId);
   if (!unitDef) return null;
@@ -46,7 +46,7 @@ export function PlayModeUnitCard({ rosterUnit, factionId }: PlayModeUnitCardProp
   }
 
   // Handle relationship state change
-  const handleRelationshipChange = (event: React.MouseEvent<HTMLElement>, newValue: string | null) => {
+  const handleRelationshipChange = (_event: React.MouseEvent<HTMLElement>, newValue: string | null) => {
     if (newValue === 'none' || newValue === null) {
       // Clear relationship
       updateUnit({

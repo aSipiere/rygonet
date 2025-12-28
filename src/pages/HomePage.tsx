@@ -27,29 +27,30 @@ export default function HomePage() {
     <Box>
       <Box sx={{ textAlign: 'center', mb: 4, mt: 2 }}>
         <Typography
-          variant="body2"
+          component="pre"
           sx={{
             color: 'primary.main',
-            letterSpacing: '0.2em',
+            fontFamily: 'monospace',
+            fontSize: { xs: '0.4rem', sm: '0.5rem', md: '0.6rem', lg: '0.7rem' },
+            lineHeight: 1.2,
             mb: 2,
+            overflow: 'auto',
           }}
         >
-          ╔═══════════════════════════════════════════════════════════╗
-        </Typography>
-        <Typography variant="h3" component="h1" gutterBottom sx={{ color: 'primary.main' }}>
-          FIRELOCK: RENEGADE
+{`
+
+      :::::::::  :::   :::  ::::::::   ::::::::  ::::    ::: :::::::::: :::::::::::
+     :+:    :+: :+:   :+: :+:    :+: :+:    :+: :+:+:   :+: :+:            :+:     
+    +:+    +:+  +:+ +:+  +:+        +:+    +:+ :+:+:+  +:+ +:+            +:+      
+   +#++:++#:    +#++:   :#:        +#+    +:+ +#+ +:+ +#+ +#++:++#       +#+       
+  +#+    +#+    +#+    +#+   +#+# +#+    +#+ +#+  +#+#+# +#+            +#+        
+ #+#    #+#    #+#    #+#    #+# #+#    #+# #+#   #+#+# #+#            #+#         
+###    ###    ###     ########   ########  ###    #### ##########     ###          
+
+`}
         </Typography>
         <Typography variant="h5" sx={{ color: 'text.secondary', mb: 1 }}>
-          ARMY ROSTER MANAGEMENT SYSTEM
-        </Typography>
-        <Typography
-          variant="body2"
-          sx={{
-            color: 'primary.main',
-            letterSpacing: '0.2em',
-          }}
-        >
-          ╚═══════════════════════════════════════════════════════════╝
+          FIRELOCK 198X LIST MANAGMENT SYSTEM
         </Typography>
       </Box>
 

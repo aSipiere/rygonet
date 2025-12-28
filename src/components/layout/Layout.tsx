@@ -38,7 +38,7 @@ export function Layout({ children }: LayoutProps) {
             fontSize: '0.7rem',
           }}
         >
-          [UNAUTHORIZED ACCESS PROHIBITED] - FIRELOCK BUILDER © 2025
+          [UNAUTHORIZED ACCESS PROHIBITED] - RYGONET © 2025
         </Typography>
       </Box>
     </Box>
