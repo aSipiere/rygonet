@@ -42,9 +42,14 @@ export interface FactionData {
 
 export interface TransportValidation {
   transportUnit: RosterUnit;
-  capacity: number;
-  currentLoad: number;
-  embarkedUnits: RosterUnit[];
+  capacity: number; // PC capacity (for backwards compatibility)
+  currentLoad: number; // Total load (for backwards compatibility)
+  embarkedUnits: RosterUnit[]; // All transported units
   isValid: boolean;
   errors: string[];
+  // Separate capacity tracking
+  pcCapacity: number;
+  embarkedLoad: number;
+  desantingCapacity: number;
+  desantingLoad: number;
 }

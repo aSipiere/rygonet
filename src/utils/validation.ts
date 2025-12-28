@@ -1,5 +1,5 @@
 import { Roster, RosterUnit, Unit, TransportValidation } from '../types';
-import { getEffectiveCapacity } from './transportCapacity';
+import { getEffectiveCapacity, getDesantingCapacity } from './transportCapacity';
 
 export interface ValidationError {
   type: 'warning' | 'error';
@@ -35,36 +35,66 @@ export function validateTransportCapacity(
 ): TransportValidation[] {
   const validations: TransportValidation[] = [];
 
-  // Find all units with capacity (transports)
-  const transports = rosterUnits.filter(({ unit }) => getEffectiveCapacity(unit) > 0);
+  // Find all units that can transport (PC capacity or desanting capacity)
+  const transports = rosterUnits.filter(({ unit }) =>
+    getEffectiveCapacity(unit) > 0 || getDesantingCapacity(unit) > 0
+  );
 
   transports.forEach(({ rosterUnit: transportUnit, unit: transportDef }) => {
-    const capacity = getEffectiveCapacity(transportDef);
+    const pcCapacity = getEffectiveCapacity(transportDef);
+    const desantingCapacity = getDesantingCapacity(transportDef);
 
-    // Find all units embarked/desanting on this transport
+    // Find embarked units (use PC capacity)
     const embarkedUnits = rosterUnits.filter(({ rosterUnit }) =>
       rosterUnit.relationship?.transportUnitId === transportUnit.id &&
-      (rosterUnit.relationship?.type === 'embarked' || rosterUnit.relationship?.type === 'desanting')
+      rosterUnit.relationship?.type === 'embarked'
     );
 
-    // Calculate current load (count * unit count)
-    const currentLoad = embarkedUnits.reduce(
+    // Find desanting units (use desanting capacity)
+    const desantingUnits = rosterUnits.filter(({ rosterUnit }) =>
+      rosterUnit.relationship?.transportUnitId === transportUnit.id &&
+      rosterUnit.relationship?.type === 'desanting'
+    );
+
+    // Calculate loads separately
+    const embarkedLoad = embarkedUnits.reduce(
+      (sum, { rosterUnit }) => sum + rosterUnit.count,
+      0
+    );
+
+    const desantingLoad = desantingUnits.reduce(
       (sum, { rosterUnit }) => sum + rosterUnit.count,
       0
     );
 
     const errors: string[] = [];
-    if (currentLoad > capacity) {
-      errors.push(`Overcapacity: ${currentLoad}/${capacity} models`);
+
+    // Validate embarked capacity
+    if (embarkedLoad > pcCapacity) {
+      errors.push(`Embarked overcapacity: ${embarkedLoad}/${pcCapacity} models`);
     }
+
+    // Validate desanting capacity
+    if (desantingLoad > desantingCapacity) {
+      errors.push(`Desanting overcapacity: ${desantingLoad}/${desantingCapacity} units`);
+    }
+
+    // Combine all transported units for display
+    const allTransportedUnits = [...embarkedUnits, ...desantingUnits];
+    const totalLoad = embarkedLoad + desantingLoad;
 
     validations.push({
       transportUnit,
-      capacity,
-      currentLoad,
-      embarkedUnits: embarkedUnits.map((item) => item.rosterUnit),
-      isValid: currentLoad <= capacity,
+      capacity: pcCapacity, // Keep PC capacity as primary for backwards compatibility
+      currentLoad: totalLoad,
+      embarkedUnits: allTransportedUnits.map((item) => item.rosterUnit),
+      isValid: embarkedLoad <= pcCapacity && desantingLoad <= desantingCapacity,
       errors,
+      // New separate capacity fields
+      pcCapacity,
+      embarkedLoad,
+      desantingCapacity,
+      desantingLoad,
     });
   });
 
