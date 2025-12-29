@@ -12,6 +12,7 @@ import { canUnitBeTransported, canUnitTransport } from '@/utils/roster';
 import { UnitOptionsSelector } from './UnitOptionsSelector';
 import { UnitRelationshipControl } from './UnitRelationshipControl';
 import { TransportCapacityIndicator } from './TransportCapacityIndicator';
+import { useHighlight } from './ArmyRoster';
 
 interface ArmyRosterUnitProps {
   rosterUnit: RosterUnit;
@@ -20,6 +21,7 @@ interface ArmyRosterUnitProps {
 export function ArmyRosterUnit({ rosterUnit }: ArmyRosterUnitProps) {
   const { currentRoster, removeUnit, updateUnit, isEditMode } = useRoster();
   const { getUnitById } = useFactionDataContext();
+  const { highlightedUnitId } = useHighlight();
 
   const { attributes, listeners, setNodeRef, transform, isDragging } = useDraggable({
     id: rosterUnit.id,
@@ -54,6 +56,8 @@ export function ArmyRosterUnit({ rosterUnit }: ArmyRosterUnitProps) {
     });
   };
 
+  const isHighlighted = highlightedUnitId === rosterUnit.id;
+
   const style = {
     transform: CSS.Translate.toString(transform),
     opacity: isDragging ? 0.5 : 1,
@@ -65,11 +69,17 @@ export function ArmyRosterUnit({ rosterUnit }: ArmyRosterUnitProps) {
       style={style}
       sx={{
         ml: indentLevel * 4,
-        border: '1px solid',
-        borderColor: isRelated ? 'secondary.main' : 'primary.main',
+        border: isHighlighted ? '2px solid' : '1px solid',
+        borderColor: isHighlighted
+          ? 'warning.main'
+          : isRelated
+            ? 'secondary.main'
+            : 'primary.main',
         p: 1.5,
-        bgcolor: 'background.paper',
+        bgcolor: isHighlighted ? 'warning.dark' : 'background.paper',
         fontFamily: 'monospace',
+        transition: 'all 0.2s ease-in-out',
+        boxShadow: isHighlighted ? 3 : 0,
       }}
     >
       {/* Header row */}
