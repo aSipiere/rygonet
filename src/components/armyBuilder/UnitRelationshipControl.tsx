@@ -3,6 +3,7 @@ import { RosterUnit, UnitRelationshipType } from '@/types';
 import { useRoster } from '@/hooks/useRoster';
 import { useFactionDataContext } from '@/contexts/FactionDataContext';
 import { canUnitTransport } from '@/utils/roster';
+import { useHighlight } from './ArmyRoster';
 
 interface UnitRelationshipControlProps {
   rosterUnit: RosterUnit;
@@ -11,6 +12,7 @@ interface UnitRelationshipControlProps {
 export function UnitRelationshipControl({ rosterUnit }: UnitRelationshipControlProps) {
   const { currentRoster, setUnitRelationship, clearUnitRelationship } = useRoster();
   const { getUnitById } = useFactionDataContext();
+  const { setHighlightedUnitId } = useHighlight();
 
   if (!currentRoster) return null;
 
@@ -44,10 +46,15 @@ export function UnitRelationshipControl({ rosterUnit }: UnitRelationshipControlP
         <Select
           value={currentValue}
           onChange={(e) => handleChange(e.target.value)}
+          onClose={() => setHighlightedUnitId(null)}
           label="Relationship"
           sx={{ fontFamily: 'monospace' }}
         >
-          <MenuItem value="" sx={{ fontFamily: 'monospace' }}>
+          <MenuItem
+            value=""
+            sx={{ fontFamily: 'monospace' }}
+            onMouseEnter={() => setHighlightedUnitId(null)}
+          >
             None
           </MenuItem>
           {availableTransports.map((transport) => {
@@ -59,22 +66,28 @@ export function UnitRelationshipControl({ rosterUnit }: UnitRelationshipControlP
                 key={`embarked-${transport.id}`}
                 value={`embarked:${transport.id}`}
                 sx={{ fontFamily: 'monospace' }}
+                onMouseEnter={() => setHighlightedUnitId(transport.id)}
+                onMouseLeave={() => setHighlightedUnitId(null)}
               >
-                Embarked in {transportDef.name}
+                Embarked in {transport.customName || transportDef.name}
               </MenuItem>,
               <MenuItem
                 key={`desanting-${transport.id}`}
                 value={`desanting:${transport.id}`}
                 sx={{ fontFamily: 'monospace' }}
+                onMouseEnter={() => setHighlightedUnitId(transport.id)}
+                onMouseLeave={() => setHighlightedUnitId(null)}
               >
-                Desanting on {transportDef.name}
+                Desanting on {transport.customName || transportDef.name}
               </MenuItem>,
               <MenuItem
                 key={`towed-${transport.id}`}
                 value={`towed:${transport.id}`}
                 sx={{ fontFamily: 'monospace' }}
+                onMouseEnter={() => setHighlightedUnitId(transport.id)}
+                onMouseLeave={() => setHighlightedUnitId(null)}
               >
-                Towed by {transportDef.name}
+                Towed by {transport.customName || transportDef.name}
               </MenuItem>,
             ];
           })}
