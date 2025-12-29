@@ -81,7 +81,7 @@ export default function HomePage() {
           >
             The new STANDARD RECOGNITION AND UNIT I.D. DATABASE is now live. For now, the prototype
             is operational with BLUEFOR effectiveness statistics compiled and verified. Over the
-            coming days, profiles for neer peer adversaries will be compiled and uploaded to the system.
+            coming days, profiles for near peer adversaries will be compiled and uploaded to the system.
             <br />
             <br />
             We've also improved the ability to model embarked, desanting and towed units when you
