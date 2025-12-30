@@ -8,7 +8,7 @@ import { CSS } from '@dnd-kit/utilities';
 import { RosterUnit } from '@/types';
 import { useRoster } from '@/hooks/useRoster';
 import { useFactionDataContext } from '@/contexts/FactionDataContext';
-import { canUnitBeTransported, canUnitTransport } from '@/utils/roster';
+import { canUnitBeTransported, canUnitTransport, parsePoints } from '@/utils/roster';
 import { UnitOptionsSelector } from './UnitOptionsSelector';
 import { UnitRelationshipControl } from './UnitRelationshipControl';
 import { TransportCapacityIndicator } from './TransportCapacityIndicator';
@@ -37,7 +37,7 @@ export function ArmyRosterUnit({ rosterUnit }: ArmyRosterUnitProps) {
   const indentLevel = isRelated ? 1 : 0;
 
   // Calculate unit points
-  let unitPoints = unitDef.points;
+  let unitPoints = parsePoints(unitDef.points);
   if (rosterUnit.selectedOptions && unitDef.options) {
     rosterUnit.selectedOptions.forEach((optionIndex) => {
       const option = unitDef.options![optionIndex];

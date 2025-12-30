@@ -1,31 +1,42 @@
 import { Typography } from '@mui/material';
-import { UnitStats } from '@/types/unit';
+import { UnitStats, UnitType } from '@/types/unit';
 
 interface StatsDisplayProps {
   stats: UnitStats;
+  unitClass: UnitType;
 }
 
-export function StatsDisplay({ stats }: StatsDisplayProps) {
+export function StatsDisplay({ stats, unitClass }: StatsDisplayProps) {
   // Build statline parts
-  const parts: string[] = [stats.unitType];
+  const parts: string[] = [unitClass];
 
   if (stats.height !== undefined) {
     parts.push(`H${stats.height}`);
   }
 
-  if (stats.speed !== undefined) {
-    parts.push(`S${stats.speed}"`);
+  if (stats.spottingDistance !== undefined) {
+    parts.push(`S${stats.spottingDistance}"`);
   }
 
   parts.push(`M${stats.movement}"`);
-  parts.push(`Q${stats.quality}`);
+  parts.push(`Q${stats.quality}+`);
 
   if (stats.toughness) {
-    parts.push(`T${stats.toughness.front}/${stats.toughness.side}/${stats.toughness.rear}`);
+    // Format toughness - handle both string and object forms
+    if (typeof stats.toughness === 'string') {
+      parts.push(`T${stats.toughness}`);
+    } else {
+      // Object form: {front, side, rear} -> "6/4/4"
+      parts.push(`T${stats.toughness.front}/${stats.toughness.side}/${stats.toughness.rear}`);
+    }
+  }
+
+  if (stats.evasion !== undefined) {
+    parts.push(`E${stats.evasion}+`);
   }
 
   if (stats.command !== undefined) {
-    parts.push(`Command ${stats.command}`);
+    parts.push(`C${stats.command}`);
   }
 
   if (stats.capacity !== undefined) {

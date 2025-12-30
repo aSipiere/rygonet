@@ -50,7 +50,7 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "name", "category", "points", "stats"],
+        "required": ["id", "name", "category", "unitClass", "points", "stats"],
         "properties": {
           "id": {
             "type": "string",
@@ -63,35 +63,42 @@
           "category": {
             "type": "string",
             "enum": ["TACOMS", "Infantry", "Vehicles", "Aircraft", "Emplacements", "Support", "Scenario"],
-            "description": "Unit category for army organization"
+            "description": "Main section header from army book (e.g., TACOMS, Infantry, Vehicles)"
           },
           "subcategory": {
             "type": "string",
-            "description": "Subcategory within the main category"
+            "description": "Subsection within category (e.g., Line Squads, Personnel Carriers, Main Battle Tanks)"
+          },
+          "descriptiveCategory": {
+            "type": "string",
+            "description": "Short descriptive text (e.g., 'Self-Propelled Howitzer', 'Main Battle Tank', 'Paratrooper Squad')"
+          },
+          "unitClass": {
+            "type": "string",
+            "enum": ["Inf", "Inf(S)", "Vec", "Vec(W)", "Vec(S)", "Vec(C)", "Vec(M)", "Vec(L)", "Vec(H)", "Air", "Air(CAP)", "Air(CAS)"],
+            "description": "Unit class for PC capacity and game mechanics: Inf (team, 1 PC), Inf(S) (squad, 2 PC), Vec variants (W=wide, S=small, C=crew, M=medium, L=large, H=hovercraft)"
           },
           "points": {
-            "type": "integer",
-            "minimum": 0,
-            "description": "Point cost of the unit"
+            "oneOf": [
+              {
+                "type": "integer",
+                "minimum": 0
+              },
+              {
+                "type": "string",
+                "pattern": "^\\d+/\\d+$"
+              }
+            ],
+            "description": "Point cost of the unit, or alternative cost like '0/20' for conditional pricing"
           },
           "stats": {
             "type": "object",
-            "required": ["unitType", "movement", "quality"],
+            "required": ["movement", "quality"],
             "properties": {
-              "unitType": {
-                "type": "string",
-                "enum": ["Vec", "Inf", "Air"],
-                "description": "Unit type: Vehicle, Infantry, or Aircraft"
-              },
               "height": {
                 "type": "integer",
                 "minimum": 0,
                 "description": "Height value"
-              },
-              "speed": {
-                "type": "integer",
-                "minimum": 0,
-                "description": "Speed value in inches"
               },
               "movement": {
                 "type": "integer",
@@ -99,27 +106,50 @@
                 "description": "Movement value in inches"
               },
               "quality": {
-                "type": "integer",
-                "minimum": 1,
-                "maximum": 6,
-                "description": "Quality rating (lower is better)"
+                "oneOf": [
+                  {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 6
+                  },
+                  {
+                    "type": "string",
+                    "enum": ["*"]
+                  }
+                ],
+                "description": "Quality rating (lower is better), or '*' for drones"
               },
               "toughness": {
-                "type": "object",
-                "properties": {
-                  "front": {
-                    "type": "integer",
-                    "minimum": 0
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "front": {
+                        "type": ["integer", "string"],
+                        "description": "Front toughness value (number or special value like '1-')"
+                      },
+                      "side": {
+                        "type": ["integer", "string"],
+                        "description": "Side toughness value (number or special value like '1-')"
+                      },
+                      "rear": {
+                        "type": ["integer", "string"],
+                        "description": "Rear toughness value (number or special value like '1-')"
+                      }
+                    },
+                    "description": "Directional toughness for ground units and helicopters"
                   },
-                  "side": {
-                    "type": "integer",
-                    "minimum": 0
-                  },
-                  "rear": {
-                    "type": "integer",
-                    "minimum": 0
+                  {
+                    "type": ["integer", "string"],
+                    "description": "Single toughness value for planes (Air(CAP), Air(CAS))"
                   }
-                }
+                ]
+              },
+              "evasion": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 6,
+                "description": "Evasion stat for planes (Air(CAP), Air(CAS))"
               },
               "command": {
                 "type": "integer",
@@ -128,6 +158,11 @@
               "capacity": {
                 "type": "integer",
                 "minimum": 0
+              },
+              "spottingDistance": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Spotting distance in inches"
               }
             }
           },
@@ -146,6 +181,10 @@
               }
             }
           },
+          "description": {
+            "type": "string",
+            "description": "Unit special ability description or flavor text (e.g., 'All units targeted in Brigade (including self) lose all pin tokens.')"
+          },
           "weapons": {
             "type": "array",
             "items": {
@@ -155,6 +194,10 @@
                 "name": {
                   "type": "string",
                   "description": "Weapon name"
+                },
+                "target": {
+                  "type": "string",
+                  "description": "Valid targets: 'All' (all unit classes), 'Inf/Vec/Air' (specific classes), 'Gnd' (ground point + radius). Common to all shot types if not specified per shot."
                 },
                 "range": {
                   "type": "integer",
@@ -170,20 +213,38 @@
                       "description": "Single accuracy value (legacy format)"
                     },
                     {
+                      "type": "string",
+                      "description": "String accuracy value (e.g., '++' for automatic hit, 'xx' for cannot hit)"
+                    },
+                    {
                       "type": "object",
                       "required": ["stationary", "moving"],
                       "properties": {
                         "stationary": {
-                          "type": "integer",
-                          "minimum": 1,
-                          "maximum": 6,
-                          "description": "Accuracy when stationary (e.g., 4 for 4+)"
+                          "oneOf": [
+                            {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 6
+                            },
+                            {
+                              "type": "string"
+                            }
+                          ],
+                          "description": "Accuracy when stationary (e.g., 4 for 4+, '++' for auto-hit, 'xx' for cannot hit)"
                         },
                         "moving": {
-                          "type": "integer",
-                          "minimum": 1,
-                          "maximum": 6,
-                          "description": "Accuracy when moving (e.g., 5 for 5+)"
+                          "oneOf": [
+                            {
+                              "type": "integer",
+                              "minimum": 1,
+                              "maximum": 6
+                            },
+                            {
+                              "type": "string"
+                            }
+                          ],
+                          "description": "Accuracy when moving (e.g., 5 for 5+, '++' for auto-hit, 'xx' for cannot hit)"
                         }
                       },
                       "description": "Dual accuracy values for stationary and moving"
@@ -192,14 +253,38 @@
                   "description": "Accuracy value (common to all shot types if not specified per shot)"
                 },
                 "strength": {
-                  "type": "integer",
-                  "minimum": 0,
+                  "oneOf": [
+                    {
+                      "type": "integer",
+                      "minimum": 0,
+                      "description": "Single strength value"
+                    },
+                    {
+                      "type": "string",
+                      "description": "String strength value (e.g., '0+' for special cases)"
+                    },
+                    {
+                      "type": "object",
+                      "required": ["normal", "halfRange"],
+                      "properties": {
+                        "normal": {
+                          "type": ["integer", "string"],
+                          "description": "Strength at normal range (number or string like '0+')"
+                        },
+                        "halfRange": {
+                          "type": ["integer", "string"],
+                          "description": "Strength at half range or less (number or string like '0+')"
+                        }
+                      },
+                      "description": "Dual strength values for normal and half range"
+                    }
+                  ],
                   "description": "Strength value (common to all shot types if not specified per shot)"
                 },
-                "damage": {
+                "dice": {
                   "type": "integer",
                   "minimum": 0,
-                  "description": "Damage dice (common to all shot types if not specified per shot)"
+                  "description": "Number of damage dice (common to all shot types if not specified per shot)"
                 },
                 "ammo": {
                   "type": ["integer", "null"],
@@ -241,18 +326,38 @@
                             "maximum": 6
                           },
                           {
+                            "type": "string",
+                            "description": "String accuracy value (e.g., '++' for automatic hit, 'xx' for cannot hit)"
+                          },
+                          {
                             "type": "object",
                             "required": ["stationary", "moving"],
                             "properties": {
                               "stationary": {
-                                "type": "integer",
-                                "minimum": 1,
-                                "maximum": 6
+                                "oneOf": [
+                                  {
+                                    "type": "integer",
+                                    "minimum": 1,
+                                    "maximum": 6
+                                  },
+                                  {
+                                    "type": "string"
+                                  }
+                                ],
+                                "description": "Accuracy when stationary (e.g., 4 for 4+, '++' for auto-hit, 'xx' for cannot hit)"
                               },
                               "moving": {
-                                "type": "integer",
-                                "minimum": 1,
-                                "maximum": 6
+                                "oneOf": [
+                                  {
+                                    "type": "integer",
+                                    "minimum": 1,
+                                    "maximum": 6
+                                  },
+                                  {
+                                    "type": "string"
+                                  }
+                                ],
+                                "description": "Accuracy when moving (e.g., 5 for 5+, '++' for auto-hit, 'xx' for cannot hit)"
                               }
                             }
                           },
@@ -263,14 +368,39 @@
                         "description": "Accuracy override for this shot type. Omit or set to null to inherit from weapon."
                       },
                       "strength": {
-                        "type": ["integer", "null"],
-                        "minimum": 0,
+                        "oneOf": [
+                          {
+                            "type": "integer",
+                            "minimum": 0
+                          },
+                          {
+                            "type": "string",
+                            "description": "String strength value (e.g., '0+' for special cases)"
+                          },
+                          {
+                            "type": "object",
+                            "required": ["normal", "halfRange"],
+                            "properties": {
+                              "normal": {
+                                "type": ["integer", "string"],
+                                "description": "Strength at normal range (number or string like '0+')"
+                              },
+                              "halfRange": {
+                                "type": ["integer", "string"],
+                                "description": "Strength at half range or less (number or string like '0+')"
+                              }
+                            }
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
                         "description": "Strength value for this shot type. Omit or set to null to inherit from weapon."
                       },
-                      "damage": {
+                      "dice": {
                         "type": ["integer", "null"],
                         "minimum": 0,
-                        "description": "Damage override for this shot type. Omit or set to null to inherit from weapon."
+                        "description": "Number of damage dice override for this shot type. Omit or set to null to inherit from weapon."
                       },
                       "specialRules": {
                         "type": "array",

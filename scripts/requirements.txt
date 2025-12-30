@@ -1,0 +1,5 @@
+pdfplumber>=0.10.0
+jsonschema>=4.0.0
+pytesseract>=0.3.13
+pdf2image>=1.17.0
+pillow>=12.0.0
