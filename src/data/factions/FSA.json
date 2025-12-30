@@ -2,8 +2,26 @@
   "faction": {
     "id": "fsa",
     "name": "Federal States-Army",
+    "description": "The Federal States-Army (F.S-A.) constitutes the land and air troops of the Armed Forces of the Intermarine Federation. Its subordinate branches include the States-Army Air Corps (F.S.A.A.C.), the Ready Reserve, and the Whitewater Guard state militia. Included also are units from the Expeditionary Corps (F.E.C.). It is the largest, most well-armed, and least orderly collection of thieves, drunkards, smugglers, and friends of liberty between the Sea of Lights and the Sea of Masts.",
     "version": "FM 100-1-8X v0.9.6",
-    "description": "Auto-extracted from Quick Unit Reference using OCR"
+    "specialRules": [
+      {
+        "name": "Assault Dismount",
+        "description": "Federal regular infantry fight under armour until the last moment: disembarking into fire, supported by their carrier's weaponry."
+      },
+      {
+        "name": "Chemical-SP (X\")",
+        "description": "Gas shells enriched with silver particulate \"confetti\" are notorious for their hideous effects against unprotected lupar: silver destroys cursed flesh."
+      },
+      {
+        "name": "Sprint Motor",
+        "description": "Space Corps rockeet motors bridge the gap between old and new - at least until their fuel runs out."
+      },
+            {
+        "name": "Steel Watchbands",
+        "description": "Federal tankers excel at firing shot after accurate shot while rolling onwards."
+      }
+    ]
   },
   "units": [
     {
