@@ -17,14 +17,22 @@ export function PlayModeGroup({ group, units, factionId }: PlayModeGroupProps) {
   return (
     <TerminalBox title={title} variant="heavy">
       <Grid container spacing={2}>
-        {units.map((rosterUnit) => (
-          <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }} key={rosterUnit.id}>
-            <PlayModeUnitCard
-              rosterUnit={rosterUnit}
-              factionId={factionId}
-            />
-          </Grid>
-        ))}
+        {units.flatMap((rosterUnit) => {
+          // Create array of grid items for each duplicate
+          const count = rosterUnit.count || 1;
+          const items = [];
+          for (let i = 0; i < count; i++) {
+            items.push(
+              <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }} key={`${rosterUnit.id}-${i}`}>
+                <PlayModeUnitCard
+                  rosterUnit={{ ...rosterUnit, count: 1 }}
+                  factionId={factionId}
+                />
+              </Grid>
+            );
+          }
+          return items;
+        })}
       </Grid>
     </TerminalBox>
   );

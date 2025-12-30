@@ -4,8 +4,8 @@ export interface WeaponAccuracy {
 }
 
 export interface WeaponStrength {
-  normal: number;
-  halfRange: number;
+  normal: number | string;
+  halfRange: number | string;
 }
 
 export interface ShotType {
@@ -13,7 +13,7 @@ export interface ShotType {
   target?: string | null;
   range?: number | null;
   accuracy?: number | string | WeaponAccuracy | null;
-  strength?: number | string | WeaponStrength | null;
+  strength?: string | WeaponStrength | null;
   dice?: number | null;
   specialRules?: string[];
 }
@@ -23,7 +23,7 @@ export interface Weapon {
   target?: string;
   range?: number;
   accuracy?: number | string | WeaponAccuracy;
-  strength?: number | string | WeaponStrength;
+  strength?: string | WeaponStrength;
   dice?: number;
   ammo?: number | null;
   specialRules?: string[];

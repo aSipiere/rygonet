@@ -14,13 +14,11 @@ export type UnitCategory =
   | 'Support'
   | 'Scenario';
 
-export interface UnitToughness {
+export type Toughness = string | {
   front: number | string;
   side: number | string;
   rear: number | string;
-}
-
-export type Toughness = UnitToughness | number | string;
+};
 
 export interface UnitStats {
   height?: number;
@@ -53,7 +51,7 @@ export interface Unit {
   points: number | string; // number or "X/Y" for split costs
   stats: UnitStats;
   specialRules?: UnitSpecialRule[];
-  description?: string; // Unit special ability description or flavor text
+  unitAbility?: string; // Unit special ability description
   weapons?: Weapon[];
   options?: UnitOption[];
 }

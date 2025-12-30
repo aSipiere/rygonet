@@ -1182,9 +1182,9 @@ def parse_card_text(card_text: str, line_boxes: Optional[List[LineBox]] = None) 
     if stats is None or stat_i is None:
         return None
 
-    # Parse special rules, description, and weapons
+    # Parse special rules, unit ability, and weapons
     special_rules: List[str] = []
-    description: Optional[str] = None
+    unit_ability: Optional[str] = None
     weapons: List[Dict[str, Any]] = []
 
     # Debug flag for GRENADIERS (disabled)
@@ -1214,9 +1214,11 @@ def parse_card_text(card_text: str, line_boxes: Optional[List[LineBox]] = None) 
         #     print(f"    is_special_rule_line({idx}): line_boxes[{idx}].text='{line_boxes[idx].text[:40]}', is_italic={line_boxes[idx].is_italic}, returning {result}")
         return result
 
-    # Collect special rules (italic lines) and description (if present)
-    # Pattern: special rules, separator, description, separator, weapons
-    # We need to look ahead to distinguish description from weapon section
+    # Collect special rules (italic lines) and unit ability (if present)
+    # Card structure after stats:
+    # - Special rules: italic lines with commas OR short capitalized phrases
+    # - Unit ability: italic lines forming sentences (start with "All", "The", etc.)
+    # - Weapons: non-italic weapon names
     cursor = stat_i + 1
 
     # If we have formatting and the stat line was split (Inf on one line, rest on next),
@@ -1225,36 +1227,78 @@ def parse_card_text(card_text: str, line_boxes: Optional[List[LineBox]] = None) 
         # Stat line is split - skip the next line (which has the rest of the stats)
         cursor = stat_i + 2
 
-    # First, collect all special rules (italic lines before first separator or weapon)
-    temp_rules = []  # Collect in temp list first
+    # Parse special rules and unit ability sequentially
+    # Track if we're in the middle of comma-separated special rules
+    in_comma_separated_rules = False
+    ability_started = False
+
     while cursor < len(lines) and not is_weapon_line(lines[cursor], cursor):
         # Check for separator (underscore line)
         if re.match(r'^_+$', lines[cursor].strip()):
             cursor += 1
-            break  # Stop collecting special rules
+            continue  # Skip separators but keep processing
 
         ln = lines[cursor].strip("_").strip()
-        if ln:
-            # if is_grenadiers:
-            #     print(f"DEBUG cursor={cursor}: '{ln}' | italic={is_special_rule_line(cursor)}")
+        if not ln:
+            cursor += 1
+            continue
 
-            # Use formatting to determine if this is a special rule
-            if is_special_rule_line(cursor):
-                # This is an italic line - it's a special rule
-                if ',' in ln:
-                    # Comma-separated special rules
-                    special_rules.extend(split_rules_smart(ln))
+        # Only process italic lines in this section
+        if is_special_rule_line(cursor):
+            # Check if unit ability has already started
+            if ability_started:
+                # We're in ability mode - add to unit ability
+                if unit_ability is None:
+                    unit_ability = ln
                 else:
-                    # Single special rule
-                    special_rules.append(ln)
+                    unit_ability += ' ' + ln
+                cursor += 1
+                continue
+
+            # Check if this line starts a unit ability (sentence form)
+            # Heuristics: starts with common sentence words
+            sentence_starters = ['All', 'The', 'Each', 'When', 'If', 'Any', 'This', 'Target', 'Units']
+            starts_sentence = any(ln.startswith(word + ' ') for word in sentence_starters)
+
+            # Or ends with period (likely end of ability sentence)
+            ends_with_period = ln.endswith('.')
+
+            # Check if line looks like a unit ability (5+ words and no commas)
+            word_count = len(ln.split())
+            looks_like_ability = word_count >= 5 and ',' not in ln
+
+            if starts_sentence or (looks_like_ability and not in_comma_separated_rules):
+                # This starts the unit ability section
+                ability_started = True
+                unit_ability = ln
+                cursor += 1
+                continue
+
+            # Not a unit ability - process as special rule(s)
+            if ',' in ln:
+                # Comma-separated special rules
+                rules = split_rules_smart(ln)
+                special_rules.extend(rules)
+                # Check if line ends with comma (continuation expected)
+                in_comma_separated_rules = ln.rstrip().endswith(',')
             else:
-                # Non-italic line - NOT a special rule
-                # Could be part of description that OCR split
-                temp_rules.append((cursor, ln))
+                # Single special rule (short, capitalized)
+                # Could be continuation of comma-separated list from previous line
+                if in_comma_separated_rules:
+                    # This is the final rule in a comma-separated list
+                    special_rules.append(ln)
+                    in_comma_separated_rules = False
+                elif word_count <= 4:  # Short phrase = special rule
+                    special_rules.append(ln)
+                else:
+                    # Long phrase without comma - might be unit ability that was missed
+                    ability_started = True
+                    unit_ability = ln
+
         cursor += 1
 
     # if is_grenadiers:
-    #     print(f"DEBUG: After special rules loop, cursor={cursor}, special_rules={special_rules}, temp_rules={[t[1] for t in temp_rules]}")
+    #     print(f"DEBUG: After special rules loop, cursor={cursor}, special_rules={special_rules}, unit_ability={unit_ability}")
 
     # Pre-process: Split lines where a special rule and weapon name were incorrectly merged
     # This happens when fuzzy matching combines "Defensive CC" (italic) with "6L1 85mm RPG" (non-italic)
@@ -1291,96 +1335,6 @@ def parse_card_text(card_text: str, line_boxes: Optional[List[LineBox]] = None) 
     # Replace with fixed versions
     lines = fixed_lines
     line_boxes = fixed_line_boxes
-
-
-    # Process temp_rules: separate actual special rules from description fragments
-    if temp_rules:
-        # Look for the boundary between special rules and description
-        # Special rules are typically single capitalized words (e.g., "Paradrop", "Fearless")
-        # Description fragments are words that form sentences (e.g., "All units", "targeted", "in")
-        desc_start_idx = None
-        for i, (_, text) in enumerate(temp_rules):
-            # Check if this could be the start of a description
-            # Heuristic: if current word is common sentence starter AND there are enough following words
-            if i + 3 < len(temp_rules):  # Need at least 4 more items for description
-                remaining = [r[1] for r in temp_rules[i:]]
-                combined_remaining = ' '.join(remaining)
-                # Check if remaining items form a sentence (>20 chars, ends with period/paren)
-                # AND current word is not a typical special rule pattern
-                is_sentence = (len(combined_remaining) > 20 and
-                              (combined_remaining.endswith('.') or combined_remaining.endswith(')')))
-                is_not_special_rule = not re.match(r'^[A-Z][a-z]+(?:\s*\([^)]+\))?$', text)
-                # Also check if text is a common sentence word
-                is_sentence_word = text in ['All', 'The', 'Each', 'When', 'If', 'Any', 'This']
-
-                if is_sentence and (is_not_special_rule or is_sentence_word):
-                    # Looks like description starts here
-                    desc_start_idx = i
-                    break
-
-        if desc_start_idx is not None:
-            # Split: everything before desc_start_idx is special rules,
-            # everything from desc_start_idx onwards is description
-            for i, (_, text) in enumerate(temp_rules):
-                if i < desc_start_idx:
-                    special_rules.append(text)
-                else:
-                    if description is None:
-                        description = text
-                    else:
-                        description += ' ' + text
-        else:
-            # No description found, all are special rules
-            for _, rule_text in temp_rules:
-                special_rules.append(rule_text)
-
-    # Now check if there's a description block before weapons
-    # Look ahead to see if we have: non-weapon text, separator, then weapon
-    # This indicates a description block
-    if cursor < len(lines) and not is_weapon_line(lines[cursor]):
-        # Peek ahead to find pattern
-        peek_cursor = cursor
-        potential_desc_lines = []
-        found_second_separator = False
-        found_weapon_after = False
-
-        # Collect lines until we hit a separator or weapon
-        while peek_cursor < len(lines):
-            if re.match(r'^_+$', lines[peek_cursor].strip()):
-                # Found second separator
-                found_second_separator = True
-                peek_cursor += 1
-                # Check if there's a weapon after this separator
-                while peek_cursor < len(lines):
-                    if re.match(r'^_+$', lines[peek_cursor].strip()) or lines[peek_cursor].strip() == '':
-                        peek_cursor += 1
-                        continue
-                    if is_weapon_line(lines[peek_cursor]):
-                        found_weapon_after = True
-                    break
-                break
-            elif is_weapon_line(lines[peek_cursor]):
-                # Hit weapon without separator - no description block
-                break
-            else:
-                desc_ln = lines[peek_cursor].strip("_").strip()
-                if desc_ln:
-                    potential_desc_lines.append(desc_ln)
-                peek_cursor += 1
-
-        # If we found the pattern: text, separator, weapon - then it's a description
-        if found_second_separator and found_weapon_after and potential_desc_lines:
-            # This is a description block
-            description = ' '.join(potential_desc_lines)
-            cursor = peek_cursor  # Move cursor past the description and separator
-        elif potential_desc_lines and not found_weapon_after:
-            # Lines after separator but no weapon found after second separator
-            # These might be special rules that weren't comma-separated
-            # Add them to special rules instead
-            for line in potential_desc_lines:
-                # Don't add if it looks like a sentence (description that we missed)
-                if not (len(line.split()) > 5 and not ',' in line):
-                    special_rules.append(line)
 
     # Parse weapons (non-italic lines matching weapon pattern, followed by profiles)
     while cursor < len(lines):
@@ -1852,9 +1806,9 @@ def parse_card_text(card_text: str, line_boxes: Optional[List[LineBox]] = None) 
     deduped_rules = dedupe_preserve_order(merged_rules)
     unit["specialRules"] = [{"name": r} for r in deduped_rules]
 
-    # Add description if we captured it
-    if description:
-        unit["description"] = description
+    # Add unit ability if we captured it
+    if unit_ability:
+        unit["unitAbility"] = unit_ability
 
     if weapons:
         unit["weapons"] = weapons

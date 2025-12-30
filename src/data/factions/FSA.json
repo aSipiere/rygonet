@@ -2,26 +2,8 @@
   "faction": {
     "id": "fsa",
     "name": "Federal States-Army",
-    "description": "The Federal States-Army (F.S-A.) constitutes the land and air troops of the Armed Forces of the Intermarine Federation. Its subordinate branches include the States-Army Air Corps (F.S.A.A.C.), the Ready Reserve, and the Whitewater Guard state militia. Included also are units from the Expeditionary Corps (F.E.C.). It is the largest, most well-armed, and least orderly collection of thieves, drunkards, smugglers, and friends of liberty between the Sea of Lights and the Sea of Masts.",
     "version": "FM 100-1-8X v0.9.6",
-    "specialRules": [
-      {
-        "name": "Assault Dismount",
-        "description": "Federal regular infantry fight under armour until the last moment: disembarking into fire, supported by their carrier's weaponry."
-      },
-      {
-        "name": "Chemical-SP (X\")",
-        "description": "Gas shells enriched with silver particulate \"confetti\" are notorious for their hideous effects against unprotected lupar: silver destroys cursed flesh."
-      },
-      {
-        "name": "Sprint Motor",
-        "description": "Space Corps rockeet motors bridge the gap between old and new - at least until their fuel runs out."
-      },
-            {
-        "name": "Steel Watchbands",
-        "description": "Federal tankers excel at firing shot after accurate shot while rolling onwards."
-      }
-    ]
+    "description": "Auto-extracted from Quick Unit Reference using OCR"
   },
   "units": [
     {
@@ -83,7 +65,8 @@
           "dice": 1,
           "ammo": null,
           "specialRules": [
-            "Designator"
+            "Designator",
+            "Discreet"
           ]
         },
         {
@@ -97,14 +80,14 @@
           "dice": 2,
           "ammo": 1,
           "specialRules": [
-            "(1)",
+            "Light Indirect (1)",
             "No CC",
             "Smoke (3\")"
           ]
         }
       ],
       "options": [],
-      "category": "Vehicles"
+      "category": "TACOMS"
     },
     {
       "id": "reservists",
@@ -154,7 +137,8 @@
           },
           "ammo": 3,
           "specialRules": [
-            "Shaped Charge"
+            "Shaped Charge",
+            "Small Arm"
           ]
         }
       ],
@@ -273,12 +257,9 @@
         },
         {
           "name": "Paradrop"
-        },
-        {
-          "name": "Brigade (including self)"
         }
       ],
-      "description": "All units targeted in lose all pin tokens.",
+      "unitAbility": "All units targeted in Brigade (including self) lose all pin tokens.",
       "weapons": [
         {
           "name": "6G1A 7.76mm Automatic Rifle",
@@ -310,12 +291,13 @@
           },
           "ammo": 4,
           "specialRules": [
-            "Shaped Charge"
+            "Shaped Charge",
+            "Underbarrel (6G1A)"
           ]
         }
       ],
       "options": [],
-      "category": "Infantry"
+      "category": "TACOMS"
     },
     {
       "id": "federal-expeditionaries",
@@ -376,7 +358,8 @@
           },
           "ammo": 4,
           "specialRules": [
-            "Shaped Charge"
+            "Shaped Charge",
+            "Underbarrel (6G1A)"
           ]
         }
       ],
@@ -604,47 +587,9 @@
       "specialRules": [
         {
           "name": "Sense (6\")"
-        },
-        {
-          "name": "vehicle with at least M6\" which this unit"
-        },
-        {
-          "name": "move\" during the Maneuver Phase"
-        },
-        {
-          "name": "which is"
-        },
-        {
-          "name": "only M6\""
-        },
-        {
-          "name": "but ignores terrain entrance/exit"
-        },
-        {
-          "name": "cost and all terrain multipliers."
-        },
-        {
-          "name": "Any"
-        },
-        {
-          "name": "embarks"
-        },
-        {
-          "name": "or"
-        },
-        {
-          "name": "desants"
-        },
-        {
-          "name": "on can"
-        },
-        {
-          "name": "make"
-        },
-        {
-          "name": "a \"pathfinder"
         }
       ],
+      "unitAbility": "vehicle with at least M6\" which this unit move\" during the Maneuver Phase, which is only M6\", but ignores terrain entrance/exit cost and all terrain multipliers.",
       "weapons": [
         {
           "name": "6G1 7.76mm Battle Rifle",
@@ -666,7 +611,8 @@
             "RO\"",
             "Al+/1+",
             "S1/1",
-            "D1"
+            "D1",
+            "Melee"
           ]
         }
       ],
@@ -696,23 +642,9 @@
         },
         {
           "name": "Fearless"
-        },
-        {
-          "name": "This unit does not lose"
-        },
-        {
-          "name": "tokens while it is not"
-        },
-        {
-          "name": "accuracy"
-        },
-        {
-          "name": "from pin"
-        },
-        {
-          "name": "identified."
         }
       ],
+      "unitAbility": "This unit does not lose tokens while it is not identified.",
       "weapons": [
         {
           "name": "6G5 7.76mm Sniper Rifle",
@@ -733,7 +665,7 @@
             "No CC",
             "Scoped",
             "Small Arm",
-            "Thermal"
+            "Thermal Sights"
           ]
         },
         {
@@ -761,7 +693,8 @@
           "dice": 1,
           "ammo": null,
           "specialRules": [
-            "Designator"
+            "Designator",
+            "Discreet"
           ]
         }
       ],
@@ -860,10 +793,6 @@
             "moving": 4
           },
           "dice": 2,
-          "strength": {
-            "normal": 1,
-            "halfRange": 1
-          },
           "ammo": null,
           "specialRules": [
             "Turret"
@@ -885,7 +814,7 @@
           ]
         },
         {
-          "name": "(Unnamed weapon)",
+          "name": "902V 81mm Smoke Launchers",
           "target": "Gnd",
           "range": 6,
           "accuracy": {
@@ -895,7 +824,7 @@
           "dice": 2,
           "ammo": 1,
           "specialRules": [
-            "(1)",
+            "Light Indirect (1)",
             "No CC",
             "Smoke (3\")",
             "Turret"
@@ -1018,7 +947,7 @@
           },
           "ammo": 4,
           "specialRules": [
-            "Cover (1)",
+            "Ignore Cover (1)",
             "Turret"
           ]
         }
@@ -1027,8 +956,8 @@
       "category": "Vehicles"
     },
     {
-      "id": "type-68b-bantam-mk",
-      "name": "TYPE 68B \"BANTAM-Mk\"",
+      "id": "type-68b",
+      "name": "TYPE 68B",
       "unitClass": "Vec",
       "points": 25,
       "stats": {
@@ -1106,7 +1035,7 @@
           "dice": 2,
           "ammo": 1,
           "specialRules": [
-            "(1)",
+            "Light Indirect (1)",
             "No CC",
             "Smoke (3\")",
             "Turret"
@@ -1151,10 +1080,6 @@
             "moving": 4
           },
           "dice": 2,
-          "strength": {
-            "normal": 1,
-            "halfRange": 1
-          },
           "ammo": null,
           "specialRules": [
             "Turret"
@@ -1191,7 +1116,7 @@
           "ammo": 4,
           "specialRules": [
             "Turret",
-            "Cover (1)",
+            "Ignore Cover (1)",
             "Multi-Gun"
           ]
         }
@@ -1237,6 +1162,10 @@
             "moving": 5
           },
           "dice": 2,
+          "strength": {
+            "normal": 1,
+            "halfRange": 1
+          },
           "ammo": null,
           "specialRules": [
             "Turret"
@@ -1253,7 +1182,7 @@
           "dice": 2,
           "ammo": 1,
           "specialRules": [
-            "(1)",
+            "Light Indirect (1)",
             "No CC",
             "Smoke (3\")",
             "Turret"
@@ -1329,7 +1258,7 @@
           ]
         },
         {
-          "name": "Cover (1) 902V 81mm Smoke Launchers",
+          "name": "902V 81mm Smoke Launchers",
           "target": "Gnd",
           "range": 6,
           "accuracy": {
@@ -1339,7 +1268,7 @@
           "dice": 2,
           "ammo": 1,
           "specialRules": [
-            "(1)",
+            "Light Indirect (1)",
             "No CC",
             "Smoke (3\")",
             "Turret"
@@ -1420,7 +1349,7 @@
           "dice": 2,
           "ammo": 1,
           "specialRules": [
-            "(1)",
+            "Light Indirect (1)",
             "No CC",
             "Smoke (3\")",
             "Turret"
@@ -1465,6 +1394,10 @@
             "moving": 5
           },
           "dice": 2,
+          "strength": {
+            "normal": 1,
+            "halfRange": 1
+          },
           "ammo": null,
           "specialRules": [
             "Multi-Gun"
@@ -1515,7 +1448,7 @@
           "dice": 2,
           "ammo": 1,
           "specialRules": [
-            "(1)",
+            "Light Indirect (1)",
             "No CC",
             "Smoke (3\")",
             "Turret"
@@ -1566,7 +1499,7 @@
           },
           "ammo": null,
           "specialRules": [
-            "Sights",
+            "Thermal Sights",
             "Turret"
           ]
         },
@@ -1581,7 +1514,7 @@
           "dice": 2,
           "ammo": 1,
           "specialRules": [
-            "(1)",
+            "Light Indirect (1)",
             "No CC",
             "Smoke (3\")",
             "Turret"
@@ -1641,23 +1574,7 @@
             "normal": 8,
             "halfRange": 1
           },
-          "ammo": null
-        },
-        {
-          "name": "82mm Automatic Mortar",
-          "target": "Gnd",
-          "range": 40,
-          "accuracy": {
-            "stationary": 4,
-            "moving": "xx"
-          },
-          "dice": 1,
-          "strength": "[D3]",
           "ammo": null,
-          "specialRules": [
-            "Air-Filling",
-            "Light Indirect (3) (2\")"
-          ],
           "shotTypes": [
             {
               "name": "82mm Chemical-SP",
@@ -1669,7 +1586,8 @@
               },
               "dice": 1,
               "specialRules": [
-                "Chemical-SP (3\")"
+                "Light Indirect (3)",
+                "Chemical-SP (2\")"
               ]
             },
             {
@@ -1682,9 +1600,26 @@
               },
               "dice": 2,
               "specialRules": [
+                "Light Indirect (3)",
                 "Smoke (3\")"
               ]
             }
+          ]
+        },
+        {
+          "name": "(Unnamed weapon)",
+          "target": "Gnd",
+          "range": 40,
+          "accuracy": {
+            "stationary": 4,
+            "moving": "xx"
+          },
+          "dice": 1,
+          "strength": "[D3]",
+          "ammo": null,
+          "specialRules": [
+            "Air-Filling",
+            "Light Indirect (3)"
           ]
         }
       ],
@@ -1767,7 +1702,7 @@
             {
               "name": "152mm Chemical-SP",
               "target": "Gnd",
-              "range": 40,
+              "range": 0,
               "accuracy": {
                 "stationary": "++",
                 "moving": "xx"
@@ -1775,20 +1710,7 @@
               "dice": 1,
               "specialRules": [
                 "Chemical-SP (4\")",
-                "Heavy"
-              ]
-            },
-            {
-              "name": "152mm Smoke",
-              "target": "Gnd",
-              "range": 40,
-              "accuracy": {
-                "stationary": "++",
-                "moving": "xx"
-              },
-              "dice": 4,
-              "specialRules": [
-                "Indirect (3)"
+                "Heavy Indirect (3)"
               ]
             }
           ]
@@ -1853,7 +1775,7 @@
           "ammo": 4,
           "specialRules": [
             "No CC (Inf.)",
-            "Radar Anti-Alr",
+            "Radar Anti-Atr",
             "Tracking",
             "Turret"
           ]
@@ -1965,8 +1887,8 @@
       "category": "Vehicles"
     },
     {
-      "id": "type-71h",
-      "name": "TYPE 71H",
+      "id": "type-71h-tusker-av",
+      "name": "TYPE 71H \"TUSKER-AV\"",
       "unitClass": "Vec",
       "points": 50,
       "stats": {
@@ -2045,35 +1967,6 @@
                 "No CC (Inf.)",
                 "Shaped Charge"
               ]
-            },
-            {
-              "name": "152mm Chemical-SP",
-              "target": "Gnd",
-              "range": 40,
-              "accuracy": {
-                "stationary": "++",
-                "moving": "++"
-              },
-              "dice": 1,
-              "specialRules": [
-                "Chemical-SP (4\")",
-                "Heavy (3)"
-              ]
-            },
-            {
-              "name": "152mm Smoke",
-              "target": "Gnd",
-              "range": 40,
-              "accuracy": {
-                "stationary": "++",
-                "moving": "++"
-              },
-              "dice": 4,
-              "specialRules": [
-                "Indirect (3)",
-                "No CC",
-                "Smoke (4\")"
-              ]
             }
           ]
         }
@@ -2134,10 +2027,6 @@
             "moving": 4
           },
           "dice": 2,
-          "strength": {
-            "normal": 1,
-            "halfRange": 1
-          },
           "ammo": null,
           "specialRules": [
             "Multi-Gun",
@@ -2159,7 +2048,7 @@
           },
           "ammo": 4,
           "specialRules": [
-            "Cover (1)",
+            "Ignore Cover (1)",
             "Multi-Gun",
             "Turret"
           ]
@@ -2200,6 +2089,10 @@
             "moving": 5
           },
           "dice": 2,
+          "strength": {
+            "normal": 1,
+            "halfRange": 1
+          },
           "ammo": null,
           "specialRules": [
             "Door Gun (Sides)"
@@ -2211,7 +2104,7 @@
     },
     {
       "id": "hzn-18b-bison",
-      "name": "HZN-18B \"BISON\"",
+      "name": "HzN-18B \"BISON\"",
       "unitClass": "Air",
       "points": 25,
       "stats": {
@@ -2305,14 +2198,28 @@
           "range": 0,
           "accuracy": 3,
           "dice": 2,
-          "strength": "1+",
+          "strength": "$1+",
           "ammo": 2,
           "specialRules": [
             "Barrage (2)",
-            "Ignore",
-            "Cover (2)",
-            "Lingering (2\")",
+            "Ignore Cover (2)",
+            "Lingering",
+            "Radius (2\")",
             "Rear Attack"
+          ]
+        },
+        {
+          "name": "9GR4 120mm Infrared AAM",
+          "target": "Air",
+          "range": 24,
+          "accuracy": 4,
+          "dice": 1,
+          "strength": 6,
+          "ammo": 2,
+          "specialRules": [
+            "Air-Filling",
+            "Guided Missile (1)",
+            "Homing"
           ]
         }
       ],
@@ -2320,8 +2227,8 @@
       "category": "Aircraft"
     },
     {
-      "id": "hugag",
-      "name": "\"HUGAG\"",
+      "id": "hzn-22-hugag",
+      "name": "HzN-22 \"HUGAG\"",
       "unitClass": "Air",
       "points": 20,
       "stats": {
@@ -2410,7 +2317,8 @@
           "ammo": 2,
           "specialRules": [
             "Air-Filling",
-            "Barrage (2) (3\")",
+            "Barrage (2)",
+            "Radius (3\")",
             "Rear Attack"
           ]
         },
@@ -2428,7 +2336,8 @@
           "specialRules": [
             "Guided Missile (2)",
             "MCLOS",
-            "Shaped Charge"
+            "Shaped Charge",
+            "Thermal Sights"
           ]
         }
       ],

@@ -2,11 +2,24 @@ import { RosterUnit, Unit, RosterGroup } from '../types';
 import { generateRandomGroupName } from './nameGenerator';
 import { getEffectiveCapacity } from './transportCapacity';
 
+/**
+ * Parse a points value which can be a number or a string like "10/15"
+ * For string values, returns the first number
+ */
+export function parsePoints(points: number | string): number {
+  if (typeof points === 'number') {
+    return points;
+  }
+  // Handle split costs like "10/15" - take the first value
+  const match = points.match(/^(\d+)/);
+  return match ? parseInt(match[1]) : 0;
+}
+
 export function calculateTotalPoints(
   rosterUnits: { rosterUnit: RosterUnit; unit: Unit }[]
 ): number {
   return rosterUnits.reduce((total, { rosterUnit, unit }) => {
-    let unitTotal = unit.points;
+    let unitTotal = parsePoints(unit.points);
 
     // Add selected options points
     if (rosterUnit.selectedOptions && unit.options) {
@@ -41,7 +54,7 @@ export function sortUnitsByName(units: Unit[]): Unit[] {
 }
 
 export function sortUnitsByPoints(units: Unit[]): Unit[] {
-  return [...units].sort((a, b) => a.points - b.points);
+  return [...units].sort((a, b) => parsePoints(a.points) - parsePoints(b.points));
 }
 
 // Group management helpers

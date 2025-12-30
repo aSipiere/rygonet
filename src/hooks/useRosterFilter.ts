@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import { Unit, UnitCategory } from '@/types/unit';
+import { parsePoints } from '@/utils/roster';
 
 export type SortOption = 'points-asc' | 'points-desc' | 'name-asc' | 'name-desc' | 'category';
 
@@ -26,10 +27,10 @@ export function useRosterFilter(
     // Step 2: Sort based on sortBy option
     switch (sortBy) {
       case 'points-asc':
-        filtered.sort((a, b) => a.points - b.points);
+        filtered.sort((a, b) => parsePoints(a.points) - parsePoints(b.points));
         break;
       case 'points-desc':
-        filtered.sort((a, b) => b.points - a.points);
+        filtered.sort((a, b) => parsePoints(b.points) - parsePoints(a.points));
         break;
       case 'name-asc':
         filtered.sort((a, b) => a.name.localeCompare(b.name));
