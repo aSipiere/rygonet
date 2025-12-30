@@ -30,7 +30,7 @@ export function UnitCard({ unit }: UnitCardProps) {
         <Typography variant="body2" sx={{ color: 'secondary.main', fontWeight: 700, mb: 1 }}>
           STATS
         </Typography>
-        <StatsDisplay stats={unit.stats} />
+        <StatsDisplay stats={unit.stats} unitClass={unit.unitClass} />
       </Box>
 
       {/* Weapons Section */}
@@ -44,6 +44,21 @@ export function UnitCard({ unit }: UnitCardProps) {
             {unit.weapons.map((weapon, idx) => (
               <WeaponDisplay key={idx} weapon={weapon} />
             ))}
+          </Box>
+        </>
+      )}
+
+      {/* Description Section */}
+      {unit.description && (
+        <>
+          <Divider variant="simple" />
+          <Box sx={{ my: 1.5 }}>
+            <Typography variant="body2" sx={{ color: 'secondary.main', fontWeight: 700, mb: 1 }}>
+              ABILITY
+            </Typography>
+            <Typography variant="caption" color="text.secondary" sx={{ whiteSpace: 'pre-line' }}>
+              {unit.description}
+            </Typography>
           </Box>
         </>
       )}

@@ -1,13 +1,14 @@
 import { Typography } from '@mui/material';
-import { UnitStats } from '@/types/unit';
+import { UnitStats, UnitType } from '@/types/unit';
 
 interface StatsDisplayProps {
   stats: UnitStats;
+  unitClass: UnitType;
 }
 
-export function StatsDisplay({ stats }: StatsDisplayProps) {
+export function StatsDisplay({ stats, unitClass }: StatsDisplayProps) {
   // Build statline parts
-  const parts: string[] = [stats.unitType];
+  const parts: string[] = [unitClass];
 
   if (stats.height !== undefined) {
     parts.push(`H${stats.height}`);

@@ -93,12 +93,12 @@ export function canUnitTransportOthers(unit: Unit): boolean {
 
 /**
  * Get the desanting capacity for a vehicle
- * All vehicles (unitType 'Vec') have a default desanting capacity of 2
+ * All vehicles (unitClass starts with 'Vec') have a default desanting capacity of 2
  * Non-vehicles cannot have desanting units
  */
 export function getDesantingCapacity(unit: Unit): number {
   // Only vehicles can have desanting units
-  if (unit.stats.unitType === 'Vec') {
+  if (unit.unitClass.startsWith('Vec')) {
     return 2;
   }
   return 0;

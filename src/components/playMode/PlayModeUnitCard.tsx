@@ -148,7 +148,7 @@ export function PlayModeUnitCard({ rosterUnit, factionId }: PlayModeUnitCardProp
         <Typography variant="body2" sx={{ color: 'secondary.main', fontWeight: 700, mb: 1 }}>
           STATS
         </Typography>
-        <StatsDisplay stats={unitDef.stats} />
+        <StatsDisplay stats={unitDef.stats} unitClass={unitDef.unitClass} />
       </Box>
 
       {/* Weapons Section */}
@@ -162,6 +162,21 @@ export function PlayModeUnitCard({ rosterUnit, factionId }: PlayModeUnitCardProp
             {unitDef.weapons.map((weapon, idx) => (
               <WeaponDisplay key={idx} weapon={weapon} />
             ))}
+          </Box>
+        </>
+      )}
+
+      {/* Description Section */}
+      {unitDef.description && (
+        <>
+          <Divider variant="simple" />
+          <Box sx={{ my: 1.5 }}>
+            <Typography variant="body2" sx={{ color: 'secondary.main', fontWeight: 700, mb: 1 }}>
+              ABILITY
+            </Typography>
+            <Typography variant="caption" color="text.secondary" sx={{ whiteSpace: 'pre-line' }}>
+              {unitDef.description}
+            </Typography>
           </Box>
         </>
       )}

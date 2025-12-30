@@ -39,3 +39,15 @@ coverage/
 
 # Misc
 *.tsbuildinfo
+
+# Rule books
+*.pdf
+
+# python
+.venv*
+venv
+
+# ocr extractor
+ocr_debug
+scripts/*.json
+scripts/scrap.txt

@@ -73,7 +73,7 @@ export function getTransportedUnits(
 }
 
 export function canUnitBeTransported(unit: Unit): boolean {
-  return unit.stats.unitType === 'Inf' || unit.stats.unitType === 'Vec'; // Infantry and vehicles can be transported/towed
+  return unit.unitClass.startsWith('Inf') || unit.unitClass.startsWith('Vec'); // Infantry and vehicles can be transported/towed
 }
 
 export function canUnitTransport(unit: Unit): boolean {

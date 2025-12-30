@@ -23,7 +23,7 @@ function ShotTypeDisplay({ shotType }: { shotType: ShotType }) {
         {shotType.range !== null && shotType.range !== undefined && `Range: ${shotType.range} | `}
         {shotType.accuracy !== null && shotType.accuracy !== undefined && `Acc: ${formatAccuracy(shotType.accuracy)} | `}
         {shotType.strength !== null && shotType.strength !== undefined && `Str: ${shotType.strength} | `}
-        {shotType.damage !== null && shotType.damage !== undefined && `D: ${shotType.damage}`}
+        {shotType.dice !== null && shotType.dice !== undefined && `D: ${shotType.dice}`}
       </Typography>
       {shotType.specialRules && shotType.specialRules.length > 0 && (
         <Typography variant="caption" color="text.secondary" display="block">
@@ -53,7 +53,7 @@ export function WeaponDisplay({ weapon }: WeaponDisplayProps) {
             {weapon.range !== undefined && `Range: ${weapon.range} | `}
             {weapon.accuracy !== undefined && `Acc: ${formatAccuracy(weapon.accuracy)} | `}
             {weapon.strength !== undefined && `Str: ${weapon.strength} | `}
-            {weapon.damage !== undefined && `D: ${weapon.damage}`}
+            {weapon.dice !== undefined && `D: ${weapon.dice}`}
             {weapon.ammo !== null && weapon.ammo !== undefined && ` | Ammo: ${weapon.ammo}`}
           </Typography>
           {weapon.specialRules && weapon.specialRules.length > 0 && (

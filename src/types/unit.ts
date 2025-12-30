@@ -1,6 +1,9 @@
 import { Weapon } from './weapon';
 
-export type UnitType = 'Vec' | 'Inf' | 'Air';
+export type UnitType =
+  | 'Vec' | 'Vec(W)' | 'Vec(C)' | 'Vec(S)' | 'Vec(M)' | 'Vec(L)' | 'Vec(H)'
+  | 'Inf' | 'Inf(S)'
+  | 'Air' | 'Air(CAP)' | 'Air(CAS)';
 
 export type UnitCategory =
   | 'TACOMS'
@@ -12,20 +15,22 @@ export type UnitCategory =
   | 'Scenario';
 
 export interface UnitToughness {
-  front: number;
-  side: number;
-  rear: number;
+  front: number | string;
+  side: number | string;
+  rear: number | string;
 }
 
+export type Toughness = UnitToughness | number | string;
+
 export interface UnitStats {
-  unitType: UnitType;
   height?: number;
-  speed?: number;
   movement: number;
-  quality: number;
-  toughness?: UnitToughness;
+  quality: number | '*';
+  toughness?: Toughness;
+  evasion?: number;
   command?: number;
   capacity?: number;
+  spottingDistance?: number;
 }
 
 export interface UnitSpecialRule {
@@ -43,9 +48,12 @@ export interface Unit {
   name: string;
   category: UnitCategory;
   subcategory?: string;
-  points: number;
+  descriptiveCategory?: string;
+  unitClass: UnitType; // Unit class for PC capacity: Inf (1 PC), Inf(S) (2 PC), Vec variants
+  points: number | string; // number or "X/Y" for split costs
   stats: UnitStats;
   specialRules?: UnitSpecialRule[];
+  description?: string; // Unit special ability description or flavor text
   weapons?: Weapon[];
   options?: UnitOption[];
 }
