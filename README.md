@@ -28,6 +28,7 @@ A modern army roster builder for Firelock: 198X miniatures wargame.
 - ✅ TypeScript type safety throughout
 - ✅ Responsive layout with MUI
 - ✅ Netlify deployment ready
+- ✅ In-app feedback system with GitHub integration
 
 ## Project Structure
 
@@ -142,7 +143,8 @@ This project is configured for Netlify deployment with `netlify.toml`:
 1. Connect your GitHub repository to Netlify
 2. Build command: `npm run build`
 3. Publish directory: `dist`
-4. Auto-deploy on push to main
+4. Configure environment variables (see below)
+5. Auto-deploy on push to main
 
 Or deploy manually:
 
@@ -151,6 +153,24 @@ npm install -g netlify-cli
 npm run build
 netlify deploy --prod
 ```
+
+### Environment Variables
+
+For the feedback system to work, you need to configure the following environment variables in Netlify:
+
+1. **GITHUB_TOKEN**: Create a GitHub Personal Access Token
+   - Go to https://github.com/settings/tokens/new
+   - Select scopes: `repo` (Full control of private repositories)
+   - Generate and copy the token
+   - Add it to Netlify: Site Settings → Environment Variables → Add variable
+   - Name: `GITHUB_TOKEN`
+   - Value: Your token
+
+2. **GITHUB_REPO** (optional): Defaults to `aSipiere/rygonet`
+   - Format: `owner/repo`
+   - Only needed if deploying to a different repository
+
+The feedback button in the app will automatically create GitHub issues with user feedback.
 
 ## Data Structure
 

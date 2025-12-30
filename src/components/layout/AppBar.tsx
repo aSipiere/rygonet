@@ -1,9 +1,14 @@
+import { useState } from 'react';
 import { AppBar as MuiAppBar, Toolbar, Typography, Button, Box } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
+import FeedbackIcon from '@mui/icons-material/Feedback';
 import { APP_NAME } from '@utils/constants';
 import { SettingsMenu } from '@components/common/SettingsMenu';
+import { FeedbackDialog } from '@components/common/FeedbackDialog';
 
 export function AppBar() {
+  const [feedbackOpen, setFeedbackOpen] = useState(false);
+
   return (
     <MuiAppBar position="static">
       <Toolbar sx={{ py: 1 }}>
@@ -80,9 +85,25 @@ export function AppBar() {
           >
             [FACTIONS]
           </Button>
+          <Button
+            color="inherit"
+            onClick={() => setFeedbackOpen(true)}
+            startIcon={<FeedbackIcon sx={{ fontSize: '1rem' }} />}
+            sx={{
+              color: 'primary.main',
+              fontSize: '0.85rem',
+              px: 2,
+              '&:hover': {
+                backgroundColor: (theme) => `${theme.palette.primary.main}1A`,
+              },
+            }}
+          >
+            [FEEDBACK]
+          </Button>
           <SettingsMenu />
         </Box>
       </Toolbar>
+      <FeedbackDialog open={feedbackOpen} onClose={() => setFeedbackOpen(false)} />
     </MuiAppBar>
   );
 }
