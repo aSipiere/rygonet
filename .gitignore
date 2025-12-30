@@ -46,6 +46,7 @@ coverage/
 # python
 .venv*
 venv
+*.pyc
 
 # ocr extractor
 ocr_debug
