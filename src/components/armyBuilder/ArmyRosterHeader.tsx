@@ -1,8 +1,12 @@
 import { Box, Typography, Stack, Alert, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import { Roster } from '@/types';
 import { useRoster } from '@/hooks/useRoster';
+import { useFactionDataContext } from '@/contexts/FactionDataContext';
+import { exportToText } from '@/utils/export';
 import { useState } from 'react';
 
 interface ArmyRosterHeaderProps {
@@ -11,8 +15,10 @@ interface ArmyRosterHeaderProps {
 }
 
 export function ArmyRosterHeader({ roster, totalPoints }: ArmyRosterHeaderProps) {
-  const { validationErrors, rosterUnitsWithData, isSharedRoster, isEditMode, shareRoster, cloneSharedRoster, saveRoster, enterEditMode } = useRoster();
+  const { validationErrors, rosterUnitsWithData, isSharedRoster, isEditMode, shareRoster, cloneSharedRoster, saveRoster, enterEditMode, resetRoster } = useRoster();
+  const { getFactionById, getUnitById } = useFactionDataContext();
   const [shareStatus, setShareStatus] = useState<string>('');
+  const [showResetConfirm, setShowResetConfirm] = useState(false);
   const navigate = useNavigate();
 
   const pointsUsed = totalPoints;
@@ -22,7 +28,7 @@ export function ArmyRosterHeader({ roster, totalPoints }: ArmyRosterHeaderProps)
   const requiredTACOMS = Math.ceil(pointsLimit / 100);
   const currentTACOMS = rosterUnitsWithData
     .filter(({ unit }) => unit.category === 'TACOMS')
-    .reduce((sum, { rosterUnit }) => sum + rosterUnit.count, 0);
+    .length;
 
   const handleShareRoster = async () => {
     const success = await shareRoster();
@@ -47,6 +53,34 @@ export function ArmyRosterHeader({ roster, totalPoints }: ArmyRosterHeaderProps)
 
   const handleEditRoster = () => {
     enterEditMode();
+  };
+
+  const handleExportText = async () => {
+    const factionData = getFactionById(roster.factionId);
+    const factionName = factionData?.faction.name || roster.factionId;
+    const success = await exportToText(roster, factionName, getUnitById);
+    if (success) {
+      setShareStatus('List copied to clipboard!');
+      setTimeout(() => setShareStatus(''), 3000);
+    } else {
+      setShareStatus('Failed to copy list');
+      setTimeout(() => setShareStatus(''), 3000);
+    }
+  };
+
+  const handleResetClick = () => {
+    if (showResetConfirm) {
+      // Second click - actually reset
+      resetRoster();
+      setShowResetConfirm(false);
+      setShareStatus('Roster reset!');
+      setTimeout(() => setShareStatus(''), 2000);
+    } else {
+      // First click - show confirmation
+      setShowResetConfirm(true);
+      // Auto-cancel after 3 seconds
+      setTimeout(() => setShowResetConfirm(false), 3000);
+    }
   };
 
   return (
@@ -83,14 +117,26 @@ export function ArmyRosterHeader({ roster, totalPoints }: ArmyRosterHeaderProps)
         <Box sx={{ textAlign: 'right' }}>
           <Stack direction="row" spacing={1} alignItems="center">
             {!isSharedRoster && isEditMode && (
-              <Button
-                size="small"
-                variant="contained"
-                onClick={handleSaveRoster}
-                sx={{ fontFamily: 'monospace' }}
-              >
-                Save
-              </Button>
+              <>
+                <Button
+                  size="small"
+                  variant="contained"
+                  onClick={handleSaveRoster}
+                  sx={{ fontFamily: 'monospace' }}
+                >
+                  Save
+                </Button>
+                <Button
+                  size="small"
+                  variant="outlined"
+                  color={showResetConfirm ? 'warning' : 'error'}
+                  onClick={handleResetClick}
+                  startIcon={<RestartAltIcon />}
+                  sx={{ fontFamily: 'monospace' }}
+                >
+                  {showResetConfirm ? 'CONFIRM' : 'Reset'}
+                </Button>
+              </>
             )}
             {!isSharedRoster && !isEditMode && (
               <>
@@ -118,6 +164,15 @@ export function ArmyRosterHeader({ roster, totalPoints }: ArmyRosterHeaderProps)
                   sx={{ fontFamily: 'monospace' }}
                 >
                   Share
+                </Button>
+                <Button
+                  size="small"
+                  variant="outlined"
+                  onClick={handleExportText}
+                  startIcon={<ContentCopyIcon />}
+                  sx={{ fontFamily: 'monospace' }}
+                >
+                  Export Text
                 </Button>
               </>
             )}

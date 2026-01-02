@@ -31,8 +31,7 @@ export function calculateTotalPoints(
       });
     }
 
-    // Multiply by count
-    return total + unitTotal * rosterUnit.count;
+    return total + unitTotal;
   }, 0);
 }
 

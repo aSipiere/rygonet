@@ -94,6 +94,10 @@ export function useRoster() {
     dispatch({ type: 'CLEAR_UNIT_RELATIONSHIP', payload: unitId });
   }, [dispatch]);
 
+  const resetRoster = useCallback(() => {
+    dispatch({ type: 'RESET_ROSTER' });
+  }, [dispatch]);
+
   // Get units with full data
   const rosterUnitsWithData = useMemo(() => {
     if (!state.currentRoster) return [];
@@ -178,6 +182,8 @@ export function useRoster() {
     // Relationship functions
     setUnitRelationship,
     clearUnitRelationship,
+    // Reset function
+    resetRoster,
     // Validation
     validationErrors,
     transportValidations,

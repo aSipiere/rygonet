@@ -73,7 +73,7 @@ export default function HomePage() {
                 flex: 1,
               }}
             >
-              29/12/1985 0100 GMT (Grotehaven Mean Time) - System Administrator's Notice:
+              02/01/1986 1600 GMT (Grotehaven Mean Time) - System Administrator's Notice:
             </Typography>
             <IconButton
               size="small"
@@ -92,18 +92,11 @@ export default function HomePage() {
                 lineHeight: 1.6,
               }}
             >
-              The new STANDARD RECOGNITION AND UNIT I.D. DATABASE is now live. For now, the prototype
-              is operational with BLUEFOR effectiveness statistics compiled and verified. Over the
-              coming days, profiles for near peer adversaries will be compiled and uploaded to the system.
+              All near peer adversaries have been added in addition to BLUEFOR, we should have a good
+              first draft of everything now (particular thanks to nullAurelian and oktopusgrabbermouth).
               <br />
               <br />
-              We've also improved the ability to model embarked, desanting and towed units when you
-              have multiple carriers, when you hover over a unit in the drop down it will highlight
-              which vehicle that selection pertains to.
-              <br />
-              <br />
-              If you notice any inaccuracies or peculiarities of the system, please notify a FEDINT
-              Liaison officer (@ahlakes on discord).
+
               <br />
               <br />
               - SYSADMIN
@@ -188,9 +181,11 @@ export default function HomePage() {
                 {factions.map((factionData) => (
                   <Box
                     key={factionData.faction.id}
+                    onClick={() => navigate(`/factions/${factionData.faction.id}`)}
                     sx={{
                       py: 1.5,
                       borderBottom: '1px solid #333',
+                      cursor: 'pointer',
                       '&:hover': {
                         backgroundColor: 'rgba(0, 255, 0, 0.05)',
                       },

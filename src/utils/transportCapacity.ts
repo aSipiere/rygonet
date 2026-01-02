@@ -21,8 +21,8 @@ export function parseTransportCapacity(unit: Unit): TransportCapacityInfo {
     for (const rule of unit.specialRules) {
       const ruleName = typeof rule === 'string' ? rule : rule.name;
 
-      // Match PC(Rear, 2) or PC(2, Sides) formats
-      const pcMatch = ruleName.match(/PC\(([^,]+),\s*(\d+)\)|PC\((\d+),\s*([^)]+)\)/i);
+      // Match PC(Rear, 2) or PC(2, Sides) formats (with optional space after PC)
+      const pcMatch = ruleName.match(/PC\s*\(([^,]+),\s*(\d+)\)|PC\s*\((\d+),\s*([^)]+)\)/i);
       if (pcMatch) {
         if (pcMatch[1]) {
           // Format: PC(Rear, 2)
@@ -41,8 +41,8 @@ export function parseTransportCapacity(unit: Unit): TransportCapacityInfo {
         }
       }
 
-      // Match Tow(4) format
-      const towMatch = ruleName.match(/Tow\((\d+)\)/i);
+      // Match Tow(4) format (with optional space after Tow)
+      const towMatch = ruleName.match(/Tow\s*\((\d+)\)/i);
       if (towMatch) {
         return {
           capacity: 1, // Can tow 1 unit at max toughness, or 2 at half
@@ -102,4 +102,18 @@ export function getDesantingCapacity(unit: Unit): number {
     return 2;
   }
   return 0;
+}
+
+/**
+ * Calculate how much capacity a unit consumes when embarked or desanting
+ * - Inf (S) or Inf(S) units take 2 capacity slots
+ * - All other units take 1 capacity slot
+ */
+export function getUnitCapacityCost(unit: Unit): number {
+  // Infantry (Small) units take 2 capacity slots (handle both formats with and without space)
+  if (unit.stats.unitClass === 'Inf (S)' || unit.stats.unitClass === 'Inf(S)') {
+    return 2;
+  }
+  // All other units take 1 capacity slot
+  return 1;
 }

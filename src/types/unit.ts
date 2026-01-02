@@ -1,9 +1,9 @@
 import { Weapon } from './weapon';
 
 export type UnitType =
-  | 'Vec' | 'Vec(W)' | 'Vec(C)' | 'Vec(S)' | 'Vec(M)' | 'Vec(L)' | 'Vec(H)'
-  | 'Inf' | 'Inf(S)'
-  | 'Air' | 'Air(CAP)' | 'Air(CAS)';
+  | 'Vec' | 'Vec(W)' | 'Vec(C)' | 'Vec(S)' | 'Vec(M)' | 'Vec(L)' | 'Vec(H)' | 'Vec (W)' | 'Vec (C)' | 'Vec (S)' | 'Vec (M)' | 'Vec (L)' | 'Vec (H)'
+  | 'Inf' | 'Inf(S)' | 'Inf (S)'
+  | 'Air' | 'Air(CAP)' | 'Air(CAS)' | 'Air (CAP)' | 'Air (CAS)';
 
 export type UnitCategory =
   | 'TACOMS'
@@ -21,7 +21,7 @@ export type Toughness = string | {
 };
 
 export interface UnitStats {
-  unitClass: UnitType; // Unit class for PC capacity: Inf (1 PC), Inf(S) (2 PC), Vec variants
+  unitClass: UnitType; // Unit class for PC capacity: Inf (1 PC), Inf (S) or Inf(S) (2 PC), Vec variants
   height?: number;
   movement: number;
   quality: number | '*';

@@ -1,52 +1,51 @@
-const PREFIXES = [
+const NATO_ALPHABET = [
   'Alpha',
   'Bravo',
   'Charlie',
   'Delta',
   'Echo',
   'Foxtrot',
-  'Ghost',
-  'Hunter',
-  'Iron',
-  'Kodiak',
-  'Lightning',
-  'Maverick',
-  'Night',
+  'Golf',
+  'Hotel',
+  'India',
+  'Juliet',
+  'Kilo',
+  'Lima',
+  'Mike',
+  'November',
   'Oscar',
-  'Phoenix',
-  'Raven',
-  'Shadow',
-  'Storm',
-  'Thunder',
-  'Viper',
-  'Wolf',
+  'Papa',
+  'Quebec',
+  'Romeo',
+  'Sierra',
+  'Tango',
+  'Uniform',
+  'Victor',
+  'Whiskey',
+  'X-ray',
+  'Yankee',
   'Zulu',
 ];
 
-const SUFFIXES = [
-  'Battalion',
-  'Brigade',
-  'Company',
-  'Detachment',
-  'Division',
-  'Element',
-  'Force',
-  'Group',
-  'Legion',
-  'Platoon',
-  'Regiment',
-  'Squad',
-  'Strike Team',
-  'Task Force',
-  'Team',
-  'Troop',
-  'Unit',
-  'Wing',
-];
+/**
+ * Generate a sequential group name using NATO phonetic alphabet
+ * @param index The sequential index (0-based) for the group
+ * @returns A group name like "Alpha", "Bravo", etc.
+ */
+export function generateSequentialGroupName(index: number): string {
+  if (index < NATO_ALPHABET.length) {
+    return NATO_ALPHABET[index];
+  }
+  // If we exceed 26 groups, start adding numbers: "Alpha 2", "Bravo 2", etc.
+  const cycle = Math.floor(index / NATO_ALPHABET.length);
+  const alphabetIndex = index % NATO_ALPHABET.length;
+  return `${NATO_ALPHABET[alphabetIndex]} ${cycle + 1}`;
+}
 
+/**
+ * @deprecated Use generateSequentialGroupName instead
+ */
 export function generateRandomGroupName(): string {
-  const prefix = PREFIXES[Math.floor(Math.random() * PREFIXES.length)];
-  const suffix = SUFFIXES[Math.floor(Math.random() * SUFFIXES.length)];
-
-  return `${prefix} ${suffix}`;
+  // For backwards compatibility, just return Alpha for now
+  return generateSequentialGroupName(0);
 }

@@ -119,9 +119,23 @@ export function ArmyRosterGroup({ group, units }: ArmyRosterGroupProps) {
 
       {!isCollapsed && (
         <Stack spacing={1} sx={{ ml: group ? 2 : 0 }}>
-          {units.map((unit) => (
-            <ArmyRosterUnit key={unit.id} rosterUnit={unit} />
-          ))}
+          {units
+            .filter((unit) => !unit.relationship) // Only render top-level units (not transported)
+            .map((unit) => (
+              <Box key={unit.id}>
+                <ArmyRosterUnit rosterUnit={unit} />
+                {/* Render transported units under this carrier */}
+                <Stack spacing={1} sx={{ ml: 4 }}>
+                  {units
+                    .filter((transportedUnit) =>
+                      transportedUnit.relationship?.transportUnitId === unit.id
+                    )
+                    .map((transportedUnit) => (
+                      <ArmyRosterUnit key={transportedUnit.id} rosterUnit={transportedUnit} />
+                    ))}
+                </Stack>
+              </Box>
+            ))}
           {units.length === 0 && (
             <Typography
               variant="caption"
