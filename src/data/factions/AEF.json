@@ -7,15 +7,19 @@
     "specialRules": [
       {
         "name": "Bloodlust",
-        "description": "Luparic troops are prone to berserking in close combat, making them fearsome opponents in melee engagements."
+        "description": "A wolf in uniform is still a wolf. The smell of blood drives undisciplined troops into a killing frenzy. If this infantry unit reaches six pin tokens during the Fire Phase, the unit must roll a 4+ check to avoid going berserk."
+      },
+      {
+        "name": "Guidance (X\")",
+        "description": "The stories and sight of the Waykeepers steel the nerves of their flock against the killing temptation. This unit soothes friendly lupar within X inches from itself. Units which enter this radius automatically lose their berserk tokens, and units inside of the radius cannot gain them."
       },
       {
         "name": "Infiltrator",
-        "description": "Lupar excel at stealth and concealment operations in their native terrain, allowing them to deploy closer to enemy positions."
+        "description": "Whether warden or poacher, the lupar are natural hunters—the wilder, the better. This unit may deploy up to 16\" away from your deployment edge, into occluding terrain, before any standard deployment by either side."
       },
       {
-        "name": "Sense (X\")",
-        "description": "Lupar possess superhuman senses, particularly hearing and smell. Units can detect enemies within X\" range through sound and scent, even without line of sight."
+        "name": "Rally (Salt)",
+        "description": "Potent, artificial, unmistakable: the scent of signal salt drives lupar by drilled reflex to their objective. This Rally weapon only affects non-NBC lupar."
       }
     ]
   },
