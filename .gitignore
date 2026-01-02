@@ -52,3 +52,5 @@ venv
 ocr_debug
 scripts/*.json
 scripts/scrap.txt
+
+.claude

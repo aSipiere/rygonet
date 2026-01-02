@@ -3592,7 +3592,7 @@
       "points": 20,
       "stats": {
         "unitClass": "Vec",
-        "height": 0,
+        "height": 1,
         "spottingDistance": 0,
         "movement": 10,
         "quality": 2,
@@ -3659,7 +3659,7 @@
       "points": 20,
       "stats": {
         "unitClass": "Vec",
-        "height": 0,
+        "height": 1,
         "spottingDistance": 0,
         "movement": 10,
         "quality": 2,
@@ -3724,7 +3724,7 @@
       "points": 30,
       "stats": {
         "unitClass": "Vec",
-        "height": 0,
+        "height": 1,
         "spottingDistance": 0,
         "movement": 10,
         "quality": 2,

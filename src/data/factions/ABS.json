@@ -1,0 +1,3314 @@
+{
+  "faction": {
+    "id": "abs",
+    "name": "Atom Barons of Santagria",
+    "description": "Armies of the Atom Barons of Santagria (A.B.S.) are cobbled from available resources according to need rather than any cohesive doctrine. The stratification of post-nuclear Santagrine society is reflected in their forces' compositions, with archaically-armed common levies sharply contrasted by the artful opulence of the airborne nobility. Above all else, Santagrines are dangerous because of their unpredictability.",
+    "version": "FM 100-1-8X v0.9.6",
+    "specialRules": [
+      {
+        "name": "Flower of the Atom",
+        "description": "Forward air control does not task a knight: it only humbly requests he pursue a specific target. Instead of moving, a plane with this rule that has not yet fired may choose to lose its current mission target and tilt."
+      },
+      {
+        "name": "Leviathan (X)",
+        "description": "Whether rolling or flying, this monstrosity takes incredible punishment to kill. This unit must suffer X number of kills to be destroyed. When it suffers a kill, place a leviathan token on it and choose one non-Small Arm weapon on its statline to be destroyed."
+      },
+      {
+        "name": "Tercio",
+        "description": "Santagrine levies usually fight in archaic, pre-arranged formations, sacrificing flexibility for mass. Units with this rule may be deployed in a special tercio formation consisting of three infantry units placed into mutual basal contact in a triangle."
+      }
+    ]
+  },
+  "units": [
+    {
+      "id": "peg.123-ac-graf",
+      "name": "PEG.123-AC GRAF",
+      "category": "TACOMS",
+      "descriptiveCategory": "",
+      "points": 0,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 32,
+        "movement": 36,
+        "quality": 4,
+        "toughness": {
+          "front": 2,
+          "side": 1,
+          "rear": 1
+        },
+        "command": 2
+      },
+      "specialRules": [
+        {
+          "name": "TACOM"
+        },
+        {
+          "name": "Chaff-Flares (1)"
+        },
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Brigade (4, 16\")"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "MhM-76 .305 Minigun",
+          "ammo": null,
+          "target": "All",
+          "range": 12,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 5
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 4,
+          "specialRules": [
+            "Turret"
+          ]
+        },
+        {
+          "name": "Lerna 15-lber Rocket Pod",
+          "ammo": 1,
+          "target": "Inf/Vec",
+          "range": 22,
+          "accuracy": {
+            "stationary": 6,
+            "moving": 5
+          },
+          "strength": {
+            "normal": 4,
+            "halfRange": 4
+          },
+          "dice": 4,
+          "specialRules": [
+            "Strafing"
+          ]
+        },
+        {
+          "name": "120dB Megaphone Array",
+          "ammo": null,
+          "target": "Inf/Vec",
+          "range": 16,
+          "accuracy": {
+            "stationary": "++",
+            "moving": "++"
+          },
+          "strength": 0,
+          "dice": 1,
+          "specialRules": [
+            "Rally",
+            "Turret"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uni.28-ac-don",
+      "name": "UNI.28-AC DON",
+      "category": "TACOMS",
+      "descriptiveCategory": "",
+      "points": 25,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 24,
+        "quality": 5,
+        "toughness": {
+          "front": 4,
+          "side": 3,
+          "rear": 3
+        },
+        "command": 3
+      },
+      "specialRules": [
+        {
+          "name": "TACOM"
+        },
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Brigade (3, 12\")"
+        },
+        {
+          "name": "Leviathan (2)"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Allant 1.8-lber Rptary Cannon",
+          "ammo": 3,
+          "target": "All",
+          "range": 32,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 4,
+            "halfRange": 6
+          },
+          "dice": 3,
+          "specialRules": [
+            ""
+          ]
+        },
+        {
+          "name": "SUR-4 127mm Air-to-Air Missile",
+          "ammo": 2,
+          "target": "Air",
+          "range": 60,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 3
+          },
+          "strength": {
+            "normal": 6,
+            "halfRange": 6
+          },
+          "dice": 1,
+          "specialRules": [
+            "Air-Filling",
+            "Guided Missile (1)",
+            "Homing"
+          ]
+        },
+        {
+          "name": "120dB Megaphone Array",
+          "ammo": null,
+          "target": "Inf/Vec",
+          "range": 16,
+          "accuracy": {
+            "stationary": "++",
+            "moving": "++"
+          },
+          "strength": 0,
+          "dice": 1,
+          "specialRules": [
+            "Rally",
+            "Turret"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vbd.127-db-castellan",
+      "name": "VBD.127-DB CASTELLAN",
+      "category": "TACOMS",
+      "descriptiveCategory": "",
+      "points": 40,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 8,
+        "quality": 4,
+        "toughness": {
+          "front": 16,
+          "side": 7,
+          "rear": 5
+        },
+        "command": 4
+      },
+      "specialRules": [
+        {
+          "name": "TACOM"
+        },
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Brigade (2, 8\")"
+        }
+      ],
+      "unitAbility": "Whenever this unit scores a kill on an enemy Vehicle, it may Rally a friendly unit within 8\".",
+      "weapons": [
+        {
+          "name": "MhL-42 .305 MG",
+          "ammo": null,
+          "target": "All",
+          "range": 12,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 2,
+          "specialRules": [
+            "Thermal Sights",
+            "Turret"
+          ]
+        },
+        {
+          "name": "Sb.98 55-lber Gun",
+          "ammo": 4,
+          "target": "Vec",
+          "range": 40,
+          "shotTypes": [
+            {
+              "name": "55-lb. APDS",
+              "accuracy": {
+                "stationary": 3,
+                "moving": 3
+              },
+              "strength": {
+                "normal": 14,
+                "halfRange": 21
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Thermal Sights",
+                "Turret"
+              ]
+            },
+            {
+              "name": "55-lb. HESH",
+              "target": "Inf/Vec",
+              "accuracy": {
+                "stationary": 3,
+                "moving": 3
+              },
+              "strength": {
+                "normal": 9,
+                "halfRange": 4
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Thermal Sights",
+                "Turret",
+                "Shaped Charge"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Lerna 15-lber Rocket Pod",
+          "ammo": 1,
+          "target": "Inf/Vec",
+          "range": 22,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 5
+          },
+          "strength": {
+            "normal": 4,
+            "halfRange": 4
+          },
+          "dice": 4,
+          "specialRules": [
+            "No CC (Inf.)",
+            "Turret"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "santagrine-militia",
+      "name": "SANTAGRINE MILITIA",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 5,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 16,
+        "movement": 4,
+        "quality": 1,
+        "toughness": {
+          "front": 1,
+          "side": 1,
+          "rear": 1
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Tercio"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Bolt-Action Rifle, various make & caliber",
+          "ammo": null,
+          "target": "All",
+          "range": 10,
+          "accuracy": {
+            "stationary": 5,
+            "moving": 5
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 1,
+          "specialRules": [
+            "Small Arm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mounted-serjeants",
+      "name": "MOUNTED SERJEANTS",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 10,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 24,
+        "movement": 8,
+        "quality": 2,
+        "toughness": {
+          "front": 1,
+          "side": 1,
+          "rear": "1-"
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Fearless"
+        },
+        {
+          "name": "NBC"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Cavalry Carbine, local manufacture",
+          "ammo": null,
+          "target": "All",
+          "range": 8,
+          "accuracy": {
+            "stationary": 5,
+            "moving": 5
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 1,
+          "specialRules": [
+            "Small Arm"
+          ]
+        },
+        {
+          "name": "18-oz Lance Mine",
+          "ammo": 2,
+          "target": "Vec",
+          "range": 0,
+          "accuracy": {
+            "stationary": 1,
+            "moving": 1
+          },
+          "strength": {
+            "normal": 6,
+            "halfRange": 1
+          },
+          "dice": 1,
+          "specialRules": [
+            "Melee",
+            "Shaped Charge"
+          ]
+        },
+        {
+          "name": "Heirloom Backsword",
+          "ammo": null,
+          "target": "Inf",
+          "range": 0,
+          "accuracy": {
+            "stationary": 1,
+            "moving": 1
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": 1
+          },
+          "dice": 2,
+          "specialRules": [
+            "Melee"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yeoman-paras",
+      "name": "YEOMAN PARAS",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 15,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 16,
+        "movement": 5,
+        "quality": 3,
+        "toughness": {
+          "front": 1,
+          "side": "1-",
+          "rear": "1-"
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Assault Specialist"
+        },
+        {
+          "name": "Fearless"
+        },
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Amphibious"
+        },
+        {
+          "name": "Tercio"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "MhL-48 .455 SMG",
+          "ammo": null,
+          "target": "All",
+          "range": 8,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 3
+          },
+          "strength": {
+            "normal": "1-",
+            "halfRange": "1+"
+          },
+          "dice": 2,
+          "specialRules": [
+            "Small Arm"
+          ]
+        },
+        {
+          "name": "Hi-25 2.5-lber Spigot Mortar",
+          "ammo": 3,
+          "target": "Inf/Vec",
+          "range": 6,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 5
+          },
+          "strength": {
+            "normal": 7,
+            "halfRange": "1+"
+          },
+          "dice": 1,
+          "specialRules": [
+            "Light Indirect (0)",
+            "Shaped Charge",
+            "Small Arm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "volley-team",
+      "name": "VOLLEY TEAM",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 5,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 16,
+        "movement": 4,
+        "quality": 1,
+        "toughness": {
+          "front": "1-",
+          "side": "1-",
+          "rear": "1-"
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Tercio"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Bolt-Action Rifle, various make & caliber",
+          "ammo": null,
+          "target": "All",
+          "range": 10,
+          "accuracy": {
+            "stationary": 5,
+            "moving": 5
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 1,
+          "specialRules": [
+            "Small Arm"
+          ]
+        },
+        {
+          "name": "\"Tricorne\" Triple RPG, improvized",
+          "ammo": 2,
+          "target": "Inf/Vec",
+          "range": 8,
+          "accuracy": {
+            "stationary": 5,
+            "moving": 6
+          },
+          "strength": {
+            "normal": 5,
+            "halfRange": 1
+          },
+          "dice": 3,
+          "specialRules": [
+            "Shaped Charge",
+            "Small Arm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "light-gun-team",
+      "name": "LIGHT GUN TEAM",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 5,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 24,
+        "movement": 4,
+        "quality": 1,
+        "toughness": {
+          "front": 1,
+          "side": "1-",
+          "rear": "1-"
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "NBC"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Rh-49 .305 Self-cycling Rifle",
+          "ammo": null,
+          "target": "All",
+          "range": 8,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 1,
+          "specialRules": [
+            "Small Arm"
+          ]
+        },
+        {
+          "name": "Sb.1 1-lber Gun",
+          "ammo": 3,
+          "target": "Inf/Vec",
+          "range": 24,
+          "accuracy": {
+            "stationary": 5,
+            "moving": "xx"
+          },
+          "strength": {
+            "normal": 14,
+            "halfRange": 2
+          },
+          "dice": 1,
+          "specialRules": [
+            "Defensive CC",
+            "Shaped Charge"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grenadier-team",
+      "name": "GRENADIER TEAM",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 10,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 16,
+        "movement": 4,
+        "quality": 2,
+        "toughness": {
+          "front": 2,
+          "side": "1+",
+          "rear": "1+"
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Tercio"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Engram .32 Machine Pistol",
+          "ammo": null,
+          "target": "Inf",
+          "range": 2,
+          "accuracy": {
+            "stationary": 5,
+            "moving": 5
+          },
+          "strength": {
+            "normal": "1-",
+            "halfRange": "1-"
+          },
+          "dice": 2,
+          "specialRules": [
+            "Small Arm"
+          ]
+        },
+        {
+          "name": "S-5 40mm Grenade Pistol, sawn-off",
+          "ammo": 4,
+          "target": "Inf/Vec",
+          "range": 6,
+          "shotTypes": [
+            {
+              "name": "40mm HE",
+              "accuracy": {
+                "stationary": 4,
+                "moving": 4
+              },
+              "strength": {
+                "normal": "1+",
+                "halfRange": "1+"
+              },
+              "dice": 1,
+              "specialRules": [
+                "Small Arm",
+                "Ignore Cover (1)"
+              ]
+            },
+            {
+              "name": "40mm Smoke",
+              "target": "Gnd",
+              "accuracy": {
+                "stationary": "++",
+                "moving": "++"
+              },
+              "strength": 0,
+              "dice": 1,
+              "specialRules": [
+                "Small Arm",
+                "No CC",
+                "Smoke (2\")"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "machine-gun-team",
+      "name": "MACHINE GUN TEAM",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 10,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 16,
+        "movement": 4,
+        "quality": 2,
+        "toughness": {
+          "front": 1,
+          "side": "1-",
+          "rear": "1-"
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Tercio"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Rh-49 .305 Self-cycling Rifle",
+          "ammo": null,
+          "target": "All",
+          "range": 8,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 1,
+          "specialRules": [
+            "Small Arm"
+          ]
+        },
+        {
+          "name": "Depredador Cortes .455 MG",
+          "ammo": null,
+          "target": "All",
+          "range": 14,
+          "accuracy": {
+            "stationary": 4,
+            "moving": "xx"
+          },
+          "strength": {
+            "normal": "1+",
+            "halfRange": 2
+          },
+          "dice": 2,
+          "specialRules": [
+            "Defensive CC"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bombard-team",
+      "name": "BOMBARD TEAM",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 15,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 24,
+        "movement": 4,
+        "quality": 2,
+        "toughness": {
+          "front": "1-",
+          "side": "1-",
+          "rear": "1-"
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "NBC"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Rh-49 .305 Self-cycling Rifle",
+          "ammo": null,
+          "target": "All",
+          "range": 8,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 1,
+          "specialRules": [
+            "Small Arm"
+          ]
+        },
+        {
+          "name": "Hi-14 Three-Quarters Bombard",
+          "ammo": 4,
+          "target": "Gnd",
+          "range": 24,
+          "shotTypes": [
+            {
+              "name": "26-lb HE",
+              "accuracy": {
+                "stationary": 4,
+                "moving": "xx"
+              },
+              "strength": "[D6]",
+              "dice": 1,
+              "specialRules": [
+                "Light Indirect (2)",
+                "No CC",
+                "Air-Filling",
+                "Radius (2\")"
+              ]
+            },
+            {
+              "name": "14-lb Plutonium Core",
+              "accuracy": {
+                "stationary": "++",
+                "moving": "xx"
+              },
+              "strength": 0,
+              "dice": 1,
+              "specialRules": [
+                "Light Indirect (2)",
+                "No CC",
+                "Radius (4\")",
+                "Roll a D6 for each unit in the radius. If the result is above the unit's Quality, it takes max pin, otherwise it takes one pin."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "groundsmen",
+      "name": "GROUNDSMEN",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 10,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 32,
+        "movement": 5,
+        "quality": 3,
+        "toughness": {
+          "front": 1,
+          "side": "1-",
+          "rear": "1-"
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Fearless"
+        },
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Paradrop"
+        },
+        {
+          "name": "Sense (6\")"
+        },
+        {
+          "name": "Tercio"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "SMHH Combination Gun, .276 Barrel",
+          "ammo": null,
+          "target": "All",
+          "range": 12,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 1,
+          "specialRules": [
+            "Scoped",
+            "Small Arm"
+          ]
+        },
+        {
+          "name": "12-gauge Slug Barrel",
+          "ammo": null,
+          "target": "Inf/Vec",
+          "range": 6,
+          "accuracy": "*",
+          "strength": {
+            "normal": "1+",
+            "halfRange": 2
+          },
+          "dice": 1,
+          "specialRules": [
+            "Underbarrel (SMHH)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pages",
+      "name": "PAGES",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 10,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 32,
+        "movement": 5,
+        "quality": 2,
+        "toughness": {
+          "front": 1,
+          "side": "1-",
+          "rear": "1-"
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Fearless"
+        },
+        {
+          "name": "NBC"
+        }
+      ],
+      "unitAbility": "This unit may activate to call a plane mission during the Support Phase, replace a friendly TACOM's turn.",
+      "weapons": [
+        {
+          "name": "AFME-42/58 .439 Automatic Rifle",
+          "ammo": null,
+          "target": "All",
+          "range": 8,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 6
+          },
+          "strength": {
+            "normal": "1+",
+            "halfRange": "1+"
+          },
+          "dice": 2,
+          "specialRules": [
+            "Small Arm"
+          ]
+        },
+        {
+          "name": "Coincidence Rangefinder, craft-produced",
+          "ammo": null,
+          "target": "All",
+          "range": 32,
+          "accuracy": {
+            "stationary": "++",
+            "moving": "xx"
+          },
+          "strength": 0,
+          "dice": 1,
+          "specialRules": [
+            "Discreet",
+            "Designator"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "black-fangs",
+      "name": "BLACK FANGS",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 20,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 24,
+        "movement": 4,
+        "quality": 4,
+        "toughness": {
+          "front": 2,
+          "side": "1+",
+          "rear": "1+"
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Assault Specialist"
+        },
+        {
+          "name": "Fearless"
+        },
+        {
+          "name": "NBC"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "LMG, various make and caliber",
+          "ammo": null,
+          "target": "All",
+          "range": 10,
+          "accuracy": {
+            "stationary": 2,
+            "moving": 3
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 2,
+          "specialRules": [
+            "Small Arm"
+          ]
+        },
+        {
+          "name": "Lerna 15-lber Rocket Pod",
+          "ammo": 1,
+          "target": "Inf/Vec",
+          "range": 22,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 5
+          },
+          "strength": {
+            "normal": 4,
+            "halfRange": 4
+          },
+          "dice": 4,
+          "specialRules": [
+            "No CC (Inf.)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "atomic-pilgrims",
+      "name": "ATOMIC PILGRIMS",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 60,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 24,
+        "movement": 4,
+        "quality": 4,
+        "toughness": {
+          "front": "1-",
+          "side": "1-",
+          "rear": "1-"
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Fearless"
+        },
+        {
+          "name": "NBC"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Engram .32 Machine Pistol",
+          "ammo": null,
+          "target": "Inf",
+          "range": 2,
+          "accuracy": {
+            "stationary": 5,
+            "moving": 5
+          },
+          "strength": {
+            "normal": "1-",
+            "halfRange": "1-"
+          },
+          "dice": 2,
+          "specialRules": [
+            "Small Arm"
+          ]
+        },
+        {
+          "name": "\"Violet Mace\" Recoilless Gun, Nuclear",
+          "ammo": 1,
+          "target": "Gnd",
+          "range": 24,
+          "accuracy": {
+            "stationary": "++",
+            "moving": "xx"
+          },
+          "strength": 0,
+          "dice": 1,
+          "specialRules": [
+            "Nuclear (1\"-2\"-6\")"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "steam-tractor",
+      "name": "STEAM TRACTOR",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 5,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 16,
+        "movement": 6,
+        "quality": 2,
+        "toughness": {
+          "front": 4,
+          "side": 4,
+          "rear": 3
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "PC (1, Any)"
+        },
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Tow (2)"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "MhL-42 .305 MG",
+          "ammo": null,
+          "target": "All",
+          "range": 12,
+          "accuracy": {
+            "stationary": 5,
+            "moving": 6
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 2,
+          "specialRules": [
+            "Turret"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "war-wagon",
+      "name": "WAR WAGON",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 5,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 8,
+        "movement": 0,
+        "quality": 1,
+        "toughness": {
+          "front": 3,
+          "side": 3,
+          "rear": 3
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "PC (4, Any)"
+        },
+        {
+          "name": "Resupply (2)"
+        },
+        {
+          "name": "Tow (Infinite)"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Engram .32 Snub Nose, driver issue",
+          "ammo": null,
+          "target": "Inf",
+          "range": 2,
+          "accuracy": {
+            "stationary": 5,
+            "moving": 5
+          },
+          "strength": {
+            "normal": "1-",
+            "halfRange": "1-"
+          },
+          "dice": 1,
+          "specialRules": [
+            "Small Arm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cb.76-misericorde",
+      "name": "CB.76 MISERICORDE",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 15,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 24,
+        "movement": 8,
+        "quality": 3,
+        "toughness": {
+          "front": 5,
+          "side": 4,
+          "rear": 2
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Paradrop"
+        },
+        {
+          "name": "Tow (2)"
+        }
+      ],
+      "unitAbility": "May fire while carrying desanting infantry and can carry PC(3) desants instead of PC(2)",
+      "weapons": [
+        {
+          "name": "MhL-42 .305 MG",
+          "ammo": null,
+          "target": "All",
+          "range": 12,
+          "accuracy": {
+            "stationary": 5,
+            "moving": 6
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 2,
+          "specialRules": [
+            "Turret"
+          ]
+        },
+        {
+          "name": "Sb.21 20-lber Mountain Gun",
+          "ammo": 3,
+          "target": "Inf/Vec",
+          "range": 24,
+          "shotTypes": [
+            {
+              "name": "20-lb. HESH",
+              "accuracy": {
+                "stationary": 4,
+                "moving": 6
+              },
+              "strength": {
+                "normal": 8,
+                "halfRange": 3
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Shaped Charge"
+              ]
+            },
+            {
+              "name": "20-lb. Smoke",
+              "target": "Gnd",
+              "accuracy": {
+                "stationary": "++",
+                "moving": "++"
+              },
+              "strength": 0,
+              "dice": 1,
+              "specialRules": [
+                "No CC",
+                "Smoke (3\")"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exto",
+      "name": "EXTO",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 25,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 8,
+        "quality": 2,
+        "toughness": {
+          "front": 4,
+          "side": 4,
+          "rear": 4
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Leviathan (2)"
+        },
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "PC (6, Side)"
+        },
+        {
+          "name": "Resupply (4)"
+        },
+        {
+          "name": "Tow (2)"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Rh-49 .305 Self-cycling Rifle",
+          "ammo": null,
+          "target": "All",
+          "range": 8,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 1,
+          "specialRules": [
+            "Small Arm"
+          ]
+        },
+        {
+          "name": "SAE 2-lber AA Gun",
+          "ammo": 2,
+          "target": "All",
+          "range": 36,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 5
+          },
+          "strength": {
+            "normal": 5,
+            "halfRange": 7
+          },
+          "dice": 2,
+          "specialRules": [
+            "No CC (Inf.)",
+            "Radar Anti-Air",
+            "Tracking",
+            "Turret"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hexamer",
+      "name": "HEXAMER",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 10,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 16,
+        "movement": 6,
+        "quality": 2,
+        "toughness": {
+          "front": 4,
+          "side": 4,
+          "rear": 3
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Tow (2)"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "MhL-42 .305 MG",
+          "ammo": null,
+          "target": "All",
+          "range": 12,
+          "accuracy": {
+            "stationary": 5,
+            "moving": 6
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 2,
+          "specialRules": [
+            "Multi-Gun"
+          ]
+        },
+        {
+          "name": "Sb.1 1-lber Gun",
+          "ammo": 4,
+          "target": "Vec",
+          "range": 20,
+          "shotTypes": [
+            {
+              "name": "1-lb. APDS",
+              "accuracy": {
+                "stationary": 4,
+                "moving": 6
+              },
+              "strength": {
+                "normal": 3,
+                "halfRange": 4
+              },
+              "dice": 1,
+              "specialRules": [
+                ""
+              ]
+            },
+            {
+              "name": "1-lb. SAPHE",
+              "target": "Inf/Vec",
+              "accuracy": {
+                "stationary": 4,
+                "moving": 6
+              },
+              "strength": {
+                "normal": "1+",
+                "halfRange": 2
+              },
+              "dice": 1,
+              "specialRules": [
+                "Ignore Cover (1)",
+                "No CC (Inf.)"
+              ]
+            },
+            {
+              "name": "1-lb. Smoke",
+              "target": "Gnd",
+              "accuracy": {
+                "stationary": "++",
+                "moving": "++"
+              },
+              "strength": 0,
+              "dice": 1,
+              "specialRules": [
+                "No CC",
+                "Smoke (2\")"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vc.2-veldjen",
+      "name": "VC.2 VELDJEN",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 20,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 6,
+        "quality": 3,
+        "toughness": {
+          "front": 8,
+          "side": 6,
+          "rear": 5
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Tow (2)"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "MhL-42 .305 MG",
+          "ammo": null,
+          "target": "All",
+          "range": 12,
+          "accuracy": {
+            "stationary": 5,
+            "moving": 6
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 2,
+          "specialRules": [
+            "Turret"
+          ]
+        },
+        {
+          "name": "MhL-60 .50 HMG",
+          "ammo": null,
+          "target": "All",
+          "range": 20,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 5
+          },
+          "strength": {
+            "normal": 2,
+            "halfRange": 3
+          },
+          "dice": 2,
+          "specialRules": [
+            "Multi-Gun"
+          ]
+        },
+        {
+          "name": "14-lber Gun, various make",
+          "ammo": 6,
+          "target": "Vec",
+          "range": 32,
+          "shotTypes": [
+            {
+              "name": "14-lb. APHE",
+              "accuracy": {
+                "stationary": 4,
+                "moving": 6
+              },
+              "strength": {
+                "normal": 8,
+                "halfRange": 12
+              },
+              "dice": 1,
+              "specialRules": [
+                "Turret",
+                "No CC (Inf.)"
+              ]
+            },
+            {
+              "name": "14-lb. HESH",
+              "target": "Inf/Vec",
+              "accuracy": {
+                "stationary": 4,
+                "moving": 6
+              },
+              "strength": {
+                "normal": 7,
+                "halfRange": 2
+              },
+              "dice": 1,
+              "specialRules": [
+                "Turret",
+                "No CC (Inf.)",
+                "Shaped Charge"
+              ]
+            },
+            {
+              "name": "14-lb. Smoke",
+              "target": "Gnd",
+              "accuracy": {
+                "stationary": "++",
+                "moving": "++"
+              },
+              "strength": 0,
+              "dice": 1,
+              "specialRules": [
+                "Turret",
+                "No CC",
+                "Smoke (3\")"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vc.44r-whirlwind",
+      "name": "VC.44R WHIRLWIND",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 35,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 10,
+        "quality": 2,
+        "toughness": {
+          "front": 12,
+          "side": 6,
+          "rear": 5
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Tow (2)"
+        }
+      ],
+      "unitAbility": "This unit pays an additional 1\" when rotating left. When rotating right, the rotation is free up to 180 degrees.",
+      "weapons": [
+        {
+          "name": "MhL-42 .305 MG",
+          "ammo": null,
+          "target": "All",
+          "range": 12,
+          "accuracy": {
+            "stationary": 5,
+            "moving": 6
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 2,
+          "specialRules": [
+            "Turret"
+          ]
+        },
+        {
+          "name": "24-lber Gun, local manufacture",
+          "ammo": 4,
+          "target": "Vec",
+          "range": 40,
+          "shotTypes": [
+            {
+              "name": "24-lb. APDS",
+              "accuracy": {
+                "stationary": 3,
+                "moving": 4
+              },
+              "strength": {
+                "normal": 12,
+                "halfRange": 18
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Turret"
+              ]
+            },
+            {
+              "name": "24-lb. HESH",
+              "target": "Inf/Vec",
+              "accuracy": {
+                "stationary": 3,
+                "moving": 4
+              },
+              "strength": {
+                "normal": 8,
+                "halfRange": 3
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Turret",
+                "Shaped Charge"
+              ]
+            },
+            {
+              "name": "24-lb. WP Smoke",
+              "target": "Gnd",
+              "accuracy": {
+                "stationary": 3,
+                "moving": 4
+              },
+              "strength": {
+                "normal": "1+",
+                "halfRange": "1+"
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Turret",
+                "Ignore Cover (2)",
+                "Smoke (3\")",
+                "Rear Attack"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ve.378-cataphract",
+      "name": "VE.378 CATAPHRACT",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 40,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 6,
+        "quality": 2,
+        "toughness": {
+          "front": 16,
+          "side": 10,
+          "rear": 6
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "NBC"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "MhL-60 .50 HMG",
+          "ammo": null,
+          "target": "All",
+          "range": 20,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 6
+          },
+          "strength": {
+            "normal": 2,
+            "halfRange": 3
+          },
+          "dice": 2,
+          "specialRules": [
+            "Turret"
+          ]
+        },
+        {
+          "name": "Sb.1 1-lber Gun",
+          "ammo": 3,
+          "target": "Vec",
+          "range": 20,
+          "shotTypes": [
+            {
+              "name": "1-lb. APDS",
+              "accuracy": {
+                "stationary": 4,
+                "moving": 6
+              },
+              "strength": {
+                "normal": 3,
+                "halfRange": 4
+              },
+              "dice": 1,
+              "specialRules": [
+                "Multi-Gun",
+                "No CC (Inf.)",
+                "Turret"
+              ]
+            },
+            {
+              "name": "1-lb. SAPHE",
+              "target": "Inf/Vec",
+              "accuracy": {
+                "stationary": 4,
+                "moving": 6
+              },
+              "strength": {
+                "normal": "1+",
+                "halfRange": 2
+              },
+              "dice": 1,
+              "specialRules": [
+                "Multi-Gun",
+                "No CC (Inf.)",
+                "Turret",
+                "Ignore Cover (1)"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Sb.92 55-lber Gun",
+          "ammo": 4,
+          "target": "Vec",
+          "range": 40,
+          "shotTypes": [
+            {
+              "name": "55-lb. APDS",
+              "accuracy": {
+                "stationary": 2,
+                "moving": 5
+              },
+              "strength": {
+                "normal": 14,
+                "halfRange": 21
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Thermal Sights",
+                "Turret"
+              ]
+            },
+            {
+              "name": "55-lb. HESH",
+              "target": "Inf/Vec",
+              "accuracy": {
+                "stationary": 3,
+                "moving": 5
+              },
+              "strength": {
+                "normal": 9,
+                "halfRange": 4
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Thermal Sights",
+                "Turret",
+                "Shaped Charge"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vauban",
+      "name": "VAUBAN",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 60,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 6,
+        "quality": 4,
+        "toughness": {
+          "front": 6,
+          "side": 6,
+          "rear": 4
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Leviathan (3)"
+        },
+        {
+          "name": "NBC"
+        }
+      ],
+      "unitAbility": "If the CWIS has not been destroyed this unit gains APS(6+, Infinite). This APS has infinite ammo but may only trigger once per round and only against Guided Missiles.",
+      "weapons": [
+        {
+          "name": "GAP-61 .61 CWIS",
+          "ammo": null,
+          "target": "All",
+          "range": 24,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 3,
+            "halfRange": 4
+          },
+          "dice": 3,
+          "specialRules": [
+            "Multi-Gun",
+            "Radar Anti-Air",
+            "Tracking",
+            "Turret"
+          ]
+        },
+        {
+          "name": "SAP 14-lber Naval Gun",
+          "ammo": 4,
+          "target": "Vec",
+          "range": 40,
+          "shotTypes": [
+            {
+              "name": "14-lb. APHE",
+              "accuracy": {
+                "stationary": 4,
+                "moving": 4
+              },
+              "strength": {
+                "normal": 8,
+                "halfRange": 12
+              },
+              "dice": 2,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Radar Anti-Air",
+                "Tracking",
+                "Turret"
+              ]
+            },
+            {
+              "name": "14-lb. Proximity Fuze HE",
+              "target": "All",
+              "accuracy": {
+                "stationary": 4,
+                "moving": 4
+              },
+              "strength": {
+                "normal": 3,
+                "halfRange": 3
+              },
+              "dice": 2,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Radar Anti-Air",
+                "Tracking",
+                "Turret",
+                "Air-Filling"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "VIM-4 \"Copa\" 90-lber VLS Missiles",
+          "ammo": 4,
+          "target": "Vec/Air",
+          "range": 60,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 8,
+            "halfRange": 8
+          },
+          "dice": 1,
+          "specialRules": [
+            "Air-Filling",
+            "Guided Missile (2)",
+            "Radar Anti-Air",
+            "Turret"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "field-gun",
+      "name": "FIELD GUN",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 10,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 32,
+        "movement": 3,
+        "quality": 2,
+        "toughness": {
+          "front": 2,
+          "side": 1,
+          "rear": 1
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "NBC"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Bolt Action Rifle, various make & caliber",
+          "ammo": null,
+          "target": "All",
+          "range": 10,
+          "accuracy": {
+            "stationary": 5,
+            "moving": 5
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 1,
+          "specialRules": [
+            "Small Arm"
+          ]
+        },
+        {
+          "name": "Field Gun, various make & caliber",
+          "ammo": 4,
+          "target": "Inf/Vec",
+          "range": 40,
+          "shotTypes": [
+            {
+              "name": "HESH, variable weight",
+              "accuracy": {
+                "stationary": 4,
+                "moving": "xx"
+              },
+              "strength": {
+                "normal": 9,
+                "halfRange": 4
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC",
+                "Shaped Charge"
+              ]
+            },
+            {
+              "name": "Gas, variable composition & weight",
+              "target": "Gnd",
+              "accuracy": {
+                "stationary": "++",
+                "moving": "xx"
+              },
+              "strength": 0,
+              "dice": 1,
+              "specialRules": [
+                "No CC",
+                "Chemical Weapon (4\")"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sb.15-1-lber-pom-pom",
+      "name": "SB.15 1-LBER POM-POM",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 10,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 32,
+        "movement": 3,
+        "quality": 2,
+        "toughness": {
+          "front": 2,
+          "side": 1,
+          "rear": 1
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "NBC"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Bolt Action Rifle, various make & caliber",
+          "ammo": null,
+          "target": "All",
+          "range": 10,
+          "accuracy": {
+            "stationary": 5,
+            "moving": 5
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 1,
+          "specialRules": [
+            "Small Arm"
+          ]
+        },
+        {
+          "name": "Sb.15 1-lber Autocannon",
+          "ammo": 4,
+          "target": "All",
+          "range": 32,
+          "accuracy": {
+            "stationary": 4,
+            "moving": "xx"
+          },
+          "strength": {
+            "normal": 4,
+            "halfRange": 6
+          },
+          "dice": 2,
+          "specialRules": [
+            "Tracking",
+            "Turret",
+            "No CC"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cb.61-galgo",
+      "name": "CB.61 GALGO",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 15,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 10,
+        "quality": 3,
+        "toughness": {
+          "front": 4,
+          "side": 3,
+          "rear": 2
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Paradrop"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "MhL-77 .61 HMG",
+          "ammo": null,
+          "target": "All",
+          "range": 24,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 5
+          },
+          "strength": {
+            "normal": 3,
+            "halfRange": 4
+          },
+          "dice": 2,
+          "specialRules": [
+            "Turret"
+          ]
+        },
+        {
+          "name": "No.20 4-lb. Smoke Launchers",
+          "ammo": 1,
+          "target": "Gnd",
+          "range": 0,
+          "accuracy": {
+            "stationary": "++",
+            "moving": "++"
+          },
+          "strength": 0,
+          "dice": 1,
+          "specialRules": [
+            "Light Indirect (0)",
+            "No CC",
+            "Smoke (2\")",
+            "Turret"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sb.18-22-lber-retumbo",
+      "name": "SB.18 22-LBER RETUMBO",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 20,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 2,
+        "quality": 2,
+        "toughness": {
+          "front": 2,
+          "side": 1,
+          "rear": 1
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "NBC"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Bolt Action Rifle, various make & caliber",
+          "ammo": null,
+          "target": "All",
+          "range": 10,
+          "accuracy": {
+            "stationary": 5,
+            "moving": 5
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 1,
+          "specialRules": [
+            "Small Arm"
+          ]
+        },
+        {
+          "name": "Sb.18 22-lber Anti-Aircraft Gun",
+          "ammo": 4,
+          "target": "Vec",
+          "range": 40,
+          "shotTypes": [
+            {
+              "name": "22-lb. AP",
+              "accuracy": {
+                "stationary": 3,
+                "moving": "xx"
+              },
+              "strength": {
+                "normal": 8,
+                "halfRange": 12
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC",
+                "Radar Anti-Air",
+                "Tracking (Flak)",
+                "Turret"
+              ]
+            },
+            {
+              "name": "22-lb. Timed Fuze HE",
+              "target": "All",
+              "accuracy": {
+                "stationary": 4,
+                "moving": "xx"
+              },
+              "strength": {
+                "normal": 3,
+                "halfRange": 3
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC",
+                "Radar Anti-Air",
+                "Tracking (Flak)",
+                "Turret",
+                "Air-Filling"
+              ]
+            },
+            {
+              "name": "22-lb. Frag",
+              "target": "Gnd",
+              "range": null,
+              "accuracy": {
+                "stationary": 4,
+                "moving": "xx"
+              },
+              "strength": "[D3]",
+              "dice": 2,
+              "specialRules": [
+                "No CC",
+                "Radar Anti-Air",
+                "Tracking (Flak)",
+                "Turret",
+                "Air-Filling",
+                "Heavy Indirect (3)",
+                "Radius (2\")"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "osm-mogul",
+      "name": "OSM MOGUL",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 40,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 6,
+        "quality": 2,
+        "toughness": {
+          "front": 18,
+          "side": 12,
+          "rear": 8
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Tow (2)"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "MhL-42 .305 MG",
+          "ammo": null,
+          "target": "All",
+          "range": 12,
+          "accuracy": {
+            "stationary": 5,
+            "moving": 6
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 2,
+          "specialRules": [
+            "Turret"
+          ]
+        },
+        {
+          "name": "S-10 250-lber Siege Gun",
+          "ammo": 3,
+          "target": "Inf/Vec",
+          "range": 40,
+          "shotTypes": [
+            {
+              "name": "250-lb. HE",
+              "accuracy": {
+                "stationary": 3,
+                "moving": 4
+              },
+              "strength": {
+                "normal": 8,
+                "halfRange": 8
+              },
+              "dice": 1,
+              "specialRules": [
+                "Ignore Cover (1)",
+                "No CC (Inf.)"
+              ]
+            },
+            {
+              "name": "250-lb. Phosgene Gas",
+              "target": "Gnd",
+              "range": null,
+              "accuracy": {
+                "stationary": "++",
+                "moving": "++"
+              },
+              "strength": 0,
+              "dice": 2,
+              "specialRules": [
+                "Chemical Weapon (4\")",
+                "Heavy Indirect (3)",
+                "No CC"
+              ]
+            },
+            {
+              "name": "250-lb. WP Smoke",
+              "target": "Gnd",
+              "range": null,
+              "accuracy": {
+                "stationary": 4,
+                "moving": 5
+              },
+              "strength": {
+                "normal": "1+",
+                "halfRange": "1+"
+              },
+              "dice": 2,
+              "specialRules": [
+                "Air-Filling",
+                "Heavy Indirect (3)",
+                "Ignore Cover (2)",
+                "No CC",
+                "Smoke (4\")",
+                "Rear Attack"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ldal-pietro",
+      "name": "LDAL PIETRO",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 10,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 16,
+        "movement": 8,
+        "quality": 1,
+        "toughness": {
+          "front": 5,
+          "side": 4,
+          "rear": "1+"
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "PC (8, Front)"
+        },
+        {
+          "name": "NBC"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Sb.1 1-lber Dual Guns",
+          "ammo": 6,
+          "target": "Vec",
+          "range": 20,
+          "shotTypes": [
+            {
+              "name": "1-lb. APDS",
+              "accuracy": {
+                "stationary": 4,
+                "moving": 6
+              },
+              "strength": {
+                "normal": 3,
+                "halfRange": 4
+              },
+              "dice": 1,
+              "specialRules": [
+                "Barrage (2)",
+                "Turret"
+              ]
+            },
+            {
+              "name": "1-lb. SAPHE",
+              "target": "Inf/Vec",
+              "accuracy": {
+                "stationary": 4,
+                "moving": 6
+              },
+              "strength": {
+                "normal": "1+",
+                "halfRange": 2
+              },
+              "dice": 1,
+              "specialRules": [
+                "Barrage (2)",
+                "Turret",
+                "Ignore Cover (1)",
+                "No CC (Inf.)"
+              ]
+            },
+            {
+              "name": "1-lb. Smoke",
+              "target": "Gnd",
+              "accuracy": {
+                "stationary": "++",
+                "moving": "++"
+              },
+              "strength": 0,
+              "dice": 1,
+              "specialRules": [
+                "Barrage (2)",
+                "Turret",
+                "No CC",
+                "Smoke (2\")"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "peg.60-11-squire",
+      "name": "PEG.60-11 SQUIRE",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 20,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 32,
+        "quality": 3,
+        "toughness": {
+          "front": "1+",
+          "side": "1+",
+          "rear": "1+"
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "PC (2, Rear)"
+        },
+        {
+          "name": "NBC"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "MhL-42 .305 MG",
+          "ammo": null,
+          "target": "All",
+          "range": 12,
+          "accuracy": {
+            "stationary": 5,
+            "moving": 6
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 2,
+          "specialRules": [
+            "Turret"
+          ]
+        },
+        {
+          "name": "Lerna 15-lber Rocket Pod",
+          "ammo": 1,
+          "target": "Inf/Vec",
+          "range": 22,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 5
+          },
+          "strength": {
+            "normal": 4,
+            "halfRange": 4
+          },
+          "dice": 4,
+          "specialRules": [
+            "No CC (Inf.)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "peg.80-01a-sambuca",
+      "name": "PEG.80-01A SAMBUCA",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 25,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 24,
+        "quality": 3,
+        "toughness": {
+          "front": 3,
+          "side": 3,
+          "rear": 3
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Chaff-Flares (1)"
+        },
+        {
+          "name": "PC (6, Rear)"
+        },
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Tow (2)"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "MhL-60 .50 HMG",
+          "ammo": null,
+          "target": "All",
+          "range": 20,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 5
+          },
+          "strength": {
+            "normal": 2,
+            "halfRange": 3
+          },
+          "dice": 2,
+          "specialRules": [
+            "Door Gun (sides, Rear)"
+          ]
+        },
+        {
+          "name": "Lerna 15-lber Rocket Pod",
+          "ammo": 1,
+          "target": "Inf/Vec",
+          "range": 22,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 5
+          },
+          "strength": {
+            "normal": 4,
+            "halfRange": 4
+          },
+          "dice": 4,
+          "specialRules": [
+            "No CC (Inf.)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "peg.123-00-knight-errant",
+      "name": "PEG.123-00 KNIGHT-ERRANT",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 30,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 32,
+        "movement": 36,
+        "quality": 3,
+        "toughness": {
+          "front": 2,
+          "side": 1,
+          "rear": 1
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Chaff-Flares (2)"
+        },
+        {
+          "name": "NBC"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "SOAA Target Designator",
+          "ammo": null,
+          "target": "All",
+          "range": 40,
+          "accuracy": {
+            "stationary": "++",
+            "moving": "++"
+          },
+          "strength": 0,
+          "dice": 1,
+          "specialRules": [
+            "Discreet",
+            "Designator"
+          ]
+        },
+        {
+          "name": "Chilon 30-lber High-Velocity Missile",
+          "ammo": 4,
+          "target": "Vec",
+          "range": 60,
+          "shotTypes": [
+            {
+              "name": "Air-to-Ground Targeting",
+              "accuracy": {
+                "stationary": 3,
+                "moving": 3
+              },
+              "strength": {
+                "normal": 8,
+                "halfRange": 5
+              },
+              "dice": 1,
+              "specialRules": [
+                "Guided Missile (1)"
+              ]
+            },
+            {
+              "name": "Air-to-Air Targeting",
+              "target": "Air",
+              "accuracy": {
+                "stationary": 4,
+                "moving": 4
+              },
+              "strength": {
+                "normal": 8,
+                "halfRange": 5
+              },
+              "dice": 1,
+              "specialRules": [
+                "Guided Missile (1)"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uni.28-05-conquistador",
+      "name": "UNI.28-05 CONQUISTADOR",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 40,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 24,
+        "quality": 3,
+        "toughness": {
+          "front": 3,
+          "side": 3,
+          "rear": 3
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Leviathan (2)"
+        },
+        {
+          "name": "NBC"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Sb.38 20mm Autocannon",
+          "ammo": 4,
+          "target": "All",
+          "range": 32,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 4,
+            "halfRange": 6
+          },
+          "dice": 2,
+          "specialRules": [
+            ""
+          ]
+        },
+        {
+          "name": "Sarvara 46-lber Dual Rocket Pods",
+          "ammo": 2,
+          "target": "Inf/Vec",
+          "range": 24,
+          "accuracy": {
+            "stationary": 6,
+            "moving": 5
+          },
+          "strength": {
+            "normal": 10,
+            "halfRange": 2
+          },
+          "dice": 2,
+          "specialRules": [
+            "Barrage (2)",
+            "Shaped Charge",
+            "Strafing"
+          ]
+        },
+        {
+          "name": "Lerna 15-lber Dual Rocket Pods",
+          "ammo": 2,
+          "target": "Inf/Vec",
+          "range": 22,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 5
+          },
+          "strength": {
+            "normal": 4,
+            "halfRange": 4
+          },
+          "dice": 4,
+          "specialRules": [
+            "No CC (Inf.)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uni.28-03-man-at-arms",
+      "name": "UNI.28-03 MAN-AT-ARMS",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 50,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 24,
+        "quality": 4,
+        "toughness": {
+          "front": 4,
+          "side": 3,
+          "rear": 3
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Leviathan (2)"
+        },
+        {
+          "name": "NBC"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Allant 1.8-lber Rotary Cannon",
+          "ammo": 3,
+          "target": "All",
+          "range": 32,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 4,
+            "halfRange": 6
+          },
+          "dice": 3,
+          "specialRules": [
+            ""
+          ]
+        },
+        {
+          "name": "9GR1M 125mm ATGM",
+          "ammo": 4,
+          "target": "Vec",
+          "range": 60,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 16,
+            "halfRange": 3
+          },
+          "dice": 1,
+          "specialRules": [
+            "Guided Missile (2)",
+            "Shaped Charge"
+          ]
+        },
+        {
+          "name": "Lerna 15-lber Dual Rocket Pods",
+          "ammo": 2,
+          "target": "Inf/Vec",
+          "range": 22,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 5
+          },
+          "strength": {
+            "normal": 4,
+            "halfRange": 4
+          },
+          "dice": 4,
+          "specialRules": [
+            "No CC (Inf.)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uni.28-08-lancer",
+      "name": "UNI.28-08 LANCER",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 60,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 24,
+        "quality": 4,
+        "toughness": {
+          "front": 4,
+          "side": 4,
+          "rear": 3
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Leviathan (2)"
+        },
+        {
+          "name": "NBC"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "SDV 6-lber High-Velocity Autocannon",
+          "ammo": 3,
+          "target": "Air",
+          "range": 40,
+          "shotTypes": [
+            {
+              "name": "Air-to-Air Targeting",
+              "accuracy": {
+                "stationary": 5,
+                "moving": 5
+              },
+              "strength": {
+                "normal": 12,
+                "halfRange": 18
+              },
+              "dice": 2,
+              "specialRules": [
+                "Thermal Sights"
+              ]
+            },
+            {
+              "name": "Air-to-Ground Targeting",
+              "target": "Vec",
+              "accuracy": {
+                "stationary": 4,
+                "moving": 4
+              },
+              "strength": {
+                "normal": 12,
+                "halfRange": 18
+              },
+              "dice": 2,
+              "specialRules": [
+                "Thermal Sights"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Lerna 15-lber Dual Rocket Pod",
+          "ammo": 2,
+          "target": "Inf/Vec",
+          "range": 22,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 5
+          },
+          "strength": {
+            "normal": 4,
+            "halfRange": 4
+          },
+          "dice": 4,
+          "specialRules": [
+            "No CC (Inf.)"
+          ]
+        },
+        {
+          "name": "Silene 285-lber Dual WP Rocket Pod",
+          "ammo": 2,
+          "target": "Gnd",
+          "range": 28,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 4
+          },
+          "strength": {
+            "normal": "1+",
+            "halfRange": "1+"
+          },
+          "dice": 1,
+          "specialRules": [
+            "Barrage (2)",
+            "Ignore Cover (2)",
+            "Rear Attack",
+            "Smoke (4\")"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mc.17-86-spada-fresco",
+      "name": "MC.17-86 SPADA-FRESCO",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 20,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 0,
+        "movement": 16,
+        "quality": 3,
+        "toughness": 2,
+        "command": 2
+      },
+      "specialRules": [
+        {
+          "name": "Afterburner"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Sb.38 20mm Autocannons, dual",
+          "ammo": 3,
+          "target": "All",
+          "range": 8,
+          "accuracy": 3,
+          "strength": 4,
+          "dice": 2,
+          "specialRules": [
+            ""
+          ]
+        },
+        {
+          "name": "500-lber HE Bombs, various models",
+          "ammo": 2,
+          "target": "Gnd",
+          "range": 0,
+          "accuracy": 3,
+          "strength": 6,
+          "dice": 1,
+          "specialRules": [
+            "Air-Filling",
+            "Barrage (2)",
+            "Radius (3\")",
+            "Rear Attack"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mc.20-01c-rocinante",
+      "name": "MC.20-01C ROCINANTE",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 30,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 0,
+        "movement": 18,
+        "quality": 3,
+        "toughness": 3,
+        "command": 3
+      },
+      "specialRules": [
+        {
+          "name": "Afterburner"
+        },
+        {
+          "name": "Chaff-Flares (1)"
+        },
+        {
+          "name": "Flower of the Atom"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Allant 1.8-lber Rotary Cannon",
+          "ammo": 2,
+          "target": "All",
+          "range": 8,
+          "accuracy": 3,
+          "strength": 4,
+          "dice": 3,
+          "specialRules": [
+            ""
+          ]
+        },
+        {
+          "name": "Lerna 15-lber Dual Rocket Pods",
+          "ammo": 2,
+          "target": "Inf/Vec",
+          "range": 22,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 5
+          },
+          "strength": {
+            "normal": 4,
+            "halfRange": 4
+          },
+          "dice": 4,
+          "specialRules": [
+            "Barrage (2)"
+          ]
+        },
+        {
+          "name": "SUR-4 127mm Infrared AAM",
+          "ammo": 2,
+          "target": "Air",
+          "range": 24,
+          "accuracy": 3,
+          "strength": 6,
+          "dice": 1,
+          "specialRules": [
+            "Air-Filling",
+            "Guided Missile (1)",
+            "Homing"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dc/b.2k-jonquil",
+      "name": "DC/B.2K JONQUIL",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 30,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 0,
+        "movement": 14,
+        "quality": 3,
+        "toughness": 4,
+        "command": 1
+      },
+      "specialRules": [
+        {
+          "name": "Afterburner"
+        },
+        {
+          "name": "Flower of the Atom"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Rb.12 9-lber Air-to-Air Rockets",
+          "ammo": 2,
+          "target": "All",
+          "range": 6,
+          "accuracy": 4,
+          "strength": 3,
+          "dice": 3,
+          "specialRules": [
+            "Barrage (2)"
+          ]
+        },
+        {
+          "name": "Mf.59 60-lber Semi-Active AAM",
+          "ammo": 4,
+          "target": "Air",
+          "range": 50,
+          "accuracy": 3,
+          "strength": 8,
+          "dice": 1,
+          "specialRules": [
+            "Air-Filling",
+            "Guided Missile (1)",
+            "No CC"
+          ]
+        },
+        {
+          "name": "9GR3 275mm AGM",
+          "ammo": 3,
+          "target": "Vec",
+          "range": 60,
+          "accuracy": 2,
+          "strength": {
+            "normal": 24,
+            "halfRange": 8
+          },
+          "dice": 1,
+          "specialRules": [
+            "Guided Missile (2)",
+            "MCLOS",
+            "Shaped Charge"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dc.4e-bavieca",
+      "name": "DC.4E BAVIECA",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 40,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 0,
+        "movement": 20,
+        "quality": 4,
+        "toughness": 3,
+        "command": 2
+      },
+      "specialRules": [
+        {
+          "name": "Afterburner"
+        },
+        {
+          "name": "Chaff-Flares (2)"
+        },
+        {
+          "name": "Flower of the Atom"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "Allant 1.8-lber Rotary Cannon, modified",
+          "ammo": 2,
+          "target": "All",
+          "range": 8,
+          "accuracy": 3,
+          "strength": 4,
+          "dice": 4,
+          "specialRules": [
+            ""
+          ]
+        },
+        {
+          "name": "Breakspear 60-lber Semi-Active AAM",
+          "ammo": 4,
+          "target": "Air",
+          "range": 60,
+          "accuracy": 3,
+          "strength": 8,
+          "dice": 1,
+          "specialRules": [
+            "Air-Filling",
+            "Guided Missile (1)",
+            "No CC"
+          ]
+        },
+        {
+          "name": "SUR-4 127mm IR AAM, modified",
+          "ammo": 4,
+          "target": "Vec/Air",
+          "range": 30,
+          "accuracy": 3,
+          "strength": 6,
+          "dice": 1,
+          "specialRules": [
+            "Air-Filling",
+            "Barrage (2)",
+            "Guided Missile (1)",
+            "Homing"
+          ]
+        }
+      ]
+    }
+  ]
+}

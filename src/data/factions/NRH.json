@@ -1,0 +1,3149 @@
+{
+  "faction": {
+    "id": "nrh",
+    "name": "New Rygolic Host",
+    "description": "The New Rygolic Host (N.R.H.) operates autonomously: a stateless, headless army safeguarding the Petty States as a whole from foreign invasion. All N.R.H. troops are connected to 'Rygonet', an advanced command system distributing its computations across its soldiers' brains, relying on superhuman coordination and highly advanced weapons to offset its numeric disadvantage with precision firepower.",
+    "version": "FM 100-1-8X v0.9.6",
+    "specialRules": [
+      {
+        "name": "Active Camouflage",
+        "description": "Rygolic stealth units are fitted with advanced camouflage systems capable of variously concealing them on the visible, IR and EM spectrums. This unit cannot be spotted from more than 6\" away regardless of terrain."
+      },
+      {
+        "name": "Drone",
+        "description": "Rygo light support units are often fully autonomous, as unshakable as they are inflexible. This unit's quality is marked Q*, indicating that it is unaffected by pin."
+      },
+      {
+        "name": "Guided Shell",
+        "description": "Rygolic ordnance is precision-guided and designed to minimize collateral while maximizing damage. This weapon gains an Ignore Cover (X) value where X equals the number of friendly units currently spotting the unit."
+      },
+      {
+        "name": "Hovercraft",
+        "description": "Tracked IFVs have been supplanted by air-cushioned craft in N.R.H. service: the best of all worlds. This vehicle is marked Vec (H). It never pays movement to enter or exit terrain and ignores swamp's terrain multiplier."
+      },
+      {
+        "name": "Laser",
+        "description": "Federal R&D has yet to fully understand Rygo directed energy weapons. This weapon always rolls a minimum of 6+ to kill regardless of the target's Toughness."
+      },
+      {
+        "name": "Round Extruder",
+        "description": "Advanced Rygolic vehicles can carry hundreds of large-bore rounds: stockpiling kinetic penetrators or collapsible warheads and propellant sleeves. This weapon can use a fire action to reload one Ammo for itself instead of shooting in the Fire Phase."
+      },
+      {
+        "name": "Rygonet (X\")",
+        "description": "Rygonet is a distributed intelligence: using a sliver of each construct's brainpower to delegate orders. Any friendly Rygolic unit within X\" of this unit is eligible to lend its action to any other Rygo unit in that same radius."
+      },
+      {
+        "name": "Strider",
+        "description": "Biological legs grant Rygolic light armor all-terrain mobility and the ability to crouch behind cover. This vehicle is marked Vec (S) and considered infantry for movement purposes."
+      }
+    ]
+  },
+  "units": [
+    {
+      "id": "node-team",
+      "name": "NODE TEAM",
+      "category": "TACOMS",
+      "descriptiveCategory": "",
+      "points": 0,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 24,
+        "movement": 5,
+        "quality": 3,
+        "toughness": {
+          "front": "1+",
+          "side": 1,
+          "rear": 1
+        },
+        "command": 2
+      },
+      "specialRules": [
+        {
+          "name": "TACOM"
+        },
+        {
+          "name": "Fearless"
+        },
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Rygonet (12\")"
+        },
+        {
+          "name": "Brigade (2, 12\")"
+        }
+      ],
+      "unitAbility": "One Node Team comes free per 100 points as a standard TACOM. Further Node Teams may be purchased for 20 points each at no limit.",
+      "weapons": [
+        {
+          "name": "\"Snake Green\" 5mm Assault Rifle",
+          "ammo": null,
+          "target": "All",
+          "range": 8,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": 1
+          },
+          "dice": 2,
+          "specialRules": [
+            "Small Arm",
+            "Thermal Sights"
+          ]
+        },
+        {
+          "name": "\"Tread Curve\" 20mm Grenade Launcher",
+          "ammo": 3,
+          "target": "Vec",
+          "range": 8,
+          "shotTypes": [
+            {
+              "name": "",
+              "accuracy": "*",
+              "strength": {
+                "normal": 3,
+                "halfRange": 4
+              },
+              "dice": 1,
+              "specialRules": [
+                "Underbarrel (Snake Green)"
+              ]
+            },
+            {
+              "name": "",
+              "target": "Inf/Vec",
+              "accuracy": "*",
+              "strength": {
+                "normal": "1+",
+                "halfRange": "1+"
+              },
+              "dice": 1,
+              "specialRules": [
+                "Underbarrel (Snake Green)",
+                "Ignore Cover (1)"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "node-team-(additional)",
+      "name": "NODE TEAM (ADDITIONAL)",
+      "category": "TACOMS",
+      "descriptiveCategory": "",
+      "points": 20,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 24,
+        "movement": 5,
+        "quality": 3,
+        "toughness": {
+          "front": "1+",
+          "side": 1,
+          "rear": 1
+        },
+        "command": 2
+      },
+      "specialRules": [
+        {
+          "name": "TACOM (Additional)"
+        },
+        {
+          "name": "Fearless"
+        },
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Rygonet (12\")"
+        },
+        {
+          "name": "Brigade (2, 12\")"
+        }
+      ],
+      "unitAbility": "One Node Team comes free per 100 points as a standard TACOM. Further Node Teams may be purchased for 20 points each at no limit.",
+      "weapons": [
+        {
+          "name": "\"Snake Green\" 5mm Assault Rifle",
+          "ammo": null,
+          "target": "All",
+          "range": 8,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": 1
+          },
+          "dice": 2,
+          "specialRules": [
+            "Small Arm",
+            "Thermal Sights"
+          ]
+        },
+        {
+          "name": "\"Tread Curve\" 20mm Grenade Launcher",
+          "ammo": 3,
+          "target": "Vec",
+          "range": 8,
+          "shotTypes": [
+            {
+              "name": "",
+              "accuracy": "*",
+              "strength": {
+                "normal": 3,
+                "halfRange": 4
+              },
+              "dice": 1,
+              "specialRules": [
+                "Underbarrel (Snake Green)"
+              ]
+            },
+            {
+              "name": "",
+              "target": "Inf/Vec",
+              "accuracy": "*",
+              "strength": {
+                "normal": "1+",
+                "halfRange": "1+"
+              },
+              "dice": 1,
+              "specialRules": [
+                "Underbarrel (Snake Green)",
+                "Ignore Cover (1)"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "g1-ganglion",
+      "name": "G1 GANGLION",
+      "category": "TACOMS",
+      "descriptiveCategory": "",
+      "points": 20,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 0,
+        "movement": 0,
+        "quality": 6,
+        "toughness": {
+          "front": 4,
+          "side": 4,
+          "rear": 4
+        },
+        "command": 6
+      },
+      "specialRules": [
+        {
+          "name": "TACOM"
+        },
+        {
+          "name": "Amphibious"
+        },
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Rygonet (24\")"
+        },
+        {
+          "name": "Brigade (4, 12\")"
+        }
+      ],
+      "unitAbility": "This unit may not lend actions to friendly units via Rygonet.",
+      "weapons": [
+        {
+          "name": "",
+          "ammo": null,
+          "target": "",
+          "range": 0,
+          "accuracy": 4,
+          "strength": 0,
+          "dice": 0,
+          "specialRules": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3-stoma",
+      "name": "S3 STOMA",
+      "category": "TACOMS",
+      "descriptiveCategory": "",
+      "points": 30,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 8,
+        "quality": 3,
+        "toughness": {
+          "front": 6,
+          "side": 6,
+          "rear": 5
+        },
+        "command": 4
+      },
+      "specialRules": [
+        {
+          "name": "TACOM"
+        },
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Rygonet (12\")"
+        },
+        {
+          "name": "Brigade (4,8\")"
+        }
+      ],
+      "unitAbility": "When this unit activates in the Fire Phase, it may select one friendly Rygolic unit within Line of Sight up to 8\" away which has not already acted that round. The Stoma and the selected unit fire at the same target simultaneously. Units activated this way are treated as having already fired for the round.",
+      "weapons": [
+        {
+          "name": "\"Drift Bar\" 5mm Coaxial MG",
+          "ammo": null,
+          "target": "All",
+          "range": 12,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 3
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": 1
+          },
+          "dice": 2,
+          "specialRules": [
+            "Thermal Sights",
+            "Turret"
+          ]
+        },
+        {
+          "name": "\"Pitch Break\" 25mm Autocannon",
+          "ammo": 4,
+          "target": "All",
+          "range": 32,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 3
+          },
+          "strength": {
+            "normal": 4,
+            "halfRange": 6
+          },
+          "dice": 2,
+          "specialRules": [
+            "No CC (Inf.)",
+            "Thermal Sights",
+            "Tracking",
+            "Turret"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tactical-team",
+      "name": "TACTICAL TEAM",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 15,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 32,
+        "movement": 5,
+        "quality": 3,
+        "toughness": {
+          "front": "1+",
+          "side": 1,
+          "rear": 1
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Fearless"
+        },
+        {
+          "name": "NBC"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "\"Snake Green\" 5mm Assault Rifle",
+          "ammo": null,
+          "target": "All",
+          "range": 8,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": 1
+          },
+          "dice": 2,
+          "specialRules": [
+            "Small Arm",
+            "Thermal Sights"
+          ]
+        },
+        {
+          "name": "\"Tread Curve\" 20mm Grenade Launcher",
+          "ammo": 3,
+          "target": "Vec",
+          "range": 8,
+          "shotTypes": [
+            {
+              "name": "",
+              "accuracy": "*",
+              "strength": {
+                "normal": 3,
+                "halfRange": 4
+              },
+              "dice": 1,
+              "specialRules": [
+                "Underbarrel (Snake Green)"
+              ]
+            },
+            {
+              "name": "",
+              "target": "Inf/Vec",
+              "accuracy": "*",
+              "strength": {
+                "normal": "1+",
+                "halfRange": "1+"
+              },
+              "dice": 1,
+              "specialRules": [
+                "Underbarrel (Snake Green)",
+                "Ignore Cover (1)"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "\"Side Fast\" 140mm ATGM",
+          "ammo": 1,
+          "target": "Vec",
+          "range": 30,
+          "accuracy": {
+            "stationary": 3,
+            "moving": "xx"
+          },
+          "strength": {
+            "normal": 14,
+            "halfRange": 2
+          },
+          "dice": 1,
+          "specialRules": [
+            "Guided Missile (1)",
+            "Shaped Charge",
+            "Thermal Sights"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "legionnaires",
+      "name": "LEGIONNAIRES",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 25,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 32,
+        "movement": 5,
+        "quality": 3,
+        "toughness": {
+          "front": "1+",
+          "side": 1,
+          "rear": 1
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Fearless"
+        },
+        {
+          "name": "NBC"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "\"Snake Green\" 5mm Assault Rifle",
+          "ammo": null,
+          "target": "All",
+          "range": 8,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": 1
+          },
+          "dice": 2,
+          "specialRules": [
+            "Small Arm",
+            "Thermal Sights"
+          ]
+        },
+        {
+          "name": "\"Tread Curve\" 20mm Grenade Launcher",
+          "ammo": 3,
+          "target": "Vec",
+          "range": 8,
+          "shotTypes": [
+            {
+              "name": "",
+              "accuracy": "*",
+              "strength": {
+                "normal": 3,
+                "halfRange": 4
+              },
+              "dice": 1,
+              "specialRules": [
+                "Underbarrel (Snake Green)"
+              ]
+            },
+            {
+              "name": "",
+              "target": "Inf/Vec",
+              "accuracy": "*",
+              "strength": {
+                "normal": "1+",
+                "halfRange": "1+"
+              },
+              "dice": 1,
+              "specialRules": [
+                "Underbarrel (Snake Green)",
+                "Ignore Cover (1)"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "\"Side Fast\" 140mm ATGM",
+          "ammo": 3,
+          "target": "Vec",
+          "range": 30,
+          "accuracy": {
+            "stationary": 3,
+            "moving": "xx"
+          },
+          "strength": {
+            "normal": 14,
+            "halfRange": 2
+          },
+          "dice": 1,
+          "specialRules": [
+            "Guided Missile (1)",
+            "Shaped Charge",
+            "Thermal Sights"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "smartgun-team-team",
+      "name": "SMARTGUN TEAM TEAM",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 15,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 32,
+        "movement": 5,
+        "quality": 3,
+        "toughness": {
+          "front": "1+",
+          "side": 1,
+          "rear": 1
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Fearless"
+        },
+        {
+          "name": "NBC"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "\"Snake Green\" 5mm Assault Rifle",
+          "ammo": null,
+          "target": "All",
+          "range": 8,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": 1
+          },
+          "dice": 2,
+          "specialRules": [
+            "Small Arm",
+            "Thermal Sights"
+          ]
+        },
+        {
+          "name": "\"Drift Cage\" 5mm Stabilized SAW",
+          "ammo": null,
+          "target": "All",
+          "range": 16,
+          "accuracy": {
+            "stationary": 2,
+            "moving": 3
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": 1
+          },
+          "dice": 3,
+          "specialRules": [
+            "Scoped",
+            "Thermal Sights",
+            "Tracking",
+            "Turret"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "laser-team",
+      "name": "LASER TEAM",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 15,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 32,
+        "movement": 5,
+        "quality": 3,
+        "toughness": {
+          "front": "1+",
+          "side": 1,
+          "rear": 1
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Fearless"
+        },
+        {
+          "name": "NBC"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "\"Snake Green\" 5mm Assault Rifle",
+          "ammo": null,
+          "target": "All",
+          "range": 8,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": 1
+          },
+          "dice": 2,
+          "specialRules": [
+            "Small Arm",
+            "Thermal Sights"
+          ]
+        },
+        {
+          "name": "\"Sun Point\" 6kW Laser Weapon",
+          "ammo": null,
+          "target": "All",
+          "range": 40,
+          "accuracy": {
+            "stationary": 1,
+            "moving": "xx"
+          },
+          "strength": {
+            "normal": "1+",
+            "halfRange": "1+"
+          },
+          "dice": 1,
+          "specialRules": [
+            "Laser",
+            "Small Arm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "manpads-team",
+      "name": "MANPADS TEAM",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 20,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 32,
+        "movement": 5,
+        "quality": 3,
+        "toughness": {
+          "front": "1+",
+          "side": 1,
+          "rear": 1
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Fearless"
+        },
+        {
+          "name": "NBC"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "\"Snake Green\" 5mm Assault Rifle",
+          "ammo": null,
+          "target": "All",
+          "range": 8,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": 1
+          },
+          "dice": 2,
+          "specialRules": [
+            "Small Arm",
+            "Thermal Sights"
+          ]
+        },
+        {
+          "name": "\"Tread Curve\" 20mm Grenade Launcher",
+          "ammo": 3,
+          "target": "Vec",
+          "range": 8,
+          "shotTypes": [
+            {
+              "name": "",
+              "accuracy": "*",
+              "strength": {
+                "normal": 3,
+                "halfRange": 4
+              },
+              "dice": 1,
+              "specialRules": [
+                "Underbarrel (Snake Green)"
+              ]
+            },
+            {
+              "name": "",
+              "target": "Inf/Vec",
+              "accuracy": "*",
+              "strength": {
+                "normal": "1+",
+                "halfRange": "1+"
+              },
+              "dice": 1,
+              "specialRules": [
+                "Underbarrel (Snake Green)",
+                "Ignore Cover (1)"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "\"Pole Gaurd\" 70mm MANPADS",
+          "ammo": 2,
+          "target": "Air",
+          "range": 60,
+          "accuracy": {
+            "stationary": 3,
+            "moving": "xx"
+          },
+          "strength": {
+            "normal": 5,
+            "halfRange": 5
+          },
+          "dice": 1,
+          "specialRules": [
+            "Guided Missile (1)",
+            "Homing",
+            "Small Arm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chemical-team",
+      "name": "CHEMICAL TEAM",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 20,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 24,
+        "movement": 4,
+        "quality": 3,
+        "toughness": {
+          "front": "1+",
+          "side": "1+",
+          "rear": "1+"
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Fearless"
+        },
+        {
+          "name": "NBC"
+        }
+      ],
+      "unitAbility": "May always lose up to 3 pin during Upkeep, even when inside of Chemical Weapons.",
+      "weapons": [
+        {
+          "name": "\"Pike Jump\" 12-gauge Automatic Shotgun",
+          "ammo": null,
+          "target": "All",
+          "range": 6,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 4
+          },
+          "strength": {
+            "normal": "1-",
+            "halfRange": "1+"
+          },
+          "dice": 3,
+          "specialRules": [
+            "Ignore Cover (1)",
+            "Small Arm",
+            "Thermal Sights"
+          ]
+        },
+        {
+          "name": "\"Weave Liner\" 70mm Dual RPG",
+          "ammo": 6,
+          "target": "Inf/Vec",
+          "range": 10,
+          "shotTypes": [
+            {
+              "name": "70mm HEAT",
+              "accuracy": {
+                "stationary": 3,
+                "moving": 4
+              },
+              "strength": {
+                "normal": 7,
+                "halfRange": "1+"
+              },
+              "dice": 1,
+              "specialRules": [
+                "Barrage (2)",
+                "Small Arm",
+                "Thermal Sights",
+                "Shaped Charge"
+              ]
+            },
+            {
+              "name": "70mm Thermobaric",
+              "accuracy": {
+                "stationary": 3,
+                "moving": 4
+              },
+              "strength": {
+                "normal": 2,
+                "halfRange": 2
+              },
+              "dice": 1,
+              "specialRules": [
+                "Barrage (2)",
+                "Small Arm",
+                "Thermal Sights",
+                "Ignore Cover (2)",
+                "Rear Attack"
+              ]
+            },
+            {
+              "name": "70mm Nerve Agent",
+              "target": "Gnd",
+              "accuracy": {
+                "stationary": "++",
+                "moving": "++"
+              },
+              "strength": 0,
+              "dice": 1,
+              "specialRules": [
+                "Barrage (2)",
+                "Small Arm",
+                "Thermal Sights",
+                "Chemical Weapon (2\")"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guided-mortar-spider",
+      "name": "GUIDED MORTAR SPIDER",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 30,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 24,
+        "movement": 5,
+        "quality": 3,
+        "toughness": {
+          "front": "1+",
+          "side": 1,
+          "rear": 1
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Fearless"
+        },
+        {
+          "name": "NBC"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "\"Snake Green\" 5mm Assault Rifle",
+          "ammo": null,
+          "target": "All",
+          "range": 8,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": 1
+          },
+          "dice": 2,
+          "specialRules": [
+            "Small Arm",
+            "Thermal Sights"
+          ]
+        },
+        {
+          "name": "\"Trace Rung\" 80mm Guided Mortar",
+          "ammo": 4,
+          "target": "Inf/Vec",
+          "range": 40,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 4,
+            "halfRange": 4
+          },
+          "dice": 1,
+          "specialRules": [
+            "Guided Shell",
+            "Light Indirect (1)",
+            "No CC",
+            "Thermal Sights"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "carabiner-horse",
+      "name": "CARABINER HORSE",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 15,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 32,
+        "movement": 6,
+        "quality": 3,
+        "toughness": {
+          "front": 1,
+          "side": 1,
+          "rear": 1
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Fearless"
+        },
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Resupply (4)"
+        },
+        {
+          "name": "Tow (2)"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "\"Bronze Lead\" Laser Designator",
+          "ammo": null,
+          "target": "All",
+          "range": 40,
+          "accuracy": {
+            "stationary": "++",
+            "moving": "++"
+          },
+          "strength": 0,
+          "dice": 1,
+          "specialRules": [
+            "Designator",
+            "Discreet"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "capsule-squad",
+      "name": "CAPSULE SQUAD",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 25,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 24,
+        "movement": 5,
+        "quality": 3,
+        "toughness": {
+          "front": 1,
+          "side": 1,
+          "rear": 1
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Fearless"
+        },
+        {
+          "name": "NBC"
+        }
+      ],
+      "unitAbility": "Deploy this unit via a Capsule Insertion support mission during the Support Phase.",
+      "weapons": [
+        {
+          "name": "\"Snake Green\" 5mm Assault Rifle",
+          "ammo": null,
+          "target": "All",
+          "range": 8,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": 1
+          },
+          "dice": 2,
+          "specialRules": [
+            "Small Arm",
+            "Thermal Sights"
+          ]
+        },
+        {
+          "name": "\"Tread Curve\" 20mm Grenade Launcher",
+          "ammo": 3,
+          "target": "Vec",
+          "range": 8,
+          "shotTypes": [
+            {
+              "name": "",
+              "accuracy": "*",
+              "strength": {
+                "normal": 3,
+                "halfRange": 4
+              },
+              "dice": 1,
+              "specialRules": [
+                "Underbarrel (Snake Green)"
+              ]
+            },
+            {
+              "name": "",
+              "target": "Inf/Vec",
+              "accuracy": "*",
+              "strength": {
+                "normal": "1+",
+                "halfRange": "1+"
+              },
+              "dice": 1,
+              "specialRules": [
+                "Underbarrel (Snake Green)",
+                "Ignore Cover (1)"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assassin",
+      "name": "ASSASSIN",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 30,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 8,
+        "movement": 6,
+        "quality": 4,
+        "toughness": {
+          "front": 1,
+          "side": 1,
+          "rear": "1-"
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Active Camoflauge"
+        },
+        {
+          "name": "Assault Specialist"
+        },
+        {
+          "name": "Fearless"
+        },
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Sense (8\")"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "\"Frame Staff\" 10mm SMG, dual",
+          "ammo": null,
+          "target": "All",
+          "range": 8,
+          "accuracy": {
+            "stationary": 2,
+            "moving": 2
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 3,
+          "specialRules": [
+            "Small Arm",
+            "Thermal Sights"
+          ]
+        },
+        {
+          "name": "\"Sphere Catch\" 12mm Pistol, subsonic",
+          "ammo": null,
+          "target": "All",
+          "range": 8,
+          "accuracy": {
+            "stationary": 2,
+            "moving": 2
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": 1
+          },
+          "dice": 1,
+          "specialRules": [
+            "Discreet",
+            "Multi-Gun",
+            "Scoped",
+            "Small Arm",
+            "Thermal Sights"
+          ]
+        },
+        {
+          "name": "\"Site Cause\" Plastic Explosive Charge",
+          "ammo": 2,
+          "target": "Vec",
+          "range": 0,
+          "accuracy": {
+            "stationary": 1,
+            "moving": 1
+          },
+          "strength": {
+            "normal": 12,
+            "halfRange": 12
+          },
+          "dice": 1,
+          "specialRules": [
+            "Melee",
+            "Multi-Gun"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "simulacrum",
+      "name": "SIMULACRUM",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 30,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 32,
+        "movement": 4,
+        "quality": 3,
+        "toughness": {
+          "front": 1,
+          "side": 1,
+          "rear": 1
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Fearless"
+        },
+        {
+          "name": "NBC"
+        }
+      ],
+      "unitAbility": "When entering Close Combat this unit may opt to copy any enemy unit that it would enter close combat with. If two or more Simulacrum units would enter Close Quarter with each other immediately kill them.",
+      "weapons": [
+        {
+          "name": "",
+          "ammo": null,
+          "target": "",
+          "range": 0,
+          "accuracy": 4,
+          "strength": 0,
+          "dice": 0,
+          "specialRules": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-candor",
+      "name": "C1 CANDOR",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 25,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 10,
+        "quality": 3,
+        "toughness": {
+          "front": 6,
+          "side": 4,
+          "rear": 4
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "PC (2, Rear)"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "\"Drift Bar\" 5mm Coaxial MG",
+          "ammo": null,
+          "target": "All",
+          "range": 12,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 3
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": 1
+          },
+          "dice": 2,
+          "specialRules": [
+            "Thermal Sights",
+            "Turret"
+          ]
+        },
+        {
+          "name": "\"Sun Point\" 6kW Laser Weapon",
+          "ammo": null,
+          "target": "All",
+          "range": 40,
+          "accuracy": {
+            "stationary": 1,
+            "moving": 1
+          },
+          "strength": {
+            "normal": "1+",
+            "halfRange": "1+"
+          },
+          "dice": 1,
+          "specialRules": [
+            "Laser",
+            "Turret"
+          ]
+        },
+        {
+          "name": "\"Tread Bus\" 65mm Smoke Launchers",
+          "ammo": 1,
+          "target": "Gnd",
+          "range": 6,
+          "accuracy": {
+            "stationary": "++",
+            "moving": "++"
+          },
+          "strength": 0,
+          "dice": 1,
+          "specialRules": [
+            "Light Indirect (0)",
+            "No CC",
+            "Smoke (2\")",
+            "Turret"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p1-parallax",
+      "name": "P1 PARALLAX",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 35,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 10,
+        "quality": 3,
+        "toughness": {
+          "front": 6,
+          "side": 4,
+          "rear": 4
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Amphibious"
+        },
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "PC (2, Rear)"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "\"Drift Bar\" 5mm Coaxial MG",
+          "ammo": null,
+          "target": "All",
+          "range": 12,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 3
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": 1
+          },
+          "dice": 2,
+          "specialRules": [
+            "Thermal Sights",
+            "Turret"
+          ]
+        },
+        {
+          "name": "\"Pitch Break\" 25mm Autocannon",
+          "ammo": 4,
+          "target": "All",
+          "range": 32,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 3
+          },
+          "strength": {
+            "normal": 4,
+            "halfRange": 6
+          },
+          "dice": 2,
+          "specialRules": [
+            "No CC (Inf.)",
+            "Thermal Sights",
+            "Tracking",
+            "Turret"
+          ]
+        },
+        {
+          "name": "\"Side Judge\" 150mm ATGM",
+          "ammo": 3,
+          "target": "Vec",
+          "range": 60,
+          "accuracy": {
+            "stationary": 3,
+            "moving": "xx"
+          },
+          "strength": {
+            "normal": 15,
+            "halfRange": 2
+          },
+          "dice": 1,
+          "specialRules": [
+            "Guided Missile (2)",
+            "Shaped Charge",
+            "Thermal Sights",
+            "Turret"
+          ]
+        },
+        {
+          "name": "\"Tread Bus\" 65mm Smoke Launchers",
+          "ammo": 1,
+          "target": "Gnd",
+          "range": 6,
+          "accuracy": {
+            "stationary": "++",
+            "moving": "++"
+          },
+          "strength": 0,
+          "dice": 1,
+          "specialRules": [
+            "Light Indirect (0)",
+            "No CC",
+            "Smoke (2\")",
+            "Turret"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p2-perigee",
+      "name": "P2 PERIGEE",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 35,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 10,
+        "quality": 3,
+        "toughness": {
+          "front": 6,
+          "side": 4,
+          "rear": 4
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Amphibious"
+        },
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "PC (2, Rear)"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "\"Drift Bar\" 5mm Coaxial MG",
+          "ammo": null,
+          "target": "All",
+          "range": 12,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 3
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": 1
+          },
+          "dice": 2,
+          "specialRules": [
+            "Thermal Sights",
+            "Turret"
+          ]
+        },
+        {
+          "name": "\"Pitch Break\" 25mm Autocannon",
+          "ammo": 4,
+          "target": "All",
+          "range": 32,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 3
+          },
+          "strength": {
+            "normal": 4,
+            "halfRange": 6
+          },
+          "dice": 2,
+          "specialRules": [
+            "No CC (Inf.)",
+            "Thermal Sights",
+            "Tracking",
+            "Turret"
+          ]
+        },
+        {
+          "name": "\"Pole Guard\" 70mm SAM",
+          "ammo": 4,
+          "target": "Air",
+          "range": 60,
+          "accuracy": {
+            "stationary": 3,
+            "moving": "xx"
+          },
+          "strength": {
+            "normal": 5,
+            "halfRange": 5
+          },
+          "dice": 1,
+          "specialRules": [
+            "Guided Missile (1)",
+            "Homing",
+            "Turret"
+          ]
+        },
+        {
+          "name": "\"Tread Bus\" 65mm Smoke Launchers",
+          "ammo": 1,
+          "target": "Gnd",
+          "range": 6,
+          "accuracy": {
+            "stationary": "++",
+            "moving": "++"
+          },
+          "strength": 0,
+          "dice": 1,
+          "specialRules": [
+            "Light Indirect (0)",
+            "No CC",
+            "Smoke (2\")",
+            "Turret"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "m1-microwave",
+      "name": "M1 MICROWAVE",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 20,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 32,
+        "movement": 8,
+        "quality": "*",
+        "toughness": {
+          "front": 4,
+          "side": 2,
+          "rear": 2
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Drone"
+        },
+        {
+          "name": "NBC"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "\"Pitch Break\" 25mm Autocannon",
+          "ammo": 4,
+          "target": "All",
+          "range": 32,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 3
+          },
+          "strength": {
+            "normal": 4,
+            "halfRange": 6
+          },
+          "dice": 2,
+          "specialRules": [
+            "No CC (Inf.)",
+            "Thermal Sights",
+            "Tracking",
+            "Turret"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s1-synod",
+      "name": "S1 SYNOD",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 40,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 8,
+        "quality": 3,
+        "toughness": {
+          "front": 12,
+          "side": 10,
+          "rear": 8
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "NBC"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "\"Drift Fence\" 10mm HMG",
+          "ammo": null,
+          "target": "All",
+          "range": 20,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 3
+          },
+          "strength": {
+            "normal": 2,
+            "halfRange": 3
+          },
+          "dice": 2,
+          "specialRules": [
+            "Thermal Sights",
+            "Turret"
+          ]
+        },
+        {
+          "name": "\"Bridge Spike\" 75mm Rifled Gun",
+          "ammo": 4,
+          "target": "Vec",
+          "range": 40,
+          "shotTypes": [
+            {
+              "name": "75mm Sabot",
+              "accuracy": {
+                "stationary": 3,
+                "moving": 3
+              },
+              "strength": {
+                "normal": 10,
+                "halfRange": 15
+              },
+              "dice": 1,
+              "specialRules": [
+                "Round Extruder",
+                "Thermal Sights",
+                "Turret",
+                "No CC (Inf.)"
+              ]
+            },
+            {
+              "name": "75mm HEAT",
+              "target": "Inf/Vec",
+              "accuracy": {
+                "stationary": 3,
+                "moving": 3
+              },
+              "strength": {
+                "normal": 8,
+                "halfRange": "1+"
+              },
+              "dice": 1,
+              "specialRules": [
+                "Round Extruder",
+                "Thermal Sights",
+                "Turret",
+                "No CC (Inf.)",
+                "Shaped Charge"
+              ]
+            },
+            {
+              "name": "75mm Beehive",
+              "target": "All",
+              "range": 20,
+              "accuracy": {
+                "stationary": 2,
+                "moving": 2
+              },
+              "strength": {
+                "normal": 1,
+                "halfRange": "1+"
+              },
+              "dice": 3,
+              "specialRules": [
+                "Round Extruder",
+                "Thermal Sights",
+                "Turret",
+                "Defensive CC (Inf.)"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "\"Tread Bus\" 65mm Smoke Launchers",
+          "ammo": 1,
+          "target": "Gnd",
+          "range": 6,
+          "accuracy": {
+            "stationary": "++",
+            "moving": "++"
+          },
+          "strength": 0,
+          "dice": 1,
+          "specialRules": [
+            "Light Indirect (0)",
+            "No CC",
+            "Smoke (2\")",
+            "Turret"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c1-cabal",
+      "name": "C1 CABAL",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 50,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 10,
+        "quality": 3,
+        "toughness": {
+          "front": 8,
+          "side": 6,
+          "rear": 4
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "APS (5+, 2)"
+        },
+        {
+          "name": "NBC"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "\"Drift Bar\" 5mm Coaxial MG",
+          "ammo": null,
+          "target": "All",
+          "range": 12,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 3
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": 1
+          },
+          "dice": 2,
+          "specialRules": [
+            "Thermal Sights",
+            "Turret"
+          ]
+        },
+        {
+          "name": "\"Bridge Dart\" 105mm Gun",
+          "ammo": 6,
+          "target": "Vec",
+          "range": 40,
+          "shotTypes": [
+            {
+              "name": "105mm Sabot",
+              "accuracy": {
+                "stationary": 2,
+                "moving": 3
+              },
+              "strength": {
+                "normal": 14,
+                "halfRange": 21
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Thermal Sights",
+                "Turret"
+              ]
+            },
+            {
+              "name": "105mm HEAT",
+              "target": "Inf/Vec",
+              "accuracy": {
+                "stationary": 2,
+                "moving": 3
+              },
+              "strength": {
+                "normal": 10,
+                "halfRange": 2
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Thermal Sights",
+                "Turret",
+                "Shaped Charge"
+              ]
+            },
+            {
+              "name": "105mm Proximity Fuse HE",
+              "target": "All",
+              "accuracy": {
+                "stationary": 2,
+                "moving": 3
+              },
+              "strength": {
+                "normal": 4,
+                "halfRange": 4
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Thermal Sights",
+                "Turret",
+                "Air-Filling",
+                "Tracking (Flak)"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "\"Tread Bus\" 65mm Smoke Launchers",
+          "ammo": 1,
+          "target": "Gnd",
+          "range": 6,
+          "accuracy": {
+            "stationary": "++",
+            "moving": "++"
+          },
+          "strength": 0,
+          "dice": 1,
+          "specialRules": [
+            "Light Indirect (0)",
+            "No CC",
+            "Smoke (2\")",
+            "Turret"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "x1-x-ray",
+      "name": "X1 X-RAY",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 80,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 10,
+        "quality": 3,
+        "toughness": {
+          "front": 16,
+          "side": 14,
+          "rear": 6
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "APS (6+, 3)"
+        },
+        {
+          "name": "NBC"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "\"Sun Point\" 6kW Laser Weapon",
+          "ammo": null,
+          "target": "All",
+          "range": 40,
+          "accuracy": {
+            "stationary": 1,
+            "moving": 1
+          },
+          "strength": {
+            "normal": "1+",
+            "halfRange": "1+"
+          },
+          "dice": 1,
+          "specialRules": [
+            "Laser",
+            "Turret"
+          ]
+        },
+        {
+          "name": "\"Bridge Dart\" 105mm Gun",
+          "ammo": 4,
+          "target": "Vec",
+          "range": 50,
+          "shotTypes": [
+            {
+              "name": "105mm Rocket-Assisted Sabot",
+              "accuracy": {
+                "stationary": 2,
+                "moving": 3
+              },
+              "strength": {
+                "normal": 16,
+                "halfRange": 24
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Round Extruder",
+                "Thermal Sights",
+                "Turret"
+              ]
+            },
+            {
+              "name": "105mm Rocket-Assisted HEAT",
+              "target": "Inf/Vec",
+              "accuracy": {
+                "stationary": 2,
+                "moving": 3
+              },
+              "strength": {
+                "normal": 10,
+                "halfRange": 2
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Round Extruder",
+                "Thermal Sights",
+                "Turret",
+                "Shaped Charge"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "\"Tread Bus\" 65mm Smoke Launchers",
+          "ammo": 1,
+          "target": "Gnd",
+          "range": 6,
+          "accuracy": {
+            "stationary": "++",
+            "moving": "++"
+          },
+          "strength": 0,
+          "dice": 1,
+          "specialRules": [
+            "Light Indirect (0)",
+            "No CC",
+            "Smoke (2\")",
+            "Turret"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "automated-sentry",
+      "name": "AUTOMATED SENTRY",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 15,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 32,
+        "movement": 0,
+        "quality": "*",
+        "toughness": {
+          "front": 2,
+          "side": 2,
+          "rear": 1
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Drone"
+        },
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Paradrop"
+        }
+      ],
+      "unitAbility": "This unit cannot fire during the first Fire Phase of the game if Paradropped",
+      "weapons": [
+        {
+          "name": "\"Yaw Post\" 10mm Minigun",
+          "ammo": null,
+          "target": "All",
+          "range": 20,
+          "accuracy": {
+            "stationary": 4,
+            "moving": "xx"
+          },
+          "strength": {
+            "normal": 2,
+            "halfRange": 3
+          },
+          "dice": 3,
+          "specialRules": [
+            "Thermal Sights",
+            "Tracking",
+            "Turret"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "automated-atgm",
+      "name": "AUTOMATED ATGM",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 20,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 32,
+        "movement": 0,
+        "quality": "*",
+        "toughness": {
+          "front": 2,
+          "side": 2,
+          "rear": 1
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Drone"
+        },
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Paradrop"
+        }
+      ],
+      "unitAbility": "This unit cannot fire during the first Fire Phase of the game if Paradropped",
+      "weapons": [
+        {
+          "name": "\"Side Judge\" 150mm ATGM",
+          "ammo": 3,
+          "target": "Vec",
+          "range": 60,
+          "accuracy": {
+            "stationary": 4,
+            "moving": "xx"
+          },
+          "strength": {
+            "normal": 15,
+            "halfRange": 2
+          },
+          "dice": 1,
+          "specialRules": [
+            "Guided Missile (2)",
+            "Shaped Charge",
+            "Thermal Sights",
+            "Turret"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2-stochast",
+      "name": "S2 STOCHAST",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 40,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 8,
+        "quality": 3,
+        "toughness": {
+          "front": 12,
+          "side": 10,
+          "rear": 8
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "NBC"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "\"Drift Fence\" 10mm HMG",
+          "ammo": null,
+          "target": "All",
+          "range": 20,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 3
+          },
+          "strength": {
+            "normal": 2,
+            "halfRange": 3
+          },
+          "dice": 2,
+          "specialRules": [
+            "Thermal Sights",
+            "Turret"
+          ]
+        },
+        {
+          "name": "\"Ink Strake\" 55mm Thermobaric Rockets",
+          "ammo": 4,
+          "target": "Gnd",
+          "range": 28,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 2,
+            "halfRange": 2
+          },
+          "dice": 3,
+          "specialRules": [
+            "Ignore Cover (2)",
+            "No CC",
+            "Rear Attack",
+            "Saturating (4)",
+            "Thermal Sights",
+            "Turret"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c2-chorus",
+      "name": "C2 CHORUS",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 60,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 10,
+        "quality": 3,
+        "toughness": {
+          "front": 8,
+          "side": 6,
+          "rear": 4
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "NBC"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "\"Drift Bar\" 5mm Coaxial MG",
+          "ammo": null,
+          "target": "All",
+          "range": 12,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 3
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": 1
+          },
+          "dice": 2,
+          "specialRules": [
+            "Thermal Sights",
+            "Turret"
+          ]
+        },
+        {
+          "name": "\"Star Call\" Laser Designator",
+          "ammo": null,
+          "target": "All",
+          "range": 40,
+          "accuracy": {
+            "stationary": "++",
+            "moving": "++"
+          },
+          "strength": 0,
+          "dice": 1,
+          "specialRules": [
+            "Designator",
+            "Discreet",
+            "Turret"
+          ]
+        },
+        {
+          "name": "\"Star Shelf\" 155mm Missile Launcher",
+          "ammo": 6,
+          "target": "Vec",
+          "range": 60,
+          "shotTypes": [
+            {
+              "name": "ATGM Guidance Mode",
+              "accuracy": {
+                "stationary": 3,
+                "moving": "xx"
+              },
+              "strength": {
+                "normal": 16,
+                "halfRange": 3
+              },
+              "dice": 1,
+              "specialRules": [
+                "Guided Missile (1)",
+                "Shaped Charge",
+                "Turret"
+              ]
+            },
+            {
+              "name": "SAM Guidance Mode",
+              "target": "Air",
+              "accuracy": {
+                "stationary": 3,
+                "moving": "xx"
+              },
+              "strength": {
+                "normal": 16,
+                "halfRange": 3
+              },
+              "dice": 1,
+              "specialRules": [
+                "Guided Missile (1)",
+                "Shaped Charge",
+                "Turret",
+                "Radar Anti-Air"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "\"Tread Bus\" 65mm Smoke Launchers",
+          "ammo": 1,
+          "target": "Gnd",
+          "range": 6,
+          "accuracy": {
+            "stationary": "++",
+            "moving": "++"
+          },
+          "strength": 0,
+          "dice": 1,
+          "specialRules": [
+            "Light Indirect (0)",
+            "No CC",
+            "Smoke (2\")",
+            "Turret"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "x2-xiphos",
+      "name": "X2 XIPHOS",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 80,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 10,
+        "quality": 4,
+        "toughness": {
+          "front": 12,
+          "side": 8,
+          "rear": 6
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "APS (6+, 2)"
+        },
+        {
+          "name": "NBC"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "\"Drift Bar\" 5mm Coaxial MG",
+          "ammo": null,
+          "target": "All",
+          "range": 12,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 3
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": 1
+          },
+          "dice": 2,
+          "specialRules": [
+            "Thermal Sights",
+            "Turret"
+          ]
+        },
+        {
+          "name": "\"Bridge Arrow\" 155mm Howitzer",
+          "ammo": 4,
+          "target": "Vec",
+          "range": 60,
+          "shotTypes": [
+            {
+              "name": "155mm LOSAT",
+              "accuracy": {
+                "stationary": 2,
+                "moving": 3
+              },
+              "strength": {
+                "normal": 21,
+                "halfRange": 14
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC",
+                "Round Extruder",
+                "Thermal Sights",
+                "Guided Missile (1)"
+              ]
+            },
+            {
+              "name": "155mm Guided HE",
+              "target": "Inf/Vec",
+              "range": null,
+              "accuracy": {
+                "stationary": 3,
+                "moving": 4
+              },
+              "strength": {
+                "normal": 8,
+                "halfRange": 8
+              },
+              "dice": 2,
+              "specialRules": [
+                "No CC",
+                "Round Extruder",
+                "Thermal Sights",
+                "Heavy Indirect (2)",
+                "Guided Shell"
+              ]
+            },
+            {
+              "name": "155mm Smoke",
+              "target": "Gnd",
+              "range": null,
+              "accuracy": {
+                "stationary": "++",
+                "moving": "++"
+              },
+              "strength": 0,
+              "dice": 4,
+              "specialRules": [
+                "No CC",
+                "Round Extruder",
+                "Thermal Sights",
+                "Heavy Indirect (2)",
+                "Smoke (4\")"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "x3-xenon",
+      "name": "X3 XENON",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 80,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 10,
+        "quality": 3,
+        "toughness": {
+          "front": 14,
+          "side": 10,
+          "rear": 6
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "APS (6+, 2)"
+        },
+        {
+          "name": "NBC"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "\"Drift Bar\" 5mm Coaxial MG",
+          "ammo": null,
+          "target": "All",
+          "range": 12,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 3
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": 1
+          },
+          "dice": 2,
+          "specialRules": [
+            "Thermal Sights",
+            "Turret"
+          ]
+        },
+        {
+          "name": "\"Sun Blind\" 20kW Laser Weapon Array",
+          "ammo": null,
+          "target": "All",
+          "range": 40,
+          "shotTypes": [
+            {
+              "name": "Focused Array",
+              "accuracy": {
+                "stationary": 1,
+                "moving": 1
+              },
+              "strength": {
+                "normal": 2,
+                "halfRange": 2
+              },
+              "dice": 4,
+              "specialRules": [
+                "Laser",
+                "Turret"
+              ]
+            },
+            {
+              "name": "Dispersed Array",
+              "range": 20,
+              "accuracy": {
+                "stationary": "++",
+                "moving": "++"
+              },
+              "strength": 0,
+              "dice": 1,
+              "specialRules": [
+                "Laser",
+                "Turret",
+                "Radius (3\")",
+                "All units (including airborne untis) in the radius take maximum Pin"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Shockwave Dispersal System",
+          "ammo": null,
+          "target": "Gnd",
+          "range": 0,
+          "accuracy": {
+            "stationary": "++",
+            "moving": "++"
+          },
+          "strength": 0,
+          "dice": 1,
+          "specialRules": [
+            "Radius (6\")",
+            "Infantry in radius take one pin",
+            "Smoke radii with their centers in this radius are cleared"
+          ]
+        },
+        {
+          "name": "\"Tread Bus\" 65mm Smoke Launchers",
+          "ammo": 1,
+          "target": "Gnd",
+          "range": 6,
+          "accuracy": {
+            "stationary": "++",
+            "moving": "++"
+          },
+          "strength": 0,
+          "dice": 1,
+          "specialRules": [
+            "Light Indirect (0)",
+            "No CC",
+            "Smoke (2\")",
+            "Turret"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "y1-yardfish",
+      "name": "Y1 YARDFISH",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 30,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 32,
+        "movement": 8,
+        "quality": 3,
+        "toughness": {
+          "front": 3,
+          "side": 3,
+          "rear": 2
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Active Camoflauge"
+        },
+        {
+          "name": "NBC"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "\"Sun Line\" 6kW Laser Weapon Array",
+          "ammo": null,
+          "target": "All",
+          "range": 40,
+          "accuracy": {
+            "stationary": 1,
+            "moving": 1
+          },
+          "strength": {
+            "normal": "1+",
+            "halfRange": "1+"
+          },
+          "dice": 2,
+          "specialRules": [
+            "Laser",
+            "Turret"
+          ]
+        },
+        {
+          "name": "\"Dredge Top\" 149mm VLS Missiles",
+          "ammo": 2,
+          "target": "Vec/Air",
+          "range": 60,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 3
+          },
+          "strength": {
+            "normal": 8,
+            "halfRange": 8
+          },
+          "dice": 1,
+          "specialRules": [
+            "Guided Missile (2)",
+            "Radar Anti-Air",
+            "Turret"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "r1-redstone",
+      "name": "R1 REDSTONE",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 20,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 16,
+        "movement": 24,
+        "quality": 3,
+        "toughness": {
+          "front": 3,
+          "side": 3,
+          "rear": 3
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Chaff-Flares (1)"
+        },
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "PC (2, Any)"
+        },
+        {
+          "name": "Resupply (3)"
+        }
+      ],
+      "unitAbility": "If this unit falls back from close combat, choose one engaged enemy unit to take a Strength 1+ hit on it's rear arc.",
+      "weapons": [
+        {
+          "name": "",
+          "ammo": null,
+          "target": "",
+          "range": 0,
+          "accuracy": 4,
+          "strength": 0,
+          "dice": 0,
+          "specialRules": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "id": "r2-repeater",
+      "name": "R2 REPEATER",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 30,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 24,
+        "movement": 24,
+        "quality": 3,
+        "toughness": {
+          "front": 3,
+          "side": 3,
+          "rear": 3
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Chaff-Flares (1)"
+        },
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "PC (1, Any)"
+        }
+      ],
+      "unitAbility": "If this unit falls back from close combat, choose one engaged enemy unit to take a Strength 1+ hit on it's rear arc.",
+      "weapons": [
+        {
+          "name": "\"Yaw Shaft\" 15mm Minigun",
+          "ammo": null,
+          "target": "All",
+          "range": 24,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 3,
+            "halfRange": 4
+          },
+          "dice": 3,
+          "specialRules": [
+            "Door Gun (Front)",
+            "Thermal Sights",
+            "Tracking"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "h1-handler",
+      "name": "H1 HANDLER",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 15,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 32,
+        "movement": 32,
+        "quality": "*",
+        "toughness": {
+          "front": 1,
+          "side": 1,
+          "rear": 1
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Drone"
+        },
+        {
+          "name": "NBC"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "\"Star Call\" Laser Designator",
+          "ammo": null,
+          "target": "All",
+          "range": 40,
+          "accuracy": {
+            "stationary": "++",
+            "moving": "++"
+          },
+          "strength": 0,
+          "dice": 1,
+          "specialRules": [
+            "Designator",
+            "Discreet"
+          ]
+        },
+        {
+          "name": "\"Tread Plate\" 65mm Smoke Array",
+          "ammo": 2,
+          "target": "Gnd",
+          "range": 12,
+          "accuracy": {
+            "stationary": "++",
+            "moving": "++"
+          },
+          "strength": 0,
+          "dice": 2,
+          "specialRules": [
+            "Light Indirect (1)",
+            "No CC",
+            "Smoke (4\")",
+            "Turret"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "h2-hangman",
+      "name": "H2 HANGMAN",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 15,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 32,
+        "movement": 32,
+        "quality": "*",
+        "toughness": {
+          "front": 1,
+          "side": 1,
+          "rear": 1
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Chaff-Flares (1)"
+        },
+        {
+          "name": "Drone"
+        },
+        {
+          "name": "NBC"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "\"Bolt Fleck\" 100mm Flechette Gun",
+          "ammo": 3,
+          "target": "Inf/Vec",
+          "range": 16,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 4,
+          "specialRules": [
+            "Thermal Sights"
+          ]
+        },
+        {
+          "name": "\"Weave Stalk\" 70mm Dual Rocket Pod",
+          "ammo": 2,
+          "target": "Inf/Vec",
+          "range": 16,
+          "accuracy": {
+            "stationary": 6,
+            "moving": 5
+          },
+          "strength": {
+            "normal": 7,
+            "halfRange": "1+"
+          },
+          "dice": 1,
+          "specialRules": [
+            "Barrage (2)",
+            "Shaped Charge",
+            "Strafing",
+            "Thermal Sights"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "t1-tatter",
+      "name": "T1 TATTER",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 60,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 32,
+        "quality": 3,
+        "toughness": {
+          "front": 3,
+          "side": 3,
+          "rear": 3
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Chaff-Flares (2)"
+        },
+        {
+          "name": "NBC"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "\"Pitch Throat\" 35mm Autocannon",
+          "ammo": 3,
+          "target": "All",
+          "range": 32,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 7,
+            "halfRange": 7
+          },
+          "dice": 2,
+          "specialRules": [
+            "Thermal Sights"
+          ]
+        },
+        {
+          "name": "\"Ram Crutch\" 175mm Active AAM",
+          "ammo": 2,
+          "target": "Air",
+          "range": 60,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 3
+          },
+          "strength": {
+            "normal": 7,
+            "halfRange": 7
+          },
+          "dice": 1,
+          "specialRules": [
+            "Air-Filling",
+            "Guided Missile (1)",
+            "Homing",
+            "Radar Anti-Air"
+          ]
+        },
+        {
+          "name": "\"Mark Pate\" 180mm AGM",
+          "ammo": 4,
+          "target": "Vec",
+          "range": 60,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 18,
+            "halfRange": 4
+          },
+          "dice": 1,
+          "specialRules": [
+            "Guided Missile (1)",
+            "Shaped Charge"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "destroying-angel",
+      "name": "DESTROYING ANGEL",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 80,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 18,
+        "quality": 4,
+        "toughness": {
+          "front": 4,
+          "side": 4,
+          "rear": 4
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "APS (6+, 4)"
+        },
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Sense (12\")"
+        }
+      ],
+      "unitAbility": "Every time this unit uses APS, its weapon Dice statistic decreases by 1 for the rest of the round. If the Dice value hits 0 it cannot be fired this round and APS cannot be triggered again this round. During Upkeep the laser weapon's Dice value is reset to 4 regardless of how many munitions were intercepted last round.",
+      "weapons": [
+        {
+          "name": "\"Sun Door\" 20kW Pulsed Laser Battery",
+          "ammo": null,
+          "target": "All",
+          "range": 40,
+          "accuracy": {
+            "stationary": 1,
+            "moving": 1
+          },
+          "strength": {
+            "normal": "1+",
+            "halfRange": "1+"
+          },
+          "dice": 4,
+          "specialRules": [
+            "Laser",
+            "Turret"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1-blindsight",
+      "name": "B1 BLINDSIGHT",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 50,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 0,
+        "movement": 20,
+        "quality": 4,
+        "toughness": 3,
+        "command": 3
+      },
+      "specialRules": [
+        {
+          "name": "Afterburner"
+        },
+        {
+          "name": "Chaff-Flares (2)"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "\"Sun Grid\" 20kW Laser Array",
+          "ammo": null,
+          "target": "All",
+          "range": 10,
+          "accuracy": 1,
+          "strength": "1+",
+          "dice": 3,
+          "specialRules": [
+            "Laser"
+          ]
+        },
+        {
+          "name": "\"Ram Crutch\" 175mm Active AAM",
+          "ammo": 4,
+          "target": "Air",
+          "range": 60,
+          "accuracy": 3,
+          "strength": 7,
+          "dice": 1,
+          "specialRules": [
+            "Air-Filling",
+            "Guided Missile (1)",
+            "Homing",
+            "Radar Anti-Air"
+          ]
+        },
+        {
+          "name": "\"Mark Pate\" 180mm AGM",
+          "ammo": 2,
+          "target": "Vec",
+          "range": 60,
+          "accuracy": 3,
+          "strength": {
+            "normal": 18,
+            "halfRange": 4
+          },
+          "dice": 1,
+          "specialRules": [
+            "Guided Missile (1)",
+            "Shaped Charge"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "z1-zenith",
+      "name": "Z1 ZENITH",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 50,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 0,
+        "movement": 16,
+        "quality": 4,
+        "toughness": 3,
+        "command": 1
+      },
+      "specialRules": [
+        {
+          "name": "Active Camoflauge"
+        },
+        {
+          "name": "Afterburner"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "\"Able Ivy\" 20t Guided Nuclear Bomb",
+          "ammo": 1,
+          "target": "Gnd",
+          "range": 40,
+          "accuracy": "++",
+          "strength": 0,
+          "dice": 1,
+          "specialRules": [
+            "Guided Missile (2)",
+            "Nuclear (1\"-2\"-6\")"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a1-apogee",
+      "name": "A1 APOGEE",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 50,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 0,
+        "movement": 14,
+        "quality": 4,
+        "toughness": 6,
+        "command": 2
+      },
+      "specialRules": [
+        {
+          "name": "Chaff-Flares (2)"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "\"Yaw Switch\" 40mm Rotary Cannon",
+          "ammo": 4,
+          "target": "All",
+          "range": 8,
+          "accuracy": 4,
+          "strength": 6,
+          "dice": 4,
+          "specialRules": [
+            ""
+          ]
+        },
+        {
+          "name": "\"Lake Brush\" 275mm Guided Bomb",
+          "ammo": 2,
+          "target": "Gnd",
+          "range": 32,
+          "accuracy": 2,
+          "strength": 10,
+          "dice": 1,
+          "specialRules": [
+            "Air-Filling",
+            "Barrage (2)",
+            "Guided Missile (2)",
+            "Radius (3\")",
+            "Rear Attack"
+          ]
+        }
+      ]
+    }
+  ]
+}

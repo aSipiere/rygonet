@@ -1,7 +1,14 @@
 #!/usr/bin/env python3
 """
-Transform Federal Library data from the firelock-198X-armybuilder format
+Transform library data from the firelock-198X-armybuilder format
 into the rygonet schema format.
+
+Usage:
+    python transform_federal_library.py <url>
+
+Examples:
+    python transform_federal_library.py https://raw.githubusercontent.com/nullAurelian/firelock-198X-armybuilder/refs/heads/main/src/data/federalLibrary.js
+    python transform_federal_library.py https://raw.githubusercontent.com/nullAurelian/firelock-198X-armybuilder/refs/heads/main/src/data/luparLibrary.js
 """
 
 import json
@@ -10,21 +17,19 @@ import sys
 from collections import OrderedDict
 from urllib.request import urlopen
 
-# Source URL
-FEDERAL_LIBRARY_URL = "https://raw.githubusercontent.com/nullAurelian/firelock-198X-armybuilder/refs/heads/main/src/data/federalLibrary.js"
-
-def fetch_federal_library():
-    """Fetch the federal library JavaScript file."""
-    print(f"Fetching {FEDERAL_LIBRARY_URL}...")
-    with urlopen(FEDERAL_LIBRARY_URL) as response:
+def fetch_library(url):
+    """Fetch the library JavaScript file from URL."""
+    print(f"Fetching {url}...")
+    with urlopen(url) as response:
         return response.read().decode('utf-8')
 
 def parse_js_to_json(js_content):
     """Parse JavaScript array export to Python dict."""
-    # Extract the array content between const fedlist = [ and export
-    match = re.search(r'const fedlist = (\[.*?\n\])\s*export', js_content, re.DOTALL)
+    # Extract the array content between const <name>list = [ and export
+    # Try different list names: fedlist, luparlist, rygoliclist, santagrilist
+    match = re.search(r'const \w+list = (\[.*?\n\])\s*export', js_content, re.DOTALL)
     if not match:
-        raise ValueError("Could not find fedlist array in JavaScript file")
+        raise ValueError("Could not find list array in JavaScript file")
 
     array_content = match.group(1)
 
@@ -227,6 +232,10 @@ def parse_stat_value(stat_str):
     if not isinstance(stat_str, str):
         return stat_str
 
+    # Handle special values like "Q*" for drones
+    if '*' in stat_str:
+        return '*'
+
     # Remove the prefix letter and any quotes
     match = re.search(r'[A-Z](\d+)', stat_str)
     if match:
@@ -236,7 +245,8 @@ def parse_stat_value(stat_str):
     if stat_str.endswith('-'):
         return stat_str
 
-    return 0
+    # If we can't parse it, return 1 as a safe default (not 0 which is invalid)
+    return 1
 
 def transform_toughness(stats_array):
     """Transform toughness from stats array."""
@@ -273,6 +283,23 @@ def transform_unit(unit):
     # Create ID from name
     unit_id = unit.get('name', 'unknown').lower().replace(' ', '-').replace('"', '').replace("'", '')
 
+    # Parse stats with proper handling of special values
+    height = parse_stat_value(stats_array[0]) if len(stats_array) > 0 else 1
+    spotting = parse_stat_value(stats_array[1]) if len(stats_array) > 1 else 0
+    movement = parse_stat_value(stats_array[2]) if len(stats_array) > 2 else 0
+    quality = parse_stat_value(stats_array[3]) if len(stats_array) > 3 else 4
+    command = parse_stat_value(stats_array[5]) if len(stats_array) > 5 else 0
+
+    # Ensure only quality can be '*', convert others to 0 if they're '*'
+    if spotting == '*':
+        spotting = 0
+    if height == '*':
+        height = 1
+    if movement == '*':
+        movement = 0
+    if command == '*':
+        command = 0
+
     transformed = OrderedDict([
         ('id', unit_id),
         ('name', unit.get('name', 'Unknown Unit').upper()),
@@ -281,12 +308,12 @@ def transform_unit(unit):
         ('points', unit.get('value', 0)),
         ('stats', OrderedDict([
             ('unitClass', transform_unit_type(unit.get('type', {}))),
-            ('height', parse_stat_value(stats_array[0]) if len(stats_array) > 0 else 1),
-            ('spottingDistance', parse_stat_value(stats_array[1]) if len(stats_array) > 1 else 0),
-            ('movement', parse_stat_value(stats_array[2]) if len(stats_array) > 2 else 0),
-            ('quality', parse_stat_value(stats_array[3]) if len(stats_array) > 3 else 4),
+            ('height', height),
+            ('spottingDistance', spotting),
+            ('movement', movement),
+            ('quality', quality),
             ('toughness', transform_toughness(stats_array)),
-            ('command', parse_stat_value(stats_array[5]) if len(stats_array) > 5 else 0)
+            ('command', command)
         ]))
     ])
 
@@ -342,17 +369,67 @@ def categorize_units(units):
         if any(sr.get('name', '').startswith('Brigade') for sr in unit.get('specialRules', [])):
             unit['category'] = 'TACOMS'
 
+def extract_faction_info(url):
+    """Extract faction ID and name from the URL."""
+    # Map library filenames to faction info
+    faction_map = {
+        'federalLibrary': {
+            'id': 'fsa',
+            'name': 'Federal States-Army',
+            'description': 'Federal States military forces'
+        },
+        'luparLibrary': {
+            'id': 'lupar',
+            'name': 'Lupar Realms',
+            'description': 'Lupar Realms military forces'
+        },
+        'rygolicLibrary': {
+            'id': 'rygolic',
+            'name': 'Rygolic Empire',
+            'description': 'Rygolic Empire military forces'
+        },
+        'santagriLibrary': {
+            'id': 'santagri',
+            'name': 'Santagri',
+            'description': 'Santagri military forces'
+        }
+    }
+
+    # Extract library name from URL
+    match = re.search(r'/(\w+Library)\.js', url)
+    if not match:
+        raise ValueError(f"Could not extract faction name from URL: {url}")
+
+    library_name = match.group(1)
+    if library_name not in faction_map:
+        raise ValueError(f"Unknown library: {library_name}")
+
+    return faction_map[library_name]
+
 def main():
     """Main transformation function."""
     try:
-        # Fetch and parse source data
-        js_content = fetch_federal_library()
-        fed_units = parse_js_to_json(js_content)
+        # Check for URL argument
+        if len(sys.argv) < 2:
+            print("Usage: python transform_federal_library.py <url>", file=sys.stderr)
+            print("\nExamples:", file=sys.stderr)
+            print("  python transform_federal_library.py https://raw.githubusercontent.com/nullAurelian/firelock-198X-armybuilder/refs/heads/main/src/data/federalLibrary.js", file=sys.stderr)
+            print("  python transform_federal_library.py https://raw.githubusercontent.com/nullAurelian/firelock-198X-armybuilder/refs/heads/main/src/data/luparLibrary.js", file=sys.stderr)
+            sys.exit(1)
 
-        print(f"Parsed {len(fed_units)} units from Federal Library")
+        url = sys.argv[1]
+
+        # Extract faction info from URL
+        faction_info = extract_faction_info(url)
+
+        # Fetch and parse source data
+        js_content = fetch_library(url)
+        units = parse_js_to_json(js_content)
+
+        print(f"Parsed {len(units)} units from {faction_info['name']}")
 
         # Transform each unit
-        transformed_units = [transform_unit(unit) for unit in fed_units]
+        transformed_units = [transform_unit(unit) for unit in units]
 
         # Categorize units
         categorize_units(transformed_units)
@@ -360,16 +437,17 @@ def main():
         # Create the output structure
         output = {
             "faction": {
-                "id": "federal",
-                "name": "Federal States",
-                "description": "Federal States military forces",
+                "id": faction_info['id'],
+                "name": faction_info['name'],
+                "description": faction_info['description'],
                 "version": "Imported from firelock-198X-armybuilder"
             },
             "units": transformed_units
         }
 
-        # Write to output file
-        output_path = "../src/data/factions/Federal.json"
+        # Write to output file - capitalize first letter for filename
+        filename = faction_info['name'].split()[0] if ' ' in faction_info['name'] else faction_info['name']
+        output_path = f"../src/data/factions/{filename}.json"
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(output, f, indent=2, ensure_ascii=False)
 
