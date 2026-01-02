@@ -50,7 +50,7 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "name", "category", "unitClass", "points", "stats"],
+        "required": ["id", "name", "category", "points", "stats"],
         "properties": {
           "id": {
             "type": "string",
@@ -73,11 +73,6 @@
             "type": "string",
             "description": "Short descriptive text (e.g., 'Self-Propelled Howitzer', 'Main Battle Tank', 'Paratrooper Squad')"
           },
-          "unitClass": {
-            "type": "string",
-            "enum": ["Inf", "Inf(S)", "Vec", "Vec(W)", "Vec(S)", "Vec(C)", "Vec(M)", "Vec(L)", "Vec(H)", "Air", "Air(CAP)", "Air(CAS)"],
-            "description": "Unit class for PC capacity and game mechanics: Inf (team, 1 PC), Inf(S) (squad, 2 PC), Vec variants (W=wide, S=small, C=crew, M=medium, L=large, H=hovercraft)"
-          },
           "points": {
             "oneOf": [
               {
@@ -93,8 +88,13 @@
           },
           "stats": {
             "type": "object",
-            "required": ["movement", "quality"],
+            "required": ["unitClass", "movement", "quality"],
             "properties": {
+              "unitClass": {
+                "type": "string",
+                "enum": ["Inf", "Inf(S)", "Vec", "Vec(W)", "Vec(S)", "Vec(C)", "Vec(M)", "Vec(L)", "Vec(H)", "Air", "Air(CAP)", "Air(CAS)"],
+                "description": "Unit class for PC capacity and game mechanics: Inf (team, 1 PC), Inf(S) (squad, 2 PC), Vec variants (W=wide, S=small, C=crew, M=medium, L=large, H=hovercraft)"
+              },
               "height": {
                 "type": "integer",
                 "minimum": 0,

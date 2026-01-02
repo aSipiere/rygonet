@@ -17,7 +17,7 @@
         "name": "Sprint Motor",
         "description": "Space Corps rockeet motors bridge the gap between old and new - at least until their fuel runs out."
       },
-            {
+      {
         "name": "Steel Watchbands",
         "description": "Federal tankers excel at firing shot after accurate shot while rolling onwards."
       }
@@ -26,62 +26,67 @@
   "units": [
     {
       "id": "type-68c-appomattox",
-      "name": "TYPE 68C \"APPOMATTOX\"",
-      "unitClass": "Vec",
+      "name": "TYPE 68C APPOMATTOX",
+      "category": "TACOMS",
+      "descriptiveCategory": "",
       "points": 0,
       "stats": {
-        "movement": 8,
-        "quality": 3,
+        "unitClass": "Vec",
         "height": 2,
         "spottingDistance": 32,
-        "command": 3,
+        "movement": 8,
+        "quality": 3,
         "toughness": {
           "front": 6,
           "side": 4,
           "rear": 4
-        }
+        },
+        "command": 3
       },
-      "descriptiveCategory": "COMMAND POST CARRIER",
       "specialRules": [
+        {
+          "name": "TACOM"
+        },
+        {
+          "name": "NBC"
+        },
         {
           "name": "Amphibious"
         },
         {
           "name": "Brigade (3, 12\")"
-        },
-        {
-          "name": "NBC"
         }
       ],
       "weapons": [
         {
-          "name": "Pequod SA 11.5mm, commander's issue",
+          "name": "Pequod SA 11.5mm, commander issue",
+          "ammo": null,
           "target": "All",
           "range": 2,
           "accuracy": {
             "stationary": 5,
             "moving": 5
           },
-          "dice": 1,
           "strength": {
-            "normal": 1,
-            "halfRange": 1
+            "normal": "1+",
+            "halfRange": "1+"
           },
-          "ammo": null,
+          "dice": 1,
           "specialRules": [
             "Small Arm"
           ]
         },
         {
           "name": "1M1V Target Bearing Transmitter",
+          "ammo": null,
           "target": "All",
           "range": 32,
           "accuracy": {
             "stationary": "++",
             "moving": "xx"
           },
+          "strength": 0,
           "dice": 1,
-          "ammo": null,
           "specialRules": [
             "Designator",
             "Discreet"
@@ -89,1076 +94,2053 @@
         },
         {
           "name": "902V 81mm Smoke Launchers",
+          "ammo": 1,
           "target": "Gnd",
           "range": 6,
           "accuracy": {
             "stationary": "++",
             "moving": "++"
           },
+          "strength": 0,
           "dice": 2,
-          "ammo": 1,
           "specialRules": [
-            "Light Indirect (1)",
+            "Light Indirect(1)",
             "No CC",
             "Smoke (3\")"
           ]
         }
-      ],
-      "options": [],
-      "category": "TACOMS"
+      ]
     },
     {
-      "id": "reservists",
-      "name": "RESERVISTS",
-      "unitClass": "Inf(S)",
-      "points": 5,
-      "stats": {
-        "movement": 4,
-        "quality": 1,
-        "height": 1,
-        "spottingDistance": 16,
-        "toughness": {
-          "front": "1-",
-          "side": "1-",
-          "rear": "1-"
-        }
-      },
-      "descriptiveCategory": "MILITIA SQUAD",
-      "specialRules": [],
-      "weapons": [
-        {
-          "name": "6P3 11.5mm SMG",
-          "target": "All",
-          "range": 8,
-          "accuracy": {
-            "stationary": 5,
-            "moving": 5
-          },
-          "dice": 2,
-          "ammo": null,
-          "specialRules": [
-            "Small Arm"
-          ]
-        },
-        {
-          "name": "6L4 73mm RPG",
-          "target": "Inf/Vec",
-          "range": 8,
-          "accuracy": {
-            "stationary": 5,
-            "moving": 6
-          },
-          "dice": 1,
-          "strength": {
-            "normal": 6,
-            "halfRange": 1
-          },
-          "ammo": 3,
-          "specialRules": [
-            "Shaped Charge",
-            "Small Arm"
-          ]
-        }
-      ],
-      "options": [],
-      "category": "Infantry"
-    },
-    {
-      "id": "states-grenadiers",
-      "name": "STATES-GRENADIERS",
-      "unitClass": "Inf(S)",
-      "points": 10,
-      "stats": {
-        "movement": 4,
-        "quality": 2,
-        "height": 1,
-        "spottingDistance": 16,
-        "toughness": {
-          "front": 1,
-          "side": "1-",
-          "rear": "1-"
-        }
-      },
-      "descriptiveCategory": "LINE SQUAD",
-      "specialRules": [
-        {
-          "name": "Assault Dismount"
-        }
-      ],
-      "weapons": [
-        {
-          "name": "6G1 7.76mm Battle Rifle",
-          "target": "All",
-          "range": 8,
-          "accuracy": {
-            "stationary": 3,
-            "moving": 4
-          },
-          "dice": 1,
-          "strength": {
-            "normal": 1,
-            "halfRange": 1
-          },
-          "ammo": null,
-          "specialRules": [
-            "Small Arm"
-          ]
-        },
-        {
-          "name": "6G2 7.76mm GPMG",
-          "target": "All",
-          "range": 12,
-          "accuracy": {
-            "stationary": 4,
-            "moving": "xx"
-          },
-          "dice": 2,
-          "strength": {
-            "normal": 1,
-            "halfRange": 1
-          },
-          "ammo": null,
-          "specialRules": [
-            "Defensive CC"
-          ]
-        },
-        {
-          "name": "6L1 85mm RPG",
-          "target": "Inf/Vec",
-          "range": 8,
-          "accuracy": {
-            "stationary": 4,
-            "moving": 6
-          },
-          "dice": 1,
-          "strength": {
-            "normal": 8,
-            "halfRange": 1
-          },
-          "ammo": 3,
-          "specialRules": [
-            "Shaped Charge",
-            "Small Arm"
-          ]
-        }
-      ],
-      "options": [],
-      "category": "Infantry"
-    },
-    {
-      "id": "expeditionary-command",
-      "name": "EXPEDITIONARY COMMAND",
-      "unitClass": "Inf(S)",
+      "id": "expeditionary-command-squad",
+      "name": "EXPEDITIONARY COMMAND SQUAD",
+      "category": "TACOMS",
+      "descriptiveCategory": "",
       "points": 15,
       "stats": {
-        "movement": 5,
-        "quality": 4,
+        "unitClass": "Vec",
         "height": 1,
         "spottingDistance": 24,
-        "command": 5,
+        "movement": 5,
+        "quality": 4,
         "toughness": {
           "front": 1,
           "side": "1-",
           "rear": "1-"
-        }
+        },
+        "command": 5
       },
-      "descriptiveCategory": "PARATROOPER COMMAND SQUAD",
       "specialRules": [
         {
+          "name": "TACOM"
+        },
+        {
           "name": "Assault Dismount"
+        },
+        {
+          "name": "Fearless"
+        },
+        {
+          "name": "Paradrop"
         },
         {
           "name": "Brigade (2, 8\")"
-        },
-        {
-          "name": "Fearless"
-        },
-        {
-          "name": "Paradrop"
         }
       ],
-      "unitAbility": "All units targeted in Brigade (including self) lose all pin tokens.",
+      "unitAbility": "All units targeted in a Brigade (including self) lose all pin tokens.",
       "weapons": [
         {
           "name": "6G1A 7.76mm Automatic Rifle",
+          "ammo": null,
           "target": "All",
           "range": 8,
           "accuracy": {
             "stationary": 4,
             "moving": 4
           },
-          "dice": 2,
           "strength": {
             "normal": 1,
-            "halfRange": 1
+            "halfRange": "1+"
           },
-          "ammo": null,
+          "dice": 2,
           "specialRules": [
             "Small Arm"
           ]
         },
         {
-          "name": "6L3 40mm HEDP Grenade Launcher",
+          "name": "6L3 10mm HEDP Grenade Launcher",
+          "ammo": 4,
           "target": "Inf/Vec",
           "range": 8,
           "accuracy": "*",
-          "dice": 1,
           "strength": {
             "normal": 5,
-            "halfRange": 1
+            "halfRange": "1+"
           },
-          "ammo": 4,
+          "dice": 1,
           "specialRules": [
             "Shaped Charge",
             "Underbarrel (6G1A)"
           ]
         }
-      ],
-      "options": [],
-      "category": "TACOMS"
+      ]
     },
     {
-      "id": "federal-expeditionaries",
-      "name": "FEDERAL EXPEDITIONARIES",
-      "unitClass": "Inf(S)",
+      "id": "type-40m-veldjen-mc",
+      "name": "TYPE 40M VELDJEN-MC",
+      "category": "TACOMS",
+      "descriptiveCategory": "",
       "points": 15,
       "stats": {
-        "movement": 5,
-        "quality": 3,
-        "height": 1,
-        "spottingDistance": 16,
-        "toughness": {
-          "front": 1,
-          "side": "1-",
-          "rear": "1-"
-        }
-      },
-      "descriptiveCategory": "PARATROOPER SQUAD",
-      "specialRules": [
-        {
-          "name": "Assault Dismount"
-        },
-        {
-          "name": "Fearless"
-        },
-        {
-          "name": "Paradrop"
-        }
-      ],
-      "weapons": [
-        {
-          "name": "6G1A 7.76mm Automatic Rifle",
-          "target": "All",
-          "range": 8,
-          "accuracy": {
-            "stationary": 4,
-            "moving": 4
-          },
-          "dice": 2,
-          "strength": {
-            "normal": 1,
-            "halfRange": 1
-          },
-          "ammo": null,
-          "specialRules": [
-            "Small Arm"
-          ]
-        },
-        {
-          "name": "6L3 40mm HEDP Grenade Launcher",
-          "target": "Inf/Vec",
-          "range": 8,
-          "accuracy": "*",
-          "dice": 1,
-          "strength": {
-            "normal": 5,
-            "halfRange": 1
-          },
-          "ammo": 4,
-          "specialRules": [
-            "Shaped Charge",
-            "Underbarrel (6G1A)"
-          ]
-        }
-      ],
-      "options": [],
-      "category": "Infantry"
-    },
-    {
-      "id": "atgm-team",
-      "name": "ATGM TEAM",
-      "unitClass": "Inf",
-      "points": 10,
-      "stats": {
-        "movement": 4,
-        "quality": 2,
-        "height": 1,
-        "spottingDistance": 32,
-        "toughness": {
-          "front": "1-",
-          "side": "1-",
-          "rear": "1-"
-        }
-      },
-      "descriptiveCategory": "ANTI-TANK TEAM",
-      "specialRules": [
-        {
-          "name": "Assault Dismount"
-        }
-      ],
-      "weapons": [
-        {
-          "name": "6G1 7.76mm Battle Rifle",
-          "target": "All",
-          "range": 8,
-          "accuracy": {
-            "stationary": 3,
-            "moving": 4
-          },
-          "dice": 1,
-          "strength": {
-            "normal": 1,
-            "halfRange": 1
-          },
-          "ammo": null,
-          "specialRules": [
-            "Small Arm"
-          ]
-        }
-      ],
-      "options": [],
-      "category": "Infantry"
-    },
-    {
-      "id": "mortar-team",
-      "name": "MORTAR TEAM",
-      "unitClass": "Inf",
-      "points": 10,
-      "stats": {
-        "movement": 4,
-        "quality": 2,
-        "height": 1,
-        "spottingDistance": 16,
-        "toughness": {
-          "front": "1-",
-          "side": "1-",
-          "rear": "1-"
-        }
-      },
-      "descriptiveCategory": "ANTI-PERSONNEL TEAM",
-      "specialRules": [
-        {
-          "name": "Assault Dismount"
-        }
-      ],
-      "weapons": [
-        {
-          "name": "6G1 7.76mm Battle Rifle",
-          "target": "All",
-          "range": 8,
-          "accuracy": {
-            "stationary": 3,
-            "moving": 4
-          },
-          "dice": 1,
-          "strength": {
-            "normal": 1,
-            "halfRange": 1
-          },
-          "ammo": null,
-          "specialRules": [
-            "Small Arm"
-          ]
-        }
-      ],
-      "options": [],
-      "category": "Infantry"
-    },
-    {
-      "id": "manpads-team",
-      "name": "MANPADS TEAM",
-      "unitClass": "Inf",
-      "points": 10,
-      "stats": {
-        "movement": 4,
-        "quality": 2,
-        "height": 1,
-        "spottingDistance": 32,
-        "toughness": {
-          "front": "1-",
-          "side": "1-",
-          "rear": "1-"
-        }
-      },
-      "descriptiveCategory": "ANTI-AIR TEAM",
-      "specialRules": [
-        {
-          "name": "Assault Dismount"
-        }
-      ],
-      "weapons": [
-        {
-          "name": "6G1 7.76mm Battle Rifle",
-          "target": "All",
-          "range": 8,
-          "accuracy": {
-            "stationary": 3,
-            "moving": 4
-          },
-          "dice": 1,
-          "strength": {
-            "normal": 1,
-            "halfRange": 1
-          },
-          "ammo": null,
-          "specialRules": [
-            "Small Arm"
-          ]
-        },
-        {
-          "name": "9GR2 85mm MANPADS",
-          "target": "Air",
-          "range": 60,
-          "accuracy": {
-            "stationary": 4,
-            "moving": "xx"
-          },
-          "dice": 1,
-          "strength": {
-            "normal": 5,
-            "halfRange": 5
-          },
-          "ammo": 2,
-          "specialRules": [
-            "Air-Filling",
-            "Guided Missile (2)",
-            "Homing",
-            "Small Arm"
-          ]
-        }
-      ],
-      "options": [],
-      "category": "Infantry"
-    },
-    {
-      "id": "recoilless-rifle-team",
-      "name": "RECOILLESS RIFLE TEAM",
-      "unitClass": "Inf",
-      "points": 15,
-      "stats": {
-        "movement": 4,
-        "quality": 2,
-        "height": 1,
-        "spottingDistance": 24,
-        "toughness": {
-          "front": "1-",
-          "side": "1-",
-          "rear": "1-"
-        }
-      },
-      "descriptiveCategory": "GENERAL-PURPOSE TEAM",
-      "specialRules": [
-        {
-          "name": "Assault Dismount"
-        }
-      ],
-      "weapons": [
-        {
-          "name": "6G1 7.76mm Battle Rifle",
-          "target": "All",
-          "range": 8,
-          "accuracy": {
-            "stationary": 3,
-            "moving": 4
-          },
-          "dice": 1,
-          "strength": {
-            "normal": 1,
-            "halfRange": 1
-          },
-          "ammo": null,
-          "specialRules": [
-            "Small Arm"
-          ]
-        }
-      ],
-      "options": [],
-      "category": "Infantry"
-    },
-    {
-      "id": "pup-carson-scouts",
-      "name": "PUP CARSON SCOUTS",
-      "unitClass": "Inf",
-      "points": 10,
-      "stats": {
-        "movement": 5,
-        "quality": 2,
-        "height": 1,
-        "spottingDistance": 24,
-        "toughness": {
-          "front": 1,
-          "side": "1-",
-          "rear": "1-"
-        }
-      },
-      "descriptiveCategory": "PATHFINDER TEAM",
-      "specialRules": [
-        {
-          "name": "Sense (6\")"
-        }
-      ],
-      "unitAbility": "vehicle with at least M6\" which this unit move\" during the Maneuver Phase, which is only M6\", but ignores terrain entrance/exit cost and all terrain multipliers.",
-      "weapons": [
-        {
-          "name": "6G1 7.76mm Battle Rifle",
-          "target": "All",
-          "range": 8,
-          "accuracy": {
-            "stationary": 4,
-            "moving": 4
-          },
-          "dice": 1,
-          "strength": {
-            "normal": 1,
-            "halfRange": 1
-          },
-          "ammo": null,
-          "specialRules": [
-            "Small Arm",
-            "All",
-            "RO\"",
-            "Al+/1+",
-            "S1/1",
-            "D1",
-            "Melee"
-          ]
-        }
-      ],
-      "options": [],
-      "category": "Infantry"
-    },
-    {
-      "id": "intermarine-rangers",
-      "name": "INTERMARINE RANGERS",
-      "unitClass": "Inf",
-      "points": 15,
-      "stats": {
-        "movement": 5,
-        "quality": 4,
-        "height": 1,
-        "spottingDistance": 32,
-        "toughness": {
-          "front": 1,
-          "side": "1-",
-          "rear": "1-"
-        }
-      },
-      "descriptiveCategory": "SCOUT-SNIPER TEAM",
-      "specialRules": [
-        {
-          "name": "Assault Dismount"
-        },
-        {
-          "name": "Fearless"
-        }
-      ],
-      "unitAbility": "This unit does not lose tokens while it is not identified.",
-      "weapons": [
-        {
-          "name": "6G5 7.76mm Sniper Rifle",
-          "target": "All",
-          "range": 16,
-          "accuracy": {
-            "stationary": 2,
-            "moving": "xx"
-          },
-          "dice": 1,
-          "strength": {
-            "normal": 1,
-            "halfRange": 1
-          },
-          "ammo": null,
-          "specialRules": [
-            "Discreet",
-            "No CC",
-            "Scoped",
-            "Small Arm",
-            "Thermal Sights"
-          ]
-        },
-        {
-          "name": "6P3 11.5mm SMG",
-          "target": "All",
-          "range": 8,
-          "accuracy": {
-            "stationary": 3,
-            "moving": 3
-          },
-          "dice": 2,
-          "ammo": null,
-          "specialRules": [
-            "Small Arm"
-          ]
-        },
-        {
-          "name": "1A5P MVSO Acquisition Laser",
-          "target": "All",
-          "range": 40,
-          "accuracy": {
-            "stationary": "++",
-            "moving": "xx"
-          },
-          "dice": 1,
-          "ammo": null,
-          "specialRules": [
-            "Designator",
-            "Discreet"
-          ]
-        }
-      ],
-      "options": [],
-      "category": "Infantry"
-    },
-    {
-      "id": "expeditionary-r-r-team",
-      "name": "EXPEDITIONARY R. R. TEAM",
-      "unitClass": "Inf",
-      "points": 15,
-      "stats": {
-        "movement": 5,
-        "quality": 3,
-        "height": 1,
-        "spottingDistance": 24,
-        "toughness": {
-          "front": 1,
-          "side": "1-",
-          "rear": "1-"
-        }
-      },
-      "descriptiveCategory": "PARATROOPER G. P. TEAM",
-      "specialRules": [
-        {
-          "name": "Assault Dismount"
-        },
-        {
-          "name": "Fearless"
-        },
-        {
-          "name": "Paradrop"
-        }
-      ],
-      "weapons": [
-        {
-          "name": "6G1A 7.76mm Automatic Rifle",
-          "target": "All",
-          "range": 8,
-          "accuracy": {
-            "stationary": 4,
-            "moving": 4
-          },
-          "dice": 2,
-          "strength": {
-            "normal": 1,
-            "halfRange": 1
-          },
-          "ammo": null,
-          "specialRules": [
-            "Small Arm"
-          ]
-        }
-      ],
-      "options": [],
-      "category": "Infantry"
-    },
-    {
-      "id": "type-68-bantam",
-      "name": "TYPE 68 \"BANTAM\"",
-      "unitClass": "Vec",
-      "points": 20,
-      "stats": {
-        "movement": 8,
-        "quality": 3,
+        "unitClass": "Vec",
         "height": 2,
         "spottingDistance": 32,
-        "toughness": {
-          "front": 6,
-          "side": 4,
-          "rear": 4
-        }
-      },
-      "descriptiveCategory": "INFANTRY FIGHTING VEHICLE",
-      "specialRules": [
-        {
-          "name": "Amphibious"
-        },
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "PC (2, Rear)"
-        },
-        {
-          "name": "Steel Watchbands"
-        }
-      ],
-      "weapons": [
-        {
-          "name": "6G2 7.76mm MG",
-          "target": "All",
-          "range": 12,
-          "accuracy": {
-            "stationary": 4,
-            "moving": 4
-          },
-          "dice": 2,
-          "ammo": null,
-          "specialRules": [
-            "Turret"
-          ]
-        },
-        {
-          "name": "2K28 73mm Low-Pressure Gun",
-          "target": "Inf/Vec",
-          "range": 22,
-          "accuracy": {
-            "stationary": 4,
-            "moving": 4
-          },
-          "dice": 1,
-          "ammo": 4,
-          "specialRules": [
-            "No CC (Inf.)",
-            "Turret"
-          ]
-        },
-        {
-          "name": "902V 81mm Smoke Launchers",
-          "target": "Gnd",
-          "range": 6,
-          "accuracy": {
-            "stationary": "++",
-            "moving": "++"
-          },
-          "dice": 2,
-          "ammo": 1,
-          "specialRules": [
-            "Light Indirect (1)",
-            "No CC",
-            "Smoke (3\")",
-            "Turret"
-          ]
-        }
-      ],
-      "options": [],
-      "category": "Vehicles"
-    },
-    {
-      "id": "laf-301-ox",
-      "name": "LaF-301 \"OX\"",
-      "unitClass": "Vec(W)",
-      "points": 10,
-      "stats": {
-        "movement": 8,
-        "quality": 2,
-        "height": 2,
-        "spottingDistance": 16,
-        "toughness": {
-          "front": 1,
-          "side": 1,
-          "rear": 1
-        }
-      },
-      "descriptiveCategory": "LOGISTICS TRUCK",
-      "specialRules": [
-        {
-          "name": "PC (2, Rear)"
-        },
-        {
-          "name": "Resupply (6)"
-        },
-        {
-          "name": "Tow (3)"
-        }
-      ],
-      "weapons": [
-        {
-          "name": "6G1 7.76mm Battle Rifle",
-          "target": "All",
-          "range": 8,
-          "accuracy": {
-            "stationary": 3,
-            "moving": 4
-          },
-          "dice": 1,
-          "strength": {
-            "normal": 1,
-            "halfRange": 1
-          },
-          "ammo": null,
-          "specialRules": [
-            "Small Arm"
-          ]
-        }
-      ],
-      "options": [],
-      "category": "Vehicles"
-    },
-    {
-      "id": "type-60-grumble",
-      "name": "TYPE 60 \"GRUMBLE\"",
-      "unitClass": "Vec(W)",
-      "points": 10,
-      "stats": {
-        "movement": 8,
-        "quality": 2,
-        "height": 2,
-        "spottingDistance": 24,
-        "toughness": {
-          "front": 4,
-          "side": 4,
-          "rear": 3
-        }
-      },
-      "descriptiveCategory": "ARMORED PERSONNEL CARRIER",
-      "specialRules": [
-        {
-          "name": "Amphibious"
-        },
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "PC (3, Rear)"
-        }
-      ],
-      "weapons": [
-        {
-          "name": "6G2 7.76mm MG",
-          "target": "All",
-          "range": 12,
-          "accuracy": {
-            "stationary": 4,
-            "moving": 6
-          },
-          "dice": 2,
-          "strength": {
-            "normal": 1,
-            "halfRange": 1
-          },
-          "ammo": null,
-          "specialRules": [
-            "Turret"
-          ]
-        },
-        {
-          "name": "2K15 40mm HE Grenade Launcher",
-          "target": "Inf/Vec",
-          "range": 14,
-          "accuracy": {
-            "stationary": 4,
-            "moving": 6
-          },
-          "dice": 2,
-          "strength": {
-            "normal": 1,
-            "halfRange": 2
-          },
-          "ammo": 4,
-          "specialRules": [
-            "Ignore Cover (1)",
-            "Turret"
-          ]
-        }
-      ],
-      "options": [],
-      "category": "Vehicles"
-    },
-    {
-      "id": "type-68b",
-      "name": "TYPE 68B",
-      "unitClass": "Vec",
-      "points": 25,
-      "stats": {
-        "movement": 8,
-        "quality": 3,
-        "height": 2,
-        "spottingDistance": 32,
-        "toughness": {
-          "front": 6,
-          "side": 4,
-          "rear": 4
-        }
-      },
-      "descriptiveCategory": "INFANTRY FIGHTING VEHICLE",
-      "specialRules": [
-        {
-          "name": "Amphibious"
-        },
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "PC (2, Rear)"
-        },
-        {
-          "name": "Steel Watchbands"
-        }
-      ],
-      "weapons": [
-        {
-          "name": "6G2 7.76mm MG",
-          "target": "All",
-          "range": 12,
-          "accuracy": {
-            "stationary": 4,
-            "moving": 4
-          },
-          "dice": 2,
-          "strength": {
-            "normal": 1,
-            "halfRange": 1
-          },
-          "ammo": null,
-          "specialRules": [
-            "Turret"
-          ]
-        },
-        {
-          "name": "2A34 23mm Autocannon",
-          "target": "All",
-          "range": 32,
-          "accuracy": {
-            "stationary": 4,
-            "moving": 4
-          },
-          "dice": 2,
-          "strength": {
-            "normal": 4,
-            "halfRange": 6
-          },
-          "ammo": 4,
-          "specialRules": [
-            "No CC (Inf.)",
-            "Turret"
-          ]
-        },
-        {
-          "name": "902V 81mm Smoke Launchers",
-          "target": "Gnd",
-          "range": 6,
-          "accuracy": {
-            "stationary": "++",
-            "moving": "++"
-          },
-          "dice": 2,
-          "ammo": 1,
-          "specialRules": [
-            "Light Indirect (1)",
-            "No CC",
-            "Smoke (3\")",
-            "Turret"
-          ]
-        }
-      ],
-      "options": [],
-      "category": "Vehicles"
-    },
-    {
-      "id": "type-40m-veldjen-m",
-      "name": "TYPE 40M \"VELDJEN-M\"",
-      "unitClass": "Vec",
-      "points": 20,
-      "stats": {
         "movement": 6,
-        "quality": 2,
-        "height": 2,
-        "spottingDistance": 32,
+        "quality": 3,
         "toughness": {
           "front": 8,
           "side": 6,
           "rear": 5
-        }
+        },
+        "command": 4
       },
-      "descriptiveCategory": "MEDIUM TANK",
       "specialRules": [
+        {
+          "name": "TACOM"
+        },
         {
           "name": "NBC"
         },
         {
           "name": "Steel Watchbands"
+        },
+        {
+          "name": "Brigade (4, 6\")"
         }
       ],
       "weapons": [
         {
           "name": "6G2 7.76mm MG",
+          "ammo": null,
           "target": "All",
           "range": 12,
           "accuracy": {
             "stationary": 4,
             "moving": 4
           },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
           "dice": 2,
-          "ammo": null,
           "specialRules": [
             "Turret"
           ]
         },
         {
           "name": "2K70 57mm High Velocity Gun",
+          "ammo": 6,
           "target": "Vec",
           "range": 40,
           "accuracy": {
             "stationary": 4,
             "moving": 4
           },
-          "dice": 1,
           "strength": {
             "normal": 12,
             "halfRange": 18
           },
-          "ammo": null
+          "dice": 1,
+          "specialRules": [
+            "Turret"
+          ]
         },
         {
           "name": "2K15 40mm HE Grenade Launcher",
+          "ammo": 4,
           "target": "Inf/Vec",
           "range": 14,
           "accuracy": {
             "stationary": 4,
             "moving": 5
           },
-          "dice": 2,
           "strength": {
-            "normal": 1,
+            "normal": "1+",
             "halfRange": 2
           },
-          "ammo": 4,
+          "dice": 2,
           "specialRules": [
-            "Turret",
             "Ignore Cover (1)",
             "Multi-Gun"
           ]
         }
-      ],
-      "options": [],
-      "category": "Vehicles"
+      ]
     },
     {
-      "id": "type-52-duck",
-      "name": "TYPE 52 \"DUCK\"",
-      "unitClass": "Vec",
-      "points": 20,
+      "id": "type-52c-duck-c",
+      "name": "TYPE 52C DUCK-C",
+      "category": "TACOMS",
+      "descriptiveCategory": "",
+      "points": 15,
       "stats": {
-        "movement": 10,
-        "quality": 2,
+        "unitClass": "Vec",
         "height": 2,
         "spottingDistance": 32,
+        "movement": 10,
+        "quality": 3,
         "toughness": {
           "front": 6,
           "side": 4,
           "rear": 4
-        }
+        },
+        "command": 4
       },
-      "descriptiveCategory": "LIGHT TANK",
+      "specialRules": [
+        {
+          "name": "TACOM"
+        },
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Steel Watchbands"
+        },
+        {
+          "name": "Amphibious"
+        },
+        {
+          "name": "Brigade (4, 6\")"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "6G2 7.76mm MG",
+          "ammo": null,
+          "target": "All",
+          "range": 12,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 5
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 2,
+          "specialRules": [
+            "Turret"
+          ]
+        },
+        {
+          "name": "2K81 152mm Gun-Launcher",
+          "ammo": 4,
+          "target": "Inf/Vec",
+          "range": 32,
+          "shotTypes": [
+            {
+              "name": "152mm HEAT",
+              "accuracy": {
+                "stationary": 4,
+                "moving": 5
+              },
+              "strength": {
+                "normal": 14,
+                "halfRange": 2
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Shaped Charge"
+              ]
+            },
+            {
+              "name": "152mm Beehive",
+              "range": 16,
+              "accuracy": {
+                "stationary": 4,
+                "moving": 5
+              },
+              "strength": {
+                "normal": 1,
+                "halfRange": "1+"
+              },
+              "dice": 5,
+              "specialRules": [
+                "Defensive CC (Inf.)"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "902V 81mm Smoke Launchers",
+          "ammo": 1,
+          "target": "Gnd",
+          "range": 6,
+          "accuracy": {
+            "stationary": "++",
+            "moving": "++"
+          },
+          "strength": 0,
+          "dice": 2,
+          "specialRules": [
+            "Light Indirect(1)",
+            "No CC",
+            "Smoke (3\")",
+            "Turret"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "type-52pc-mallard-c",
+      "name": "TYPE 52PC MALLARD-C",
+      "category": "TACOMS",
+      "descriptiveCategory": "",
+      "points": 15,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 10,
+        "quality": 4,
+        "toughness": {
+          "front": 4,
+          "side": 3,
+          "rear": 3
+        },
+        "command": 4
+      },
+      "specialRules": [
+        {
+          "name": "TACOM"
+        },
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Steel Watchbands"
+        },
+        {
+          "name": "Paradrop"
+        },
+        {
+          "name": "Amphibious"
+        },
+        {
+          "name": "Brigade (4, 6\")"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "2A76 7.76mm Minigun",
+          "ammo": null,
+          "target": "All",
+          "range": 12,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 6
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 4,
+          "specialRules": [
+            "Turret"
+          ]
+        },
+        {
+          "name": "2K56 76mm Gun",
+          "ammo": 3,
+          "target": "Vec",
+          "range": 32,
+          "shotTypes": [
+            {
+              "name": "76mm HVAP",
+              "accuracy": {
+                "stationary": 4,
+                "moving": 5
+              },
+              "strength": {
+                "normal": 8,
+                "halfRange": 15
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Turret"
+              ]
+            },
+            {
+              "name": "76mm HE-Frag",
+              "target": "Inf/Vec",
+              "accuracy": {
+                "stationary": 4,
+                "moving": 5
+              },
+              "strength": {
+                "normal": 3,
+                "halfRange": 3
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Turret",
+                "Ignore Cover (1)"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "902V 81mm Smoke Launchers",
+          "ammo": 1,
+          "target": "Gnd",
+          "range": 6,
+          "accuracy": {
+            "stationary": "++",
+            "moving": "++"
+          },
+          "strength": 0,
+          "dice": 2,
+          "specialRules": [
+            "Light Indirect(1)",
+            "No CC",
+            "Smoke (3\")",
+            "Turret"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "type-55mc-razorback-mc",
+      "name": "TYPE 55MC RAZORBACK-MC",
+      "category": "TACOMS",
+      "descriptiveCategory": "",
+      "points": 30,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 8,
+        "quality": 3,
+        "toughness": {
+          "front": 14,
+          "side": 7,
+          "rear": 5
+        },
+        "command": 4
+      },
+      "specialRules": [
+        {
+          "name": "TACOM"
+        },
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Steel Watchbands"
+        },
+        {
+          "name": "Brigade (4, 6\")"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "6G2 7.76mm MG, Hull",
+          "ammo": null,
+          "target": "All",
+          "range": 12,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 5
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 2,
+          "specialRules": [
+            "Multi-Gun"
+          ]
+        },
+        {
+          "name": "6GZ1 14,5mm HMG",
+          "ammo": null,
+          "target": "All",
+          "range": 24,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 6
+          },
+          "strength": {
+            "normal": 3,
+            "halfRange": 4
+          },
+          "dice": 2,
+          "specialRules": [
+            "Turret"
+          ]
+        },
+        {
+          "name": "2K41 100mm Gun",
+          "ammo": 4,
+          "target": "Vec",
+          "range": 40,
+          "shotTypes": [
+            {
+              "name": "100mm APDS",
+              "accuracy": {
+                "stationary": 3,
+                "moving": 4
+              },
+              "strength": {
+                "normal": 12,
+                "halfRange": 18
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Thermal Sights",
+                "Turret"
+              ]
+            },
+            {
+              "name": "100mm HE-Frag",
+              "target": "Inf/Vec",
+              "accuracy": {
+                "stationary": 3,
+                "moving": 4
+              },
+              "strength": {
+                "normal": 4,
+                "halfRange": 4
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Thermal Sights",
+                "Turret",
+                "Ignore Cover (1)"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "902V 81mm Smoke Launchers",
+          "ammo": 1,
+          "target": "Gnd",
+          "range": 6,
+          "accuracy": {
+            "stationary": "++",
+            "moving": "++"
+          },
+          "strength": 0,
+          "dice": 2,
+          "specialRules": [
+            "Light Indirect(1)",
+            "No CC",
+            "Smoke (3\")",
+            "Turret"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "type-71c-tusker-kc",
+      "name": "TYPE 71C TUSKER-KC",
+      "category": "TACOMS",
+      "descriptiveCategory": "",
+      "points": 40,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 8,
+        "quality": 4,
+        "toughness": {
+          "front": 16,
+          "side": 8,
+          "rear": 6
+        },
+        "command": 4
+      },
+      "specialRules": [
+        {
+          "name": "TACOM"
+        },
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Steel Watchbands"
+        },
+        {
+          "name": "Brigade (4, 6\")"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "6GZ1 14,5mm HMG",
+          "ammo": null,
+          "target": "All",
+          "range": 24,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 6
+          },
+          "strength": {
+            "normal": 3,
+            "halfRange": 4
+          },
+          "dice": 2,
+          "specialRules": [
+            "Turret"
+          ]
+        },
+        {
+          "name": "2K43 115mm Gun",
+          "ammo": 4,
+          "target": "Vec",
+          "range": 40,
+          "shotTypes": [
+            {
+              "name": "115mm Sabot",
+              "accuracy": {
+                "stationary": 2,
+                "moving": 3
+              },
+              "strength": {
+                "normal": 14,
+                "halfRange": 21
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Thermal Sights",
+                "Turret"
+              ]
+            },
+            {
+              "name": "115mm HEAT",
+              "target": "Inf/Vec",
+              "accuracy": {
+                "stationary": 2,
+                "moving": 3
+              },
+              "strength": {
+                "normal": 11,
+                "halfRange": 2
+              },
+              "dice": 1,
+              "specialRules": [
+                "Shaped Charge"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "902V 81mm Smoke Launchers",
+          "ammo": 1,
+          "target": "Gnd",
+          "range": 6,
+          "accuracy": {
+            "stationary": "++",
+            "moving": "++"
+          },
+          "strength": 0,
+          "dice": 2,
+          "specialRules": [
+            "Light Indirect(1)",
+            "No CC",
+            "Smoke (3\")",
+            "Turret"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "type-71bc-tusker-gmc",
+      "name": "TYPE 71BC TUSKER-GMC",
+      "category": "TACOMS",
+      "descriptiveCategory": "",
+      "points": 70,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 8,
+        "quality": 5,
+        "toughness": {
+          "front": 24,
+          "side": 12,
+          "rear": 8
+        },
+        "command": 4
+      },
+      "specialRules": [
+        {
+          "name": "TACOM"
+        },
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Steel Watchbands"
+        },
+        {
+          "name": "Brigade (4, 6\")"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "6GZ1 14,5mm HMG",
+          "ammo": null,
+          "target": "All",
+          "range": 24,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 6
+          },
+          "strength": {
+            "normal": 3,
+            "halfRange": 4
+          },
+          "dice": 2,
+          "specialRules": [
+            "Thermal Sights",
+            "Turret"
+          ]
+        },
+        {
+          "name": "2K81 152mm Gun-Launcher",
+          "ammo": 4,
+          "target": "Vec",
+          "range": 60,
+          "shotTypes": [
+            {
+              "name": "152mm Gun-Launched ATGM",
+              "accuracy": {
+                "stationary": 2,
+                "moving": "xx"
+              },
+              "strength": {
+                "normal": 18,
+                "halfRange": 3
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Thermal Sights",
+                "Turret",
+                "Guided Missile (1)",
+                "Shaped Charge"
+              ]
+            },
+            {
+              "name": "152mm Gun-Launched Thermobaric",
+              "target": "Gnd",
+              "accuracy": {
+                "stationary": 3,
+                "moving": "xx"
+              },
+              "strength": {
+                "normal": 3,
+                "halfRange": 3
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Thermal Sights",
+                "Turret",
+                "Guided Missile (1)",
+                "Ignore Cover (2)",
+                "Radius (2\")",
+                "Rear Attack"
+              ]
+            },
+            {
+              "name": "152mm Tandem Heat",
+              "target": "Inf/Vec",
+              "range": 40,
+              "accuracy": {
+                "stationary": 2,
+                "moving": 3
+              },
+              "strength": {
+                "normal": 18,
+                "halfRange": 3
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Thermal Sights",
+                "Turret",
+                "Shaped Charge"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "902V 81mm Smoke Launchers",
+          "ammo": 1,
+          "target": "Gnd",
+          "range": 6,
+          "accuracy": {
+            "stationary": "++",
+            "moving": "++"
+          },
+          "strength": 0,
+          "dice": 2,
+          "specialRules": [
+            "Light Indirect(1)",
+            "No CC",
+            "Smoke (3\")",
+            "Turret"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reservists",
+      "name": "RESERVISTS",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 5,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 16,
+        "movement": 4,
+        "quality": 1,
+        "toughness": {
+          "front": "1-",
+          "side": "1-",
+          "rear": "1-"
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": ""
+        }
+      ],
+      "weapons": [
+        {
+          "name": "6P3 11.5mm SMG",
+          "ammo": null,
+          "target": "All",
+          "range": 8,
+          "accuracy": {
+            "stationary": 5,
+            "moving": 5
+          },
+          "strength": {
+            "normal": "1-",
+            "halfRange": 1
+          },
+          "dice": 2,
+          "specialRules": [
+            "Small Arm"
+          ]
+        },
+        {
+          "name": "6L4 73mm RPG",
+          "ammo": 3,
+          "target": "Inf/Vec",
+          "range": 8,
+          "accuracy": {
+            "stationary": 5,
+            "moving": 6
+          },
+          "strength": {
+            "normal": 6,
+            "halfRange": 1
+          },
+          "dice": 1,
+          "specialRules": [
+            "Shaped Charge",
+            "Small Arm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "states-grenadiers",
+      "name": "STATES-GRENADIERS",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 10,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 16,
+        "movement": 4,
+        "quality": 2,
+        "toughness": {
+          "front": 1,
+          "side": "1-",
+          "rear": "1-"
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Assault Dismount"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "6G1 7.76mm Battle Rifle",
+          "ammo": null,
+          "target": "All",
+          "range": 8,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 1,
+          "specialRules": [
+            "Small Arm"
+          ]
+        },
+        {
+          "name": "6G2 7.76mm GPMG",
+          "ammo": null,
+          "target": "All",
+          "range": 12,
+          "accuracy": {
+            "stationary": 4,
+            "moving": "xx"
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 2,
+          "specialRules": [
+            "Defensive CC"
+          ]
+        },
+        {
+          "name": "6L1 85mm RPG",
+          "ammo": 3,
+          "target": "Inf/Vec",
+          "range": 8,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 6
+          },
+          "strength": {
+            "normal": 8,
+            "halfRange": "1+"
+          },
+          "dice": 1,
+          "specialRules": [
+            "Shaped Charge",
+            "Small Arm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "federal-expeditionaries",
+      "name": "FEDERAL EXPEDITIONARIES",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 15,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 16,
+        "movement": 5,
+        "quality": 3,
+        "toughness": {
+          "front": 1,
+          "side": "1-",
+          "rear": "1-"
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Assault Dismount"
+        },
+        {
+          "name": "Fearless"
+        },
+        {
+          "name": "Paradrop"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "6G1A 7.76mm Automatic Rifle",
+          "ammo": null,
+          "target": "All",
+          "range": 8,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 2,
+          "specialRules": [
+            "Small Arm"
+          ]
+        },
+        {
+          "name": "6L3 10mm HEDP Grenade Launcher",
+          "ammo": 4,
+          "target": "Inf/Vec",
+          "range": 8,
+          "accuracy": "*",
+          "strength": {
+            "normal": 5,
+            "halfRange": "1+"
+          },
+          "dice": 1,
+          "specialRules": [
+            "Shaped Charge",
+            "Underbarrel (6G1A)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mortar-team",
+      "name": "MORTAR TEAM",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 10,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 16,
+        "movement": 4,
+        "quality": 2,
+        "toughness": {
+          "front": "1-",
+          "side": "1-",
+          "rear": "1-"
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Assault Dismount"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "6G1 7.76mm Battle Rifle",
+          "ammo": null,
+          "target": "All",
+          "range": 8,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 1,
+          "specialRules": [
+            "Small Arm"
+          ]
+        },
+        {
+          "name": "6L2 60mm Knee Mortar",
+          "ammo": 6,
+          "target": "Inf/Vec",
+          "range": 16,
+          "shotTypes": [
+            {
+              "name": "60mm Frag",
+              "accuracy": {
+                "stationary": 4,
+                "moving": "xx"
+              },
+              "strength": {
+                "normal": "1+",
+                "halfRange": "1+"
+              },
+              "dice": 2,
+              "specialRules": [
+                "Light Indirect (1)",
+                "No CC",
+                "Air-Filling"
+              ]
+            },
+            {
+              "name": "60mm Smoke",
+              "target": "Gnd",
+              "accuracy": {
+                "stationary": "++",
+                "moving": "xx"
+              },
+              "strength": 0,
+              "dice": 1,
+              "specialRules": [
+                "Smoke (3\")"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "atgm-team",
+      "name": "ATGM TEAM",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 10,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 32,
+        "movement": 4,
+        "quality": 2,
+        "toughness": {
+          "front": "1-",
+          "side": "1-",
+          "rear": "1-"
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Assault Dismount"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "6G1 7.76mm Battle Rifle",
+          "ammo": null,
+          "target": "All",
+          "range": 8,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 1,
+          "specialRules": [
+            "Small Arm"
+          ]
+        },
+        {
+          "name": "9GR1 125mm ATGM",
+          "ammo": 2,
+          "target": "Vec",
+          "range": 60,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 14,
+            "halfRange": 2
+          },
+          "dice": 1,
+          "specialRules": [
+            "Guided Missile (2)",
+            "MCLOS",
+            "Shaped Charge"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "manpads-team",
+      "name": "MANPADS TEAM",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 10,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 32,
+        "movement": 4,
+        "quality": 2,
+        "toughness": {
+          "front": "1-",
+          "side": "1-",
+          "rear": "1-"
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Assault Dismount"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "6G1 7.76mm Battle Rifle",
+          "ammo": null,
+          "target": "All",
+          "range": 8,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 1,
+          "specialRules": [
+            "Small Arm"
+          ]
+        },
+        {
+          "name": "9GR2 85mm MANPADS",
+          "ammo": 2,
+          "target": "Air",
+          "range": 60,
+          "accuracy": {
+            "stationary": 4,
+            "moving": "xx"
+          },
+          "strength": {
+            "normal": 5,
+            "halfRange": 5
+          },
+          "dice": 1,
+          "specialRules": [
+            "Air-Filling",
+            "Guided Missle (2)",
+            "Homing",
+            "Small Arm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "recoilless-rifle-team",
+      "name": "RECOILLESS RIFLE TEAM",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 15,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 24,
+        "movement": 4,
+        "quality": 2,
+        "toughness": {
+          "front": "1-",
+          "side": "1-",
+          "rear": "1-"
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Assault Dismount"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "6G1 7.76mm Battle Rifle",
+          "ammo": null,
+          "target": "All",
+          "range": 8,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 1,
+          "specialRules": [
+            "Small Arm"
+          ]
+        },
+        {
+          "name": "6L5 73mm Recoilless Rifle",
+          "ammo": 4,
+          "target": "Inf/Vec",
+          "range": 24,
+          "shotTypes": [
+            {
+              "name": "73mm HEAT",
+              "accuracy": {
+                "stationary": 3,
+                "moving": "xx"
+              },
+              "strength": {
+                "normal": 8,
+                "halfRange": "1+"
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Shaped Charge"
+              ]
+            },
+            {
+              "name": "73mm Incendiary",
+              "accuracy": {
+                "stationary": 3,
+                "moving": "xx"
+              },
+              "strength": {
+                "normal": "1+",
+                "halfRange": "1+"
+              },
+              "dice": 1,
+              "specialRules": [
+                "Ignore Cover (2)",
+                "No CC (Inf.)",
+                "Rear Attack"
+              ]
+            },
+            {
+              "name": "73mm Smoke",
+              "target": "Gnd",
+              "accuracy": {
+                "stationary": 3,
+                "moving": "xx"
+              },
+              "strength": 0,
+              "dice": 1,
+              "specialRules": [
+                "No CC",
+                "Smoke (3\")"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "expeditionary-r.r.-team",
+      "name": "EXPEDITIONARY R.R. TEAM",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 15,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 24,
+        "movement": 5,
+        "quality": 3,
+        "toughness": {
+          "front": 1,
+          "side": "1-",
+          "rear": "1-"
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Assault Dismount"
+        },
+        {
+          "name": "Fearless"
+        },
+        {
+          "name": "Paradrop"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "6G1A 7.76mm Automatic Rifle",
+          "ammo": null,
+          "target": "All",
+          "range": 8,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 2,
+          "specialRules": [
+            "Small Arm"
+          ]
+        },
+        {
+          "name": "6L6 57mm Light Recoilless Rifle",
+          "ammo": 4,
+          "target": "Inf/Vec",
+          "range": 24,
+          "shotTypes": [
+            {
+              "name": "57mm HEAT",
+              "accuracy": {
+                "stationary": 3,
+                "moving": 5
+              },
+              "strength": {
+                "normal": 6,
+                "halfRange": 1
+              },
+              "dice": 1,
+              "specialRules": [
+                "Small Arm",
+                "Shaped Charge"
+              ]
+            },
+            {
+              "name": "57mm Canister",
+              "range": 12,
+              "accuracy": {
+                "stationary": 3,
+                "moving": 5
+              },
+              "strength": {
+                "normal": 1,
+                "halfRange": 1
+              },
+              "dice": 3,
+              "specialRules": [
+                "Small Arm"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pup-carson-scouts",
+      "name": "PUP CARSON SCOUTS",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 10,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 24,
+        "movement": 5,
+        "quality": 2,
+        "toughness": {
+          "front": 1,
+          "side": "1-",
+          "rear": "1-"
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Sense (6\")"
+        }
+      ],
+      "unitAbility": "Any Tracked with at least M6\" which this unit embarks or desants on can make a \"pathfinder move\" during Maneuver Phase which is only M6\" but ignores terrain entrance/exit costs and all terrain multipliers.",
+      "weapons": [
+        {
+          "name": "6G1 7.76mm Battle Rifle",
+          "ammo": null,
+          "target": "All",
+          "range": 8,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 1,
+          "specialRules": [
+            "Small Arm"
+          ]
+        },
+        {
+          "name": "Teeth & Claws",
+          "ammo": null,
+          "target": "All",
+          "range": 0,
+          "accuracy": {
+            "stationary": 1,
+            "moving": 1
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": 1
+          },
+          "dice": 1,
+          "specialRules": [
+            "Melee"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "intermarine-rangers",
+      "name": "INTERMARINE RANGERS",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 15,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 1,
+        "spottingDistance": 32,
+        "movement": 5,
+        "quality": 4,
+        "toughness": {
+          "front": 1,
+          "side": "1-",
+          "rear": "1-"
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Assault Dismount"
+        },
+        {
+          "name": "Fearless"
+        }
+      ],
+      "unitAbility": "This Unit does not lose accuracy from pin tokens while it is not identified.",
+      "weapons": [
+        {
+          "name": "6G5 7.76mm Sniper Rifle",
+          "ammo": null,
+          "target": "All",
+          "range": 16,
+          "accuracy": {
+            "stationary": 2,
+            "moving": "xx"
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 1,
+          "specialRules": [
+            "Discreet",
+            "No CC",
+            "Scoped",
+            "Small Arm",
+            "Thermal Sight"
+          ]
+        },
+        {
+          "name": "6P3 11.5mm SMG",
+          "ammo": null,
+          "target": "All",
+          "range": 8,
+          "accuracy": {
+            "stationary": 5,
+            "moving": 5
+          },
+          "strength": {
+            "normal": "1-",
+            "halfRange": 1
+          },
+          "dice": 2,
+          "specialRules": [
+            "Small Arm"
+          ]
+        },
+        {
+          "name": "1A5P MVSO Acquisition Laser",
+          "ammo": null,
+          "target": "All",
+          "range": 40,
+          "accuracy": {
+            "stationary": "++",
+            "moving": "xx"
+          },
+          "strength": 0,
+          "dice": 1,
+          "specialRules": [
+            "Designator",
+            "Discreet"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "laf-30-ox",
+      "name": "LAF-30 OX",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 10,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 16,
+        "movement": 8,
+        "quality": 2,
+        "toughness": {
+          "front": 1,
+          "side": 1,
+          "rear": 1
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Resupply (6)"
+        },
+        {
+          "name": "PC (2, Rear)"
+        },
+        {
+          "name": "Tow (2)"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "6G1 7.76mm Battle Rifle",
+          "ammo": null,
+          "target": "All",
+          "range": 8,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 1,
+          "specialRules": [
+            "Small Arm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "type-60-grumble",
+      "name": "TYPE 60 GRUMBLE",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 10,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 24,
+        "movement": 8,
+        "quality": 2,
+        "toughness": {
+          "front": 4,
+          "side": 4,
+          "rear": 3
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Amphibious"
+        },
+        {
+          "name": "PC (2, Rear)"
+        },
+        {
+          "name": "NBC"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "6G2 7.76mm MG",
+          "ammo": null,
+          "target": "All",
+          "range": 12,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 2,
+          "specialRules": [
+            "Turret"
+          ]
+        },
+        {
+          "name": "2K15 40mm HE Grenade Launcher",
+          "ammo": 4,
+          "target": "Inf/Vec",
+          "range": 14,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 5
+          },
+          "strength": {
+            "normal": "1+",
+            "halfRange": 2
+          },
+          "dice": 2,
+          "specialRules": [
+            "Ignore Cover (1)",
+            "Turret"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "type-68-bantam",
+      "name": "TYPE 68 BANTAM",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 20,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 8,
+        "quality": 3,
+        "toughness": {
+          "front": 6,
+          "side": 4,
+          "rear": 4
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Amphibious"
+        },
+        {
+          "name": "PC (2, Rear)"
+        },
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Steel Watchbands"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "6G2 7.76mm MG",
+          "ammo": null,
+          "target": "All",
+          "range": 12,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 2,
+          "specialRules": [
+            "Turret"
+          ]
+        },
+        {
+          "name": "2K28 73mm Low-Pressure Gun (73mm HEAT, 73mm HE-Frag)",
+          "ammo": 4,
+          "target": "Inf/Vec",
+          "range": 22,
+          "shotTypes": [
+            {
+              "name": "73mm HEAT",
+              "accuracy": {
+                "stationary": 4,
+                "moving": 4
+              },
+              "strength": {
+                "normal": 8,
+                "halfRange": "1+"
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Turret",
+                "Shaped Charge"
+              ]
+            },
+            {
+              "name": "73mm HE-Frag",
+              "accuracy": {
+                "stationary": 4,
+                "moving": 4
+              },
+              "strength": {
+                "normal": 3,
+                "halfRange": 3
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Turret",
+                "Ignore Cover (1)"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "9GR1 125mm ATGM",
+          "ammo": 2,
+          "target": "Vec",
+          "range": 60,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 14,
+            "halfRange": 2
+          },
+          "dice": 1,
+          "specialRules": [
+            "Guided Missile (2)",
+            "MCLOS",
+            "Shaped Charge",
+            "Turret"
+          ]
+        },
+        {
+          "name": "902V 81mm Smoke Launchers",
+          "ammo": 1,
+          "target": "Gnd",
+          "range": 6,
+          "accuracy": {
+            "stationary": "++",
+            "moving": "++"
+          },
+          "strength": 0,
+          "dice": 2,
+          "specialRules": [
+            "Light Indirect(1)",
+            "No CC",
+            "Smoke (3\")",
+            "Turret"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "type-68b-bantam-mk",
+      "name": "TYPE 68B BANTAM-MK",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 25,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 8,
+        "quality": 3,
+        "toughness": {
+          "front": 6,
+          "side": 4,
+          "rear": 4
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Amphibious"
+        },
+        {
+          "name": "PC (2, Rear)"
+        },
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Steel Watchbands"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "6G2 7.76mm MG",
+          "ammo": null,
+          "target": "All",
+          "range": 12,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 2,
+          "specialRules": [
+            "Turret"
+          ]
+        },
+        {
+          "name": "2A34 23mm Autocannon",
+          "ammo": 4,
+          "target": "All",
+          "range": 32,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 4,
+            "halfRange": 6
+          },
+          "dice": 2,
+          "specialRules": [
+            "No CC (Inf.)",
+            "Turret"
+          ]
+        },
+        {
+          "name": "9GR1 125mm ATGM",
+          "ammo": 2,
+          "target": "Vec",
+          "range": 60,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 14,
+            "halfRange": 2
+          },
+          "dice": 1,
+          "specialRules": [
+            "Guided Missile (2)",
+            "MCLOS",
+            "Shaped Charge",
+            "Turret"
+          ]
+        },
+        {
+          "name": "902V 81mm Smoke Launchers",
+          "ammo": 1,
+          "target": "Gnd",
+          "range": 6,
+          "accuracy": {
+            "stationary": "++",
+            "moving": "++"
+          },
+          "strength": 0,
+          "dice": 2,
+          "specialRules": [
+            "Light Indirect(1)",
+            "No CC",
+            "Smoke (3\")",
+            "Turret"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "type-40-veldjen-m",
+      "name": "TYPE 40 VELDJEN-M",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 20,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 6,
+        "quality": 2,
+        "toughness": {
+          "front": 8,
+          "side": 6,
+          "rear": 5
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Steel Watchbands"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "6G2 7.76mm MG",
+          "ammo": null,
+          "target": "All",
+          "range": 12,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 2,
+          "specialRules": [
+            "Turret"
+          ]
+        },
+        {
+          "name": "2K70 57mm High Velocity Gun",
+          "ammo": 6,
+          "target": "Vec",
+          "range": 40,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 12,
+            "halfRange": 18
+          },
+          "dice": 1,
+          "specialRules": [
+            "Turret"
+          ]
+        },
+        {
+          "name": "2K15 40mm HE Grenade Launcher",
+          "ammo": 4,
+          "target": "Inf/Vec",
+          "range": 14,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 5
+          },
+          "strength": {
+            "normal": "1+",
+            "halfRange": 2
+          },
+          "dice": 2,
+          "specialRules": [
+            "Ignore Cover (1)",
+            "Multi-Gun"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "type-52-duck",
+      "name": "TYPE 52 DUCK",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 20,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 10,
+        "quality": 2,
+        "toughness": {
+          "front": 6,
+          "side": 4,
+          "rear": 4
+        },
+        "command": 0
+      },
       "specialRules": [
         {
           "name": "Amphibious"
@@ -1173,60 +2155,101 @@
       "weapons": [
         {
           "name": "6G2 7.76mm MG",
+          "ammo": null,
           "target": "All",
           "range": 12,
           "accuracy": {
             "stationary": 4,
-            "moving": 5
+            "moving": 4
           },
-          "dice": 2,
           "strength": {
             "normal": 1,
-            "halfRange": 1
+            "halfRange": "1+"
           },
-          "ammo": null,
+          "dice": 2,
           "specialRules": [
             "Turret"
           ]
         },
         {
+          "name": "2K81 152mm Gun-Launcher",
+          "ammo": 4,
+          "target": "Inf/Vec",
+          "range": 32,
+          "shotTypes": [
+            {
+              "name": "152mm HEAT",
+              "accuracy": {
+                "stationary": 4,
+                "moving": 5
+              },
+              "strength": {
+                "normal": 14,
+                "halfRange": 2
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Shaped Charge"
+              ]
+            },
+            {
+              "name": "152mm Beehive",
+              "range": 16,
+              "accuracy": {
+                "stationary": 4,
+                "moving": 5
+              },
+              "strength": {
+                "normal": 1,
+                "halfRange": "1+"
+              },
+              "dice": 5,
+              "specialRules": [
+                "Defensive CC (Inf.)"
+              ]
+            }
+          ]
+        },
+        {
           "name": "902V 81mm Smoke Launchers",
+          "ammo": 1,
           "target": "Gnd",
           "range": 6,
           "accuracy": {
             "stationary": "++",
             "moving": "++"
           },
+          "strength": 0,
           "dice": 2,
-          "ammo": 1,
           "specialRules": [
-            "Light Indirect (1)",
+            "Light Indirect(1)",
             "No CC",
             "Smoke (3\")",
             "Turret"
           ]
         }
-      ],
-      "options": [],
-      "category": "Vehicles"
+      ]
     },
     {
       "id": "type-52p-mallard",
-      "name": "TYPE 52P \"MALLARD\"",
-      "unitClass": "Vec",
+      "name": "TYPE 52P MALLARD",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
       "points": 20,
       "stats": {
-        "movement": 10,
-        "quality": 3,
+        "unitClass": "Vec",
         "height": 2,
         "spottingDistance": 32,
+        "movement": 10,
+        "quality": 3,
         "toughness": {
           "front": 4,
           "side": 3,
           "rear": 3
-        }
+        },
+        "command": 0
       },
-      "descriptiveCategory": "AIRMOBILE LIGHT TANK",
       "specialRules": [
         {
           "name": "Amphibious"
@@ -1244,156 +2267,103 @@
       "weapons": [
         {
           "name": "2A76 7.76mm Minigun",
+          "ammo": null,
           "target": "All",
           "range": 12,
           "accuracy": {
             "stationary": 4,
             "moving": 6
           },
-          "dice": 4,
           "strength": {
             "normal": 1,
-            "halfRange": 1
+            "halfRange": "1+"
           },
-          "ammo": null,
+          "dice": 4,
           "specialRules": [
             "Turret"
           ]
         },
         {
           "name": "2K56 76mm Gun",
-          "target": "All",
-          "range": 32,
-          "accuracy": {
-            "stationary": 4,
-            "moving": 5
-          },
-          "dice": 1,
           "ammo": 3,
-          "specialRules": [
-            "No CC (Inf.)",
-            "Turret"
+          "target": "Vec",
+          "range": 32,
+          "shotTypes": [
+            {
+              "name": "76mm HVAP",
+              "accuracy": {
+                "stationary": 4,
+                "moving": 5
+              },
+              "strength": {
+                "normal": 8,
+                "halfRange": 15
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Turret"
+              ]
+            },
+            {
+              "name": "76mm HE-Frag",
+              "target": "Inf/Vec",
+              "accuracy": {
+                "stationary": 4,
+                "moving": 5
+              },
+              "strength": {
+                "normal": 3,
+                "halfRange": 3
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Turret",
+                "Ignore Cover (1)"
+              ]
+            }
           ]
         },
         {
           "name": "902V 81mm Smoke Launchers",
+          "ammo": 1,
           "target": "Gnd",
           "range": 6,
           "accuracy": {
             "stationary": "++",
             "moving": "++"
           },
+          "strength": 0,
           "dice": 2,
-          "ammo": 1,
           "specialRules": [
-            "Light Indirect (1)",
+            "Light Indirect(1)",
             "No CC",
             "Smoke (3\")",
             "Turret"
           ]
         }
-      ],
-      "options": [],
-      "category": "Vehicles"
-    },
-    {
-      "id": "type-71-tusker-k",
-      "name": "TYPE 71 \"TUSKER-K\"",
-      "unitClass": "Vec",
-      "points": 50,
-      "stats": {
-        "movement": 8,
-        "quality": 3,
-        "height": 2,
-        "spottingDistance": 32,
-        "toughness": {
-          "front": 16,
-          "side": 8,
-          "rear": 6
-        }
-      },
-      "descriptiveCategory": "MAIN BATTLE TANK",
-      "specialRules": [
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Steel Watchbands"
-        }
-      ],
-      "weapons": [
-        {
-          "name": "6GZ1 14.5mm HMG",
-          "target": "All",
-          "range": 24,
-          "accuracy": {
-            "stationary": 4,
-            "moving": 5
-          },
-          "dice": 2,
-          "strength": {
-            "normal": 3,
-            "halfRange": 4
-          },
-          "ammo": null,
-          "specialRules": [
-            "Turret"
-          ]
-        },
-        {
-          "name": "2K43 115mm Gun",
-          "target": "All",
-          "range": 40,
-          "accuracy": {
-            "stationary": 2,
-            "moving": 3
-          },
-          "dice": 1,
-          "ammo": 4,
-          "specialRules": [
-            "No CC (Inf.)",
-            "Thermal Sights",
-            "Turret"
-          ]
-        },
-        {
-          "name": "902V 81mm Smoke Launchers",
-          "target": "Gnd",
-          "range": 6,
-          "accuracy": {
-            "stationary": "++",
-            "moving": "++"
-          },
-          "dice": 2,
-          "ammo": 1,
-          "specialRules": [
-            "Light Indirect (1)",
-            "No CC",
-            "Smoke (3\")",
-            "Turret"
-          ]
-        }
-      ],
-      "options": [],
-      "category": "Vehicles"
+      ]
     },
     {
       "id": "type-55m-razorback-m",
-      "name": "TYPE 55M \"RAZORBACK-M\"",
-      "unitClass": "Vec",
+      "name": "TYPE 55M RAZORBACK-M",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
       "points": 40,
       "stats": {
-        "movement": 8,
-        "quality": 2,
+        "unitClass": "Vec",
         "height": 2,
         "spottingDistance": 32,
+        "movement": 8,
+        "quality": 2,
         "toughness": {
           "front": 14,
           "side": 7,
           "rear": 5
-        }
+        },
+        "command": 0
       },
-      "descriptiveCategory": "MAIN BATTLE TANK",
       "specialRules": [
         {
           "name": "NBC"
@@ -1404,95 +2374,124 @@
       ],
       "weapons": [
         {
-          "name": "6G2 7.76mm MG, hull",
+          "name": "6G2 7.76mm MG, Hull",
+          "ammo": null,
           "target": "All",
           "range": 12,
           "accuracy": {
             "stationary": 4,
-            "moving": 5
+            "moving": 4
           },
-          "dice": 2,
           "strength": {
             "normal": 1,
-            "halfRange": 1
+            "halfRange": "1+"
           },
-          "ammo": null,
+          "dice": 2,
           "specialRules": [
-            "Multi-Gun"
+            ""
           ]
         },
         {
-          "name": "6GZ1 14.5mm HMG",
+          "name": "6GZ1 14,5mm HMG",
+          "ammo": null,
           "target": "All",
           "range": 24,
           "accuracy": {
             "stationary": 4,
             "moving": 6
           },
-          "dice": 2,
           "strength": {
             "normal": 3,
             "halfRange": 4
           },
-          "ammo": null,
+          "dice": 2,
           "specialRules": [
             "Turret"
           ]
         },
         {
           "name": "2K41 100mm Gun",
-          "target": "All",
-          "range": 40,
-          "accuracy": {
-            "stationary": 3,
-            "moving": 4
-          },
-          "dice": 1,
           "ammo": 4,
-          "specialRules": [
-            "No CC (Inf.)",
-            "Thermal Sights",
-            "Turret"
+          "target": "Vec",
+          "range": 40,
+          "shotTypes": [
+            {
+              "name": "100mm APDS",
+              "accuracy": {
+                "stationary": 3,
+                "moving": 4
+              },
+              "strength": {
+                "normal": 12,
+                "halfRange": 18
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Thermal Sights",
+                "Turret"
+              ]
+            },
+            {
+              "name": "100mm HE-Frag",
+              "target": "Inf/Vec",
+              "accuracy": {
+                "stationary": 3,
+                "moving": 4
+              },
+              "strength": {
+                "normal": 4,
+                "halfRange": 4
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Thermal Sights",
+                "Turret",
+                "Ignore Cover (1)"
+              ]
+            }
           ]
         },
         {
           "name": "902V 81mm Smoke Launchers",
+          "ammo": 1,
           "target": "Gnd",
           "range": 6,
           "accuracy": {
             "stationary": "++",
             "moving": "++"
           },
+          "strength": 0,
           "dice": 2,
-          "ammo": 1,
           "specialRules": [
-            "Light Indirect (1)",
+            "Light Indirect(1)",
             "No CC",
             "Smoke (3\")",
             "Turret"
           ]
         }
-      ],
-      "options": [],
-      "category": "Vehicles"
+      ]
     },
     {
-      "id": "type-71b-tusker-gm",
-      "name": "TYPE 71B \"TUSKER-GM\"",
-      "unitClass": "Vec",
-      "points": 80,
+      "id": "type-71-tusker-k",
+      "name": "TYPE 71 TUSKER-K",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 50,
       "stats": {
-        "movement": 8,
-        "quality": 4,
+        "unitClass": "Vec",
         "height": 2,
         "spottingDistance": 32,
+        "movement": 8,
+        "quality": 3,
         "toughness": {
-          "front": 24,
-          "side": 12,
-          "rear": 8
-        }
+          "front": 16,
+          "side": 8,
+          "rear": 6
+        },
+        "command": 0
       },
-      "descriptiveCategory": "MAIN BATTLE TANK",
       "specialRules": [
         {
           "name": "NBC"
@@ -1503,97 +2502,304 @@
       ],
       "weapons": [
         {
-          "name": "6GZ1 14.5mm HMG",
+          "name": "6GZ1 14,5mm HMG",
+          "ammo": null,
           "target": "All",
           "range": 24,
           "accuracy": {
             "stationary": 4,
-            "moving": 4
+            "moving": 6
           },
-          "dice": 2,
           "strength": {
             "normal": 3,
             "halfRange": 4
           },
-          "ammo": null,
+          "dice": 2,
           "specialRules": [
-            "Thermal Sights",
             "Turret"
           ]
         },
         {
+          "name": "2K43 115mm Gun",
+          "ammo": 4,
+          "target": "Vec",
+          "range": 40,
+          "shotTypes": [
+            {
+              "name": "115mm Sabot",
+              "accuracy": {
+                "stationary": 2,
+                "moving": 3
+              },
+              "strength": {
+                "normal": 14,
+                "halfRange": 21
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Thermal Sights",
+                "Turret"
+              ]
+            },
+            {
+              "name": "115mm HEAT",
+              "target": "Inf/Vec",
+              "accuracy": {
+                "stationary": 2,
+                "moving": 3
+              },
+              "strength": {
+                "normal": 11,
+                "halfRange": 2
+              },
+              "dice": 1,
+              "specialRules": [
+                "Shaped Charge"
+              ]
+            }
+          ]
+        },
+        {
           "name": "902V 81mm Smoke Launchers",
+          "ammo": 1,
           "target": "Gnd",
           "range": 6,
           "accuracy": {
             "stationary": "++",
             "moving": "++"
           },
+          "strength": 0,
           "dice": 2,
-          "ammo": 1,
           "specialRules": [
-            "Light Indirect (1)",
+            "Light Indirect(1)",
             "No CC",
             "Smoke (3\")",
             "Turret"
           ]
         }
+      ]
+    },
+    {
+      "id": "type-71b-tusker-gm",
+      "name": "TYPE 71B TUSKER-GM",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 80,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 8,
+        "quality": 4,
+        "toughness": {
+          "front": 24,
+          "side": 12,
+          "rear": 8
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "NBC"
+        },
+        {
+          "name": "Steel Watchbands"
+        }
       ],
-      "options": [],
-      "category": "Vehicles"
+      "weapons": [
+        {
+          "name": "6GZ1 14,5mm HMG",
+          "ammo": null,
+          "target": "All",
+          "range": 24,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 6
+          },
+          "strength": {
+            "normal": 3,
+            "halfRange": 4
+          },
+          "dice": 2,
+          "specialRules": [
+            "Thermal Sights",
+            "Turret"
+          ]
+        },
+        {
+          "name": "2K81 152mm Gun-Launcher",
+          "ammo": 4,
+          "target": "Vec",
+          "range": 60,
+          "shotTypes": [
+            {
+              "name": "152mm Gun-Launched ATGM",
+              "accuracy": {
+                "stationary": 2,
+                "moving": "xx"
+              },
+              "strength": {
+                "normal": 18,
+                "halfRange": 3
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Thermal Sights",
+                "Turret",
+                "Guided Missile (1)",
+                "Shaped Charge"
+              ]
+            },
+            {
+              "name": "152mm Gun-Launched Thermobaric",
+              "target": "Gnd",
+              "accuracy": {
+                "stationary": 3,
+                "moving": "xx"
+              },
+              "strength": {
+                "normal": 3,
+                "halfRange": 3
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Thermal Sights",
+                "Turret",
+                "Guided Missile (1)",
+                "Ignore Cover (2)",
+                "Radius (2\")",
+                "Rear Attack"
+              ]
+            },
+            {
+              "name": "152mm Tandem Heat",
+              "target": "Inf/Vec",
+              "range": 40,
+              "accuracy": {
+                "stationary": 2,
+                "moving": 3
+              },
+              "strength": {
+                "normal": 18,
+                "halfRange": 3
+              },
+              "dice": 1,
+              "specialRules": [
+                "No CC (Inf.)",
+                "Thermal Sights",
+                "Turret",
+                "Shaped Charge"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "902V 81mm Smoke Launchers",
+          "ammo": 1,
+          "target": "Gnd",
+          "range": 6,
+          "accuracy": {
+            "stationary": "++",
+            "moving": "++"
+          },
+          "strength": 0,
+          "dice": 2,
+          "specialRules": [
+            "Light Indirect(1)",
+            "No CC",
+            "Smoke (3\")",
+            "Turret"
+          ]
+        }
+      ]
     },
     {
       "id": "2m9-korenbloem",
-      "name": "2M9 \"KORENBLOEM\"",
-      "unitClass": "Vec(C)",
+      "name": "2M9 KORENBLOEM",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
       "points": 25,
       "stats": {
-        "movement": 2,
-        "quality": 2,
+        "unitClass": "Vec",
         "height": 1,
         "spottingDistance": 24,
+        "movement": 2,
+        "quality": 2,
         "toughness": {
           "front": 1,
           "side": "1-",
           "rear": "1-"
-        }
+        },
+        "command": 0
       },
-      "descriptiveCategory": "TOWED AUTOMATIC MORTAR",
-      "specialRules": [],
+      "specialRules": [
+        {
+          "name": ""
+        }
+      ],
       "weapons": [
         {
           "name": "6G1 7.76mm Battle Rifle",
+          "ammo": null,
           "target": "All",
           "range": 8,
           "accuracy": {
             "stationary": 3,
             "moving": 4
           },
-          "dice": 1,
           "strength": {
             "normal": 1,
-            "halfRange": 1
+            "halfRange": "1+"
           },
-          "ammo": null,
+          "dice": 1,
           "specialRules": [
             "Small Arm"
           ]
         },
         {
-          "name": "82mm Automatic Mortar",
+          "name": "2M9 82mm Automatic Mortar",
+          "ammo": 6,
           "target": "Inf/Vec",
           "range": 28,
-          "accuracy": {
-            "stationary": 3,
-            "moving": "xx"
-          },
-          "dice": 1,
-          "strength": {
-            "normal": 8,
-            "halfRange": 1
-          },
-          "ammo": null,
           "shotTypes": [
+            {
+              "name": "82mm HEAT",
+              "accuracy": {
+                "stationary": 3,
+                "moving": "xx"
+              },
+              "strength": {
+                "normal": 8,
+                "halfRange": "1+"
+              },
+              "dice": 1,
+              "specialRules": [
+                "Barrage (3)",
+                "No CC",
+                "Shaped Charge"
+              ]
+            },
+            {
+              "name": "82mm Frag",
+              "target": "Gnd",
+              "range": 40,
+              "accuracy": {
+                "stationary": 4,
+                "moving": "xx"
+              },
+              "strength": "[D3]",
+              "dice": 1,
+              "specialRules": [
+                "Barrage (3)",
+                "No CC",
+                "Air-Filling",
+                "Light Indirect (3)",
+                "Radius (2\")"
+              ]
+            },
             {
               "name": "82mm Chemical-SP",
               "target": "Gnd",
@@ -1602,8 +2808,11 @@
                 "stationary": "++",
                 "moving": "xx"
               },
+              "strength": 0,
               "dice": 1,
               "specialRules": [
+                "Barrage (3)",
+                "No CC",
                 "Light Indirect (3)",
                 "Chemical-SP (2\")"
               ]
@@ -1616,93 +2825,70 @@
                 "stationary": "++",
                 "moving": "xx"
               },
+              "strength": 0,
               "dice": 2,
               "specialRules": [
+                "Barrage (3)",
+                "No CC",
                 "Light Indirect (3)",
                 "Smoke (3\")"
               ]
             }
           ]
-        },
-        {
-          "name": "(Unnamed weapon)",
-          "target": "Gnd",
-          "range": 40,
-          "accuracy": {
-            "stationary": 4,
-            "moving": "xx"
-          },
-          "dice": 1,
-          "strength": "[D3]",
-          "ammo": null,
-          "specialRules": [
-            "Air-Filling",
-            "Light Indirect (3)"
-          ]
         }
-      ],
-      "options": [],
-      "category": "Vehicles"
+      ]
     },
     {
       "id": "2k52-wheat",
-      "name": "2K52 \"WHEAT\"",
-      "unitClass": "Vec(C)",
+      "name": "2K52 WHEAT",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
       "points": 25,
       "stats": {
-        "movement": 2,
-        "quality": 2,
+        "unitClass": "Vec",
         "height": 1,
         "spottingDistance": 24,
+        "movement": 2,
+        "quality": 2,
         "toughness": {
           "front": 2,
           "side": "1-",
           "rear": "1-"
-        }
+        },
+        "command": 0
       },
-      "descriptiveCategory": "TOWED HOWITZER",
-      "specialRules": [],
+      "specialRules": [
+        {
+          "name": ""
+        }
+      ],
       "weapons": [
         {
           "name": "6G1 7.76mm Battle Rifle",
+          "ammo": null,
           "target": "All",
           "range": 8,
           "accuracy": {
             "stationary": 3,
             "moving": 4
           },
-          "dice": 1,
           "strength": {
             "normal": 1,
-            "halfRange": 1
+            "halfRange": "1+"
           },
-          "ammo": null,
+          "dice": 1,
           "specialRules": [
             "Small Arm"
           ]
         },
         {
           "name": "2K52 152mm Howitzer",
+          "ammo": null,
           "target": "Inf/Vec",
           "range": 40,
-          "accuracy": {
-            "stationary": 3,
-            "moving": "xx"
-          },
-          "dice": 1,
-          "strength": {
-            "normal": 14,
-            "halfRange": 2
-          },
-          "specialRules": [
-            "No CC",
-            "Shaped Charge"
-          ],
           "shotTypes": [
             {
               "name": "152mm HEAT",
-              "target": "Inf/Vec",
-              "range": 40,
               "accuracy": {
                 "stationary": 3,
                 "moving": "xx"
@@ -1718,42 +2904,147 @@
               ]
             },
             {
+              "name": "152mm Frag",
+              "target": "Gnd",
+              "range": null,
+              "accuracy": {
+                "stationary": 4,
+                "moving": "xx"
+              },
+              "strength": "[D6]",
+              "dice": 2,
+              "specialRules": [
+                "No CC",
+                "Air-Filling",
+                "Heavy Indirect (3)",
+                "Radius (3\")"
+              ]
+            },
+            {
               "name": "152mm Chemical-SP",
               "target": "Gnd",
-              "range": 0,
+              "range": null,
               "accuracy": {
                 "stationary": "++",
                 "moving": "xx"
               },
+              "strength": 0,
               "dice": 1,
               "specialRules": [
+                "No CC",
                 "Chemical-SP (4\")",
                 "Heavy Indirect (3)"
+              ]
+            },
+            {
+              "name": "152mm Smoke",
+              "target": "Gnd",
+              "range": null,
+              "accuracy": {
+                "stationary": "++",
+                "moving": "xx"
+              },
+              "strength": 0,
+              "dice": 4,
+              "specialRules": [
+                "No CC",
+                "Heavy Indirect (3)",
+                "Smoke (3\")"
               ]
             }
           ]
         }
+      ]
+    },
+    {
+      "id": "type-60at-runner",
+      "name": "TYPE 60AT RUNNER",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 25,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 8,
+        "quality": 2,
+        "toughness": {
+          "front": 4,
+          "side": 4,
+          "rear": 3
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Amphibious"
+        },
+        {
+          "name": "PC (2, Rear)"
+        }
       ],
-      "options": [],
-      "category": "Vehicles"
+      "weapons": [
+        {
+          "name": "6G2 7.76mm MG",
+          "ammo": null,
+          "target": "All",
+          "range": 12,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 2,
+          "specialRules": [
+            "Turret"
+          ]
+        },
+        {
+          "name": "9GR1M 125mm ATGM Rack",
+          "ammo": 6,
+          "target": "Vec",
+          "range": 60,
+          "accuracy": {
+            "stationary": 3,
+            "moving": "xx"
+          },
+          "strength": {
+            "normal": 16,
+            "halfRange": 3
+          },
+          "dice": 1,
+          "specialRules": [
+            "Barrage (3, point)",
+            "Guided Missile (2)",
+            "MCLOS",
+            "Shaped Charge",
+            "Turret"
+          ]
+        }
+      ]
     },
     {
       "id": "type-52lw-firehose",
-      "name": "TYPE 52LW \"FIREHOSE\"",
-      "unitClass": "Vec",
+      "name": "TYPE 52LW FIREHOSE",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
       "points": 30,
       "stats": {
-        "movement": 10,
-        "quality": 3,
+        "unitClass": "Vec",
         "height": 2,
         "spottingDistance": 32,
+        "movement": 10,
+        "quality": 3,
         "toughness": {
           "front": 6,
           "side": 4,
           "rear": 4
-        }
+        },
+        "command": 0
       },
-      "descriptiveCategory": "SELF-PROPELLED ANTI-AIR GUN",
       "specialRules": [
         {
           "name": "Amphibious"
@@ -1765,162 +3056,166 @@
       "weapons": [
         {
           "name": "6P3 11.5mm SMG",
+          "ammo": null,
           "target": "All",
           "range": 8,
           "accuracy": {
             "stationary": 5,
             "moving": 5
           },
+          "strength": {
+            "normal": "1-",
+            "halfRange": 1
+          },
           "dice": 2,
-          "ammo": null,
           "specialRules": [
             "Small Arm"
           ]
         },
         {
           "name": "2A37 37mm Rotary Cannon",
+          "ammo": 4,
           "target": "All",
           "range": 36,
           "accuracy": {
             "stationary": 4,
             "moving": 4
           },
-          "dice": 3,
           "strength": {
             "normal": 5,
             "halfRange": 7
           },
-          "ammo": 4,
+          "dice": 3,
           "specialRules": [
             "No CC (Inf.)",
-            "Radar Anti-Atr",
+            "Radar Anti-Air",
             "Tracking",
             "Turret"
           ]
         }
-      ],
-      "options": [],
-      "category": "Vehicles"
+      ]
     },
     {
       "id": "type-60md-wave",
-      "name": "TYPE 60MD \"WAVE\"",
-      "unitClass": "Vec(W)",
+      "name": "TYPE 60MD WAVE",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
       "points": 30,
       "stats": {
-        "movement": 8,
-        "quality": 2,
+        "unitClass": "Vec",
         "height": 2,
         "spottingDistance": 24,
-        "toughness": {
-          "front": 4,
-          "side": 4,
-          "rear": 3
-        }
-      },
-      "descriptiveCategory": "AUTOMATIC MORTAR CARRIER",
-      "specialRules": [
-        {
-          "name": "Amphibious"
-        },
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "PC (1, Rear)"
-        }
-      ],
-      "weapons": [
-        {
-          "name": "6G2 7.76mm MG",
-          "target": "All",
-          "range": 12,
-          "accuracy": {
-            "stationary": 4,
-            "moving": 6
-          },
-          "dice": 2,
-          "strength": {
-            "normal": 1,
-            "halfRange": 1
-          },
-          "ammo": null,
-          "specialRules": [
-            "Turret"
-          ]
-        }
-      ],
-      "options": [],
-      "category": "Vehicles"
-    },
-    {
-      "id": "type-60at-runner",
-      "name": "TYPE 60AT \"RUNNER\"",
-      "unitClass": "Vec(W)",
-      "points": 25,
-      "stats": {
         "movement": 8,
         "quality": 2,
-        "height": 2,
-        "spottingDistance": 32,
         "toughness": {
           "front": 4,
           "side": 4,
           "rear": 3
-        }
+        },
+        "command": 0
       },
-      "descriptiveCategory": "ATGM CARRIER",
       "specialRules": [
         {
           "name": "Amphibious"
         },
         {
-          "name": "NBC"
-        },
-        {
-          "name": "PC (1, Rear)"
+          "name": "PC (2, Rear)"
         }
       ],
       "weapons": [
         {
           "name": "6G2 7.76mm MG",
+          "ammo": null,
           "target": "All",
           "range": 12,
           "accuracy": {
             "stationary": 4,
-            "moving": 6
+            "moving": 4
           },
-          "dice": 2,
           "strength": {
             "normal": 1,
-            "halfRange": 1
+            "halfRange": "1+"
           },
-          "ammo": null,
+          "dice": 2,
           "specialRules": [
             "Turret"
           ]
+        },
+        {
+          "name": "2M9 82mm Automatic Mortar (82mm Frag, 82mm Chemical-SP, 82mm Smoke)",
+          "ammo": 6,
+          "target": "Gnd",
+          "range": 40,
+          "shotTypes": [
+            {
+              "name": "82mm Frag",
+              "accuracy": {
+                "stationary": 4,
+                "moving": 5
+              },
+              "strength": "[D3]",
+              "dice": 1,
+              "specialRules": [
+                "Barrage (3)",
+                "Light Indirect (3)",
+                "No CC",
+                "Air-Filling",
+                "Radius (2\")"
+              ]
+            },
+            {
+              "name": "82mm Chemical-SP",
+              "accuracy": {
+                "stationary": "++",
+                "moving": "++"
+              },
+              "strength": 0,
+              "dice": 1,
+              "specialRules": [
+                "Barrage (3)",
+                "Light Indirect (3)",
+                "No CC",
+                "Chemical-SP(2\")"
+              ]
+            },
+            {
+              "name": "82mm Smoke",
+              "accuracy": {
+                "stationary": "++",
+                "moving": "++"
+              },
+              "strength": 0,
+              "dice": 2,
+              "specialRules": [
+                "Barrage (3)",
+                "Light Indirect (3)",
+                "No CC",
+                "Smoke {3\")"
+              ]
+            }
+          ]
         }
-      ],
-      "options": [],
-      "category": "Vehicles"
+      ]
     },
     {
       "id": "type-71h-tusker-av",
-      "name": "TYPE 71H \"TUSKER-AV\"",
-      "unitClass": "Vec",
+      "name": "TYPE 71H TUSKER-AV",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
       "points": 50,
       "stats": {
-        "movement": 8,
-        "quality": 3,
+        "unitClass": "Vec",
         "height": 2,
         "spottingDistance": 32,
+        "movement": 8,
+        "quality": 3,
         "toughness": {
           "front": 14,
           "side": 6,
           "rear": 6
-        }
+        },
+        "command": 0
       },
-      "descriptiveCategory": "SELF-PROPELLED HOWITZER",
       "specialRules": [
         {
           "name": "NBC"
@@ -1931,49 +3226,34 @@
       ],
       "weapons": [
         {
-          "name": "6GZ1 14.5mm HMG",
+          "name": "6GZ1 14,5mm HMG",
+          "ammo": null,
           "target": "All",
           "range": 24,
           "accuracy": {
             "stationary": 4,
             "moving": 6
           },
-          "dice": 2,
           "strength": {
             "normal": 3,
             "halfRange": 4
           },
-          "ammo": null,
+          "dice": 2,
           "specialRules": [
             "Turret"
           ]
         },
         {
           "name": "2K52 152mm Howitzer",
+          "ammo": null,
           "target": "Inf/Vec",
           "range": 40,
-          "accuracy": {
-            "stationary": 3,
-            "moving": 4
-          },
-          "dice": 1,
-          "strength": {
-            "normal": 14,
-            "halfRange": 2
-          },
-          "specialRules": [
-            "Turret",
-            "No CC (Inf.)",
-            "Shaped Charge"
-          ],
           "shotTypes": [
             {
               "name": "152mm HEAT",
-              "target": "Inf/Vec",
-              "range": 40,
               "accuracy": {
                 "stationary": 3,
-                "moving": 4
+                "moving": "xx"
               },
               "strength": {
                 "normal": 14,
@@ -1981,71 +3261,120 @@
               },
               "dice": 1,
               "specialRules": [
-                "Turret",
-                "No CC (Inf.)",
+                "No CC",
                 "Shaped Charge"
+              ]
+            },
+            {
+              "name": "152mm Frag",
+              "target": "Gnd",
+              "range": null,
+              "accuracy": {
+                "stationary": 4,
+                "moving": "xx"
+              },
+              "strength": "[D6]",
+              "dice": 2,
+              "specialRules": [
+                "No CC",
+                "Air-Filling",
+                "Heavy Indirect (3)",
+                "Radius (3\")"
+              ]
+            },
+            {
+              "name": "152mm Chemical-SP",
+              "target": "Gnd",
+              "range": null,
+              "accuracy": {
+                "stationary": "++",
+                "moving": "xx"
+              },
+              "strength": 0,
+              "dice": 1,
+              "specialRules": [
+                "No CC",
+                "Chemical-SP (4\")",
+                "Heavy Indirect (3)"
+              ]
+            },
+            {
+              "name": "152mm Smoke",
+              "target": "Gnd",
+              "range": null,
+              "accuracy": {
+                "stationary": "++",
+                "moving": "xx"
+              },
+              "strength": 0,
+              "dice": 4,
+              "specialRules": [
+                "No CC",
+                "Heavy Indirect (3)",
+                "Smoke (3\")"
               ]
             }
           ]
         }
-      ],
-      "options": [],
-      "category": "Vehicles"
+      ]
     },
     {
-      "id": "36-paddle",
-      "name": "$36 \"PADDLE\"",
-      "unitClass": "Vec",
+      "id": "s36-paddle",
+      "name": "S36 PADDLE",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
       "points": 15,
       "stats": {
-        "movement": 8,
-        "quality": 2,
+        "unitClass": "Vec",
         "height": 2,
         "spottingDistance": 32,
+        "movement": 8,
+        "quality": 2,
         "toughness": {
           "front": 3,
           "side": 3,
           "rear": "1+"
-        }
+        },
+        "command": 0
       },
-      "descriptiveCategory": "RIVER GUNBOAT",
       "specialRules": [
         {
           "name": "PC (3, Any)"
-        },
-        {
-          "name": "Watercraft"
         }
       ],
       "weapons": [
         {
-          "name": "6GN3 14.5mm HMG",
+          "name": "6GZ1 14,5mm HMG",
+          "ammo": null,
           "target": "All",
           "range": 24,
           "accuracy": {
             "stationary": 4,
-            "moving": 4
+            "moving": 6
           },
-          "dice": 2,
           "strength": {
             "normal": 3,
             "halfRange": 4
           },
-          "ammo": null,
+          "dice": 2,
           "specialRules": [
             "Turret"
           ]
         },
         {
           "name": "6G2 7.76mm MG",
+          "ammo": null,
           "target": "All",
           "range": 12,
           "accuracy": {
             "stationary": 4,
             "moving": 4
           },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
           "dice": 2,
-          "ammo": null,
           "specialRules": [
             "Multi-Gun",
             "Turret"
@@ -2053,45 +3382,45 @@
         },
         {
           "name": "2K15 40mm HE Grenade Launcher",
+          "ammo": 4,
           "target": "Inf/Vec",
           "range": 14,
           "accuracy": {
             "stationary": 4,
-            "moving": 4
+            "moving": 5
           },
-          "dice": 2,
           "strength": {
-            "normal": 1,
+            "normal": "1+",
             "halfRange": 2
           },
-          "ammo": 4,
+          "dice": 2,
           "specialRules": [
             "Ignore Cover (1)",
             "Multi-Gun",
             "Turret"
           ]
         }
-      ],
-      "options": [],
-      "category": "Vehicles"
+      ]
     },
     {
       "id": "hzn-18-moose",
-      "name": "HzN-18 \"MOOSE\"",
-      "unitClass": "Air",
+      "name": "HZN-18 MOOSE",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
       "points": 15,
       "stats": {
-        "movement": 32,
-        "quality": 2,
+        "unitClass": "Vec",
         "height": 2,
         "spottingDistance": 32,
+        "movement": 32,
+        "quality": 2,
         "toughness": {
           "front": "1+",
           "side": "1+",
           "rear": "1+"
-        }
+        },
+        "command": 0
       },
-      "descriptiveCategory": "UTILITY HELICOPTER",
       "specialRules": [
         {
           "name": "PC (2, Sides)"
@@ -2100,167 +3429,43 @@
       "weapons": [
         {
           "name": "6G2 7.76mm MG",
+          "ammo": null,
           "target": "All",
           "range": 12,
           "accuracy": {
             "stationary": 4,
-            "moving": 5
+            "moving": 4
           },
-          "dice": 2,
           "strength": {
             "normal": 1,
-            "halfRange": 1
+            "halfRange": "1+"
           },
-          "ammo": null,
+          "dice": 2,
           "specialRules": [
             "Door Gun (Sides)"
           ]
         }
-      ],
-      "options": [],
-      "category": "Aircraft"
-    },
-    {
-      "id": "hzn-18b-bison",
-      "name": "HzN-18B \"BISON\"",
-      "unitClass": "Air",
-      "points": 25,
-      "stats": {
-        "movement": 32,
-        "quality": 3,
-        "height": 2,
-        "spottingDistance": 32,
-        "toughness": {
-          "front": 2,
-          "side": 2,
-          "rear": 2
-        }
-      },
-      "descriptiveCategory": "MAKESHIFT GUNSHIP",
-      "specialRules": [
-        {
-          "name": "Chaff-Flares (1)"
-        },
-        {
-          "name": "PC (1, Sides)"
-        }
-      ],
-      "weapons": [
-        {
-          "name": "2A76 7.76mm Minigun",
-          "target": "All",
-          "range": 12,
-          "accuracy": {
-            "stationary": 4,
-            "moving": 5
-          },
-          "dice": 4,
-          "strength": {
-            "normal": 1,
-            "halfRange": 1
-          },
-          "ammo": null,
-          "specialRules": [
-            "Door Gun (Sides)"
-          ]
-        },
-        {
-          "name": "2K15 40mm HEDP Grenade Launcher",
-          "target": "Inf/Vec",
-          "range": 14,
-          "accuracy": {
-            "stationary": 4,
-            "moving": 5
-          },
-          "dice": 2,
-          "strength": {
-            "normal": 5,
-            "halfRange": 1
-          },
-          "ammo": null
-        }
-      ],
-      "options": [],
-      "category": "Aircraft"
-    },
-    {
-      "id": "sig-16-rufe",
-      "name": "SiG-16 \"RUFE\"",
-      "unitClass": "Air(CAP)",
-      "points": 20,
-      "stats": {
-        "movement": 10,
-        "quality": 2,
-        "evasion": 4,
-        "toughness": 4
-      },
-      "descriptiveCategory": "MULTI-ROLE FIGHTER",
-      "specialRules": [
-        {
-          "name": "Sprint Motor"
-        }
-      ],
-      "weapons": [
-        {
-          "name": "2A34 23mm Autocannons, triplet",
-          "target": "All",
-          "range": 8,
-          "accuracy": 4,
-          "dice": 3,
-          "strength": 4,
-          "ammo": 3
-        },
-        {
-          "name": "4BN2 350kg Napalm Bomb",
-          "target": "Gnd",
-          "range": 0,
-          "accuracy": 3,
-          "dice": 2,
-          "strength": "$1+",
-          "ammo": 2,
-          "specialRules": [
-            "Barrage (2)",
-            "Ignore Cover (2)",
-            "Lingering",
-            "Radius (2\")",
-            "Rear Attack"
-          ]
-        },
-        {
-          "name": "9GR4 120mm Infrared AAM",
-          "target": "Air",
-          "range": 24,
-          "accuracy": 4,
-          "dice": 1,
-          "strength": 6,
-          "ammo": 2,
-          "specialRules": [
-            "Air-Filling",
-            "Guided Missile (1)",
-            "Homing"
-          ]
-        }
-      ],
-      "options": [],
-      "category": "Aircraft"
+      ]
     },
     {
       "id": "hzn-22-hugag",
-      "name": "HzN-22 \"HUGAG\"",
-      "unitClass": "Air",
+      "name": "HZN-22 HUGAG",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
       "points": 20,
       "stats": {
-        "movement": 24,
-        "quality": 2,
+        "unitClass": "Vec",
         "height": 2,
         "spottingDistance": 32,
+        "movement": 24,
+        "quality": 2,
         "toughness": {
           "front": 2,
           "side": 2,
           "rear": 2
-        }
+        },
+        "command": 0
       },
-      "descriptiveCategory": "HEAVY LIFT HELICOPTER",
       "specialRules": [
         {
           "name": "PC (6, Sides)"
@@ -2275,38 +3480,257 @@
       "weapons": [
         {
           "name": "2A76 7.76mm Minigun",
+          "ammo": null,
           "target": "All",
           "range": 12,
           "accuracy": {
             "stationary": 4,
-            "moving": 5
+            "moving": 6
           },
-          "dice": 4,
           "strength": {
             "normal": 1,
-            "halfRange": 1
+            "halfRange": "1+"
           },
-          "ammo": null,
+          "dice": 4,
           "specialRules": [
             "Door Gun (Sides)"
           ]
         }
+      ]
+    },
+    {
+      "id": "hzn-18b-bison",
+      "name": "HZN-18B BISON",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 25,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "spottingDistance": 32,
+        "movement": 32,
+        "quality": 3,
+        "toughness": {
+          "front": 2,
+          "side": 2,
+          "rear": 2
+        },
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": "Chaff-Flares (1)"
+        },
+        {
+          "name": "PC (1, Sides)"
+        }
       ],
-      "options": [],
-      "category": "Aircraft"
+      "weapons": [
+        {
+          "name": "2A76 7.76mm Minigun",
+          "ammo": null,
+          "target": "All",
+          "range": 12,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 6
+          },
+          "strength": {
+            "normal": 1,
+            "halfRange": "1+"
+          },
+          "dice": 4,
+          "specialRules": [
+            "Turret"
+          ]
+        },
+        {
+          "name": "2K15 40mm HEDP Grenade Launcher",
+          "ammo": 3,
+          "target": "Inf/Vec",
+          "range": 14,
+          "accuracy": {
+            "stationary": 4,
+            "moving": 5
+          },
+          "strength": {
+            "normal": 5,
+            "halfRange": "1+"
+          },
+          "dice": 2,
+          "specialRules": [
+            "Shaped Charge"
+          ]
+        },
+        {
+          "name": "9GR1 125mm ATGM",
+          "ammo": 2,
+          "target": "Vec",
+          "range": 60,
+          "accuracy": {
+            "stationary": 3,
+            "moving": 4
+          },
+          "strength": {
+            "normal": 14,
+            "halfRange": 2
+          },
+          "dice": 1,
+          "specialRules": [
+            "Guided Missile (2)",
+            "MCLOS",
+            "Shaped Charge"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sig-17-hardnose",
+      "name": "SIG-17 HARDNOSE",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 20,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 0,
+        "spottingDistance": 0,
+        "movement": 10,
+        "quality": 2,
+        "toughness": 3,
+        "command": 0
+      },
+      "specialRules": [
+        {
+          "name": ""
+        }
+      ],
+      "weapons": [
+        {
+          "name": "6G2 7.76mm MG, octet",
+          "ammo": null,
+          "target": "All",
+          "range": 2,
+          "accuracy": 4,
+          "strength": 1,
+          "dice": 3,
+          "specialRules": [
+            ""
+          ]
+        },
+        {
+          "name": "4BB2 350kg Dual-Purpose Cluster Bomb",
+          "ammo": 6,
+          "target": "Gnd",
+          "range": 0,
+          "accuracy": 2,
+          "strength": {
+            "normal": 6,
+            "halfRange": 1
+          },
+          "dice": 2,
+          "specialRules": [
+            "Rear Attack",
+            "Saturating (6\")",
+            "Shaped Charge"
+          ]
+        },
+        {
+          "name": "9GR6 200mm Beam-Riding AAM",
+          "ammo": 4,
+          "target": "Air",
+          "range": 50,
+          "accuracy": 5,
+          "strength": 6,
+          "dice": 1,
+          "specialRules": [
+            "Air-Filling",
+            "Guided Missile (2)",
+            "Barrage (2)",
+            "No CC"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sig-16-rufe",
+      "name": "SIG-16 RUFE",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
+      "points": 20,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 0,
+        "spottingDistance": 0,
+        "movement": 10,
+        "quality": 2,
+        "toughness": 4,
+        "command": 1
+      },
+      "specialRules": [
+        {
+          "name": "Sprint Motor"
+        }
+      ],
+      "weapons": [
+        {
+          "name": "2A34 23mm Autocannons, triplet",
+          "ammo": 3,
+          "target": "All",
+          "range": 8,
+          "accuracy": 4,
+          "strength": 4,
+          "dice": 3,
+          "specialRules": [
+            ""
+          ]
+        },
+        {
+          "name": "4BN2 350kg Napalm Bomb",
+          "ammo": 2,
+          "target": "Gnd",
+          "range": 0,
+          "accuracy": 3,
+          "strength": "1+",
+          "dice": 2,
+          "specialRules": [
+            "Barrage (2)",
+            "Ignore Cover (2)",
+            "Lingering",
+            "Radius (2\")",
+            "Rear Attack"
+          ]
+        },
+        {
+          "name": "9GR4 120mm Infrared AAM",
+          "ammo": 2,
+          "target": "Air",
+          "range": 24,
+          "accuracy": 4,
+          "strength": 6,
+          "dice": 1,
+          "specialRules": [
+            "Air-Filling",
+            "Guided Missile (1)",
+            "Homing"
+          ]
+        }
+      ]
     },
     {
       "id": "sig-16b-schroef",
-      "name": "SiG-16B \"SCHROEF\"",
-      "unitClass": "Air(CAS)",
+      "name": "SIG-16B SCHROEF",
+      "category": "Vehicles",
+      "descriptiveCategory": "",
       "points": 30,
       "stats": {
+        "unitClass": "Vec",
+        "height": 0,
+        "spottingDistance": 0,
         "movement": 10,
         "quality": 2,
-        "evasion": 0,
-        "toughness": 4
+        "toughness": 4,
+        "command": 0
       },
-      "descriptiveCategory": "STRIKE AIRCRAFT",
       "specialRules": [
         {
           "name": "Chaff-Flares (2)"
@@ -2318,21 +3742,24 @@
       "weapons": [
         {
           "name": "2A40 37mm Autocannons, triplet",
+          "ammo": 3,
           "target": "All",
           "range": 8,
           "accuracy": 4,
-          "dice": 3,
           "strength": 5,
-          "ammo": 3
+          "dice": 3,
+          "specialRules": [
+            ""
+          ]
         },
         {
           "name": "4BE1 500kg HE Bomb",
+          "ammo": 2,
           "target": "Gnd",
           "range": 0,
           "accuracy": 3,
-          "dice": 1,
           "strength": 8,
-          "ammo": 2,
+          "dice": 1,
           "specialRules": [
             "Air-Filling",
             "Barrage (2)",
@@ -2342,15 +3769,15 @@
         },
         {
           "name": "9GR3 275mm AGM",
+          "ammo": 2,
           "target": "Vec",
           "range": 50,
           "accuracy": 3,
-          "dice": 1,
           "strength": {
             "normal": 24,
             "halfRange": 8
           },
-          "ammo": 2,
+          "dice": 1,
           "specialRules": [
             "Guided Missile (2)",
             "MCLOS",
@@ -2358,68 +3785,7 @@
             "Thermal Sights"
           ]
         }
-      ],
-      "options": [],
-      "category": "Aircraft"
-    },
-    {
-      "id": "sig-17-hardnose",
-      "name": "SiG-17 \"HARDNOSE\"",
-      "unitClass": "Air(CAS)",
-      "points": 20,
-      "stats": {
-        "movement": 10,
-        "quality": 2,
-        "evasion": 0,
-        "toughness": 3
-      },
-      "descriptiveCategory": "LIGHT BOMBER",
-      "specialRules": [],
-      "weapons": [
-        {
-          "name": "6G2 7.76mm MGs, octet",
-          "target": "All",
-          "range": 2,
-          "accuracy": 4,
-          "dice": 3,
-          "strength": 1,
-          "ammo": null
-        },
-        {
-          "name": "4BB2 350kg Dual-Purpose Cluster Bomb",
-          "target": "Gnd",
-          "range": 0,
-          "accuracy": 2,
-          "dice": 2,
-          "strength": {
-            "normal": 6,
-            "halfRange": 1
-          },
-          "ammo": 6,
-          "specialRules": [
-            "Rear Attack",
-            "Saturating (6)",
-            "Shaped Charge"
-          ]
-        },
-        {
-          "name": "9GR6 200mm Beam-Riding AAM",
-          "target": "Air",
-          "range": 50,
-          "accuracy": 5,
-          "dice": 1,
-          "strength": 6,
-          "ammo": 4,
-          "specialRules": [
-            "Air-Filling",
-            "Guided Missile (2)",
-            "Barrage (2)",
-            "No CC"
-          ]
-        }
-      ],
-      "options": [],
-      "category": "Aircraft"
+      ]
     }
   ]
 }
