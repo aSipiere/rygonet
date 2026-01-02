@@ -63,7 +63,7 @@ export function BaseUnitCard({
 
         {/* Stats Section - matches PDF format: comes right after unit name */}
         <Box sx={{ mb: 1.5 }}>
-          <StatsDisplay stats={unit.stats} unitClass={unit.unitClass} />
+          <StatsDisplay stats={unit.stats} unitClass={unit.stats.unitClass} />
         </Box>
 
         {/* Special Rules Section - in PDF, these come before weapons */}

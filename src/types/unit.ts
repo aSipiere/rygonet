@@ -21,6 +21,7 @@ export type Toughness = string | {
 };
 
 export interface UnitStats {
+  unitClass: UnitType; // Unit class for PC capacity: Inf (1 PC), Inf(S) (2 PC), Vec variants
   height?: number;
   movement: number;
   quality: number | '*';
@@ -47,7 +48,6 @@ export interface Unit {
   category: UnitCategory;
   subcategory?: string;
   descriptiveCategory?: string;
-  unitClass: UnitType; // Unit class for PC capacity: Inf (1 PC), Inf(S) (2 PC), Vec variants
   points: number | string; // number or "X/Y" for split costs
   stats: UnitStats;
   specialRules?: UnitSpecialRule[];

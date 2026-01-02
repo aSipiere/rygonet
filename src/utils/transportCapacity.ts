@@ -98,7 +98,7 @@ export function canUnitTransportOthers(unit: Unit): boolean {
  */
 export function getDesantingCapacity(unit: Unit): number {
   // Only vehicles can have desanting units
-  if (unit.unitClass.startsWith('Vec')) {
+  if (unit.stats.unitClass.startsWith('Vec')) {
     return 2;
   }
   return 0;
