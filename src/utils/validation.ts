@@ -8,12 +8,12 @@ export interface ValidationError {
 
 export function validateTACOMS(
   rosterUnits: { rosterUnit: RosterUnit; unit: Unit }[],
-  totalPoints: number
+  pointsLimit: number
 ): ValidationError[] {
   const errors: ValidationError[] = [];
 
   // Calculate required TACOMS (1 per 100 points, rounded up)
-  const requiredTACOMS = Math.ceil(totalPoints / 100);
+  const requiredTACOMS = Math.ceil(pointsLimit / 100);
 
   // Count TACOMS units
   const tacomsCount = rosterUnits.reduce((count, { rosterUnit, unit }) => {
@@ -137,7 +137,7 @@ export function validateRoster(
   }
 
   // TACOMS validation
-  errors.push(...validateTACOMS(rosterUnits, totalPoints));
+  errors.push(...validateTACOMS(rosterUnits, roster.pointsLimit));
 
   // Transport capacity validation
   const transportValidations = validateTransportCapacity(rosterUnits);

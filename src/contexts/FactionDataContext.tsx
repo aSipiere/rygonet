@@ -21,10 +21,20 @@ export function FactionDataProvider({ children }: { children: ReactNode }) {
       try {
         setLoading(true);
 
-        // Import FSA faction data
-        const fsaData = await import('@data/factions/FSA.json');
+        // Import all faction data
+        const [fsaData, nrhData, absData, aefData] = await Promise.all([
+          import('@data/factions/FSA.json'),
+          import('@data/factions/NRH.json'),
+          import('@data/factions/ABS.json'),
+          import('@data/factions/AEF.json'),
+        ]);
 
-        setFactions([fsaData.default as FactionData]);
+        setFactions([
+          fsaData.default as FactionData,
+          nrhData.default as FactionData,
+          absData.default as FactionData,
+          aefData.default as FactionData,
+        ]);
         setError(null);
       } catch (err) {
         console.error('Failed to load faction data:', err);

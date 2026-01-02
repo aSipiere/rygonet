@@ -19,7 +19,7 @@ export function ArmyRosterHeader({ roster, totalPoints }: ArmyRosterHeaderProps)
   const pointsLimit = roster.pointsLimit;
   const pointsRemaining = pointsLimit - pointsUsed;
 
-  const requiredTACOMS = Math.ceil(pointsUsed / 100);
+  const requiredTACOMS = Math.ceil(pointsLimit / 100);
   const currentTACOMS = rosterUnitsWithData
     .filter(({ unit }) => unit.category === 'TACOMS')
     .reduce((sum, { rosterUnit }) => sum + rosterUnit.count, 0);
