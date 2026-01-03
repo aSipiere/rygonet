@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Box, Stack, Chip } from '@mui/material';
+import { Box, Stack, Chip, IconButton, Typography } from '@mui/material';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useFactionDataContext } from '@/contexts/FactionDataContext';
 import { UnitCategory } from '@/types';
 import { UNIT_CATEGORIES } from '@/utils/constants';
@@ -7,6 +8,7 @@ import { useRosterFilter, SortOption } from '@/hooks/useRosterFilter';
 import { RosterControls } from '@/components/roster/RosterControls';
 import { TerminalBox } from '@/components/common/TerminalBox';
 import { UnitSelectorCard } from './UnitSelectorCard';
+import { useRoster } from '@/hooks/useRoster';
 
 interface UnitSelectorProps {
   factionId: string;
@@ -16,6 +18,7 @@ interface UnitSelectorProps {
 
 export function UnitSelector({ factionId, onAddUnit, isEditMode }: UnitSelectorProps) {
   const { getFactionById } = useFactionDataContext();
+  const { clearCurrentRoster } = useRoster();
   const [searchTerm, setSearchTerm] = useState('');
   const [sortBy, setSortBy] = useState<SortOption>('category');
   const [selectedCategory, setSelectedCategory] = useState<UnitCategory | 'all'>('all');
@@ -29,6 +32,10 @@ export function UnitSelector({ factionId, onAddUnit, isEditMode }: UnitSelectorP
   );
 
   if (!factionData) return null;
+
+  const handleBackToSelection = () => {
+    clearCurrentRoster();
+  };
 
   return (
     <TerminalBox title="UNIT DATABASE" variant="heavy">
@@ -74,6 +81,26 @@ export function UnitSelector({ factionId, onAddUnit, isEditMode }: UnitSelectorP
           />
         ))}
       </Stack>
+
+      {/* Back button */}
+      <Box sx={{ mt: 2, pt: 2, borderTop: '1px solid', borderColor: 'divider' }}>
+        <IconButton
+          onClick={handleBackToSelection}
+          size="small"
+          sx={{
+            fontFamily: 'monospace',
+            color: 'primary.main',
+            '&:hover': {
+              backgroundColor: 'action.hover',
+            }
+          }}
+        >
+          <ArrowBackIcon sx={{ mr: 0.5 }} />
+          <Typography variant="body2" sx={{ fontFamily: 'monospace' }}>
+            Back to Roster Selection
+          </Typography>
+        </IconButton>
+      </Box>
     </TerminalBox>
   );
 }
