@@ -87,8 +87,15 @@ export function FeedbackDialog({ open, onClose }: FeedbackDialogProps) {
       fullWidth
       PaperProps={{
         sx: {
-          backgroundColor: 'transparent',
+          backgroundColor: 'background.paper',
           boxShadow: 'none',
+        },
+      }}
+      slotProps={{
+        backdrop: {
+          sx: {
+            backgroundColor: 'rgba(0, 0, 0, 0.9)',
+          },
         },
       }}
     >
