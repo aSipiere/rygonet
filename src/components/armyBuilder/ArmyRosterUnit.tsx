@@ -1,7 +1,5 @@
 import { Box, Typography, IconButton, Chip } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
-import AddIcon from '@mui/icons-material/Add';
-import RemoveIcon from '@mui/icons-material/Remove';
 import DragIndicatorIcon from '@mui/icons-material/DragIndicator';
 import { useDraggable } from '@dnd-kit/core';
 import { CSS } from '@dnd-kit/utilities';
@@ -19,7 +17,7 @@ interface ArmyRosterUnitProps {
 }
 
 export function ArmyRosterUnit({ rosterUnit }: ArmyRosterUnitProps) {
-  const { currentRoster, removeUnit, updateUnit, isEditMode } = useRoster();
+  const { currentRoster, removeUnit, isEditMode } = useRoster();
   const { getUnitById } = useFactionDataContext();
   const { highlightedUnitId } = useHighlight();
 
@@ -34,7 +32,6 @@ export function ArmyRosterUnit({ rosterUnit }: ArmyRosterUnitProps) {
 
   // Check if unit is transported/towed
   const isRelated = !!rosterUnit.relationship;
-  const indentLevel = isRelated ? 1 : 0;
 
   // Calculate unit points
   let unitPoints = parsePoints(unitDef.points);
@@ -46,15 +43,7 @@ export function ArmyRosterUnit({ rosterUnit }: ArmyRosterUnitProps) {
       }
     });
   }
-  const totalUnitPoints = unitPoints * rosterUnit.count;
-
-  const handleUpdateCount = (delta: number) => {
-    const newCount = Math.max(1, rosterUnit.count + delta);
-    updateUnit({
-      ...rosterUnit,
-      count: newCount,
-    });
-  };
+  const totalUnitPoints = unitPoints;
 
   const isHighlighted = highlightedUnitId === rosterUnit.id;
 
@@ -68,7 +57,6 @@ export function ArmyRosterUnit({ rosterUnit }: ArmyRosterUnitProps) {
       ref={setNodeRef}
       style={style}
       sx={{
-        ml: indentLevel * 4,
         border: isHighlighted ? '2px solid' : '1px solid',
         borderColor: isHighlighted
           ? 'warning.main'
@@ -102,23 +90,6 @@ export function ArmyRosterUnit({ rosterUnit }: ArmyRosterUnitProps) {
             />
           )}
         </Typography>
-
-        {/* Count controls */}
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-          {isEditMode && (
-            <IconButton size="small" onClick={() => handleUpdateCount(-1)}>
-              <RemoveIcon fontSize="small" />
-            </IconButton>
-          )}
-          <Typography variant="body2" sx={{ minWidth: '30px', textAlign: 'center' }}>
-            x{rosterUnit.count}
-          </Typography>
-          {isEditMode && (
-            <IconButton size="small" onClick={() => handleUpdateCount(1)}>
-              <AddIcon fontSize="small" />
-            </IconButton>
-          )}
-        </Box>
 
         {/* Points display */}
         <Typography variant="body2" sx={{ minWidth: '60px', textAlign: 'right' }}>

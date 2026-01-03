@@ -1,5 +1,5 @@
 import { Roster, RosterUnit, Unit, TransportValidation } from '../types';
-import { getEffectiveCapacity, getDesantingCapacity } from './transportCapacity';
+import { getEffectiveCapacity, getDesantingCapacity, getUnitCapacityCost } from './transportCapacity';
 
 export interface ValidationError {
   type: 'warning' | 'error';
@@ -8,16 +8,16 @@ export interface ValidationError {
 
 export function validateTACOMS(
   rosterUnits: { rosterUnit: RosterUnit; unit: Unit }[],
-  totalPoints: number
+  pointsLimit: number
 ): ValidationError[] {
   const errors: ValidationError[] = [];
 
   // Calculate required TACOMS (1 per 100 points, rounded up)
-  const requiredTACOMS = Math.ceil(totalPoints / 100);
+  const requiredTACOMS = Math.ceil(pointsLimit / 100);
 
   // Count TACOMS units
-  const tacomsCount = rosterUnits.reduce((count, { rosterUnit, unit }) => {
-    return count + (unit.category === 'TACOMS' ? rosterUnit.count : 0);
+  const tacomsCount = rosterUnits.reduce((count, { unit }) => {
+    return count + (unit.category === 'TACOMS' ? 1 : 0);
   }, 0);
 
   if (tacomsCount < requiredTACOMS) {
@@ -56,16 +56,9 @@ export function validateTransportCapacity(
       rosterUnit.relationship?.type === 'desanting'
     );
 
-    // Calculate loads separately
-    const embarkedLoad = embarkedUnits.reduce(
-      (sum, { rosterUnit }) => sum + rosterUnit.count,
-      0
-    );
-
-    const desantingLoad = desantingUnits.reduce(
-      (sum, { rosterUnit }) => sum + rosterUnit.count,
-      0
-    );
+    // Calculate loads separately (Inf (S) units take 2 capacity, others take 1)
+    const embarkedLoad = embarkedUnits.reduce((sum, { unit }) => sum + getUnitCapacityCost(unit), 0);
+    const desantingLoad = desantingUnits.reduce((sum, { unit }) => sum + getUnitCapacityCost(unit), 0);
 
     const errors: string[] = [];
 
@@ -137,7 +130,7 @@ export function validateRoster(
   }
 
   // TACOMS validation
-  errors.push(...validateTACOMS(rosterUnits, totalPoints));
+  errors.push(...validateTACOMS(rosterUnits, roster.pointsLimit));
 
   // Transport capacity validation
   const transportValidations = validateTransportCapacity(rosterUnits);

@@ -47,8 +47,11 @@ coverage/
 .venv*
 venv
 *.pyc
+scripts/__pycache__
 
 # ocr extractor
 ocr_debug
 scripts/*.json
 scripts/scrap.txt
+
+.claude

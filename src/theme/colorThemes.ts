@@ -18,7 +18,7 @@ export interface ColorThemeDefinition {
 
 export const COLOR_THEMES: Record<ColorTheme, ColorThemeDefinition> = {
   fsa: {
-    name: 'FSA (Default)',
+    name: 'FSA',
     palette: {
       primary: 'rgba(46, 127, 255, 1)',
       primaryLight: 'rgba(100, 160, 255, 1)',
@@ -33,7 +33,7 @@ export const COLOR_THEMES: Record<ColorTheme, ColorThemeDefinition> = {
     backgroundGradient: 'radial-gradient(circle at 50% 50%, rgba(0, 0, 50, 0.75) 0%, black 120%)',
   },
   green: {
-    name: 'Classic Terminal',
+    name: 'Santagria',
     palette: {
       primary: 'rgba(0, 255, 0, 1)',
       primaryLight: 'rgba(102, 255, 102, 1)',
@@ -63,7 +63,7 @@ export const COLOR_THEMES: Record<ColorTheme, ColorThemeDefinition> = {
     backgroundGradient: 'radial-gradient(circle at 50% 50%, rgba(20, 12, 0, 0.75) 0%, black 120%)',
   },
   white: {
-    name: 'Monochrome',
+    name: 'Luparic',
     palette: {
       primary: 'rgba(230, 230, 230, 1)',
       primaryLight: 'rgba(255, 255, 255, 1)',
@@ -76,5 +76,35 @@ export const COLOR_THEMES: Record<ColorTheme, ColorThemeDefinition> = {
     },
     textShadow: '0 0 5px rgba(230, 230, 230, 0.3)',
     backgroundGradient: 'radial-gradient(circle at 50% 50%, rgba(20, 20, 20, 0.75) 0%, black 120%)',
+  },
+  default: {
+    name: 'Default',
+    palette: {
+      primary: '#6FBDC8',
+      primaryLight: '#7CA2B8',
+      primaryDark: '#4C5A41',
+      secondary: '#7CA2B8',
+      background: '#111319',
+      backgroundPaper: 'rgba(54, 54, 54, 0.5)',
+      text: '#6FBDC8',
+      textSecondary: 'rgba(111, 189, 200, 0.7)',
+    },
+    textShadow: '0 0 5px rgba(111, 189, 200, 0.4)',
+    backgroundGradient: 'radial-gradient(circle at 50% 50%, rgba(78, 59, 45, 0.3) 0%, #111319 120%)',
+  },
+  rygolic: {
+    name: 'Rygolic',
+    palette: {
+      primary: 'rgba(220, 50, 50, 1)',
+      primaryLight: 'rgba(255, 100, 100, 1)',
+      primaryDark: 'rgba(180, 30, 30, 1)',
+      secondary: 'rgba(255, 100, 100, 1)',
+      background: '#000000',
+      backgroundPaper: 'rgba(20, 0, 0, 0.5)',
+      text: 'rgba(220, 50, 50, 1)',
+      textSecondary: 'rgba(220, 50, 50, 0.7)',
+    },
+    textShadow: '0 0 5px rgba(220, 50, 50, 0.5)',
+    backgroundGradient: 'radial-gradient(circle at 50% 50%, rgba(40, 0, 0, 0.75) 0%, black 120%)',
   },
 };

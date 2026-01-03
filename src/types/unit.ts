@@ -1,9 +1,9 @@
 import { Weapon } from './weapon';
 
 export type UnitType =
-  | 'Vec' | 'Vec(W)' | 'Vec(C)' | 'Vec(S)' | 'Vec(M)' | 'Vec(L)' | 'Vec(H)'
-  | 'Inf' | 'Inf(S)'
-  | 'Air' | 'Air(CAP)' | 'Air(CAS)';
+  | 'Vec' | 'Vec(W)' | 'Vec(C)' | 'Vec(S)' | 'Vec(M)' | 'Vec(L)' | 'Vec(H)' | 'Vec (W)' | 'Vec (C)' | 'Vec (S)' | 'Vec (M)' | 'Vec (L)' | 'Vec (H)'
+  | 'Inf' | 'Inf(S)' | 'Inf (S)'
+  | 'Air' | 'Air(CAP)' | 'Air(CAS)' | 'Air (CAP)' | 'Air (CAS)';
 
 export type UnitCategory =
   | 'TACOMS'
@@ -21,6 +21,7 @@ export type Toughness = string | {
 };
 
 export interface UnitStats {
+  unitClass: UnitType; // Unit class for PC capacity: Inf (1 PC), Inf (S) or Inf(S) (2 PC), Vec variants
   height?: number;
   movement: number;
   quality: number | '*';
@@ -47,10 +48,9 @@ export interface Unit {
   category: UnitCategory;
   subcategory?: string;
   descriptiveCategory?: string;
-  unitClass: UnitType; // Unit class for PC capacity: Inf (1 PC), Inf(S) (2 PC), Vec variants
   points: number | string; // number or "X/Y" for split costs
   stats: UnitStats;
-  specialRules?: UnitSpecialRule[];
+  specialRules?: string[]; // Array of special rule names (e.g., "NBC", "Brigade (3, 12\")")
   unitAbility?: string; // Unit special ability description
   weapons?: Weapon[];
   options?: UnitOption[];

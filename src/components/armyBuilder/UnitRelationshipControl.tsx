@@ -3,6 +3,7 @@ import { RosterUnit, UnitRelationshipType } from '@/types';
 import { useRoster } from '@/hooks/useRoster';
 import { useFactionDataContext } from '@/contexts/FactionDataContext';
 import { canUnitTransport } from '@/utils/roster';
+import { parseTransportCapacity } from '@/utils/transportCapacity';
 import { useHighlight } from './ArmyRoster';
 
 interface UnitRelationshipControlProps {
@@ -15,6 +16,12 @@ export function UnitRelationshipControl({ rosterUnit }: UnitRelationshipControlP
   const { setHighlightedUnitId } = useHighlight();
 
   if (!currentRoster) return null;
+
+  // Get the current unit definition to check if it's a vehicle
+  const currentUnitDef = getUnitById(currentRoster.factionId, rosterUnit.unitId);
+  if (!currentUnitDef) return null;
+
+  const isVehicle = currentUnitDef.stats.unitClass.startsWith('Vec');
 
   // Find available transports in roster
   const availableTransports = currentRoster.units.filter((u) => {
@@ -61,35 +68,54 @@ export function UnitRelationshipControl({ rosterUnit }: UnitRelationshipControlP
             const transportDef = getUnitById(currentRoster.factionId, transport.unitId);
             if (!transportDef) return null;
 
-            return [
-              <MenuItem
-                key={`embarked-${transport.id}`}
-                value={`embarked:${transport.id}`}
-                sx={{ fontFamily: 'monospace' }}
-                onMouseEnter={() => setHighlightedUnitId(transport.id)}
-                onMouseLeave={() => setHighlightedUnitId(null)}
-              >
-                Embarked in {transport.customName || transportDef.name}
-              </MenuItem>,
-              <MenuItem
-                key={`desanting-${transport.id}`}
-                value={`desanting:${transport.id}`}
-                sx={{ fontFamily: 'monospace' }}
-                onMouseEnter={() => setHighlightedUnitId(transport.id)}
-                onMouseLeave={() => setHighlightedUnitId(null)}
-              >
-                Desanting on {transport.customName || transportDef.name}
-              </MenuItem>,
-              <MenuItem
-                key={`towed-${transport.id}`}
-                value={`towed:${transport.id}`}
-                sx={{ fontFamily: 'monospace' }}
-                onMouseEnter={() => setHighlightedUnitId(transport.id)}
-                onMouseLeave={() => setHighlightedUnitId(null)}
-              >
-                Towed by {transport.customName || transportDef.name}
-              </MenuItem>,
-            ];
+            const transportCapacity = parseTransportCapacity(transportDef);
+            const canTow = transportCapacity.type === 'tow';
+            const canCarry = transportCapacity.type === 'pc' || transportCapacity.type === 'capacity';
+
+            const options = [];
+
+            // Only show embarked/desanting if transport has PC capacity
+            if (canCarry) {
+              options.push(
+                <MenuItem
+                  key={`embarked-${transport.id}`}
+                  value={`embarked:${transport.id}`}
+                  sx={{ fontFamily: 'monospace' }}
+                  onMouseEnter={() => setHighlightedUnitId(transport.id)}
+                  onMouseLeave={() => setHighlightedUnitId(null)}
+                >
+                  Embarked in {transport.customName || transportDef.name}
+                </MenuItem>
+              );
+              options.push(
+                <MenuItem
+                  key={`desanting-${transport.id}`}
+                  value={`desanting:${transport.id}`}
+                  sx={{ fontFamily: 'monospace' }}
+                  onMouseEnter={() => setHighlightedUnitId(transport.id)}
+                  onMouseLeave={() => setHighlightedUnitId(null)}
+                >
+                  Desanting on {transport.customName || transportDef.name}
+                </MenuItem>
+              );
+            }
+
+            // Only show towed if current unit is a vehicle AND transport can tow
+            if (isVehicle && canTow) {
+              options.push(
+                <MenuItem
+                  key={`towed-${transport.id}`}
+                  value={`towed:${transport.id}`}
+                  sx={{ fontFamily: 'monospace' }}
+                  onMouseEnter={() => setHighlightedUnitId(transport.id)}
+                  onMouseLeave={() => setHighlightedUnitId(null)}
+                >
+                  Towed by {transport.customName || transportDef.name}
+                </MenuItem>
+              );
+            }
+
+            return options;
           })}
         </Select>
       </FormControl>

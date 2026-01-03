@@ -2,6 +2,7 @@ import { createContext, useContext, useReducer, useEffect, ReactNode } from 'rea
 import { Roster, RosterUnit, UnitRelationship } from '../types';
 import { produce } from 'immer';
 import { createGroup } from '../utils/roster';
+import { generateSequentialGroupName } from '../utils/nameGenerator';
 import { migrateAllRosters } from '../utils/migration';
 import { getShareCodeFromURL, decodeRosterFromShare, clearShareCodeFromURL } from '../utils/rosterShare';
 
@@ -30,6 +31,7 @@ type RosterAction =
   | { type: 'TOGGLE_GROUP_COLLAPSED'; payload: string }
   | { type: 'SET_UNIT_RELATIONSHIP'; payload: { unitId: string; relationship: UnitRelationship | null } }
   | { type: 'CLEAR_UNIT_RELATIONSHIP'; payload: string }
+  | { type: 'RESET_ROSTER' }
   | { type: 'LOAD_SHARED_ROSTER'; payload: Roster }
   | { type: 'CLONE_SHARED_ROSTER' }
   | { type: 'SAVE_ROSTER' }
@@ -77,8 +79,18 @@ function rosterReducer(state: RosterState, action: RosterAction): RosterState {
 
       case 'REMOVE_UNIT':
         if (draft.currentRoster && draft.isEditMode) {
+          const unitToRemove = action.payload;
+
+          // Clear relationships for units that were transported by this unit
+          draft.currentRoster.units.forEach((unit) => {
+            if (unit.relationship?.transportUnitId === unitToRemove) {
+              unit.relationship = undefined;
+            }
+          });
+
+          // Remove the unit itself
           draft.currentRoster.units = draft.currentRoster.units.filter(
-            (u) => u.id !== action.payload
+            (u) => u.id !== unitToRemove
           );
           draft.currentRoster.updatedAt = new Date().toISOString();
         }
@@ -124,7 +136,10 @@ function rosterReducer(state: RosterState, action: RosterAction): RosterState {
 
       case 'CREATE_GROUP':
         if (draft.currentRoster && draft.isEditMode) {
-          const newGroup = createGroup(action.payload.name);
+          // Generate sequential name based on current group count
+          const groupIndex = draft.currentRoster.groups.length;
+          const defaultName = generateSequentialGroupName(groupIndex);
+          const newGroup = createGroup(action.payload.name || defaultName);
           draft.currentRoster.groups.push(newGroup);
           draft.currentRoster.updatedAt = new Date().toISOString();
         }
@@ -187,6 +202,17 @@ function rosterReducer(state: RosterState, action: RosterAction): RosterState {
           );
           if (unit) {
             unit.relationship = action.payload.relationship ?? undefined;
+
+            // Move unit to the same group as the transport unit
+            if (action.payload.relationship) {
+              const transportUnit = draft.currentRoster.units.find(
+                (u) => u.id === action.payload.relationship!.transportUnitId
+              );
+              if (transportUnit) {
+                unit.groupId = transportUnit.groupId;
+              }
+            }
+
             draft.currentRoster.updatedAt = new Date().toISOString();
           }
         }
@@ -199,6 +225,15 @@ function rosterReducer(state: RosterState, action: RosterAction): RosterState {
             unit.relationship = undefined;
             draft.currentRoster.updatedAt = new Date().toISOString();
           }
+        }
+        break;
+
+      case 'RESET_ROSTER':
+        if (draft.currentRoster && draft.isEditMode) {
+          // Clear all units and groups
+          draft.currentRoster.units = [];
+          draft.currentRoster.groups = [];
+          draft.currentRoster.updatedAt = new Date().toISOString();
         }
         break;
 

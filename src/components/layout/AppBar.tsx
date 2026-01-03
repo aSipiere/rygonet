@@ -35,7 +35,7 @@ export function AppBar() {
               fontSize: '0.7rem',
             }}
           >
-            198X ARMY ROSTER SYSTEM v0.1
+            198X ARMY ROSTER SYSTEM v1.0
           </Typography>
         </Box>
 

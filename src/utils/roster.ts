@@ -31,8 +31,7 @@ export function calculateTotalPoints(
       });
     }
 
-    // Multiply by count
-    return total + unitTotal * rosterUnit.count;
+    return total + unitTotal;
   }, 0);
 }
 
@@ -86,7 +85,7 @@ export function getTransportedUnits(
 }
 
 export function canUnitBeTransported(unit: Unit): boolean {
-  return unit.unitClass.startsWith('Inf') || unit.unitClass.startsWith('Vec'); // Infantry and vehicles can be transported/towed
+  return unit.stats.unitClass.startsWith('Inf') || unit.stats.unitClass.startsWith('Vec'); // Infantry and vehicles can be transported/towed
 }
 
 export function canUnitTransport(unit: Unit): boolean {

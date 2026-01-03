@@ -63,16 +63,14 @@ export function BaseUnitCard({
 
         {/* Stats Section - matches PDF format: comes right after unit name */}
         <Box sx={{ mb: 1.5 }}>
-          <StatsDisplay stats={unit.stats} unitClass={unit.unitClass} />
+          <StatsDisplay stats={unit.stats} unitClass={unit.stats.unitClass} />
         </Box>
 
         {/* Special Rules Section - in PDF, these come before weapons */}
         {unit.specialRules && unit.specialRules.length > 0 && (
           <Box sx={{ mb: 1.5 }}>
             <Typography variant="caption" color="text.secondary" sx={{ fontStyle: 'italic' }}>
-              {unit.specialRules.map((rule, idx) =>
-                `${rule.name}${idx < unit.specialRules!.length - 1 ? ', ' : ''}`
-              ).join('')}
+              {unit.specialRules.join(', ')}
             </Typography>
           </Box>
         )}
