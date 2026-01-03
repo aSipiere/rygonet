@@ -89,6 +89,8 @@ export function FeedbackDialog({ open, onClose }: FeedbackDialogProps) {
         sx: {
           backgroundColor: 'background.paper',
           boxShadow: 'none',
+          margin: { xs: 1, sm: 2 },
+          maxHeight: { xs: '95vh', sm: '90vh' },
         },
       }}
       slotProps={{
@@ -101,16 +103,25 @@ export function FeedbackDialog({ open, onClose }: FeedbackDialogProps) {
     >
       <TerminalBox title="SUBMIT FEEDBACK" variant="heavy">
         {success ? (
-          <Box sx={{ textAlign: 'center', py: 3 }}>
+          <Box sx={{ textAlign: 'center', py: { xs: 2, sm: 3 } }}>
             <Typography
               variant="h6"
-              sx={{ color: 'success.main', fontFamily: 'monospace', mb: 1 }}
+              sx={{
+                color: 'success.main',
+                fontFamily: 'monospace',
+                mb: 1,
+                fontSize: { xs: '1rem', sm: '1.15rem', md: '1.25rem' },
+              }}
             >
               ✓ FEEDBACK SUBMITTED
             </Typography>
             <Typography
               variant="body2"
-              sx={{ color: 'text.secondary', fontFamily: 'monospace' }}
+              sx={{
+                color: 'text.secondary',
+                fontFamily: 'monospace',
+                fontSize: { xs: '0.75rem', sm: '0.85rem' },
+              }}
             >
               Thank you! Your feedback has been recorded as a GitHub issue.
             </Typography>
@@ -119,39 +130,54 @@ export function FeedbackDialog({ open, onClose }: FeedbackDialogProps) {
           <>
             <Typography
               variant="body2"
-              sx={{ color: 'text.secondary', mb: 2, fontFamily: 'monospace' }}
+              sx={{
+                color: 'text.secondary',
+                mb: { xs: 1.5, sm: 2 },
+                fontFamily: 'monospace',
+                fontSize: { xs: '0.75rem', sm: '0.85rem' },
+              }}
             >
               &gt; Report bugs, request features, or share feedback
             </Typography>
 
             {error && (
-              <Alert severity="error" sx={{ mb: 2, fontFamily: 'monospace' }}>
+              <Alert
+                severity="error"
+                sx={{
+                  mb: { xs: 1.5, sm: 2 },
+                  fontFamily: 'monospace',
+                  fontSize: { xs: '0.75rem', sm: '0.85rem' },
+                }}
+              >
                 {error}
               </Alert>
             )}
 
-            <Stack spacing={2}>
+            <Stack spacing={{ xs: 1.5, sm: 2 }}>
               <FormControl fullWidth>
-                <InputLabel>Category</InputLabel>
+                <InputLabel sx={{ fontSize: { xs: '0.85rem', sm: '1rem' } }}>Category</InputLabel>
                 <Select
                   value={category}
                   onChange={(e) => setCategory(e.target.value)}
                   label="Category"
-                  sx={{ fontFamily: 'monospace' }}
+                  sx={{
+                    fontFamily: 'monospace',
+                    fontSize: { xs: '0.85rem', sm: '0.95rem' },
+                  }}
                 >
-                  <MenuItem value="bug" sx={{ fontFamily: 'monospace' }}>
+                  <MenuItem value="bug" sx={{ fontFamily: 'monospace', fontSize: { xs: '0.85rem', sm: '0.95rem' } }}>
                     Bug Report
                   </MenuItem>
-                  <MenuItem value="feature" sx={{ fontFamily: 'monospace' }}>
+                  <MenuItem value="feature" sx={{ fontFamily: 'monospace', fontSize: { xs: '0.85rem', sm: '0.95rem' } }}>
                     Feature Request
                   </MenuItem>
-                  <MenuItem value="improvement" sx={{ fontFamily: 'monospace' }}>
+                  <MenuItem value="improvement" sx={{ fontFamily: 'monospace', fontSize: { xs: '0.85rem', sm: '0.95rem' } }}>
                     Improvement
                   </MenuItem>
-                  <MenuItem value="question" sx={{ fontFamily: 'monospace' }}>
+                  <MenuItem value="question" sx={{ fontFamily: 'monospace', fontSize: { xs: '0.85rem', sm: '0.95rem' } }}>
                     Question
                   </MenuItem>
-                  <MenuItem value="other" sx={{ fontFamily: 'monospace' }}>
+                  <MenuItem value="other" sx={{ fontFamily: 'monospace', fontSize: { xs: '0.85rem', sm: '0.95rem' } }}>
                     Other
                   </MenuItem>
                 </Select>
@@ -164,7 +190,15 @@ export function FeedbackDialog({ open, onClose }: FeedbackDialogProps) {
                 fullWidth
                 required
                 placeholder="Brief summary of your feedback"
-                sx={{ '& input': { fontFamily: 'monospace' } }}
+                sx={{
+                  '& input': {
+                    fontFamily: 'monospace',
+                    fontSize: { xs: '0.85rem', sm: '0.95rem' },
+                  },
+                  '& label': {
+                    fontSize: { xs: '0.85rem', sm: '1rem' },
+                  },
+                }}
               />
 
               <TextField
@@ -176,7 +210,15 @@ export function FeedbackDialog({ open, onClose }: FeedbackDialogProps) {
                 multiline
                 rows={4}
                 placeholder="Provide details about your feedback..."
-                sx={{ '& textarea': { fontFamily: 'monospace' } }}
+                sx={{
+                  '& textarea': {
+                    fontFamily: 'monospace',
+                    fontSize: { xs: '0.85rem', sm: '0.95rem' },
+                  },
+                  '& label': {
+                    fontSize: { xs: '0.85rem', sm: '1rem' },
+                  },
+                }}
               />
 
               <TextField
@@ -186,16 +228,28 @@ export function FeedbackDialog({ open, onClose }: FeedbackDialogProps) {
                 fullWidth
                 type="email"
                 placeholder="For follow-up (optional)"
-                sx={{ '& input': { fontFamily: 'monospace' } }}
+                sx={{
+                  '& input': {
+                    fontFamily: 'monospace',
+                    fontSize: { xs: '0.85rem', sm: '0.95rem' },
+                  },
+                  '& label': {
+                    fontSize: { xs: '0.85rem', sm: '1rem' },
+                  },
+                }}
               />
 
               <Divider variant="simple" />
 
-              <Box sx={{ display: 'flex', gap: 2 }}>
+              <Box sx={{ display: 'flex', gap: { xs: 1, sm: 2 } }}>
                 <Button
                   onClick={handleClose}
                   disabled={loading}
-                  sx={{ fontFamily: 'monospace' }}
+                  sx={{
+                    fontFamily: 'monospace',
+                    fontSize: { xs: '0.75rem', sm: '0.85rem', md: '0.9rem' },
+                    minHeight: { xs: '44px', sm: '40px' },
+                  }}
                   fullWidth
                 >
                   CANCEL
@@ -204,7 +258,11 @@ export function FeedbackDialog({ open, onClose }: FeedbackDialogProps) {
                   variant="contained"
                   onClick={handleSubmit}
                   disabled={!isFormValid || loading}
-                  sx={{ fontFamily: 'monospace' }}
+                  sx={{
+                    fontFamily: 'monospace',
+                    fontSize: { xs: '0.75rem', sm: '0.85rem', md: '0.9rem' },
+                    minHeight: { xs: '44px', sm: '40px' },
+                  }}
                   fullWidth
                 >
                   {loading ? (

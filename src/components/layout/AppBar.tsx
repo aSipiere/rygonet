@@ -11,7 +11,7 @@ export function AppBar() {
 
   return (
     <MuiAppBar position="static">
-      <Toolbar sx={{ py: 1 }}>
+      <Toolbar sx={{ py: { xs: 0.5, sm: 0.75, md: 1 } }}>
         <Box sx={{ flexGrow: 1 }}>
           <Typography
             variant="h6"
@@ -23,6 +23,7 @@ export function AppBar() {
               fontWeight: 700,
               letterSpacing: '0.15em',
               display: 'block',
+              fontSize: { xs: '0.9rem', sm: '1rem', md: '1.25rem' },
             }}
           >
             {APP_NAME.toUpperCase()}
@@ -32,22 +33,24 @@ export function AppBar() {
             sx={{
               color: 'text.secondary',
               letterSpacing: '0.1em',
-              fontSize: '0.7rem',
+              fontSize: { xs: '0.5rem', sm: '0.6rem', md: '0.7rem' },
+              display: { xs: 'none', sm: 'block' },
             }}
           >
             198X ARMY ROSTER SYSTEM v1.0
           </Typography>
         </Box>
 
-        <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+        <Box sx={{ display: 'flex', gap: { xs: 0.5, sm: 0.75, md: 1 }, alignItems: 'center' }}>
           <Button
             color="inherit"
             component={RouterLink}
             to="/"
             sx={{
               color: 'primary.main',
-              fontSize: '0.85rem',
-              px: 2,
+              fontSize: { xs: '0.65rem', sm: '0.75rem', md: '0.85rem' },
+              px: { xs: 0.5, sm: 1, md: 2 },
+              minWidth: { xs: 'auto', sm: '64px' },
               '&:hover': {
                 backgroundColor: (theme) => `${theme.palette.primary.main}1A`,
               },
@@ -61,8 +64,9 @@ export function AppBar() {
             to="/builder"
             sx={{
               color: 'primary.main',
-              fontSize: '0.85rem',
-              px: 2,
+              fontSize: { xs: '0.65rem', sm: '0.75rem', md: '0.85rem' },
+              px: { xs: 0.5, sm: 1, md: 2 },
+              minWidth: { xs: 'auto', sm: '64px' },
               '&:hover': {
                 backgroundColor: (theme) => `${theme.palette.primary.main}1A`,
               },
@@ -76,8 +80,9 @@ export function AppBar() {
             to="/factions"
             sx={{
               color: 'primary.main',
-              fontSize: '0.85rem',
-              px: 2,
+              fontSize: { xs: '0.65rem', sm: '0.75rem', md: '0.85rem' },
+              px: { xs: 0.5, sm: 1, md: 2 },
+              minWidth: { xs: 'auto', sm: '64px' },
               '&:hover': {
                 backgroundColor: (theme) => `${theme.palette.primary.main}1A`,
               },
@@ -88,17 +93,23 @@ export function AppBar() {
           <Button
             color="inherit"
             onClick={() => setFeedbackOpen(true)}
-            startIcon={<FeedbackIcon sx={{ fontSize: '1rem' }} />}
+            startIcon={<FeedbackIcon sx={{ fontSize: { xs: '0.8rem', sm: '0.9rem', md: '1rem' } }} />}
             sx={{
               color: 'primary.main',
-              fontSize: '0.85rem',
-              px: 2,
+              fontSize: { xs: '0.65rem', sm: '0.75rem', md: '0.85rem' },
+              px: { xs: 0.5, sm: 1, md: 2 },
+              minWidth: { xs: 'auto', sm: '64px' },
               '&:hover': {
                 backgroundColor: (theme) => `${theme.palette.primary.main}1A`,
               },
             }}
           >
-            [FEEDBACK]
+            <Box component="span" sx={{ display: { xs: 'none', sm: 'inline' } }}>
+              [FEEDBACK]
+            </Box>
+            <Box component="span" sx={{ display: { xs: 'inline', sm: 'none' } }}>
+              [FB]
+            </Box>
           </Button>
           <SettingsMenu />
         </Box>
