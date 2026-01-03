@@ -44,15 +44,9 @@
         "command": 3
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Amphibious"
-        },
-        {
-          "name": "Brigade (3, 12\")"
-        }
+        "NBC",
+        "Amphibious",
+        "Brigade (3, 12\")"
       ],
       "weapons": [
         {
@@ -128,18 +122,10 @@
         "command": 5
       },
       "specialRules": [
-        {
-          "name": "Assault Dismount"
-        },
-        {
-          "name": "Fearless"
-        },
-        {
-          "name": "Paradrop"
-        },
-        {
-          "name": "Brigade (2, 8\")"
-        }
+        "Assault Dismount",
+        "Fearless",
+        "Paradrop",
+        "Brigade (2, 8\")"
       ],
       "unitAbility": "All units targeted in a Brigade (including self) lose all pin tokens.",
       "weapons": [
@@ -199,15 +185,9 @@
         "command": 4
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Steel Watchbands"
-        },
-        {
-          "name": "Brigade (4, 6\")"
-        }
+        "NBC",
+        "Steel Watchbands",
+        "Brigade (4, 6\")"
       ],
       "weapons": [
         {
@@ -287,18 +267,10 @@
         "command": 4
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Steel Watchbands"
-        },
-        {
-          "name": "Amphibious"
-        },
-        {
-          "name": "Brigade (4, 6\")"
-        }
+        "NBC",
+        "Steel Watchbands",
+        "Amphibious",
+        "Brigade (4, 6\")"
       ],
       "weapons": [
         {
@@ -399,21 +371,11 @@
         "command": 4
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Steel Watchbands"
-        },
-        {
-          "name": "Paradrop"
-        },
-        {
-          "name": "Amphibious"
-        },
-        {
-          "name": "Brigade (4, 6\")"
-        }
+        "NBC",
+        "Steel Watchbands",
+        "Paradrop",
+        "Amphibious",
+        "Brigade (4, 6\")"
       ],
       "weapons": [
         {
@@ -516,15 +478,9 @@
         "command": 4
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Steel Watchbands"
-        },
-        {
-          "name": "Brigade (4, 6\")"
-        }
+        "NBC",
+        "Steel Watchbands",
+        "Brigade (4, 6\")"
       ],
       "weapons": [
         {
@@ -647,15 +603,9 @@
         "command": 4
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Steel Watchbands"
-        },
-        {
-          "name": "Brigade (4, 6\")"
-        }
+        "NBC",
+        "Steel Watchbands",
+        "Brigade (4, 6\")"
       ],
       "weapons": [
         {
@@ -757,15 +707,9 @@
         "command": 4
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Steel Watchbands"
-        },
-        {
-          "name": "Brigade (4, 6\")"
-        }
+        "NBC",
+        "Steel Watchbands",
+        "Brigade (4, 6\")"
       ],
       "weapons": [
         {
@@ -896,9 +840,7 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": ""
-        }
+        ""
       ],
       "weapons": [
         {
@@ -960,9 +902,7 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Assault Dismount"
-        }
+        "Assault Dismount"
       ],
       "weapons": [
         {
@@ -1042,15 +982,9 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Assault Dismount"
-        },
-        {
-          "name": "Fearless"
-        },
-        {
-          "name": "Paradrop"
-        }
+        "Assault Dismount",
+        "Fearless",
+        "Paradrop"
       ],
       "weapons": [
         {
@@ -1109,9 +1043,7 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Assault Dismount"
-        }
+        "Assault Dismount"
       ],
       "weapons": [
         {
@@ -1192,9 +1124,7 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Assault Dismount"
-        }
+        "Assault Dismount"
       ],
       "weapons": [
         {
@@ -1257,9 +1187,7 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Assault Dismount"
-        }
+        "Assault Dismount"
       ],
       "weapons": [
         {
@@ -1323,9 +1251,7 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Assault Dismount"
-        }
+        "Assault Dismount"
       ],
       "weapons": [
         {
@@ -1423,15 +1349,9 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Assault Dismount"
-        },
-        {
-          "name": "Fearless"
-        },
-        {
-          "name": "Paradrop"
-        }
+        "Assault Dismount",
+        "Fearless",
+        "Paradrop"
       ],
       "weapons": [
         {
@@ -1514,9 +1434,7 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Sense (6\")"
-        }
+        "Sense (6\")"
       ],
       "unitAbility": "Any Tracked with at least M6\" which this unit embarks or desants on can make a \"pathfinder move\" during Maneuver Phase which is only M6\" but ignores terrain entrance/exit costs and all terrain multipliers.",
       "weapons": [
@@ -1578,12 +1496,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Assault Dismount"
-        },
-        {
-          "name": "Fearless"
-        }
+        "Assault Dismount",
+        "Fearless"
       ],
       "unitAbility": "This Unit does not lose accuracy from pin tokens while it is not identified.",
       "weapons": [
@@ -1665,15 +1579,9 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Resupply (6)"
-        },
-        {
-          "name": "PC (2, Rear)"
-        },
-        {
-          "name": "Tow (2)"
-        }
+        "Resupply (6)",
+        "PC (2, Rear)",
+        "Tow (2)"
       ],
       "weapons": [
         {
@@ -1716,15 +1624,9 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Amphibious"
-        },
-        {
-          "name": "PC (3, Rear)"
-        },
-        {
-          "name": "NBC"
-        }
+        "Amphibious",
+        "PC (3, Rear)",
+        "NBC"
       ],
       "weapons": [
         {
@@ -1786,18 +1688,10 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Amphibious"
-        },
-        {
-          "name": "PC (2, Rear)"
-        },
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Steel Watchbands"
-        }
+        "Amphibious",
+        "PC (2, Rear)",
+        "NBC",
+        "Steel Watchbands"
       ],
       "weapons": [
         {
@@ -1921,18 +1815,10 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Amphibious"
-        },
-        {
-          "name": "PC (2, Rear)"
-        },
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Steel Watchbands"
-        }
+        "Amphibious",
+        "PC (2, Rear)",
+        "NBC",
+        "Steel Watchbands"
       ],
       "weapons": [
         {
@@ -2033,12 +1919,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Steel Watchbands"
-        }
+        "NBC",
+        "Steel Watchbands"
       ],
       "weapons": [
         {
@@ -2118,15 +2000,9 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Amphibious"
-        },
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Steel Watchbands"
-        }
+        "Amphibious",
+        "NBC",
+        "Steel Watchbands"
       ],
       "weapons": [
         {
@@ -2227,18 +2103,10 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Amphibious"
-        },
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Paradrop"
-        },
-        {
-          "name": "Steel Watchbands"
-        }
+        "Amphibious",
+        "NBC",
+        "Paradrop",
+        "Steel Watchbands"
       ],
       "weapons": [
         {
@@ -2341,12 +2209,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Steel Watchbands"
-        }
+        "NBC",
+        "Steel Watchbands"
       ],
       "weapons": [
         {
@@ -2469,12 +2333,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Steel Watchbands"
-        }
+        "NBC",
+        "Steel Watchbands"
       ],
       "weapons": [
         {
@@ -2576,12 +2436,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Steel Watchbands"
-        }
+        "NBC",
+        "Steel Watchbands"
       ],
       "weapons": [
         {
@@ -2712,9 +2568,7 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": ""
-        }
+        ""
       ],
       "weapons": [
         {
@@ -2834,9 +2688,7 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": ""
-        }
+        ""
       ],
       "weapons": [
         {
@@ -2952,12 +2804,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Amphibious"
-        },
-        {
-          "name": "PC (2, Rear)"
-        }
+        "Amphibious",
+        "PC (2, Rear)"
       ],
       "weapons": [
         {
@@ -3022,12 +2870,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Amphibious"
-        },
-        {
-          "name": "NBC"
-        }
+        "Amphibious",
+        "NBC"
       ],
       "weapons": [
         {
@@ -3091,12 +2935,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Amphibious"
-        },
-        {
-          "name": "PC (2, Rear)"
-        }
+        "Amphibious",
+        "PC (2, Rear)"
       ],
       "weapons": [
         {
@@ -3193,12 +3033,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Steel Watchbands"
-        }
+        "NBC",
+        "Steel Watchbands"
       ],
       "weapons": [
         {
@@ -3314,12 +3150,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "PC (3, Any)"
-        },
-        {
-          "name": "Watercraft"
-        }
+        "PC (3, Any)",
+        "Watercraft"
       ],
       "weapons": [
         {
@@ -3401,9 +3233,7 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "PC (2, Sides)"
-        }
+        "PC (2, Sides)"
       ],
       "weapons": [
         {
@@ -3446,15 +3276,9 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "PC (6, Sides)"
-        },
-        {
-          "name": "Resupply (6)"
-        },
-        {
-          "name": "Tow (2)"
-        }
+        "PC (6, Sides)",
+        "Resupply (6)",
+        "Tow (2)"
       ],
       "weapons": [
         {
@@ -3497,12 +3321,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Chaff-Flares (1)"
-        },
-        {
-          "name": "PC (1, Sides)"
-        }
+        "Chaff-Flares (1)",
+        "PC (1, Sides)"
       ],
       "weapons": [
         {
@@ -3579,9 +3399,7 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": ""
-        }
+        ""
       ],
       "weapons": [
         {
@@ -3646,9 +3464,7 @@
         "command": 1
       },
       "specialRules": [
-        {
-          "name": "Sprint Motor"
-        }
+        "Sprint Motor"
       ],
       "weapons": [
         {
@@ -3711,12 +3527,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Chaff-Flares (2)"
-        },
-        {
-          "name": "Sprint Motor"
-        }
+        "Chaff-Flares (2)",
+        "Sprint Motor"
       ],
       "weapons": [
         {

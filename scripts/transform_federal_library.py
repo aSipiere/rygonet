@@ -353,7 +353,7 @@ def transform_unit(unit):
                     full_name = f"{rule_name} ({params})"
                 else:
                     full_name = rule_name
-                special_rules.append({"name": full_name})
+                special_rules.append(full_name)
 
         if special_rules:
             transformed['specialRules'] = special_rules
@@ -383,7 +383,8 @@ def categorize_units(units):
             unit['category'] = 'Aircraft'
 
         # TACOMS for command units (units with Brigade special rule)
-        if any(sr.get('name', '').startswith('Brigade') for sr in unit.get('specialRules', [])):
+        # Special rules are now strings, not objects
+        if any(sr.startswith('Brigade') for sr in unit.get('specialRules', [])):
             unit['category'] = 'TACOMS'
 
 def extract_faction_info(url):

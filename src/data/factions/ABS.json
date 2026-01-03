@@ -40,18 +40,10 @@
         "command": 2
       },
       "specialRules": [
-        {
-          "name": "TACOM"
-        },
-        {
-          "name": "Chaff-Flares (1)"
-        },
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Brigade (4, 16\")"
-        }
+        "TACOM",
+        "Chaff-Flares (1)",
+        "NBC",
+        "Brigade (4, 16\")"
       ],
       "weapons": [
         {
@@ -128,18 +120,10 @@
         "command": 3
       },
       "specialRules": [
-        {
-          "name": "TACOM"
-        },
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Brigade (3, 12\")"
-        },
-        {
-          "name": "Leviathan (2)"
-        }
+        "TACOM",
+        "NBC",
+        "Brigade (3, 12\")",
+        "Leviathan (2)"
       ],
       "weapons": [
         {
@@ -218,15 +202,9 @@
         "command": 4
       },
       "specialRules": [
-        {
-          "name": "TACOM"
-        },
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Brigade (2, 8\")"
-        }
+        "TACOM",
+        "NBC",
+        "Brigade (2, 8\")"
       ],
       "unitAbility": "Whenever this unit scores a kill on an enemy Vehicle, it may Rally a friendly unit within 8\".",
       "weapons": [
@@ -334,12 +312,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Tercio"
-        }
+        "NBC",
+        "Tercio"
       ],
       "weapons": [
         {
@@ -382,12 +356,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Fearless"
-        },
-        {
-          "name": "NBC"
-        }
+        "Fearless",
+        "NBC"
       ],
       "weapons": [
         {
@@ -467,21 +437,11 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Assault Specialist"
-        },
-        {
-          "name": "Fearless"
-        },
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Amphibious"
-        },
-        {
-          "name": "Tercio"
-        }
+        "Assault Specialist",
+        "Fearless",
+        "NBC",
+        "Amphibious",
+        "Tercio"
       ],
       "weapons": [
         {
@@ -544,12 +504,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Tercio"
-        }
+        "NBC",
+        "Tercio"
       ],
       "weapons": [
         {
@@ -611,9 +567,7 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        }
+        "NBC"
       ],
       "weapons": [
         {
@@ -675,12 +629,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Tercio"
-        }
+        "NBC",
+        "Tercio"
       ],
       "weapons": [
         {
@@ -762,12 +712,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Tercio"
-        }
+        "NBC",
+        "Tercio"
       ],
       "weapons": [
         {
@@ -828,9 +774,7 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        }
+        "NBC"
       ],
       "weapons": [
         {
@@ -911,21 +855,11 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Fearless"
-        },
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Paradrop"
-        },
-        {
-          "name": "Sense (6\")"
-        },
-        {
-          "name": "Tercio"
-        }
+        "Fearless",
+        "NBC",
+        "Paradrop",
+        "Sense (6\")",
+        "Tercio"
       ],
       "weapons": [
         {
@@ -984,12 +918,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Fearless"
-        },
-        {
-          "name": "NBC"
-        }
+        "Fearless",
+        "NBC"
       ],
       "unitAbility": "This unit may activate to call a plane mission during the Support Phase, replace a friendly TACOM's turn.",
       "weapons": [
@@ -1049,15 +979,9 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Assault Specialist"
-        },
-        {
-          "name": "Fearless"
-        },
-        {
-          "name": "NBC"
-        }
+        "Assault Specialist",
+        "Fearless",
+        "NBC"
       ],
       "weapons": [
         {
@@ -1118,12 +1042,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Fearless"
-        },
-        {
-          "name": "NBC"
-        }
+        "Fearless",
+        "NBC"
       ],
       "weapons": [
         {
@@ -1181,15 +1101,9 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "PC (1, Any)"
-        },
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Tow (2)"
-        }
+        "PC (1, Any)",
+        "NBC",
+        "Tow (2)"
       ],
       "weapons": [
         {
@@ -1232,18 +1146,10 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "PC (4, Any)"
-        },
-        {
-          "name": "Resupply (2)"
-        },
-        {
-          "name": "Tow (Infinite)"
-        }
+        "NBC",
+        "PC (4, Any)",
+        "Resupply (2)",
+        "Tow (Infinite)"
       ],
       "weapons": [
         {
@@ -1286,15 +1192,9 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Paradrop"
-        },
-        {
-          "name": "Tow (2)"
-        }
+        "NBC",
+        "Paradrop",
+        "Tow (2)"
       ],
       "unitAbility": "May fire while carrying desanting infantry and can carry PC(3) desants instead of PC(2)",
       "weapons": [
@@ -1376,21 +1276,11 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Leviathan (2)"
-        },
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "PC (6, Side)"
-        },
-        {
-          "name": "Resupply (4)"
-        },
-        {
-          "name": "Tow (2)"
-        }
+        "Leviathan (2)",
+        "NBC",
+        "PC (6, Side)",
+        "Resupply (4)",
+        "Tow (2)"
       ],
       "weapons": [
         {
@@ -1454,12 +1344,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Tow (2)"
-        }
+        "NBC",
+        "Tow (2)"
       ],
       "weapons": [
         {
@@ -1556,12 +1442,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Tow (2)"
-        }
+        "NBC",
+        "Tow (2)"
       ],
       "weapons": [
         {
@@ -1679,12 +1561,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Tow (2)"
-        }
+        "NBC",
+        "Tow (2)"
       ],
       "unitAbility": "This unit pays an additional 1\" when rotating left. When rotating right, the rotation is free up to 180 degrees.",
       "weapons": [
@@ -1790,9 +1668,7 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        }
+        "NBC"
       ],
       "weapons": [
         {
@@ -1923,12 +1799,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Leviathan (3)"
-        },
-        {
-          "name": "NBC"
-        }
+        "Leviathan (3)",
+        "NBC"
       ],
       "unitAbility": "If the CWIS has not been destroyed this unit gains APS(6+, Infinite). This APS has infinite ammo but may only trigger once per round and only against Guided Missiles.",
       "weapons": [
@@ -2042,9 +1914,7 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        }
+        "NBC"
       ],
       "weapons": [
         {
@@ -2125,9 +1995,7 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        }
+        "NBC"
       ],
       "weapons": [
         {
@@ -2190,12 +2058,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Paradrop"
-        }
+        "NBC",
+        "Paradrop"
       ],
       "weapons": [
         {
@@ -2256,9 +2120,7 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        }
+        "NBC"
       ],
       "weapons": [
         {
@@ -2367,12 +2229,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Tow (2)"
-        }
+        "NBC",
+        "Tow (2)"
       ],
       "weapons": [
         {
@@ -2477,12 +2335,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "PC (8, Front)"
-        },
-        {
-          "name": "NBC"
-        }
+        "PC (8, Front)",
+        "NBC"
       ],
       "weapons": [
         {
@@ -2566,12 +2420,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "PC (2, Rear)"
-        },
-        {
-          "name": "NBC"
-        }
+        "PC (2, Rear)",
+        "NBC"
       ],
       "weapons": [
         {
@@ -2632,18 +2482,10 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Chaff-Flares (1)"
-        },
-        {
-          "name": "PC (6, Rear)"
-        },
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Tow (2)"
-        }
+        "Chaff-Flares (1)",
+        "PC (6, Rear)",
+        "NBC",
+        "Tow (2)"
       ],
       "weapons": [
         {
@@ -2704,12 +2546,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Chaff-Flares (2)"
-        },
-        {
-          "name": "NBC"
-        }
+        "Chaff-Flares (2)",
+        "NBC"
       ],
       "weapons": [
         {
@@ -2789,12 +2627,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Leviathan (2)"
-        },
-        {
-          "name": "NBC"
-        }
+        "Leviathan (2)",
+        "NBC"
       ],
       "weapons": [
         {
@@ -2875,12 +2709,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Leviathan (2)"
-        },
-        {
-          "name": "NBC"
-        }
+        "Leviathan (2)",
+        "NBC"
       ],
       "weapons": [
         {
@@ -2960,12 +2790,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Leviathan (2)"
-        },
-        {
-          "name": "NBC"
-        }
+        "Leviathan (2)",
+        "NBC"
       ],
       "weapons": [
         {
@@ -3064,9 +2890,7 @@
         "command": 2
       },
       "specialRules": [
-        {
-          "name": "Afterburner"
-        }
+        "Afterburner"
       ],
       "weapons": [
         {
@@ -3114,15 +2938,9 @@
         "command": 3
       },
       "specialRules": [
-        {
-          "name": "Afterburner"
-        },
-        {
-          "name": "Chaff-Flares (1)"
-        },
-        {
-          "name": "Flower of the Atom"
-        }
+        "Afterburner",
+        "Chaff-Flares (1)",
+        "Flower of the Atom"
       ],
       "weapons": [
         {
@@ -3187,12 +3005,8 @@
         "command": 1
       },
       "specialRules": [
-        {
-          "name": "Afterburner"
-        },
-        {
-          "name": "Flower of the Atom"
-        }
+        "Afterburner",
+        "Flower of the Atom"
       ],
       "weapons": [
         {
@@ -3256,15 +3070,9 @@
         "command": 2
       },
       "specialRules": [
-        {
-          "name": "Afterburner"
-        },
-        {
-          "name": "Chaff-Flares (2)"
-        },
-        {
-          "name": "Flower of the Atom"
-        }
+        "Afterburner",
+        "Chaff-Flares (2)",
+        "Flower of the Atom"
       ],
       "weapons": [
         {

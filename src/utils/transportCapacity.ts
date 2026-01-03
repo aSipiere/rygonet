@@ -18,8 +18,7 @@ export interface TransportCapacityInfo {
 export function parseTransportCapacity(unit: Unit): TransportCapacityInfo {
   // Check special rules for PC() or Tow() notation
   if (unit.specialRules) {
-    for (const rule of unit.specialRules) {
-      const ruleName = typeof rule === 'string' ? rule : rule.name;
+    for (const ruleName of unit.specialRules) {
 
       // Match PC(Rear, 2) or PC(2, Sides) formats (with optional space after PC)
       const pcMatch = ruleName.match(/PC\s*\(([^,]+),\s*(\d+)\)|PC\s*\((\d+),\s*([^)]+)\)/i);

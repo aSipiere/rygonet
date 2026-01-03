@@ -60,21 +60,11 @@
         "command": 2
       },
       "specialRules": [
-        {
-          "name": "TACOM"
-        },
-        {
-          "name": "Fearless"
-        },
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Rygonet (12\")"
-        },
-        {
-          "name": "Brigade (2, 12\")"
-        }
+        "TACOM",
+        "Fearless",
+        "NBC",
+        "Rygonet (12\")",
+        "Brigade (2, 12\")"
       ],
       "unitAbility": "One Node Team comes free per 100 points as a standard TACOM. Further Node Teams may be purchased for 20 points each at no limit.",
       "weapons": [
@@ -153,21 +143,11 @@
         "command": 2
       },
       "specialRules": [
-        {
-          "name": "TACOM (Additional)"
-        },
-        {
-          "name": "Fearless"
-        },
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Rygonet (12\")"
-        },
-        {
-          "name": "Brigade (2, 12\")"
-        }
+        "TACOM (Additional)",
+        "Fearless",
+        "NBC",
+        "Rygonet (12\")",
+        "Brigade (2, 12\")"
       ],
       "unitAbility": "One Node Team comes free per 100 points as a standard TACOM. Further Node Teams may be purchased for 20 points each at no limit.",
       "weapons": [
@@ -246,21 +226,11 @@
         "command": 6
       },
       "specialRules": [
-        {
-          "name": "TACOM"
-        },
-        {
-          "name": "Amphibious"
-        },
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Rygonet (24\")"
-        },
-        {
-          "name": "Brigade (4, 12\")"
-        }
+        "TACOM",
+        "Amphibious",
+        "NBC",
+        "Rygonet (24\")",
+        "Brigade (4, 12\")"
       ],
       "unitAbility": "This unit may not lend actions to friendly units via Rygonet.",
       "weapons": [
@@ -298,18 +268,10 @@
         "command": 4
       },
       "specialRules": [
-        {
-          "name": "TACOM"
-        },
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Rygonet (12\")"
-        },
-        {
-          "name": "Brigade (4,8\")"
-        }
+        "TACOM",
+        "NBC",
+        "Rygonet (12\")",
+        "Brigade (4,8\")"
       ],
       "unitAbility": "When this unit activates in the Fire Phase, it may select one friendly Rygolic unit within Line of Sight up to 8\" away which has not already acted that round. The Stoma and the selected unit fire at the same target simultaneously. Units activated this way are treated as having already fired for the round.",
       "weapons": [
@@ -375,12 +337,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Fearless"
-        },
-        {
-          "name": "NBC"
-        }
+        "Fearless",
+        "NBC"
       ],
       "weapons": [
         {
@@ -478,12 +436,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Fearless"
-        },
-        {
-          "name": "NBC"
-        }
+        "Fearless",
+        "NBC"
       ],
       "weapons": [
         {
@@ -581,12 +535,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Fearless"
-        },
-        {
-          "name": "NBC"
-        }
+        "Fearless",
+        "NBC"
       ],
       "weapons": [
         {
@@ -651,12 +601,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Fearless"
-        },
-        {
-          "name": "NBC"
-        }
+        "Fearless",
+        "NBC"
       ],
       "weapons": [
         {
@@ -719,12 +665,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Fearless"
-        },
-        {
-          "name": "NBC"
-        }
+        "Fearless",
+        "NBC"
       ],
       "weapons": [
         {
@@ -822,12 +764,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Fearless"
-        },
-        {
-          "name": "NBC"
-        }
+        "Fearless",
+        "NBC"
       ],
       "unitAbility": "May always lose up to 3 pin during Upkeep, even when inside of Chemical Weapons.",
       "weapons": [
@@ -934,12 +872,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Fearless"
-        },
-        {
-          "name": "NBC"
-        }
+        "Fearless",
+        "NBC"
       ],
       "weapons": [
         {
@@ -1004,18 +938,10 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Fearless"
-        },
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Resupply (4)"
-        },
-        {
-          "name": "Tow (2)"
-        }
+        "Fearless",
+        "NBC",
+        "Resupply (4)",
+        "Tow (2)"
       ],
       "weapons": [
         {
@@ -1056,12 +982,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Fearless"
-        },
-        {
-          "name": "NBC"
-        }
+        "Fearless",
+        "NBC"
       ],
       "unitAbility": "Deploy this unit via a Capsule Insertion support mission during the Support Phase.",
       "weapons": [
@@ -1140,21 +1062,11 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Active Camoflauge"
-        },
-        {
-          "name": "Assault Specialist"
-        },
-        {
-          "name": "Fearless"
-        },
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Sense (8\")"
-        }
+        "Active Camoflauge",
+        "Assault Specialist",
+        "Fearless",
+        "NBC",
+        "Sense (8\")"
       ],
       "weapons": [
         {
@@ -1239,12 +1151,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Fearless"
-        },
-        {
-          "name": "NBC"
-        }
+        "Fearless",
+        "NBC"
       ],
       "unitAbility": "When entering Close Combat this unit may opt to copy any enemy unit that it would enter close combat with. If two or more Simulacrum units would enter Close Quarter with each other immediately kill them.",
       "weapons": [
@@ -1282,12 +1190,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "PC (2, Rear)"
-        }
+        "NBC",
+        "PC (2, Rear)"
       ],
       "weapons": [
         {
@@ -1368,15 +1272,9 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Amphibious"
-        },
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "PC (2, Rear)"
-        }
+        "Amphibious",
+        "NBC",
+        "PC (2, Rear)"
       ],
       "weapons": [
         {
@@ -1480,15 +1378,9 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Amphibious"
-        },
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "PC (2, Rear)"
-        }
+        "Amphibious",
+        "NBC",
+        "PC (2, Rear)"
       ],
       "weapons": [
         {
@@ -1591,12 +1483,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Drone"
-        },
-        {
-          "name": "NBC"
-        }
+        "Drone",
+        "NBC"
       ],
       "weapons": [
         {
@@ -1642,9 +1530,7 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        }
+        "NBC"
       ],
       "weapons": [
         {
@@ -1772,12 +1658,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "APS (5+, 2)"
-        },
-        {
-          "name": "NBC"
-        }
+        "APS (5+, 2)",
+        "NBC"
       ],
       "weapons": [
         {
@@ -1903,12 +1785,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "APS (6+, 3)"
-        },
-        {
-          "name": "NBC"
-        }
+        "APS (6+, 3)",
+        "NBC"
       ],
       "weapons": [
         {
@@ -2016,15 +1894,9 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Drone"
-        },
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Paradrop"
-        }
+        "Drone",
+        "NBC",
+        "Paradrop"
       ],
       "unitAbility": "This unit cannot fire during the first Fire Phase of the game if Paradropped",
       "weapons": [
@@ -2070,15 +1942,9 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Drone"
-        },
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Paradrop"
-        }
+        "Drone",
+        "NBC",
+        "Paradrop"
       ],
       "unitAbility": "This unit cannot fire during the first Fire Phase of the game if Paradropped",
       "weapons": [
@@ -2125,9 +1991,7 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        }
+        "NBC"
       ],
       "weapons": [
         {
@@ -2194,9 +2058,7 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        }
+        "NBC"
       ],
       "weapons": [
         {
@@ -2319,12 +2181,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "APS (6+, 2)"
-        },
-        {
-          "name": "NBC"
-        }
+        "APS (6+, 2)",
+        "NBC"
       ],
       "weapons": [
         {
@@ -2433,12 +2291,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "APS (6+, 2)"
-        },
-        {
-          "name": "NBC"
-        }
+        "APS (6+, 2)",
+        "NBC"
       ],
       "weapons": [
         {
@@ -2557,12 +2411,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Active Camoflauge"
-        },
-        {
-          "name": "NBC"
-        }
+        "Active Camoflauge",
+        "NBC"
       ],
       "weapons": [
         {
@@ -2626,18 +2476,10 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Chaff-Flares (1)"
-        },
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "PC (2, Any)"
-        },
-        {
-          "name": "Resupply (3)"
-        }
+        "Chaff-Flares (1)",
+        "NBC",
+        "PC (2, Any)",
+        "Resupply (3)"
       ],
       "unitAbility": "If this unit falls back from close combat, choose one engaged enemy unit to take a Strength 1+ hit on it's rear arc.",
       "weapons": [
@@ -2675,15 +2517,9 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Chaff-Flares (1)"
-        },
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "PC (1, Any)"
-        }
+        "Chaff-Flares (1)",
+        "NBC",
+        "PC (1, Any)"
       ],
       "unitAbility": "If this unit falls back from close combat, choose one engaged enemy unit to take a Strength 1+ hit on it's rear arc.",
       "weapons": [
@@ -2729,12 +2565,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Drone"
-        },
-        {
-          "name": "NBC"
-        }
+        "Drone",
+        "NBC"
       ],
       "weapons": [
         {
@@ -2793,15 +2625,9 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Chaff-Flares (1)"
-        },
-        {
-          "name": "Drone"
-        },
-        {
-          "name": "NBC"
-        }
+        "Chaff-Flares (1)",
+        "Drone",
+        "NBC"
       ],
       "weapons": [
         {
@@ -2865,12 +2691,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Chaff-Flares (2)"
-        },
-        {
-          "name": "NBC"
-        }
+        "Chaff-Flares (2)",
+        "NBC"
       ],
       "weapons": [
         {
@@ -2953,15 +2775,9 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "APS (6+, 4)"
-        },
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "Sense (12\")"
-        }
+        "APS (6+, 4)",
+        "NBC",
+        "Sense (12\")"
       ],
       "unitAbility": "Every time this unit uses APS, its weapon Dice statistic decreases by 1 for the rest of the round. If the Dice value hits 0 it cannot be fired this round and APS cannot be triggered again this round. During Upkeep the laser weapon's Dice value is reset to 4 regardless of how many munitions were intercepted last round.",
       "weapons": [
@@ -3002,12 +2818,8 @@
         "command": 3
       },
       "specialRules": [
-        {
-          "name": "Afterburner"
-        },
-        {
-          "name": "Chaff-Flares (2)"
-        }
+        "Afterburner",
+        "Chaff-Flares (2)"
       ],
       "weapons": [
         {
@@ -3071,12 +2883,8 @@
         "command": 1
       },
       "specialRules": [
-        {
-          "name": "Active Camoflauge"
-        },
-        {
-          "name": "Afterburner"
-        }
+        "Active Camoflauge",
+        "Afterburner"
       ],
       "weapons": [
         {
@@ -3110,9 +2918,7 @@
         "command": 2
       },
       "specialRules": [
-        {
-          "name": "Chaff-Flares (2)"
-        }
+        "Chaff-Flares (2)"
       ],
       "weapons": [
         {

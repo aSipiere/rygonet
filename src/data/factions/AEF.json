@@ -44,21 +44,11 @@
         "command": 3
       },
       "specialRules": [
-        {
-          "name": "TACOM"
-        },
-        {
-          "name": "Bloodlust"
-        },
-        {
-          "name": "Infiltrator"
-        },
-        {
-          "name": "Sense (6\")"
-        },
-        {
-          "name": "Brigade (4, 8\")"
-        }
+        "TACOM",
+        "Bloodlust",
+        "Infiltrator",
+        "Sense (6\")",
+        "Brigade (4, 8\")"
       ],
       "weapons": [
         {
@@ -156,18 +146,10 @@
         "command": 4
       },
       "specialRules": [
-        {
-          "name": "TACOM"
-        },
-        {
-          "name": "Assault Specialist"
-        },
-        {
-          "name": "Brigade (3, 4\")"
-        },
-        {
-          "name": "NBC"
-        }
+        "TACOM",
+        "Assault Specialist",
+        "Brigade (3, 4\")",
+        "NBC"
       ],
       "weapons": [
         {
@@ -283,24 +265,12 @@
         "command": 5
       },
       "specialRules": [
-        {
-          "name": "TACOM"
-        },
-        {
-          "name": "Amphibious"
-        },
-        {
-          "name": "Guidance (12\")"
-        },
-        {
-          "name": "Infiltrator"
-        },
-        {
-          "name": "Sense (8\")"
-        },
-        {
-          "name": "Brigade (3, 12\")"
-        }
+        "TACOM",
+        "Amphibious",
+        "Guidance (12\")",
+        "Infiltrator",
+        "Sense (8\")",
+        "Brigade (3, 12\")"
       ],
       "unitAbility": "While this unit is alive, no unit in this army can willingly go Berserk. Only Judges may call Exhortation support Missions.",
       "weapons": [
@@ -381,18 +351,10 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Amphibious"
-        },
-        {
-          "name": "Bloodlust"
-        },
-        {
-          "name": "Infiltrator"
-        },
-        {
-          "name": "Sense (6\")"
-        }
+        "Amphibious",
+        "Bloodlust",
+        "Infiltrator",
+        "Sense (6\")"
       ],
       "weapons": [
         {
@@ -453,15 +415,9 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Bloodlust"
-        },
-        {
-          "name": "Infiltrator"
-        },
-        {
-          "name": "Sense (6\")"
-        }
+        "Bloodlust",
+        "Infiltrator",
+        "Sense (6\")"
       ],
       "weapons": [
         {
@@ -541,15 +497,9 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Bloodlust"
-        },
-        {
-          "name": "Fearless"
-        },
-        {
-          "name": "Sense (6\")"
-        }
+        "Bloodlust",
+        "Fearless",
+        "Sense (6\")"
       ],
       "weapons": [
         {
@@ -686,12 +636,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Assault Specialist"
-        },
-        {
-          "name": "NBC"
-        }
+        "Assault Specialist",
+        "NBC"
       ],
       "weapons": [
         {
@@ -807,15 +753,9 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Bloodlust"
-        },
-        {
-          "name": "Infiltrator"
-        },
-        {
-          "name": "Sense (6\")"
-        }
+        "Bloodlust",
+        "Infiltrator",
+        "Sense (6\")"
       ],
       "weapons": [
         {
@@ -876,12 +816,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Bloodlust"
-        },
-        {
-          "name": "Sense (6\")"
-        }
+        "Bloodlust",
+        "Sense (6\")"
       ],
       "weapons": [
         {
@@ -997,15 +933,9 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Bloodlust"
-        },
-        {
-          "name": "Infiltrator"
-        },
-        {
-          "name": "Sense (6\")"
-        }
+        "Bloodlust",
+        "Infiltrator",
+        "Sense (6\")"
       ],
       "weapons": [
         {
@@ -1102,12 +1032,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Bloodlust"
-        },
-        {
-          "name": "Sense (6\")"
-        }
+        "Bloodlust",
+        "Sense (6\")"
       ],
       "weapons": [
         {
@@ -1193,18 +1119,10 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Bloodlust"
-        },
-        {
-          "name": "Infiltrator"
-        },
-        {
-          "name": "Sense (6\")"
-        },
-        {
-          "name": "Brigade (2, 4\")"
-        }
+        "Bloodlust",
+        "Infiltrator",
+        "Sense (6\")",
+        "Brigade (2, 4\")"
       ],
       "weapons": [
         {
@@ -1265,18 +1183,10 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Amphibious"
-        },
-        {
-          "name": "Bloodlust"
-        },
-        {
-          "name": "Tow (2)"
-        },
-        {
-          "name": "Sense (6\")"
-        }
+        "Amphibious",
+        "Bloodlust",
+        "Tow (2)",
+        "Sense (6\")"
       ],
       "unitAbility": "If depleted, loses its depletion token at the end of round after winning a close combat.",
       "weapons": [
@@ -1320,18 +1230,10 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Amphibious"
-        },
-        {
-          "name": "Guidance (12\")"
-        },
-        {
-          "name": "Infiltrator"
-        },
-        {
-          "name": "Sense (8\")"
-        }
+        "Amphibious",
+        "Guidance (12\")",
+        "Infiltrator",
+        "Sense (8\")"
       ],
       "weapons": [
         {
@@ -1411,18 +1313,10 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Amphibious"
-        },
-        {
-          "name": "Bloodlust"
-        },
-        {
-          "name": "Infiltrator"
-        },
-        {
-          "name": "Sense (6\")"
-        }
+        "Amphibious",
+        "Bloodlust",
+        "Infiltrator",
+        "Sense (6\")"
       ],
       "weapons": [
         {
@@ -1484,15 +1378,9 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "PC (2, Rear)"
-        },
-        {
-          "name": "Resupply (6)"
-        },
-        {
-          "name": "Tow (2)"
-        }
+        "PC (2, Rear)",
+        "Resupply (6)",
+        "Tow (2)"
       ],
       "weapons": [
         {
@@ -1535,9 +1423,7 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "PC (1, Any)"
-        }
+        "PC (1, Any)"
       ],
       "unitAbility": "Units embarked may spot and be spotted by Sense.",
       "weapons": [
@@ -1581,15 +1467,9 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Amphibious"
-        },
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "PC (2, Rear)"
-        }
+        "Amphibious",
+        "NBC",
+        "PC (2, Rear)"
       ],
       "weapons": [
         {
@@ -1632,12 +1512,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "PC (2, Rear)"
-        }
+        "NBC",
+        "PC (2, Rear)"
       ],
       "weapons": [
         {
@@ -1716,12 +1592,8 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "PC (2, Rear, Front)"
-        }
+        "NBC",
+        "PC (2, Rear, Front)"
       ],
       "weapons": [
         {
@@ -1799,9 +1671,7 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        }
+        "NBC"
       ],
       "weapons": [
         {
@@ -1906,9 +1776,7 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        }
+        "NBC"
       ],
       "weapons": [
         {
@@ -2038,9 +1906,7 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": ""
-        }
+        ""
       ],
       "weapons": [
         {
@@ -2125,15 +1991,9 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Amphibious"
-        },
-        {
-          "name": "NBC"
-        },
-        {
-          "name": "PC (2, Rear)"
-        }
+        "Amphibious",
+        "NBC",
+        "PC (2, Rear)"
       ],
       "weapons": [
         {
@@ -2217,9 +2077,7 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "NBC"
-        }
+        "NBC"
       ],
       "weapons": [
         {
@@ -2280,9 +2138,7 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": ""
-        }
+        ""
       ],
       "weapons": [
         {
@@ -2400,9 +2256,7 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": ""
-        }
+        ""
       ],
       "weapons": [
         {
@@ -2507,9 +2361,7 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": ""
-        }
+        ""
       ],
       "weapons": [
         {
@@ -2573,9 +2425,7 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": ""
-        }
+        ""
       ],
       "weapons": [
         {
@@ -2640,9 +2490,7 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "PC (4, Any)"
-        }
+        "PC (4, Any)"
       ],
       "weapons": [
         {
@@ -2745,15 +2593,9 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Chaff-Flares (3)"
-        },
-        {
-          "name": "PC (2, Sides)"
-        },
-        {
-          "name": "Tow (10)"
-        }
+        "Chaff-Flares (3)",
+        "PC (2, Sides)",
+        "Tow (10)"
       ],
       "unitAbility": "Units embarked may spot and be spotted by Sense.",
       "weapons": [
@@ -2791,9 +2633,7 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Chaff-Flares (2)"
-        }
+        "Chaff-Flares (2)"
       ],
       "weapons": [
         {
@@ -2877,9 +2717,7 @@
         "command": 0
       },
       "specialRules": [
-        {
-          "name": "Loiter"
-        }
+        "Loiter"
       ],
       "unitAbility": "Has E3 in dogfights.",
       "weapons": [
@@ -2925,9 +2763,7 @@
         "command": 1
       },
       "specialRules": [
-        {
-          "name": "Chaff-Flares (2)"
-        }
+        "Chaff-Flares (2)"
       ],
       "weapons": [
         {
@@ -2990,12 +2826,8 @@
         "command": 2
       },
       "specialRules": [
-        {
-          "name": "Afterburner"
-        },
-        {
-          "name": "Chaff-Flares (2)"
-        }
+        "Afterburner",
+        "Chaff-Flares (2)"
       ],
       "weapons": [
         {
@@ -3057,12 +2889,8 @@
         "command": 3
       },
       "specialRules": [
-        {
-          "name": "Afterburner"
-        },
-        {
-          "name": "Chaff-Flares (2)"
-        }
+        "Afterburner",
+        "Chaff-Flares (2)"
       ],
       "weapons": [
         {

@@ -70,9 +70,7 @@ export function BaseUnitCard({
         {unit.specialRules && unit.specialRules.length > 0 && (
           <Box sx={{ mb: 1.5 }}>
             <Typography variant="caption" color="text.secondary" sx={{ fontStyle: 'italic' }}>
-              {unit.specialRules.map((rule, idx) =>
-                `${rule.name}${idx < unit.specialRules!.length - 1 ? ', ' : ''}`
-              ).join('')}
+              {unit.specialRules.join(', ')}
             </Typography>
           </Box>
         )}
