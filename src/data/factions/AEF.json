@@ -31,7 +31,7 @@
       "descriptiveCategory": "",
       "points": 0,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Inf",
         "height": 1,
         "spottingDistance": 24,
         "movement": 5,
@@ -143,7 +143,7 @@
       "descriptiveCategory": "",
       "points": 15,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Inf(S)",
         "height": 1,
         "spottingDistance": 16,
         "movement": 4,
@@ -270,7 +270,7 @@
       "descriptiveCategory": "",
       "points": 20,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Inf",
         "height": 1,
         "spottingDistance": 24,
         "movement": 4,
@@ -364,11 +364,11 @@
     {
       "id": "territorials",
       "name": "TERRITORIALS",
-      "category": "Vehicles",
+      "category": "Infantry",
       "descriptiveCategory": "",
       "points": 5,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Inf(S)",
         "height": 1,
         "spottingDistance": 24,
         "movement": 5,
@@ -436,11 +436,11 @@
     {
       "id": "chasseurs",
       "name": "CHASSEURS",
-      "category": "Vehicles",
+      "category": "Infantry",
       "descriptiveCategory": "",
       "points": 10,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Inf(S)",
         "height": 1,
         "spottingDistance": 24,
         "movement": 5,
@@ -524,11 +524,11 @@
     {
       "id": "white-gloves",
       "name": "WHITE GLOVES",
-      "category": "Vehicles",
+      "category": "Infantry",
       "descriptiveCategory": "",
       "points": 20,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Inf(S)",
         "height": 1,
         "spottingDistance": 24,
         "movement": 5,
@@ -669,11 +669,11 @@
     {
       "id": "internal-security",
       "name": "INTERNAL SECURITY",
-      "category": "Vehicles",
+      "category": "Infantry",
       "descriptiveCategory": "",
       "points": 20,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Inf(S)",
         "height": 1,
         "spottingDistance": 16,
         "movement": 4,
@@ -790,11 +790,11 @@
     {
       "id": "machine-gun-team",
       "name": "MACHINE GUN TEAM",
-      "category": "Vehicles",
+      "category": "Infantry",
       "descriptiveCategory": "",
       "points": 10,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Inf",
         "height": 1,
         "spottingDistance": 24,
         "movement": 5,
@@ -859,11 +859,11 @@
     {
       "id": "hima-team",
       "name": "HIMA TEAM",
-      "category": "Vehicles",
+      "category": "Infantry",
       "descriptiveCategory": "",
       "points": 15,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Inf",
         "height": 1,
         "spottingDistance": 24,
         "movement": 5,
@@ -980,11 +980,11 @@
     {
       "id": "recoilless-rifle-team",
       "name": "RECOILLESS RIFLE TEAM",
-      "category": "Vehicles",
+      "category": "Infantry",
       "descriptiveCategory": "",
       "points": 15,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Inf",
         "height": 1,
         "spottingDistance": 24,
         "movement": 5,
@@ -1085,11 +1085,11 @@
     {
       "id": "guided-missile-team",
       "name": "GUIDED MISSILE TEAM",
-      "category": "Vehicles",
+      "category": "Infantry",
       "descriptiveCategory": "",
       "points": 20,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Inf",
         "height": 1,
         "spottingDistance": 32,
         "movement": 8,
@@ -1180,7 +1180,7 @@
       "descriptiveCategory": "",
       "points": 10,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Inf",
         "height": 1,
         "spottingDistance": 32,
         "movement": 8,
@@ -1248,11 +1248,11 @@
     {
       "id": "made-to-orders",
       "name": "MADE-TO-ORDERS",
-      "category": "Vehicles",
+      "category": "Infantry",
       "descriptiveCategory": "",
       "points": 10,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Inf(S)",
         "height": 1,
         "spottingDistance": 32,
         "movement": 8,
@@ -1303,11 +1303,11 @@
     {
       "id": "waykeepers",
       "name": "WAYKEEPERS",
-      "category": "Vehicles",
+      "category": "Infantry",
       "descriptiveCategory": "",
       "points": 15,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Inf",
         "height": 1,
         "spottingDistance": 24,
         "movement": 5,
@@ -1394,11 +1394,11 @@
     {
       "id": "bounders",
       "name": "BOUNDERS",
-      "category": "Vehicles",
+      "category": "Infantry",
       "descriptiveCategory": "",
       "points": 20,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Inf",
         "height": 1,
         "spottingDistance": 32,
         "movement": 5,
@@ -1471,7 +1471,7 @@
       "descriptiveCategory": "",
       "points": 10,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Vec (W)",
         "height": 2,
         "spottingDistance": 16,
         "movement": 8,
@@ -2025,7 +2025,7 @@
       "descriptiveCategory": "",
       "points": 15,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Vec (C)",
         "height": 1,
         "spottingDistance": 32,
         "movement": 3,
@@ -2267,7 +2267,7 @@
       "descriptiveCategory": "",
       "points": 25,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Vec (C)",
         "height": 1,
         "spottingDistance": 24,
         "movement": 2,
@@ -2560,7 +2560,7 @@
       "descriptiveCategory": "",
       "points": 30,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Vec (W)",
         "height": 2,
         "spottingDistance": 16,
         "movement": 8,
@@ -2627,7 +2627,7 @@
       "descriptiveCategory": "",
       "points": 10,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Vec (W)",
         "height": 1,
         "spottingDistance": 32,
         "movement": 12,
@@ -2864,11 +2864,11 @@
     {
       "id": "r-2-chien-de-chasse",
       "name": "R-2 CHIEN DE CHASSE",
-      "category": "Vehicles",
+      "category": "Aircraft",
       "descriptiveCategory": "",
       "points": 10,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Air (CAS)",
         "height": 1,
         "spottingDistance": 0,
         "movement": 10,
@@ -2912,11 +2912,11 @@
     {
       "id": "ad-48-falconet",
       "name": "AD-48 FALCONET",
-      "category": "Vehicles",
+      "category": "Aircraft",
       "descriptiveCategory": "",
       "points": 20,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Air (CAS)",
         "height": 1,
         "spottingDistance": 0,
         "movement": 14,
@@ -2977,11 +2977,11 @@
     {
       "id": "ap-iv-grognard",
       "name": "AP-IV GROGNARD",
-      "category": "Vehicles",
+      "category": "Aircraft",
       "descriptiveCategory": "",
       "points": 40,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Air (CAP)",
         "height": 1,
         "spottingDistance": 0,
         "movement": 16,
@@ -3044,11 +3044,11 @@
     {
       "id": "md-ii-mist",
       "name": "MD-II MIST",
-      "category": "Vehicles",
+      "category": "Aircraft",
       "descriptiveCategory": "",
       "points": 40,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Air (CAP)",
         "height": 1,
         "spottingDistance": 0,
         "movement": 20,

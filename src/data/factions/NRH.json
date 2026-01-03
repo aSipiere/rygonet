@@ -47,7 +47,7 @@
       "descriptiveCategory": "",
       "points": 0,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Inf",
         "height": 1,
         "spottingDistance": 24,
         "movement": 5,
@@ -140,7 +140,7 @@
       "descriptiveCategory": "",
       "points": 20,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Inf",
         "height": 1,
         "spottingDistance": 24,
         "movement": 5,
@@ -233,7 +233,7 @@
       "descriptiveCategory": "",
       "points": 20,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Vec (C)",
         "height": 1,
         "spottingDistance": 0,
         "movement": 0,
@@ -358,11 +358,11 @@
     {
       "id": "tactical-team",
       "name": "TACTICAL TEAM",
-      "category": "Vehicles",
+      "category": "Infantry",
       "descriptiveCategory": "",
       "points": 15,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Inf",
         "height": 1,
         "spottingDistance": 32,
         "movement": 5,
@@ -461,11 +461,11 @@
     {
       "id": "legionnaires",
       "name": "LEGIONNAIRES",
-      "category": "Vehicles",
+      "category": "Infantry",
       "descriptiveCategory": "",
       "points": 25,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Inf(S)",
         "height": 1,
         "spottingDistance": 32,
         "movement": 5,
@@ -564,11 +564,11 @@
     {
       "id": "smartgun-team-team",
       "name": "SMARTGUN TEAM TEAM",
-      "category": "Vehicles",
+      "category": "Infantry",
       "descriptiveCategory": "",
       "points": 15,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Inf",
         "height": 1,
         "spottingDistance": 32,
         "movement": 5,
@@ -634,11 +634,11 @@
     {
       "id": "laser-team",
       "name": "LASER TEAM",
-      "category": "Vehicles",
+      "category": "Infantry",
       "descriptiveCategory": "",
       "points": 15,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Inf",
         "height": 1,
         "spottingDistance": 32,
         "movement": 5,
@@ -702,11 +702,11 @@
     {
       "id": "manpads-team",
       "name": "MANPADS TEAM",
-      "category": "Vehicles",
+      "category": "Infantry",
       "descriptiveCategory": "",
       "points": 20,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Inf",
         "height": 1,
         "spottingDistance": 32,
         "movement": 5,
@@ -805,11 +805,11 @@
     {
       "id": "chemical-team",
       "name": "CHEMICAL TEAM",
-      "category": "Vehicles",
+      "category": "Infantry",
       "descriptiveCategory": "",
       "points": 20,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Inf",
         "height": 1,
         "spottingDistance": 24,
         "movement": 4,
@@ -917,11 +917,11 @@
     {
       "id": "guided-mortar-spider",
       "name": "GUIDED MORTAR SPIDER",
-      "category": "Vehicles",
+      "category": "Infantry",
       "descriptiveCategory": "",
       "points": 30,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Inf",
         "height": 1,
         "spottingDistance": 24,
         "movement": 5,
@@ -987,11 +987,11 @@
     {
       "id": "carabiner-horse",
       "name": "CARABINER HORSE",
-      "category": "Vehicles",
+      "category": "Infantry",
       "descriptiveCategory": "",
       "points": 15,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Inf",
         "height": 1,
         "spottingDistance": 32,
         "movement": 6,
@@ -1039,11 +1039,11 @@
     {
       "id": "capsule-squad",
       "name": "CAPSULE SQUAD",
-      "category": "Vehicles",
+      "category": "Infantry",
       "descriptiveCategory": "",
       "points": 25,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Inf(S)",
         "height": 1,
         "spottingDistance": 24,
         "movement": 5,
@@ -1123,11 +1123,11 @@
     {
       "id": "assassin",
       "name": "ASSASSIN",
-      "category": "Vehicles",
+      "category": "Infantry",
       "descriptiveCategory": "",
       "points": 30,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Inf",
         "height": 1,
         "spottingDistance": 8,
         "movement": 6,
@@ -1222,11 +1222,11 @@
     {
       "id": "simulacrum",
       "name": "SIMULACRUM",
-      "category": "Vehicles",
+      "category": "Infantry",
       "descriptiveCategory": "",
       "points": 30,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Inf",
         "height": 1,
         "spottingDistance": 32,
         "movement": 4,
@@ -1269,7 +1269,7 @@
       "descriptiveCategory": "",
       "points": 25,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Vec (W)",
         "height": 2,
         "spottingDistance": 32,
         "movement": 10,
@@ -1759,7 +1759,7 @@
       "descriptiveCategory": "",
       "points": 50,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Vec (W)",
         "height": 2,
         "spottingDistance": 32,
         "movement": 10,
@@ -2003,7 +2003,7 @@
       "descriptiveCategory": "",
       "points": 15,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Vec (C)",
         "height": 1,
         "spottingDistance": 32,
         "movement": 0,
@@ -2057,7 +2057,7 @@
       "descriptiveCategory": "",
       "points": 20,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Vec (C)",
         "height": 1,
         "spottingDistance": 32,
         "movement": 0,
@@ -2181,7 +2181,7 @@
       "descriptiveCategory": "",
       "points": 60,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Vec (W)",
         "height": 2,
         "spottingDistance": 32,
         "movement": 10,
@@ -2544,7 +2544,7 @@
       "descriptiveCategory": "",
       "points": 30,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Vec (W)",
         "height": 1,
         "spottingDistance": 32,
         "movement": 8,
@@ -2989,11 +2989,11 @@
     {
       "id": "b1-blindsight",
       "name": "B1 BLINDSIGHT",
-      "category": "Vehicles",
+      "category": "Aircraft",
       "descriptiveCategory": "",
       "points": 50,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Air (CAP)",
         "height": 1,
         "spottingDistance": 0,
         "movement": 20,
@@ -3058,11 +3058,11 @@
     {
       "id": "z1-zenith",
       "name": "Z1 ZENITH",
-      "category": "Vehicles",
+      "category": "Aircraft",
       "descriptiveCategory": "",
       "points": 50,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Air (CAS)",
         "height": 1,
         "spottingDistance": 0,
         "movement": 16,
@@ -3097,11 +3097,11 @@
     {
       "id": "a1-apogee",
       "name": "A1 APOGEE",
-      "category": "Vehicles",
+      "category": "Aircraft",
       "descriptiveCategory": "",
       "points": 50,
       "stats": {
-        "unitClass": "Vec",
+        "unitClass": "Air (CAS)",
         "height": 1,
         "spottingDistance": 0,
         "movement": 14,

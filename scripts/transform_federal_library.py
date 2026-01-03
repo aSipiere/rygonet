@@ -43,22 +43,37 @@ def parse_js_to_json(js_content):
 
 def transform_unit_type(type_obj):
     """Transform unit type to unitClass."""
-    super_type = type_obj.get('super', '')
-    sub_type = type_obj.get('sub', '')
+    # super and sub are arrays in the source data
+    super_types = type_obj.get('super', [])
+    sub_types = type_obj.get('sub', [])
+
+    # Get the first super type (or empty string if none)
+    super_type = super_types[0] if super_types else ''
+
+    # Check if 'Squad' is in the sub types
+    is_squad = 'Squad' in sub_types
 
     # Map to schema unit classes
     if super_type == 'Infantry':
-        if sub_type == 'Squad':
+        if is_squad:
             return 'Inf(S)'
         return 'Inf'
     elif super_type == 'Vehicle':
-        if sub_type in ['Tracked', 'Wheeled']:
-            # Determine size based on dimensions if available
-            return 'Vec'
+        # Check for specific vehicle subtypes
+        if 'Wheeled' in sub_types or 'Watercraft' in sub_types:
+            return 'Vec (W)'
+        elif 'Carriage' in sub_types:
+            return 'Vec (C)'
+        # Tracked, Hovercraft, Strider remain as Vec
         return 'Vec'
     elif super_type == 'Helicopter':
         return 'Vec'  # Helicopters are vehicles in the schema
     elif super_type == 'Aircraft':
+        # Check for aircraft role subtypes
+        if 'CAS' in sub_types:
+            return 'Air (CAS)'
+        elif 'CAP' in sub_types:
+            return 'Air (CAP)'
         return 'Air'
 
     return 'Vec'  # Default
@@ -355,7 +370,9 @@ def transform_unit(unit):
 def categorize_units(units):
     """Attempt to categorize units based on their type."""
     for unit in units:
-        unit_type = unit.get('stats', {}).get('unitClass', 'Vec')
+        # Access unitClass from the stats object correctly
+        stats = unit.get('stats', {})
+        unit_type = stats.get('unitClass', 'Vec')
 
         # Basic categorization
         if unit_type.startswith('Inf'):
@@ -365,7 +382,7 @@ def categorize_units(units):
         elif unit_type.startswith('Air'):
             unit['category'] = 'Aircraft'
 
-        # TACOMS for command units
+        # TACOMS for command units (units with Brigade special rule)
         if any(sr.get('name', '').startswith('Brigade') for sr in unit.get('specialRules', [])):
             unit['category'] = 'TACOMS'
 
