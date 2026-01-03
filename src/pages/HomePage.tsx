@@ -73,7 +73,7 @@ export default function HomePage() {
                 flex: 1,
               }}
             >
-              02/01/1986 1600 GMT (Grotehaven Mean Time) - System Administrator's Notice:
+              03/01/1986 0130 GMT (Grotehaven Mean Time) - System Administrator's Notice:
             </Typography>
             <IconButton
               size="small"
@@ -92,11 +92,12 @@ export default function HomePage() {
                 lineHeight: 1.6,
               }}
             >
-              All near peer adversaries have been added in addition to BLUEFOR, we should have a good
-              first draft of everything now (particular thanks to nullAurelian and oktopusgrabbermouth).
+              All near peer adversaries have been added, we should have a good first draft of everything now and we're
+              officially launching 1.0, the system now has a feedback button so if you run into any issues or think of any
+              improvements go ahead and pop it in there.
               <br />
               <br />
-
+              Particular thanks to nullAurelian and oktopusgrabbermouth, for their help with faction data.
               <br />
               <br />
               - SYSADMIN
