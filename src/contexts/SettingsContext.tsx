@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
-export type ColorTheme = 'fsa' | 'green' | 'amber' | 'white';
+export type ColorTheme = 'fsa' | 'green' | 'amber' | 'white' | 'default' | 'rygolic';
 
 interface SettingsState {
   scanlinesEnabled: boolean;
@@ -17,7 +17,7 @@ const STORAGE_KEY = 'firelock_settings';
 
 const defaultSettings: SettingsState = {
   scanlinesEnabled: true,
-  colorTheme: 'fsa',
+  colorTheme: 'default',
 };
 
 const SettingsContext = createContext<SettingsContextType | null>(null);
