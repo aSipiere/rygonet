@@ -3,7 +3,7 @@ import { RosterUnit, UnitRelationshipType } from '@/types';
 import { useRoster } from '@/hooks/useRoster';
 import { useFactionDataContext } from '@/contexts/FactionDataContext';
 import { canUnitTransport } from '@/utils/roster';
-import { parseTransportCapacity } from '@/utils/transportCapacity';
+import { parseTransportCapacity, getDesantingCapacity } from '@/utils/transportCapacity';
 import { useHighlight } from './ArmyRoster';
 
 interface UnitRelationshipControlProps {
@@ -23,11 +23,11 @@ export function UnitRelationshipControl({ rosterUnit }: UnitRelationshipControlP
 
   const isVehicle = currentUnitDef.stats.unitClass.startsWith('Vec');
 
-  // Find available transports in roster
+  // Find available transports in roster (units that can carry, tow, or have desanting capacity)
   const availableTransports = currentRoster.units.filter((u) => {
     if (u.id === rosterUnit.id) return false;
     const unitDef = getUnitById(currentRoster.factionId, u.unitId);
-    return unitDef && canUnitTransport(unitDef);
+    return unitDef && (canUnitTransport(unitDef) || getDesantingCapacity(unitDef) > 0);
   });
 
   const handleChange = (value: string) => {
@@ -71,10 +71,11 @@ export function UnitRelationshipControl({ rosterUnit }: UnitRelationshipControlP
             const transportCapacity = parseTransportCapacity(transportDef);
             const canTow = transportCapacity.type === 'tow';
             const canCarry = transportCapacity.type === 'pc' || transportCapacity.type === 'capacity';
+            const canDesant = getDesantingCapacity(transportDef) > 0;
 
             const options = [];
 
-            // Only show embarked/desanting if transport has PC capacity
+            // Show embarked if transport has PC capacity
             if (canCarry) {
               options.push(
                 <MenuItem
@@ -87,6 +88,10 @@ export function UnitRelationshipControl({ rosterUnit }: UnitRelationshipControlP
                   Embarked in {transport.customName || transportDef.name}
                 </MenuItem>
               );
+            }
+
+            // Show desanting if transport has desanting capacity (all Vec units)
+            if (canDesant) {
               options.push(
                 <MenuItem
                   key={`desanting-${transport.id}`}

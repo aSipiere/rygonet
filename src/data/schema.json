@@ -92,8 +92,8 @@
             "properties": {
               "unitClass": {
                 "type": "string",
-                "enum": ["Inf", "Inf(S)", "Vec", "Vec(W)", "Vec(S)", "Vec(C)", "Vec(M)", "Vec(L)", "Vec(H)", "Air", "Air(CAP)", "Air(CAS)"],
-                "description": "Unit class for PC capacity and game mechanics: Inf (team, 1 PC), Inf(S) (squad, 2 PC), Vec variants (W=wide, S=small, C=crew, M=medium, L=large, H=hovercraft)"
+                "enum": ["Inf", "Inf(S)", "Inf (S)", "Vec", "Vec(W)", "Vec (W)", "Vec(S)", "Vec (S)", "Vec(C)", "Vec (C)", "Vec(M)", "Vec (M)", "Vec(L)", "Vec (L)", "Vec(H)", "Vec (H)", "Air", "Air(CAP)", "Air (CAP)", "Air(CAS)", "Air (CAS)"],
+                "description": "Unit class for PC capacity and game mechanics: Inf (team, 1 PC), Inf(S) (squad, 2 PC), Vec variants (W=wide, S=strider, C=crew, M=medium, L=large, H=hovercraft)"
               },
               "height": {
                 "type": "integer",
