@@ -52,4 +52,7 @@ export interface TransportValidation {
   embarkedLoad: number;
   desantingCapacity: number;
   desantingLoad: number;
+  // Tow capacity tracking
+  towCapacity: number; // Max sum of front toughness that can be towed
+  towedLoad: number; // Sum of front toughness of towed units
 }

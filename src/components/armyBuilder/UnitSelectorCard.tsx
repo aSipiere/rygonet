@@ -16,6 +16,8 @@ export function UnitSelectorCard({ unit, onAdd, disabled = false }: UnitSelector
     transportLabel = ` | PC(${transportInfo.capacity}, ${transportInfo.exitPoint})`;
   } else if (transportInfo.type === 'tow') {
     transportLabel = ` | Tow(${transportInfo.maxToughness})`;
+  } else if (transportInfo.type === 'both') {
+    transportLabel = ` | PC(${transportInfo.capacity}, ${transportInfo.exitPoint}) + Tow(${transportInfo.maxToughness})`;
   } else if (transportInfo.type === 'capacity') {
     transportLabel = ` | Transport (${transportInfo.capacity})`;
   }

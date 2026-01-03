@@ -1,5 +1,5 @@
 import { Roster, RosterUnit, Unit, TransportValidation } from '../types';
-import { getEffectiveCapacity, getDesantingCapacity, getUnitCapacityCost } from './transportCapacity';
+import { getEffectiveCapacity, getDesantingCapacity, getUnitCapacityCost, parseTransportCapacity } from './transportCapacity';
 
 export interface ValidationError {
   type: 'warning' | 'error';
@@ -41,8 +41,16 @@ export function validateTransportCapacity(
   );
 
   transports.forEach(({ rosterUnit: transportUnit, unit: transportDef }) => {
-    const pcCapacity = getEffectiveCapacity(transportDef);
+    const effectiveCapacity = getEffectiveCapacity(transportDef);
     const desantingCapacity = getDesantingCapacity(transportDef);
+
+    // Parse transport info to get tow details
+    const transportInfo = parseTransportCapacity(transportDef);
+    const hasTow = transportInfo.type === 'tow' || transportInfo.type === 'both';
+    const hasPC = transportInfo.type === 'pc' || transportInfo.type === 'both';
+
+    const pcCapacity = hasPC ? effectiveCapacity : 0;
+    const towCapacity = hasTow ? (transportInfo.maxToughness || 0) : 0;
 
     // Find embarked units (use PC capacity)
     const embarkedUnits = rosterUnits.filter(({ rosterUnit }) =>
@@ -56,9 +64,26 @@ export function validateTransportCapacity(
       rosterUnit.relationship?.type === 'desanting'
     );
 
+    // Find towed units
+    const towedUnits = rosterUnits.filter(({ rosterUnit }) =>
+      rosterUnit.relationship?.transportUnitId === transportUnit.id &&
+      rosterUnit.relationship?.type === 'towed'
+    );
+
     // Calculate loads separately (Inf (S) units take 2 capacity, others take 1)
     const embarkedLoad = embarkedUnits.reduce((sum, { unit }) => sum + getUnitCapacityCost(unit), 0);
     const desantingLoad = desantingUnits.reduce((sum, { unit }) => sum + getUnitCapacityCost(unit), 0);
+
+    // For tow, calculate sum of front toughness values
+    const towedLoad = towedUnits.reduce((sum, { unit }) => {
+      const frontToughness = typeof unit.stats.toughness === 'object'
+        ? unit.stats.toughness.front
+        : unit.stats.toughness;
+      const toughnessValue = typeof frontToughness === 'string'
+        ? parseInt(frontToughness.replace(/\D/g, '')) || 0
+        : frontToughness || 0;
+      return sum + toughnessValue;
+    }, 0);
 
     const errors: string[] = [];
 
@@ -72,22 +97,30 @@ export function validateTransportCapacity(
       errors.push(`Desanting overcapacity: ${desantingLoad}/${desantingCapacity} units`);
     }
 
+    // Validate tow capacity (sum of front toughness must not exceed tow capacity)
+    if (hasTow && towedLoad > towCapacity) {
+      errors.push(`Tow overcapacity: total toughness ${towedLoad} exceeds Tow(${towCapacity})`);
+    }
+
     // Combine all transported units for display
-    const allTransportedUnits = [...embarkedUnits, ...desantingUnits];
-    const totalLoad = embarkedLoad + desantingLoad;
+    const allTransportedUnits = [...embarkedUnits, ...desantingUnits, ...towedUnits];
+    const totalLoad = embarkedLoad + desantingLoad + towedLoad;
 
     validations.push({
       transportUnit,
       capacity: pcCapacity, // Keep PC capacity as primary for backwards compatibility
       currentLoad: totalLoad,
       embarkedUnits: allTransportedUnits.map((item) => item.rosterUnit),
-      isValid: embarkedLoad <= pcCapacity && desantingLoad <= desantingCapacity,
+      isValid: embarkedLoad <= pcCapacity && desantingLoad <= desantingCapacity && errors.length === 0,
       errors,
       // New separate capacity fields
       pcCapacity,
       embarkedLoad,
       desantingCapacity,
       desantingLoad,
+      // Tow capacity fields
+      towCapacity,
+      towedLoad,
     });
   });
 

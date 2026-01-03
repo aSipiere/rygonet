@@ -12,13 +12,15 @@ export function TransportCapacityIndicator({ transportUnit }: TransportCapacityI
   const validation = transportValidations.find((v) => v.transportUnit.id === transportUnit.id);
   if (!validation) return null;
 
-  const { pcCapacity, embarkedLoad, desantingCapacity, desantingLoad } = validation;
+  const { pcCapacity, embarkedLoad, desantingCapacity, desantingLoad, towCapacity, towedLoad } = validation;
 
   const embarkedPercentage = pcCapacity > 0 ? (embarkedLoad / pcCapacity) * 100 : 0;
   const desantingPercentage = desantingCapacity > 0 ? (desantingLoad / desantingCapacity) * 100 : 0;
+  const towedPercentage = towCapacity > 0 ? (towedLoad / towCapacity) * 100 : 0;
 
   const embarkedValid = embarkedLoad <= pcCapacity;
   const desantingValid = desantingLoad <= desantingCapacity;
+  const towedValid = towedLoad <= towCapacity;
 
   return (
     <Box sx={{ mt: 1 }}>
@@ -50,7 +52,7 @@ export function TransportCapacityIndicator({ transportUnit }: TransportCapacityI
 
       {/* Desanting Capacity */}
       {desantingCapacity > 0 && (
-        <Box>
+        <Box sx={{ mb: 1 }}>
           <Typography
             variant="caption"
             sx={{
@@ -68,6 +70,32 @@ export function TransportCapacityIndicator({ transportUnit }: TransportCapacityI
               bgcolor: 'grey.800',
               '& .MuiLinearProgress-bar': {
                 bgcolor: desantingValid ? 'primary.main' : 'error.main',
+              },
+            }}
+          />
+        </Box>
+      )}
+
+      {/* Tow Capacity */}
+      {towCapacity > 0 && (
+        <Box>
+          <Typography
+            variant="caption"
+            sx={{
+              color: towedValid ? 'text.secondary' : 'error.main',
+              fontFamily: 'monospace',
+            }}
+          >
+            Tow (max T{towCapacity}): {towedLoad}/{towCapacity} toughness
+          </Typography>
+          <LinearProgress
+            variant="determinate"
+            value={Math.min(towedPercentage, 100)}
+            sx={{
+              height: 6,
+              bgcolor: 'grey.800',
+              '& .MuiLinearProgress-bar': {
+                bgcolor: towedValid ? 'primary.main' : 'error.main',
               },
             }}
           />
