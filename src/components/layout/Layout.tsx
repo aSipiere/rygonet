@@ -15,7 +15,8 @@ export function Layout({ children }: LayoutProps) {
         maxWidth="xl"
         sx={{
           flexGrow: 1,
-          py: 4,
+          py: { xs: 1.5, sm: 2.5, md: 4 },
+          px: { xs: 1, sm: 2, md: 3 },
         }}
       >
         {children}
@@ -23,8 +24,8 @@ export function Layout({ children }: LayoutProps) {
       <Box
         component="footer"
         sx={{
-          py: 2,
-          px: 2,
+          py: { xs: 1.5, sm: 2 },
+          px: { xs: 1.5, sm: 2 },
           mt: 'auto',
           borderTop: '1px solid #333',
           textAlign: 'center',
@@ -35,7 +36,7 @@ export function Layout({ children }: LayoutProps) {
           sx={{
             color: 'text.secondary',
             letterSpacing: '0.1em',
-            fontSize: '0.7rem',
+            fontSize: { xs: '0.55rem', sm: '0.65rem', md: '0.7rem' },
           }}
         >
           [UNAUTHORIZED ACCESS PROHIBITED] - RYGONET -{' '}
