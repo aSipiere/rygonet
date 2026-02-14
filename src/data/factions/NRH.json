@@ -2953,6 +2953,77 @@
           ]
         }
       ]
+    },
+    {
+      "id": "dummy-inf",
+      "name": "DUMMY (INF)",
+      "category": "Support",
+      "descriptiveCategory": "Decoy Blind",
+      "points": 5,
+      "stats": {
+        "unitClass": "Inf",
+        "height": 1,
+        "movement": 0,
+        "quality": 6,
+        "toughness": 0
+      },
+      "specialRules": [
+        "Dummy"
+      ],
+      "unitAbility": "A dummy is a blind that doesn't actually correspond to a real unit. It represents battlefield uncertainties and deliberate ruses of war. Dummies cannot shoot, spot enemies, capture or contest terrain, take up PC space, block enemy movement or parachute drops, or make use of any special rules. If identified or hit by any attack, it is immediately removed from play. Misses do not cause dummies to disappear. Dummies can move as far as you'd like in the Maneuver Phase using the movement rules of any unit class except planes. Dummies require a command token to move unless targeted in a brigade called by a real TACOM, in which case the dummy moves for free and does not count toward the TACOM's brigade limit."
+    },
+    {
+      "id": "dummy-inf-s",
+      "name": "DUMMY (INF-S)",
+      "category": "Support",
+      "descriptiveCategory": "Decoy Blind",
+      "points": 5,
+      "stats": {
+        "unitClass": "Inf(S)",
+        "height": 1,
+        "movement": 0,
+        "quality": 6,
+        "toughness": 0
+      },
+      "specialRules": [
+        "Dummy"
+      ],
+      "unitAbility": "A dummy is a blind that doesn't actually correspond to a real unit. It represents battlefield uncertainties and deliberate ruses of war. Dummies cannot shoot, spot enemies, capture or contest terrain, take up PC space, block enemy movement or parachute drops, or make use of any special rules. If identified or hit by any attack, it is immediately removed from play. Misses do not cause dummies to disappear. Dummies can move as far as you'd like in the Maneuver Phase using the movement rules of any unit class except planes. Dummies require a command token to move unless targeted in a brigade called by a real TACOM, in which case the dummy moves for free and does not count toward the TACOM's brigade limit."
+    },
+    {
+      "id": "dummy-vec",
+      "name": "DUMMY (VEC)",
+      "category": "Support",
+      "descriptiveCategory": "Decoy Blind",
+      "points": 5,
+      "stats": {
+        "unitClass": "Vec",
+        "height": 2,
+        "movement": 0,
+        "quality": 6,
+        "toughness": 0
+      },
+      "specialRules": [
+        "Dummy"
+      ],
+      "unitAbility": "A dummy is a blind that doesn't actually correspond to a real unit. It represents battlefield uncertainties and deliberate ruses of war. Dummies cannot shoot, spot enemies, capture or contest terrain, take up PC space, block enemy movement or parachute drops, or make use of any special rules. If identified or hit by any attack, it is immediately removed from play. Misses do not cause dummies to disappear. Dummies can move as far as you'd like in the Maneuver Phase using the movement rules of any unit class except planes. Dummies require a command token to move unless targeted in a brigade called by a real TACOM, in which case the dummy moves for free and does not count toward the TACOM's brigade limit."
+    },
+    {
+      "id": "dummy-air",
+      "name": "DUMMY (AIR)",
+      "category": "Support",
+      "descriptiveCategory": "Decoy Blind",
+      "points": 5,
+      "stats": {
+        "unitClass": "Air",
+        "movement": 0,
+        "quality": 6,
+        "evasion": 0
+      },
+      "specialRules": [
+        "Dummy"
+      ],
+      "unitAbility": "A dummy is a blind that doesn't actually correspond to a real unit. It represents battlefield uncertainties and deliberate ruses of war. Dummies cannot shoot, spot enemies, capture or contest terrain, take up PC space, block enemy movement or parachute drops, or make use of any special rules. If identified or hit by any attack, it is immediately removed from play. Misses do not cause dummies to disappear. Dummies can move as far as you'd like in the Maneuver Phase using the movement rules of any unit class except planes. Dummies require a command token to move unless targeted in a brigade called by a real TACOM, in which case the dummy moves for free and does not count toward the TACOM's brigade limit."
     }
   ]
 }
